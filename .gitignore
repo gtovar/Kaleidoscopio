@@ -1,7 +1,12 @@
-.bundle
+bundle
 db/*.sqlite3
 log/*.log
 tmp/
 .sass-cache/
 config/database.yml
-Fin de la conversación
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
