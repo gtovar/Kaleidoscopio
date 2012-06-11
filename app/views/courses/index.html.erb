@@ -1,0 +1,53 @@
+<h1>Listing courses</h1>
+
+<table>
+  <tr>
+    <th>Classname</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Photo</th>
+    <th>Teachername</th>
+    <th>Bioteacher</th>
+    <th>Place</th>
+    <th>Googlemap</th>
+    <th>Date</th>
+    <th>Requisitesstudent</th>
+    <th>Price</th>
+    <th>Linkay</th>
+    <th>Limitclasstickets</th>
+    <th>Linkfacebook</th>
+    <th>Kaleydoscopioclass</th>
+    <th>Teaser</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @courses.each do |course| %>
+  <tr>
+    <td><%= course.classname %></td>
+    <td><%= course.category %></td>
+    <td><%= course.description %></td>
+    <td><%= course.photo %></td>
+    <td><%= course.teachername %></td>
+    <td><%= course.bioteacher %></td>
+    <td><%= course.place %></td>
+    <td><%= course.googlemap %></td>
+    <td><%= course.date %></td>
+    <td><%= course.requisitesstudent %></td>
+    <td><%= course.price %></td>
+    <td><%= course.linkay %></td>
+    <td><%= course.limitclasstickets %></td>
+    <td><%= course.linkFacebook %></td>
+    <td><%= course.Kaleydoscopioclass %></td>
+    <td><%= course.teaser %></td>
+    <td><%= link_to 'Show', course %></td>
+    <td><%= link_to 'Edit', edit_course_path(course) %></td>
+    <td><%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Course', new_course_path %>

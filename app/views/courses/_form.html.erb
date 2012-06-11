@@ -1,0 +1,81 @@
+<%= form_for(@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :classname %><br />
+    <%= f.text_field :classname %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br />
+    <%= f.text_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :teachername %><br />
+    <%= f.text_field :teachername %>
+  </div>
+  <div class="field">
+    <%= f.label :bioteacher %><br />
+    <%= f.text_area :bioteacher %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br />
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :googlemap %><br />
+    <%= f.text_area :googlemap %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.datetime_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :requisitesstudent %><br />
+    <%= f.text_area :requisitesstudent %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :linkay %><br />
+    <%= f.text_field :linkay %>
+  </div>
+  <div class="field">
+    <%= f.label :limitclasstickets %><br />
+    <%= f.number_field :limitclasstickets %>
+  </div>
+  <div class="field">
+    <%= f.label :linkFacebook %><br />
+    <%= f.text_field :linkFacebook %>
+  </div>
+  <div class="field">
+    <%= f.label :Kaleydoscopioclass %><br />
+    <%= f.check_box :Kaleydoscopioclass %>
+  </div>
+  <div class="field">
+    <%= f.label :teaser %><br />
+    <%= f.text_field :teaser %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
