@@ -2,6 +2,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+
+
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require(*Rails.groups(:assets => %w(development test)))
@@ -30,8 +32,8 @@ module Kaleidoscopio
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+  config.i18n.load_path += Dir[Rails.root.join('config', 'locales/models', '**', '*.{rb,yml}')]
+    config.i18n.default_locale = :es
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"

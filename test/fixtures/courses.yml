@@ -1,37 +1,35 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  classname: MyString
+  name: MyString
   category: MyString
   description: MyText
   photo: MyString
-  teachername: MyString
-  bioteacher: MyText
+  teacher_name: 
+  biography_teacher: MyText
   place: MyString
-  googlemap: MyText
-  date: 2012-06-11 13:03:00
-  requisitesstudent: MyText
-  price: MyString
-  linkay: MyString
-  limitclasstickets: 1
-  linkFacebook: MyString
-  Kaleydoscopioclass: false
+  google_map: MyText
+  date_time: 2012-06-13 14:05:10
+  requisites_student: MyText
+  price_link: 
+  limt_class_tickets: 1
+  Facebook_link: MyString
+  Kaleyoscopio_class: false
   teaser: MyString
 
 two:
-  classname: MyString
+  name: MyString
   category: MyString
   description: MyText
   photo: MyString
-  teachername: MyString
-  bioteacher: MyText
+  teacher_name: 
+  biography_teacher: MyText
   place: MyString
-  googlemap: MyText
-  date: 2012-06-11 13:03:00
-  requisitesstudent: MyText
-  price: MyString
-  linkay: MyString
-  limitclasstickets: 1
-  linkFacebook: MyString
-  Kaleydoscopioclass: false
+  google_map: MyText
+  date_time: 2012-06-13 14:05:10
+  requisites_student: MyText
+  price_link: 
+  limt_class_tickets: 1
+  Facebook_link: MyString
+  Kaleyoscopio_class: false
   teaser: MyString

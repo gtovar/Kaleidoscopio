@@ -18,7 +18,7 @@ class CoursesControllerTest < ActionController::TestCase
 
   test "should create course" do
     assert_difference('Course.count') do
-      post :create, course: { Kaleydoscopioclass: @course.Kaleydoscopioclass, bioteacher: @course.bioteacher, category: @course.category, classname: @course.classname, date: @course.date, description: @course.description, googlemap: @course.googlemap, limitclasstickets: @course.limitclasstickets, linkFacebook: @course.linkFacebook, linkay: @course.linkay, photo: @course.photo, place: @course.place, price: @course.price, requisitesstudent: @course.requisitesstudent, teachername: @course.teachername, teaser: @course.teaser }
+      post :create, course: { Facebook_link: @course.Facebook_link, Kaleyoscopio_class: @course.Kaleyoscopio_class, biography_teacher: @course.biography_teacher, category: @course.category, date_time: @course.date_time, description: @course.description, google_map: @course.google_map, limt_class_tickets: @course.limt_class_tickets, name: @course.name, photo: @course.photo, place: @course.place, price_link: @course.price_link, requisites_student: @course.requisites_student, teacher_name: @course.teacher_name, teaser: @course.teaser }
     end
 
     assert_redirected_to course_path(assigns(:course))
@@ -35,7 +35,7 @@ class CoursesControllerTest < ActionController::TestCase
   end
 
   test "should update course" do
-    put :update, id: @course, course: { Kaleydoscopioclass: @course.Kaleydoscopioclass, bioteacher: @course.bioteacher, category: @course.category, classname: @course.classname, date: @course.date, description: @course.description, googlemap: @course.googlemap, limitclasstickets: @course.limitclasstickets, linkFacebook: @course.linkFacebook, linkay: @course.linkay, photo: @course.photo, place: @course.place, price: @course.price, requisitesstudent: @course.requisitesstudent, teachername: @course.teachername, teaser: @course.teaser }
+    put :update, id: @course, course: { Facebook_link: @course.Facebook_link, Kaleyoscopio_class: @course.Kaleyoscopio_class, biography_teacher: @course.biography_teacher, category: @course.category, date_time: @course.date_time, description: @course.description, google_map: @course.google_map, limt_class_tickets: @course.limt_class_tickets, name: @course.name, photo: @course.photo, place: @course.place, price_link: @course.price_link, requisites_student: @course.requisites_student, teacher_name: @course.teacher_name, teaser: @course.teaser }
     assert_redirected_to course_path(assigns(:course))
   end
 

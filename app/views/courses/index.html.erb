@@ -2,21 +2,20 @@
 
 <table>
   <tr>
-    <th>Classname</th>
+    <th>Name</th>
     <th>Category</th>
     <th>Description</th>
     <th>Photo</th>
-    <th>Teachername</th>
-    <th>Bioteacher</th>
+    <th>Teacher name</th>
+    <th>Biography teacher</th>
     <th>Place</th>
-    <th>Googlemap</th>
-    <th>Date</th>
-    <th>Requisitesstudent</th>
-    <th>Price</th>
-    <th>Linkay</th>
-    <th>Limitclasstickets</th>
-    <th>Linkfacebook</th>
-    <th>Kaleydoscopioclass</th>
+    <th>Google map</th>
+    <th>Date time</th>
+    <th>Requisites student</th>
+    <th>Price link</th>
+    <th>Limt class tickets</th>
+    <th>Facebook link</th>
+    <th>Kaleyoscopio class</th>
     <th>Teaser</th>
     <th></th>
     <th></th>
@@ -25,21 +24,20 @@
 
 <% @courses.each do |course| %>
   <tr>
-    <td><%= course.classname %></td>
+    <td><%= course.name %></td>
     <td><%= course.category %></td>
     <td><%= course.description %></td>
     <td><%= course.photo %></td>
-    <td><%= course.teachername %></td>
-    <td><%= course.bioteacher %></td>
+    <td><%= course.teacher_name %></td>
+    <td><%= course.biography_teacher %></td>
     <td><%= course.place %></td>
-    <td><%= course.googlemap %></td>
-    <td><%= course.date %></td>
-    <td><%= course.requisitesstudent %></td>
-    <td><%= course.price %></td>
-    <td><%= course.linkay %></td>
-    <td><%= course.limitclasstickets %></td>
-    <td><%= course.linkFacebook %></td>
-    <td><%= course.Kaleydoscopioclass %></td>
+    <td><%= course.google_map %></td>
+    <td><%= course.date_time %></td>
+    <td><%= course.requisites_student %></td>
+    <td><%= course.price_link %></td>
+    <td><%= course.limt_class_tickets %></td>
+    <td><%= course.Facebook_link %></td>
+    <td><%= course.Kaleyoscopio_class %></td>
     <td><%= course.teaser %></td>
     <td><%= link_to 'Show', course %></td>
     <td><%= link_to 'Edit', edit_course_path(course) %></td>
