@@ -5,13 +5,13 @@ one:
   category: MyString
   description: MyText
   photo: MyString
-  teacher_name: 
+  teacher_name: MyString
   biography_teacher: MyText
   place: MyString
   google_map: MyText
-  date_time: 2012-06-13 14:05:10
+  date_time: 2012-06-13 15:10:07
   requisites_student: MyText
-  price_link: 
+  price_link: MyString
   limt_class_tickets: 1
   Facebook_link: MyString
   Kaleyoscopio_class: false
@@ -22,13 +22,13 @@ two:
   category: MyString
   description: MyText
   photo: MyString
-  teacher_name: 
+  teacher_name: MyString
   biography_teacher: MyText
   place: MyString
   google_map: MyText
-  date_time: 2012-06-13 14:05:10
+  date_time: 2012-06-13 15:10:07
   requisites_student: MyText
-  price_link: 
+  price_link: MyString
   limt_class_tickets: 1
   Facebook_link: MyString
   Kaleyoscopio_class: false
