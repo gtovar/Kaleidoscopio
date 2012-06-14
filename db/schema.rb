@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613201007) do
+ActiveRecord::Schema.define(:version => 20120613212301) do
 
   create_table "courses", :force => true do |t|
     t.string   "name"
@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(:version => 20120613201007) do
     t.text     "google_map"
     t.datetime "date_time"
     t.text     "requisites_student"
-    t.string   "price_link"
-    t.integer  "limt_class_tickets"
-    t.string   "Facebook_link"
-    t.boolean  "Kaleyoscopio_class"
-    t.string   "teaser"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.decimal  "price"
+    t.string   "pay_link"
+    t.integer  "limit_class_tickets"
+    t.string   "facebook_link"
+    t.boolean  "owned"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
 end

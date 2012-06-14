@@ -1,3 +1,4 @@
 class Course < ActiveRecord::Base
-  attr_accessible :Facebook_link, :Kaleyoscopio_class, :biography_teacher, :category, :date_time, :description, :google_map, :limt_class_tickets, :name, :photo, :place, :price_link, :requisites_student, :teacher_name, :teaser
+validates :biography_teacher, :category, :date_time, :description, :facebook_link, :google_map, :limit_class_tickets, :name, :owned, :pay_link, :photo, :place, :price, :requisites_student, :teacher_name, :presence => true
+ attr_accessible :biography_teacher, :category, :date_time, :description, :facebook_link, :google_map, :limit_class_tickets, :name, :owned, :pay_link, :photo, :place, :price, :requisites_student, :teacher_name
 end

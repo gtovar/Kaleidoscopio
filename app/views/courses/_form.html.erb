@@ -1,16 +1,7 @@
-<%= form_for(@course) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
-
-      <ul>
-      <% @course.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<div class="row">
+  <div class="span6 offset3">
+	<%= form_for(@course) do |f| %>
+	<%= render 'shared/error_messages' %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -52,26 +43,28 @@
     <%= f.text_area :requisites_student %>
   </div>
   <div class="field">
-    <%= f.label :price_link %><br />
-    <%= f.text_field :price_link %>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :limt_class_tickets %><br />
-    <%= f.number_field :limt_class_tickets %>
+    <%= f.label :pay_link %><br />
+    <%= f.text_field :pay_link %>
   </div>
   <div class="field">
-    <%= f.label :Facebook_link %><br />
-    <%= f.text_field :Facebook_link %>
+    <%= f.label :limit_class_tickets %><br />
+    <%= f.number_field :limit_class_tickets %>
   </div>
   <div class="field">
-    <%= f.label :Kaleyoscopio_class %><br />
-    <%= f.check_box :Kaleyoscopio_class %>
+    <%= f.label :facebook_link %><br />
+    <%= f.text_field :facebook_link %>
   </div>
   <div class="field">
-    <%= f.label :teaser %><br />
-    <%= f.text_field :teaser %>
+    <%= f.label :owned %><br />
+    <%= f.check_box :owned %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-large btn-primary" %>
   </div>
 <% end %>
+</div>
+</div>

@@ -1,0 +1,19 @@
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+			<div class="alert alert-error">
+      
+<% errores = @course.errors.count %>
+
+<% if errores > 1 %>
+<h2><%= errores %>&nbsp;errores encontrados:</h2>
+<%else%>
+<h2><%= errores%>error encontrado:</h2>
+<%end%>
+			</div>
+      <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li>* <%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
