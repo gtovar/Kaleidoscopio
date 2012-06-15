@@ -1,0 +1,22 @@
+es:
+  activerecord:
+    models:
+      course: "Curso"
+    attributes:
+      course:
+        teacher_name: "Nombre del profesor"
+        name: "Nombre de la clase"
+        category: "Categoria"
+        description: "Descripción"
+        photo: "Foto"
+        teacher_name: "Nombre del maestro"
+        biography_teacher: "Biografia del Maestro"
+        place: "Lugar"
+        google_map: "Google map"
+        date_time: "Fecha y hora"
+        requisites_student: "Requisitos del estudiante"
+        price: "Precio"
+        pay_link: "Dinero mail"
+        limit_class_tickets: "No. boletos"
+        facebook_link: "Facebook"
+        owned: "Clase"

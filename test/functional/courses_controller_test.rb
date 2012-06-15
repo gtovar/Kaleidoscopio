@@ -18,7 +18,7 @@ class CoursesControllerTest < ActionController::TestCase
 
   test "should create course" do
     assert_difference('Course.count') do
-      post :create, course: { Kaleydoscopioclass: @course.Kaleydoscopioclass, bioteacher: @course.bioteacher, category: @course.category, classname: @course.classname, date: @course.date, description: @course.description, googlemap: @course.googlemap, limitclasstickets: @course.limitclasstickets, linkFacebook: @course.linkFacebook, linkay: @course.linkay, photo: @course.photo, place: @course.place, price: @course.price, requisitesstudent: @course.requisitesstudent, teachername: @course.teachername, teaser: @course.teaser }
+      post :create, course: { biography_teacher: @course.biography_teacher, category: @course.category, date_time: @course.date_time, description: @course.description, facebook_link: @course.facebook_link, google_map: @course.google_map, limit_class_tickets: @course.limit_class_tickets, name: @course.name, owned: @course.owned, pay_link: @course.pay_link, photo: @course.photo, place: @course.place, price: @course.price, requisites_student: @course.requisites_student, teacher_name: @course.teacher_name }
     end
 
     assert_redirected_to course_path(assigns(:course))
@@ -35,7 +35,7 @@ class CoursesControllerTest < ActionController::TestCase
   end
 
   test "should update course" do
-    put :update, id: @course, course: { Kaleydoscopioclass: @course.Kaleydoscopioclass, bioteacher: @course.bioteacher, category: @course.category, classname: @course.classname, date: @course.date, description: @course.description, googlemap: @course.googlemap, limitclasstickets: @course.limitclasstickets, linkFacebook: @course.linkFacebook, linkay: @course.linkay, photo: @course.photo, place: @course.place, price: @course.price, requisitesstudent: @course.requisitesstudent, teachername: @course.teachername, teaser: @course.teaser }
+    put :update, id: @course, course: { biography_teacher: @course.biography_teacher, category: @course.category, date_time: @course.date_time, description: @course.description, facebook_link: @course.facebook_link, google_map: @course.google_map, limit_class_tickets: @course.limit_class_tickets, name: @course.name, owned: @course.owned, pay_link: @course.pay_link, photo: @course.photo, place: @course.place, price: @course.price, requisites_student: @course.requisites_student, teacher_name: @course.teacher_name }
     assert_redirected_to course_path(assigns(:course))
   end
 

@@ -1,53 +1,66 @@
-<h1>Listing courses</h1>
 
-<table>
-  <tr>
-    <th>Classname</th>
-    <th>Category</th>
-    <th>Description</th>
-    <th>Photo</th>
-    <th>Teachername</th>
-    <th>Bioteacher</th>
-    <th>Place</th>
-    <th>Googlemap</th>
-    <th>Date</th>
-    <th>Requisitesstudent</th>
-    <th>Price</th>
-    <th>Linkay</th>
-    <th>Limitclasstickets</th>
-    <th>Linkfacebook</th>
-    <th>Kaleydoscopioclass</th>
-    <th>Teaser</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="center hero-unit">
+  <h1>Bienvenido a Kaleydoscopio</h1>
+
+  <h2>
+    Es una pagina para gestionar 
+    <a href="#">Cursos</a>
+    version de Desarrollo
+  </h2>
+  <%= link_to "Crear curso", new_course_path, class: "btn btn-large btn-primary" %>
+</div>
+
+
+<div class="row">
+  <aside class="span10">
+    <section>
+      <h1>
+				Lista de cursos
+			</h1>
 
 <% @courses.each do |course| %>
-  <tr>
-    <td><%= course.classname %></td>
-    <td><%= course.category %></td>
-    <td><%= course.description %></td>
-    <td><%= course.photo %></td>
-    <td><%= course.teachername %></td>
-    <td><%= course.bioteacher %></td>
-    <td><%= course.place %></td>
-    <td><%= course.googlemap %></td>
-    <td><%= course.date %></td>
-    <td><%= course.requisitesstudent %></td>
-    <td><%= course.price %></td>
-    <td><%= course.linkay %></td>
-    <td><%= course.limitclasstickets %></td>
-    <td><%= course.linkFacebook %></td>
-    <td><%= course.Kaleydoscopioclass %></td>
-    <td><%= course.teaser %></td>
-    <td><%= link_to 'Show', course %></td>
-    <td><%= link_to 'Edit', edit_course_path(course) %></td>
-    <td><%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+    <h1><%= Course.human_attribute_name("name") %></h1>
+		<%= course.name %>
+    <h1><%= Course.human_attribute_name("category") %></h1>
+		<%= course.category %>
+    <h1><%= Course.human_attribute_name("description") %></h1>
+		<%= course.description %>
+    <h1><%= Course.human_attribute_name("photo") %></h1>
+		<%= course.photo %>
+    <h1><%= Course.human_attribute_name("teacher_name") %></h1>
+<%= course.teacher_name %>
+    <h1><%= Course.human_attribute_name("biography_teacher") %></h1>
+<%= course.biography_teacher %>
+    <h1><%= Course.human_attribute_name("Place") %></h1>
+<%= course.place %>
+    <h1><%= Course.human_attribute_name("google_map") %></h1>
+<%= course.google_map %>
+    <h1><%= Course.human_attribute_name("date_time") %></h1>
+<%= course.date_time %>
+    <h1><%= Course.human_attribute_name("requisites_student") %></h1>
+<%= course.requisites_student %>
+    <h1><%= Course.human_attribute_name("price") %>Price</h1>
+<%= course.price %>
+    <h1><%= Course.human_attribute_name("pay_link") %></h1>
+<%= course.pay_link %>
+    <h1><%= Course.human_attribute_name("limit_class_tickets") %></h1>
+<%= course.limit_class_tickets %>
+    <h1><%= Course.human_attribute_name("facebook_link") %></h1>
+<%= course.facebook_link %>
+    <h1><%= Course.human_attribute_name("Owned") %></h1>
+<%= course.owned %>
+    <%= link_to 'Show', course %>
+		<%= link_to 'Edit', edit_course_path(course) %>
+		<%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %>
 <% end %>
-</table>
+</section>
+  </aside>
+</div>
+<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+<p><%= flash[:notice] %></p>
+
+
 
 <br />
 
-<%= link_to 'New Course', new_course_path %>
+<%= link_to 'Crear Curso', new_course_path, class: "btn btn-large btn-primary" %>

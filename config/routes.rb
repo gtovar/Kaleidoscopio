@@ -1,6 +1,12 @@
-Kaleidoscopio::Application.routes.draw do
+Kaleidoscopio::Application.routes.draw do  
   resources :courses
+<<<<<<< HEAD
 root :to => 'course#index'
+=======
+
+	root :to => 'courses#index'
+
+>>>>>>> filling-in-layout
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

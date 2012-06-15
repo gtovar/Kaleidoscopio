@@ -1,19 +1,10 @@
-<%= form_for(@course) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
-
-      <ul>
-      <% @course.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<div class="row">
+  <div class="span6 offset3">
+	<%= form_for(@course) do |f| %>
+	<%= render 'shared/error_messages' %>
   <div class="field">
-    <%= f.label :classname %><br />
-    <%= f.text_field :classname %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :category %><br />
@@ -28,54 +19,52 @@
     <%= f.text_field :photo %>
   </div>
   <div class="field">
-    <%= f.label :teachername %><br />
-    <%= f.text_field :teachername %>
+    <%= f.label :teacher_name %><br />
+    <%= f.text_field :teacher_name %>
   </div>
   <div class="field">
-    <%= f.label :bioteacher %><br />
-    <%= f.text_area :bioteacher %>
+    <%= f.label :biography_teacher %><br />
+    <%= f.text_area :biography_teacher %>
   </div>
   <div class="field">
     <%= f.label :place %><br />
     <%= f.text_field :place %>
   </div>
   <div class="field">
-    <%= f.label :googlemap %><br />
-    <%= f.text_area :googlemap %>
+    <%= f.label :google_map %><br />
+    <%= f.text_area :google_map %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
+    <%= f.label :date_time %><br />
+    <%= f.datetime_select :date_time %>
   </div>
   <div class="field">
-    <%= f.label :requisitesstudent %><br />
-    <%= f.text_area :requisitesstudent %>
+    <%= f.label :requisites_student %><br />
+    <%= f.text_area :requisites_student %>
   </div>
   <div class="field">
     <%= f.label :price %><br />
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :linkay %><br />
-    <%= f.text_field :linkay %>
+    <%= f.label :pay_link %><br />
+    <%= f.text_field :pay_link %>
   </div>
   <div class="field">
-    <%= f.label :limitclasstickets %><br />
-    <%= f.number_field :limitclasstickets %>
+    <%= f.label :limit_class_tickets %><br />
+    <%= f.number_field :limit_class_tickets %>
   </div>
   <div class="field">
-    <%= f.label :linkFacebook %><br />
-    <%= f.text_field :linkFacebook %>
+    <%= f.label :facebook_link %><br />
+    <%= f.text_field :facebook_link %>
   </div>
   <div class="field">
-    <%= f.label :Kaleydoscopioclass %><br />
-    <%= f.check_box :Kaleydoscopioclass %>
-  </div>
-  <div class="field">
-    <%= f.label :teaser %><br />
-    <%= f.text_field :teaser %>
+    <%= f.label :owned %><br />
+    <%= f.check_box :owned %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-large btn-primary" %>
   </div>
 <% end %>
+</div>
+</div>
