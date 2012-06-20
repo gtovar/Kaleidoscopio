@@ -1,6 +1,7 @@
 <div class="row">
   <div class="span6 offset3">
-	<%= form_for(@course) do |f| %>
+
+  <%= form_for @course, :html => {:multipart => true} do |f| %>
 	<%= render 'shared/error_messages' %>
   <div class="field">
     <%= f.label :name %><br />
@@ -16,8 +17,9 @@
   </div>
   <div class="field">
     <%= f.label :photo %><br />
-    <%= f.text_field :photo %>
+    <%= f.file_field :photo %>
   </div>
+
   <div class="field">
     <%= f.label :teacher_name %><br />
     <%= f.text_field :teacher_name %>
