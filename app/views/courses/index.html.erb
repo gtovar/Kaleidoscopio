@@ -3,7 +3,7 @@
   <h1>Bienvenido a Kaleydoscopio</h1>
 
   <h2>
-    Es una pagina para gestionar 
+    Es una pagina para gestionar
     <a href="#">Cursos</a>
     version de Desarrollo
   </h2>
@@ -26,7 +26,7 @@
     <h1><%= Course.human_attribute_name("description") %></h1>
 		<%= course.description %>
     <h1><%= Course.human_attribute_name("photo") %></h1>
-		<%= image_tag course.photo_url.to_s%>
+		<%= image_tag course.photo.url.to_s%>
 
     <h1><%= Course.human_attribute_name("teacher_name") %></h1>
 		<%= course.teacher_name %>

@@ -1,7 +1,7 @@
 CarrierWave.configure do |config|
+config.cache_dir = '#{Rails.root}/tmp/uploads'
 if Rails.env.production?
-config.root = Rails.root.join('tmp')
-config.cache_dir = 'uploads'
+  config.storage = :fog
 config.fog_credentials = {
     :provider              => 'AWS',
     :aws_access_key_id     => ENV['AWS_ACCESS_KEY_ID'],
@@ -13,7 +13,6 @@ config.fog_credentials = {
 else
  #for development and testing locally
   config.storage = :file
-  config.enable_processing = false
  end
 end
 
