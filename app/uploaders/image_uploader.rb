@@ -1,7 +1,11 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
-
+if settings.environment == :production
+    storage :fog
+  else
+    storage :file
+  end 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -11,7 +15,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
-  storage :fog
+
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
