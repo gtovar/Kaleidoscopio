@@ -16,8 +16,10 @@ class CreateCourses < ActiveRecord::Migration
       t.integer :limit_class_tickets
       t.string :facebook_link
       t.boolean :owned
+      t.string :photo_teacher
+
 
       t.timestamps
-    end
+		end
   end
 end

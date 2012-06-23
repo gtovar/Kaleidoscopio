@@ -1,25 +1,27 @@
 
 <div class="center hero-unit">
-  <h1>Bienvenido a Kaleydoscopio</h1>
+  <h1>Gestion de Cursos</h1>
 
   <h2>
-    Es una pagina para gestionar
+    Es una pagina para administrar los
     <a href="#">Cursos</a>
     version de Desarrollo
   </h2>
   <%= link_to "Crear curso", new_course_path, class: "btn btn-large btn-primary" %>
 </div>
 
-
-<div class="row">
+<p ><%= flash[:notice]  %></p>
+<div class="row ">
   <aside class="span10">
     <section>
       <h1>
 				Lista de cursos
 			</h1>
+<%= will_paginate %>
 
 <% @courses.each do |course| %>
-    <h1><%= Course.human_attribute_name("name") %></h1>
+<%= link_to "Cursos_vistante", curso_path(course), class: "btn btn-large btn-primary" %>
+    <h1><%= Course.human_attribute_name("name")  %></h1>
 		<%= course.name %>
     <h1><%= Course.human_attribute_name("category") %></h1>
 		<%= course.category %>
@@ -32,6 +34,10 @@
 		<%= course.teacher_name %>
     <h1><%= Course.human_attribute_name("biography_teacher") %></h1>
 <%= course.biography_teacher %>
+
+    <h1><%= Course.human_attribute_name("photo_teacher") %></h1>
+		<%= image_tag course.photo_teacher.url.to_s%>
+
     <h1><%= Course.human_attribute_name("Place") %></h1>
 <%= course.place %>
     <h1><%= Course.human_attribute_name("google_map") %></h1>
@@ -54,11 +60,13 @@
 		<%= link_to 'Edit', edit_course_path(course) %>
 		<%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %>
 <% end %>
+<%= will_paginate %>
+
 </section>
   </aside>
 </div>
 <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
-<p><%= flash[:notice] %></p>
+
 
 
 

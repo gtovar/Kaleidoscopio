@@ -1,11 +1,13 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Kaleydoscopio", courses_path, id: "logo" %>
+      <%= link_to "Kaleydoscopio", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Inicio",    courses_path %></li>
-          <li><%= link_to "Ayuda",    '#' %></li>
+          <li><%= link_to "Inicio",    root_path %></li>
+          <li><%= link_to "Cursos",    courses_path %></li>
+          <li><%= link_to "Conocenos",    courses_path %></li>
+          <li><%= link_to "Terminos y Condiciones",    courses_path %></li>
           <li><%= link_to "Entrar", '#' %></li>
         </ul>
       </nav>

@@ -2,13 +2,15 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.paginate(page: params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }
     end
   end
+
+
 
   # GET /courses/1
   # GET /courses/1.json
@@ -19,6 +21,9 @@ class CoursesController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @course }
     end
+	if request.path != course_path(@course)
+    redirect_to @course, status: :moved_permanently
+  end
   end
 
   # GET /courses/new
