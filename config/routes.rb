@@ -4,6 +4,8 @@ Kaleidoscopio::Application.routes.draw do
   resources :courses
 	root :to => "home#index"
 	match 'curso/:id' => 'home#show_detail_course_to_users', :as => 'curso'
+	match '/conocenos' => 'home#aboutus', :as => 'conocenos'
+	match '/terminos-y-politicas' => 'home#terms', :as => 'terminos'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

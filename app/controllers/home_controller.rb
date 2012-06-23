@@ -16,4 +16,11 @@ class HomeController < ApplicationController
       format.json { render json: @course }
     end
   end
+
+def aboutus
+end
+
+def terms
+end
+
 end
