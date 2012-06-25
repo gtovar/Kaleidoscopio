@@ -20,7 +20,7 @@
 <%= will_paginate %>
 
 <% @courses.each do |course| %>
-<%= link_to "Cursos_vistante", curso_path(course), class: "btn btn-large btn-primary" %>
+
     <h1><%= Course.human_attribute_name("name")  %></h1>
 		<%= course.name %>
     <h1><%= Course.human_attribute_name("category") %></h1>

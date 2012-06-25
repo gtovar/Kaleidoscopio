@@ -2,6 +2,7 @@ es:
   activerecord:
     models:
       course: "Curso"
+      contact: "Contacto"
     attributes:
       course:
         teacher_name: "Nombre del profesor"
@@ -21,3 +22,9 @@ es:
         limit_class_tickets: "No. boletos"
         facebook_link: "Facebook"
         owned: "Clase"
+      contact:
+        name: "Nombre"
+        email: "Correo electrónico"
+        phone: "Teléfono"
+        subjects: "Asunto"
+        message: "Mensaje"

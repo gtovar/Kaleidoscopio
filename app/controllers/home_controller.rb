@@ -9,6 +9,7 @@ class HomeController < ApplicationController
   end
 
   def show_detail_course_to_users
+
  @course = Course.find(params[:id])
 
     respond_to do |format|
@@ -21,6 +22,10 @@ def aboutus
 end
 
 def terms
+end
+def contact
+end
+def view_contact
 end
 
 end
