@@ -1,6 +1,16 @@
 Kaleidoscopio::Application.routes.draw do  
-  resources :courses
-	root :to => 'courses#index'
+ 
+
+  resources :courses do
+  	resources :orders
+  end	
+
+	root :to => 'courses#vindex', :as => 'vcourses'
+
+  
+
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -50,7 +60,7 @@ Kaleidoscopio::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  #root :to => 'courses#index'
 
   # See how all your routes lay out with "rake routes"
 

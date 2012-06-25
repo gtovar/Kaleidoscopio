@@ -1,0 +1,16 @@
+<h1>WAITING</h1>
+<form action="https://checkout.dineromail.com/CheckOut" method="post" >
+<!-- Variables Obligatorias -->
+<input type="hidden" name="merchant" value="1048078" />
+<input type="hidden" name="country_id" value="4" />
+<input type="hidden" name="payment_method_available" value="all" />
+<input type="hidden" name="item_name_1" value="<%= @course.name %>" />
+<input type="hidden" name="item_quantity_1" value="1" />
+<input type="hidden" name="item_ammount_1" value="<%= @course.price %>0" />
+<input type="hidden" name="ok_url" value="http://kaleydoscopio.heroku.com" />
+<input type="hidden" name="error_url" value="http://google.com" />
+<input type="hidden" name="pending_url" value="http://google.com" />
+
+<!-- Boton -->
+<input type='image' src='https://mexico.dineromail.com/imagenes/botones/pagar-medios_c.gif' border='0' name='submit' alt='Pagar con DineroMail'>
+</form>

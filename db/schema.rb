@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613212301) do
+ActiveRecord::Schema.define(:version => 20120625173247) do
 
   create_table "courses", :force => true do |t|
     t.string   "name"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20120613212301) do
     t.text     "google_map"
     t.datetime "date_time"
     t.text     "requisites_student"
-    t.decimal  "price"
+    t.integer  "price"
     t.string   "pay_link"
     t.integer  "limit_class_tickets"
     t.string   "facebook_link"
@@ -32,5 +32,19 @@ ActiveRecord::Schema.define(:version => 20120613212301) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end
+
+  create_table "orders", :force => true do |t|
+    t.string   "token"
+    t.integer  "course_id"
+    t.string   "payment_status"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "quantity"
+    t.integer  "total_price"
+  end
+
+  add_index "orders", ["course_id"], :name => "index_orders_on_course_id"
+
+  add_foreign_key "orders", "courses", :name => "orders_course_id_fk"
 
 end

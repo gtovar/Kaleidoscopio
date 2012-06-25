@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+
   <b>Name:</b>
+
   <%= @course.name %>
 </p>
 
@@ -21,12 +23,16 @@
 </p>
 
 <p>
+
   <b>Teacher name:</b>
+
   <%= @course.teacher_name %>
 </p>
 
 <p>
+
   <b>Biography teacher:</b>
+
   <%= @course.biography_teacher %>
 </p>
 
@@ -37,11 +43,12 @@
 
 <p>
   <b>Google map:</b>
-  <%= @course.google_map %>
+  <%= @course.google_map.html_safe %>
 </p>
 
 <p>
   <b>Date time:</b>
+
   <%= @course.date_time %>
 </p>
 
@@ -78,3 +85,25 @@
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
+
+
+<%= form_for([@course, @course.orders.build]) do |f| %>
+  
+  <%= f.label :quantity %><br />
+  <%= f.select :quantity, options_for_select([[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"]]) %>
+
+  <div class="actions">
+    <%= f.submit  %>
+  </div>
+<% end %>
+
+ ----------------------
+
+
+
+
+
+
+-----------------
+
+

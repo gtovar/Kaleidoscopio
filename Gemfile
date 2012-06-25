@@ -6,7 +6,10 @@ gem 'bootstrap-sass', '2.0.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-
+gem 'meta_search'
+gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+gem 'dineromail'
+gem "foreigner"
 
 # Gems used only for assets and not required
 # in production environments by default.
