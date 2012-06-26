@@ -11,7 +11,7 @@ class CreateCourses < ActiveRecord::Migration
       t.text :google_map
       t.datetime :date_time
       t.text :requisites_student
-      t.decimal :price
+      t.integer :price
       t.string :pay_link
       t.integer :limit_class_tickets
       t.string :facebook_link
