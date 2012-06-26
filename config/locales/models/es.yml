@@ -2,6 +2,7 @@ es:
   activerecord:
     models:
       course: "Curso"
+      contact: "Contacto"
     attributes:
       course:
         teacher_name: "Nombre del profesor"
@@ -11,6 +12,7 @@ es:
         photo: "Foto"
         teacher_name: "Nombre del maestro"
         biography_teacher: "Biografia del Maestro"
+        photo_teacher: "Foto del Maestro"
         place: "Lugar"
         google_map: "Google map"
         date_time: "Fecha y hora"
@@ -20,3 +22,9 @@ es:
         limit_class_tickets: "No. boletos"
         facebook_link: "Facebook"
         owned: "Clase"
+      contact:
+        name: "Nombre"
+        email: "Correo electrónico"
+        phone: "Teléfono"
+        subjects: "Asunto"
+        message: "Mensaje"

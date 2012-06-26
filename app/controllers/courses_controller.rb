@@ -6,6 +6,8 @@ class CoursesController < ApplicationController
     @search = Course.search(params[:search])	
     @courses = @search.all
     @total = @courses.count
+    @courses = Course.paginate(page: params[:page])
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,6 +15,7 @@ class CoursesController < ApplicationController
       format.csv {export(@courses)}	
     end
   end
+
 
   def vindex
     @search = Course.search(params[:search])	
@@ -26,6 +29,7 @@ class CoursesController < ApplicationController
   end
 
 
+
   # GET /courses/1
   # GET /courses/1.json
   def show
@@ -35,6 +39,9 @@ class CoursesController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @course }
     end
+	if request.path != course_path(@course)
+    redirect_to @course, status: :moved_permanently
+  end
   end
 
 

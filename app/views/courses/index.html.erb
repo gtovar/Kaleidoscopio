@@ -1,23 +1,24 @@
 
 
 <div class="center hero-unit">
-  <h1>Bienvenido a Kaleydoscopio</h1>
+  <h1>Gestion de Cursos</h1>
 
   <h2>
-    Es una pagina para gestionar 
+    Es una pagina para administrar los
     <a href="#">Cursos</a>
     version de Desarrollo
   </h2>
   <%= link_to "Crear curso", new_course_path, class: "btn btn-large btn-primary" %>
 </div>
 
-
-<div class="row">
+<p ><%= flash[:notice]  %></p>
+<div class="row ">
   <aside class="span10">
     <section>
       <h1>
 				Lista de cursos
 			</h1>
+<%= will_paginate %>
 
 
 <p>Total cursos:<%= @total %></p>
@@ -43,16 +44,13 @@
 
 <% @courses.each do |course| %>
 
-    <h1><%= Course.human_attribute_name("name") %></h1>
+
+    <h1><%= Course.human_attribute_name("name")  %></h1>
 		<%= course.name %>
     <h1><%= Course.human_attribute_name("category") %></h1>
 		<%= course.category %>
-    
-    <h1><%= Course.human_attribute_name("date_time") %></h1>
-		<%= course.date_time %>
-    
-    <h1><%= Course.human_attribute_name("price") %>Price</h1>
-		<%= course.price %>
+    <h1><%= Course.human_attribute_name("limit_class_tickets") %></h1>
+		<%= course.limit_class_tickets %>
     
     <h1><%= Course.human_attribute_name("Owned") %></h1>
 		<%= course.owned %>
@@ -60,12 +58,14 @@
     <%= link_to 'Edit', edit_course_path(course) %>
     <%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %>
 <% end %>
+<%= will_paginate %>
+
 </section>
   </aside>
 </div>
 <br/>
 <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
-<p><%= flash[:notice] %></p>
+
 
 
 

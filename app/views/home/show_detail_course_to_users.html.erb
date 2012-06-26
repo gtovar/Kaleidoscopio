@@ -1,0 +1,85 @@
+<div class="container">
+  <aside class="span12">
+    <section>
+      <div class="span8 hero-unit" >
+        <h2><%= @course.name %></h2>
+        <%= image_tag @course.photo.url.to_s%>
+        <% if @course.owned = true %>
+          <div class="span2">
+            <ul class="nav nav-pills nav-stacked">
+              <li class="active">
+                <a href="#">
+                  Clase de kaleydoscopio
+                </a>
+              </li>
+            </ul>
+          </div>
+        <%end%>
+        <div class="span5">
+          <%= link_to "facebook", curso_path(:id), class: "btn btn-large btn-primary" %>
+          <%= link_to "twitter", curso_path(:id), class: "btn btn-large btn-primary" %>
+        </div>
+        <div class="span8">
+          <p><%= @course.description %></p>
+        </div>
+        <div class="span2">
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active">
+              <a href="#"><h4><%= Course.human_attribute_name("limit_class_tickets") %></h4>
+                <%= @course.limit_class_tickets %></a>
+            </li>
+            <li class="active">
+              <a href="#"><h4><%= Course.human_attribute_name("date_time") %></h4>
+          </p><%= @course.date_time %></p></a>
+        </li>
+        <li class="active">
+          <a href="#"><h4><%= Course.human_attribute_name("place") %></h4>
+            <%= @course.place %></a>
+        </li>
+        <li class="active">
+          <a href="#"><h4><%= Course.human_attribute_name("category") %></h4>
+            <%= @course.category %></a>
+        </li>
+      </ul>
+    </div>
+    <div class="span5">
+      <%= Course.human_attribute_name("teacher_name") %>
+      <h3><%= @course.teacher_name %></h3>
+    </div>
+    <div class="span5">
+      <div class="span3"><%= image_tag @course.photo_teacher.url.to_s%></div>
+      <%= @course.biography_teacher %>
+    </div>
+    <div class="span8">
+      <h4><%= Course.human_attribute_name("google_map") %></h4>
+  </p><%= @course.google_map.html_safe %></p>
+</div>
+            </div>
+          </section>
+        </aside>
+      </div>
+      <div class="container">
+        <aside class="span12">
+          <section>
+            <div class="span8 hero-unit" >
+              <div class="span6">
+                <h4><%= Course.human_attribute_name("price") %></h4>
+                <h1>$<%= @course.price %></h1>
+              </div>
+		<%= form_for([@course, @course.orders.build]) do |f| %>
+  
+  <%= f.label :quantity %><br />
+  <%= f.select :quantity, options_for_select([[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"]]) %>
+
+  <div class="actions">
+    <%= f.submit  %>
+  </div>
+<% end %>
+              <%= link_to "Comprar", curso_path(:id), class: "btn btn-large btn-success" %>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+
+

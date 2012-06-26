@@ -1,6 +1,7 @@
 <div class="row">
   <div class="span6 offset3">
-	<%= form_for(@course) do |f| %>
+
+  <%= form_for @course, :html => {:multipart => true} do |f| %>
 	<%= render 'shared/error_messages' %>
   <div class="field">
     <%= f.label :name %><br />
@@ -16,12 +17,20 @@
   </div>
   <div class="field">
     <%= f.label :photo %><br />
-    <%= f.text_field :photo %>
+    <%= f.file_field :photo %>
   </div>
+
   <div class="field">
     <%= f.label :teacher_name %><br />
     <%= f.text_field :teacher_name %>
   </div>
+
+  <div class="field">
+    <%= f.label :photo_teacher %><br />
+    <%= f.file_field :photo_teacher %>
+  </div>
+
+
   <div class="field">
     <%= f.label :biography_teacher %><br />
     <%= f.text_area :biography_teacher %>
@@ -36,7 +45,7 @@
   </div>
   <div class="field">
     <%= f.label :date_time %><br />
-    <%= f.datetime_select :date_time %>
+    <%= f.text_field :date_time %>
   </div>
   <div class="field">
     <%= f.label :requisites_student %><br />

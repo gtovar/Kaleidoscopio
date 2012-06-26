@@ -19,7 +19,7 @@
 
 <p>
   <b>Photo:</b>
-  <%= @course.photo %>
+  <%= image_tag @course.photo_url %>
 </p>
 
 <p>
@@ -34,6 +34,11 @@
   <b>Biography teacher:</b>
 
   <%= @course.biography_teacher %>
+</p>
+
+<p>
+  <b>Photo teacher:</b>
+  <%= image_tag @course.photo_teacher_url %>
 </p>
 
 <p>
@@ -87,15 +92,7 @@
 <%= link_to 'Back', courses_path %>
 
 
-<%= form_for([@course, @course.orders.build]) do |f| %>
-  
-  <%= f.label :quantity %><br />
-  <%= f.select :quantity, options_for_select([[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"]]) %>
 
-  <div class="actions">
-    <%= f.submit  %>
-  </div>
-<% end %>
 
  ----------------------
 

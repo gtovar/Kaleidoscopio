@@ -30,18 +30,7 @@ class OrdersController < ApplicationController
   end
 
 
-def ipn
-    notifications = Dineromail::Notification.parse(params[:Notificacion])
-    notifications.each do |notify|
-      if notify.valid_report? && notify.completed?
-        order = Order.find(notify.transaction_id)
-        #Allways check the amount
-        order.success = order.amount == notify.amount ? 'success' : 'failure'
-        order.save
-      end
-    end
-    render :nothing => true
-  end
+
 	
   def send_orden
 	@order=Order.find(params[:id])
