@@ -8,7 +8,9 @@ Kaleidoscopio::Application.routes.draw do
 
   resources :contacts 
   get "home/index"
-  resources :courses 
+  resources :courses do 
+    resources :orders
+  end	
 	root :to => "home#index"
 	match 'curso/:id' => 'home#show_detail_course_to_users', :as => 'curso' do
 		resources :orders	
