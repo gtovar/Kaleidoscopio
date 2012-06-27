@@ -1,0 +1,761 @@
+/*
+* Skeleton V1.1
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 8/17/2011
+*/
+
+
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
+
+
+
+/* #Base 960 Grid
+================================================== */
+
+    .container                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; }
+    .container .column,
+    .container .columns                         { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
+    .row                                        { margin-bottom: 20px; }
+
+    /* Nested Column Classes */
+    .column.alpha, .columns.alpha               { margin-left: 0; }
+    .column.omega, .columns.omega               { margin-right: 0; }
+
+    /* Base Grid */
+    .container .one.column,
+    .container .one.columns                     { width: 40px;  }
+    .container .two.columns                     { width: 100px; }
+    .container .three.columns                   { width: 270px; }
+    .container .four.columns                    { width: 220px; }
+    .container .four.columns.presidebar         { width: 240px; }
+    .footer.container .four.columns             { width: 274px; }
+    .container .five.columns                    { width: 280px; }
+    .container .five.socsm_mcont                { width: 233px; }
+    .container .six.columns                     { width: 340px; }
+    .container .seven.columns                   { width: 403px; }
+    .container .eight.columns                   { width: 460px; }
+    .container .nine.columns                    { width: 520px; }
+    .container .ten.columns                     { width: 580px; }
+    .container .eleven.columns                  { width: 640px; }
+    .container .twelve.columns                  { width: 700px; }
+    .container .thirteen.columns                { width: 650px; }
+    .container .fourteen.columns                { width: 820px; }
+    .container .fifteen.columns                 { width: 880px; }
+    .container .sixteen.columns                 { width: 940px; }
+
+    .container .one-third.column                { width: 300px; }
+    .container .two-thirds.column               { width: 620px; }
+
+    /* Offsets */
+    .container .offset-by-one                   { padding-left: 60px;  }
+    .container .offset-by-two                   { padding-left: 120px; }
+    .container .offset-by-three                 { padding-left: 180px; }
+    .container .offset-by-four                  { padding-left: 240px; }
+    .container .offset-by-five                  { padding-left: 300px; }
+    .container .offset-by-six                   { padding-left: 360px; }
+    .container .offset-by-seven                 { padding-left: 420px; }
+    .container .offset-by-eight                 { padding-left: 480px; }
+    .container .offset-by-nine                  { padding-left: 540px; }
+    .container .offset-by-ten                   { padding-left: 600px; }
+    .container .offset-by-eleven                { padding-left: 660px; }
+    .container .offset-by-twelve                { padding-left: 720px; }
+    .container .offset-by-thirteen              { padding-left: 780px; }
+    .container .offset-by-fourteen              { padding-left: 840px; }
+    .container .offset-by-fifteen               { padding-left: 900px; }
+	
+	.container .mainmenu_responsive {
+		display:none;
+	}
+	.container.contentwrapper .flexslider {
+		width: 960px;
+	}
+	.container.contentwrapper .singlepostslider {
+		width: 600px;
+	}
+	.container.contentwrapper .singlepostslider .slides {
+		height:220px;
+	}
+	.sixteen.columns.alpha.omega {
+		width:960px;
+	}
+	.container .port4perline .post-title-cont {
+		width: 110px;
+		font-size:15px;
+	}
+	.container .port4perline .post-title-cont a {
+		font-size:15px;
+	}
+	.container .port4perline .post-meta {
+		font-size:12px;
+	}
+	.bigportslider .flex-direction-nav li .next {
+		right:10px;
+	}
+	.bigportslider .flex-direction-nav li .prev {
+		right:47px;
+	}
+	.d-search-widget {
+		width: 240px;
+	}
+	.APV1_container {
+		width: 395px;
+	}
+
+
+
+/* #Tablet (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        .container                                  { width: 768px; }
+		/*//////////////////////*/
+		.container.col4_bord {
+			background-image:none !important;
+			background-image:url(../col4_bg768.png) !important;
+		}
+		.carouselslider li {width:268px !important;
+		}
+		.img_hov img  {
+			width: 268px !important;
+			height:208px !important;
+		}
+		
+		
+        .container .column,
+        .container .columns                         { margin-left: 10px; margin-right: 10px;  }
+        .column.alpha, .columns.alpha               { margin-left: 0; margin-right: 10px; }
+        .column.omega, .columns.omega               { margin-right: 0; margin-left: 10px; }
+        .alpha.omega                                { margin-left: 0; margin-right: 0; }
+
+        .container .one.column,
+        .container .one.columns                     { width: 28px; }
+        .container .two.columns                     { width: 76px; }
+        .container .three.columns                   { width: 124px; }
+        .container .four.columns                    { width: 172px; }
+        .container .five.columns                    { width: 220px; }
+        .container .six.columns                     { width: 268px; }
+        .container .seven.columns                   { width: 316px; }
+        .container .eight.columns                   { width: 364px; }
+        .container .nine.columns                    { width: 412px; }
+        .container .ten.columns                     { width: 460px; }
+        .container .eleven.columns                  { width: 508px; }
+        .container .twelve.columns                  { width: 556px; }
+        .container .thirteen.columns                { width: 604px; }
+        .container .fourteen.columns                { width: 652px; }
+        .container .fifteen.columns                 { width: 700px; }
+        .container .sixteen.columns                 { width: 748px; }
+
+        .container .one-third.column                { width: 236px; }
+        .container .two-thirds.column               { width: 492px; }
+
+        /* Offsets */
+        .container .offset-by-one                   { padding-left: 48px; }
+        .container .offset-by-two                   { padding-left: 96px; }
+        .container .offset-by-three                 { padding-left: 144px; }
+        .container .offset-by-four                  { padding-left: 192px; }
+        .container .offset-by-five                  { padding-left: 240px; }
+        .container .offset-by-six                   { padding-left: 288px; }
+        .container .offset-by-seven                 { padding-left: 336px; }
+        .container .offset-by-eight                 { padding-left: 384px; }
+        .container .offset-by-nine                  { padding-left: 432px; }
+        .container .offset-by-ten                   { padding-left: 480px; }
+        .container .offset-by-eleven                { padding-left: 528px; }
+        .container .offset-by-twelve                { padding-left: 576px; }
+        .container .offset-by-thirteen              { padding-left: 624px; }
+        .container .offset-by-fourteen              { padding-left: 672px; }
+        .container .offset-by-fifteen               { padding-left: 720px; }
+		
+		.container .three.columns.logo {
+			text-align:center;
+			margin-top:10px;
+		}
+		.container .mainmenu li {
+			/*margin-right: 17px;*/
+			padding-top: 21px;
+			border-top: 0px;
+		}
+		.container .mainmenu {
+			padding-top: 21px;
+			border-top: 0px;
+			float: right;
+		}
+		.container .mainmenu .current-menu-item {
+			border-top: 0px;
+		}
+		.sf-menu li:hover ul,
+		.sf-menu li.sfHover ul {
+			top: 40px !important;
+		}
+		.backLava {
+			display:none !important;
+		}
+		.container .mainmenu_responsive {
+			display:none;
+		}
+		.container.contentwrapper .flexslider.singlepostslider {
+			width: 468px;
+		}
+		.container.contentwrapper .flexslider {
+			width: 768px;
+		}
+		.container .flexslider .slides {
+			height: 302px;
+		}
+		.container .flexslider.singlepostslider .slides {
+			height: 172px;
+		}
+		.container .post-title-cont {
+			width: 395px;
+		}
+		.container #comment-form textarea {
+			width: 479px;
+		}
+		.container #comment-form .smallcommf {
+			width: 249px;
+		}
+		.container #comment-form .smallcommf input {
+			width: 212px;
+		}
+		.container #comment-form .commemail input {
+			width: 230px;
+		}
+		.container #comment-form .commurl {
+			width: 502px;
+		}
+		.container #comment-form .commurl input {
+			width: 479px;
+		}
+		.container #flickrimages .notlast {
+			margin-left: 8px;
+			margin-right: 6px;
+		}
+		.container #flickrimages .last {
+			margin-left: 8px;
+			margin-right: 6px;
+		}
+		.container .switch div {
+			font-size:12px;
+			padding: 5px 12px 5px 13px;
+		}
+		.sixteen.columns.alpha.omega {
+			width:768px;
+		}
+		.container .port2perline .post-title-cont {
+			width: 252px;
+		}
+		.container .port4perline .post-title-cont {
+			clear:both;
+			width: 132px;
+		}
+		.container .port4perline .post-type-cont {
+			margin-left:40px;
+		}
+		.container .singleport .bigportslider {
+			width: 728px !important;
+		}
+		.container .singleport .bigportslider .slides {
+			height: 411px;
+		}
+		.container .thiscontent {
+			width: 72px;
+		}
+		.container .fimage {
+			width: 70px;
+		}
+		.container .d-search_inp-widget input {
+			width: 132px;
+		}
+		.container 	.d-search-widget {
+			width: 172px;
+		}
+		.container 	.five.columns.socsm_mcont {
+			width: 190px;
+		}
+		.container .four.columns.presidebar {
+			width: 172px;
+		}
+		.block_shadow.pagestyle .container.lislider .twelve.columns {
+			width: 705px;
+		}
+		.block_shadow.pagestyle .carouselslider li {
+			width: 710px !important;
+		}
+		.container .thisconta {
+			font-size:13px;
+		}
+		.APV1_container {
+			width: 260px;
+		}
+
+    }
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+        .container { width: 300px; }
+
+		.container.col4_bord {
+			background-image:none !important;
+			padding-bottom:20px;
+		}
+		.carouselslider li {width:280px !important;
+		}
+		.img_hov img  {
+			width: 280px !important;
+			height:217px !important;
+		}
+		
+		
+        .container .columns,
+        .container .column { margin: 0; }
+
+        .container .one.column,
+        .container .one.columns,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column  {
+			width: 280px;
+			margin:0px 10px;
+		}
+		
+		.container .three.columns.logo {
+			text-align:center;
+			margin-top:10px;
+		}
+		.container .mainmenu li {
+			margin-right: 9px;
+			padding-top: 5px;
+			border-top: 0px;
+		}
+		.container .mainmenu {
+			padding-top: 5px;
+			border-top: 0px;
+			float: none;
+		}
+		.container .mainmenu .current-menu-item {
+			border-top: 0px;
+		}
+		
+		.backLava {
+			display:none !important;
+		}
+		
+		.sf-menu li:hover ul,
+		.sf-menu li.sfHover ul {
+			top: 40px !important;
+		}
+		
+		.container .mainmenu_responsive {
+			display:block !important;
+		}
+		.container .mainmenu_cont {
+			display:none !important;
+		}
+		.mainmenu .firstitem {
+			background: url("../menu_navi_dd.png") no-repeat scroll right -3px transparent;
+			line-height: 26px;
+			padding-right: 125px;
+		} 
+		.firstitemli {
+			margin-left: 55px !important;
+		}
+		.sf-menu ul {
+			width: 218px !important;
+		}
+		.container .sub-menu {
+			margin-top: 5px !important;
+		}
+		.container .three.columns.logo {
+			text-align:center;
+		}
+		.logoimg {
+			width:60px;
+			margin-left:5px;
+			margin-top:15px;
+		}
+		.welcome_text {
+			font-size:24px !important;
+			padding: 15px 0 !important;
+			font-weight:bold;
+			line-height: 23px !important;
+		}
+		.container.contentwrapper .flexslider {
+			width: 300px;
+		}
+		.container.contentwrapper .flexslider.singlepostslider {
+			width: 240px;
+		}
+		.container.contentwrapper .flexslider.singlepostslider .slides {
+			height: 88px;
+		}
+		.container .block_title {
+			font-size: 23px;
+			margin-top: 10px;
+			padding: 0;
+		}
+		.container .singlepostslider .flex-direction-nav li .next {
+			right: 0px;
+		}
+		.container .descr_text, .container .get_now_title, .container .item {
+			padding-top:5px;
+			margin-top:5px;
+			font-size: 16px;
+		}
+		.container .flex-caption {
+			font-size: 12px;
+			line-height: 12px;
+		}
+		.container .subcaption {
+			margin-top:5px;
+			font-size:11px;
+			line-height: 11px;
+		}
+		.flex-caption {
+			display:none;
+		}
+		.container .flex-direction-nav li .prev {
+			left: 0px;
+			top:39%;
+		}
+		.container .flex-direction-nav li .next {
+			right: 0px ;
+			top:39%;
+		}
+		.container .flexslider .slides {
+			height: 114px;
+		}
+		.container .post-title-cont {
+			width: 170px;
+		}
+		.container #comment-form {
+			padding-left:0px;
+		}
+		.container #comment-form textarea {
+			width: 260px;
+		}
+		.container #comment-form .smallcommf {
+			width: 280px;
+		}
+		.container #comment-form .smallcommf input {
+			width: 260px;
+		}
+		.container .poprecent .thiscontent {
+			width:173px;
+		}
+		.sixteen.columns.alpha.omega {
+			width: 300px;
+		}
+		.sixteen.columns.alpha.omega {
+			margin-right:0px !important;
+			margin-left:0px !important;
+		}
+		.container .port2perline .post-title-cont {
+			width: 168px;
+		}
+		.container .port2perline .post-meta {
+			display:none;
+		}
+		.container .port4perline .post-title-cont {
+			width: 170px;
+		}
+		.container .cpt_sort .fl {
+			display:none;
+		}
+		.container .singleport .bigportslider {
+			width: 260px !important;
+		}
+		.container .singleport .bigportslider .slides {
+			height: 146px;
+		}
+		.bigportslider .flex-direction-nav li .next {
+			right: -15px;
+		}
+		.bigportslider .flex-direction-nav li .prev {
+			left: -15px;
+		}
+		.container .post-content.wp {
+			padding-left: 0px;
+		}
+		.container .singleport .post-meta {
+			display:none;
+		}
+		.container .singleport .post-title-cont {
+			width:189px;
+		}
+		.container .socsm_cont ul {
+			float: left;
+		} 
+		.container .shortcode_column.one_half, .container .shortcode_column.one_third, .container .shortcode_column.one_fourth, .container .shortcode_column.three_fourth  {
+			width: 100%;
+		}	
+		.container .shortcode_container {
+			width:100% !important;
+		}
+		.container .shortcode_iconbox {
+			width:100% !important;
+		}
+		.block_shadow.pagestyle .container.lislider .twelve.columns {
+			width: 245px;
+		}
+		.block_shadow.pagestyle .carouselslider li {
+			width: 245px !important;
+		}
+		.APV1_container {
+			width: 36px;
+		}
+		
+	
+
+        /* Offsets */
+        .container .offset-by-one,
+        .container .offset-by-two,
+        .container .offset-by-three,
+        .container .offset-by-four,
+        .container .offset-by-five,
+        .container .offset-by-six,
+        .container .offset-by-seven,
+        .container .offset-by-eight,
+        .container .offset-by-nine,
+        .container .offset-by-ten,
+        .container .offset-by-eleven,
+        .container .offset-by-twelve,
+        .container .offset-by-thirteen,
+        .container .offset-by-fourteen,
+        .container .offset-by-fifteen { padding-left: 0; }
+
+    }
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        .container { width: 420px; }
+		.container.col4_bord {
+			background-image:none !important;
+			padding-bottom:20px;
+		}
+		.carouselslider li {width:190px !important;
+		}
+		.img_hov img  {
+			width: 190px !important;
+			height:147px !important;
+		}
+		
+        .container .columns,
+        .container .column { margin: 0; }
+
+        .container .one.column,
+        .container .one.columns,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column {
+			width: 400px;
+			margin:0 10px;
+		}
+		
+	
+		.container .mainmenu_responsive {
+			display:block !important;
+		}
+		.container .mainmenu_cont {
+			display:none !important;
+		}
+		.mainmenu_responsive .mainmenu {
+			float: right !important;
+			position:absolute;
+			top:0px;
+			right:0px;
+		}
+		.mainmenu .firstitem {
+			background: url("../menu_navi_dd.png") no-repeat scroll right -3px transparent;
+			line-height: 26px;
+			padding-right: 125px;
+		} 
+		.sf-menu ul {
+			width: 218px !important;
+		}
+		.container .sub-menu {
+			margin-top: 15px !important;
+		}
+		.container .three.columns.logo {
+			text-align:left;
+		}
+		.logoimg {
+			width:90px;
+			margin-left:5px;
+			margin-top:15px;
+		}
+		.container .mainmenu {
+			padding-top: 51px;
+		}
+		.container.contentwrapper .flexslider {
+			width: 420px;
+		}
+		.container.contentwrapper .flexslider.singlepostslider {
+			width: 360px;
+		}
+		.container .flexslider .slides {
+			height: 162px;
+		}
+		.container.contentwrapper .flexslider.singlepostslider .slides {
+			height: 133px;
+		}
+		.container .singlepostslider .flex-direction-nav li .next {
+			right: 0px;
+		}
+		.container .post-title-cont {
+			width: 290px;
+		}
+		.container #comment-form {
+			padding-left:0px;
+		}
+		.container #comment-form textarea {
+			width: 380px;
+		}
+		.container #comment-form .smallcommf {
+			width: 400px;
+		}
+		.container #comment-form .smallcommf input {
+			width: 380px;
+		}
+		.container #flickrimages .last {
+			margin-right:14px;
+		}
+		.container #flickrimages .notlast {
+			margin-right:14px;
+		}
+		.container .poprecent .thiscontent {
+			width:290px;
+		}
+		.sixteen.columns.alpha.omega {
+			width:420px;
+		}
+		.container .port2perline .post-title-cont {
+			width: 288px;
+		}
+		.container .port4perline .post-title-cont {
+			width: 290px;
+		}
+		.container .port2perline .post-meta {
+			display:block;
+		}
+		.container .cpt_sort .fl {
+			display:none;
+		}
+		.container .flex-direction-nav li .prev {
+			top:42%;
+		}
+		.container .flex-direction-nav li .next {
+			top:42%;
+		}
+		.container .singleport .bigportslider {
+			width: 380px !important;
+		}
+		.container .singleport .bigportslider .slides {
+			height: 214px;
+		}
+		.bigportslider .flex-direction-nav li .next {
+			right: -15px;
+		}
+		.bigportslider .flex-direction-nav li .prev {
+			left: -15px;
+		}
+		.container .singleport .post-title-cont {
+			width:309px;
+		}
+		.container .shortcode_column.one_half, .container .shortcode_column.one_third, .container .shortcode_column.one_fourth, .container .shortcode_column.three_fourth {
+			width: 100%;
+		}	
+		.block_shadow.pagestyle .container.lislider .twelve.columns {
+			width: 360px;
+		}
+		.block_shadow.pagestyle .carouselslider li {
+			width: 360px !important;
+		}
+		.APV1_container {
+			width: 155px;
+		}
+		
+    }
+
+
+/* #Clearing
+================================================== */
+
+    /* Self Clearing Goodness */
+    .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+    /* You can also use a <br class="clear" /> to clear columns */
+    .clear {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }

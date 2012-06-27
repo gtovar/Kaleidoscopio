@@ -1,0 +1,45 @@
+<div class="topline">
+	<div class="tbg"></div>
+</div>
+<div class="mainwrapper">
+	<div class="wbg full-container-shadow full-container-width" style="background-color:#fff;"></div>
+</div>
+<header class="container header">
+	<div class="three columns logo">
+		<%= link_to image_tag("kaleydoscopio_logo.png", :alt => "Kaleydoscopio"), root_path, class: "logoimg" %>
+	</div>
+	<nav class="thirteen columns mainmenu_cont">
+		<div class="menu-navbar-container">
+			<ul id="menu-navbar" class="mainmenu sf-menu">
+				<li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-4 menu_bar_hover">
+					<%= link_to "Acerca de",conocenos_path %>
+					<span>
+						¿Quiénes Somos?
+					</span>
+				</li>
+					<li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5 menu_bar_hover">
+					<%= link_to "Contacto",    contacto_path %>
+					<span>
+							Escríbenos
+					</span>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<script>
+		jQuery(function($) {
+			if ($(".mainmenu > li").hasClass('current-menu-ancestor') == true) {
+				$(".mainmenu > li").removeClass("selectedLava");
+				$(".current-menu-ancestor").addClass("selectedLava");
+			}
+		});			
+	</script>
+	<div class="thirteen columns mainmenu_responsive">
+		<ul class="mainmenu sf-menu sf-js-enabled">
+			<li class="menu-item firstitemli">
+				<a href="#" class="firstitem">Navigation</a>
+				<ul class="sub-menu"></ul>
+			</li>
+		</ul>
+	</div>
+</header>

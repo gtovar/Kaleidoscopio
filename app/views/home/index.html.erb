@@ -1,36 +1,23 @@
-<div class="container">     
-<div class="center hero-unit">
-  <h1>Bienvenido a Kaleydoscopio</h1>
-  <h2>
-    Descripcion de Kaleydoscopio
-    <a href="#">Home page</a>
-    version de Desarrollo
-  </h2>
-</div>
-
-<div class="container">
-  <aside class="span12">
-    <section>
-<h1>Contenido del sitio</h1>
 <% @courses.each do |course| %>
-<div class="span4 hero-unit" >
-<p><h3><%= course.name %></h3></P>
-<div class="span4">
-<div class="span2">
-		<%= image_tag course.photo.url.to_s%>
-</div>
-</div>
-<p><%= truncate(course.description, :length => 120) %></p>
-<h4><%= Course.human_attribute_name("teacher_name") %></h4>
-<%= course.teacher_name %>
-<h4><%= Course.human_attribute_name("date_time") %></h4>
-<%= course.date_time %>
-
-<h4><%= Course.human_attribute_name("Owned") %></h4>
-<%= course.owned %>
-<p><%= link_to "Ver curso", curso_path(course), class: "btn btn-large btn-primary" %></P>
+<div id="post-263" class="post block_shadow columns eight port2perline all ">
+	<div class="thispost porttype preloader_container">
+		<div class="post-title-cont">
+			<h2 class="post-title">
+				<%= link_to course.name, curso_path(course) %>
+			</h2>	
+			<div class="post-meta portype">
+				<%= course.date_time %>
+			</div>
+		</div>
+		<div class="post-content">
+			<div class="class-thumbnail">
+				<h1 class="precio">$<%= course.price %><span class="decimal">00</span></h1>
+				<%= image_tag course.photo.url.to_s, alt: "Clases de fotografia" %>
+			</div>
+			<p><%= truncate(course.description, :length => 120) %></p>
+			<%= link_to "Click me", curso_path(course), class: "plus_btn" %>
+		</div>
+	</div>
+	<div class="clear"></div>
 </div>
 <% end %>
-</section>
-  </aside>
-</div>

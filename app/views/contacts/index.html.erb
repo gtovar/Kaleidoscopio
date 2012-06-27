@@ -3,8 +3,8 @@
   <h1>Ver contactos</h1>
 
   <h2>
-    Es una pagina ver un
-    <a href="#">Contacto</a>
+    Ver todos los
+    <a href="#">Contactos</a>
     version de Desarrollo
   </h2>
   <%= link_to "Crear contacto", new_contact_path, class: "btn btn-large btn-primary" %>
@@ -27,7 +27,17 @@
     <td><%= contact.name %></td>
     <td><%= contact.email %></td>
     <td><%= contact.phone %></td>
-    <td><%= contact.subjects %></td>
+<% asunto = contact.subjects %>
+<%case asunto%>
+<%when "1"%>
+<td>Duda</td>
+<%when "2"%>
+<td>Queja</td>
+<%when "3"%>
+<td>Sugerencia</td>
+<%when "4"%>
+<td>Propuesta</td>
+<%end%>
     <td><%= truncate (contact.message) %></td>
     <td><%= link_to 'Show', contact %></td>
     <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
