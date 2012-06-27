@@ -1,8 +1,26 @@
+require 'csv'
 class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
+    @search = Course.search(params[:search])	
+    @courses = @search.all
+    @total = @courses.count
     @courses = Course.paginate(page: params[:page])
+
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @courses }
+      format.csv {export(@courses)}	
+    end
+  end
+
+
+  def vindex
+    @search = Course.search(params[:search])	
+    @courses = @search.order('category').all
+    @total = @courses.count
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,7 +34,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
-
+    @order = @course.orders(params[@course])	
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @course }
@@ -25,6 +43,20 @@ class CoursesController < ApplicationController
     redirect_to @course, status: :moved_permanently
   end
   end
+
+
+def export(courses)
+      csv = CSV.generate(:col_sep => "\t") do |csv|
+      csv << ["Nombre_Curso", "Categoria", "Fecha", "Precio", "Curso_Propio"]
+      courses.each do |course|	
+      csv << [course.name, course.category, course.date_time, course.price, course.owned]
+      end
+    end
+
+     send_data csv, :type => 'text/csv; charset=iso-8859-1; header=present', :disposition => 	"attachment; filename=#{Time.now.strftime('%d-%m-%y--%H-%M')}.csv"
+    
+
+ end
 
   # GET /courses/new
   # GET /courses/new.json
@@ -42,6 +74,10 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
   end
 
+
+
+
+  
   # POST /courses
   # POST /courses.json
   def create

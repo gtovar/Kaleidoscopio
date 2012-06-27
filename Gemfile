@@ -8,10 +8,17 @@ gem 'bootstrap-will_paginate', '0.0.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+
+gem 'meta_search'
+gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+gem 'dineromail'
+gem "foreigner"
+
 gem 'carrierwave'
 gem 'fog'
 gem 'aws-sdk'
 gem "friendly_id"
+
 
 # Gems used only for assets and not required
 # in production environments by default.

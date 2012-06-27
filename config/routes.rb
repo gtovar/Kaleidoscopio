@@ -1,13 +1,25 @@
 Kaleidoscopio::Application.routes.draw do  
-  resources :contacts
+
+
+
+
+
+  get "dineromail/ipn"
+
+  resources :contacts 
   get "home/index"
-  resources :courses
+  resources :courses do 
+    resources :orders
+  end	
 	root :to => "home#index"
-	match 'curso/:id' => 'home#show_detail_course_to_users', :as => 'curso'
+	match 'curso/:id' => 'home#show_detail_course_to_users', :as => 'curso' do
+		resources :orders	
+	end
 	match '/conocenos' => 'home#aboutus', :as => 'conocenos'
 	match '/terminos-y-politicas' => 'home#terms', :as => 'terminos'
 	match '/contacto' => 'contacts#new', :as => 'contacto'
 	match '/ver-contacto/:id' => 'contacts#index', :as => 'vercontacto'
+	match '/dineromail' => 'dineromail#ipn'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +70,7 @@ Kaleidoscopio::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  #root :to => 'courses#index'
 
   # See how all your routes lay out with "rake routes"
 

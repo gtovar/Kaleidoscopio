@@ -66,8 +66,20 @@
                 <h4><%= Course.human_attribute_name("price") %></h4>
                 <h1>$<%= @course.price %></h1>
               </div>
+		<%= form_for([@course, @course.orders.build]) do |f| %>
+  
+  <%= f.label :quantity %><br />
+  <%= f.select :quantity, options_for_select([[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"]]) %>
+
+  <div class="actions">
+    <%= f.submit  %>
+  </div>
+<% end %>
               <%= link_to "Comprar", curso_path(:id), class: "btn btn-large btn-success" %>
             </div>
           </section>
         </aside>
       </div>
+
+
+
