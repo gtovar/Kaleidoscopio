@@ -28,8 +28,10 @@ end
 
 def terms
 end
+
 def contact
 end
+
 def view_contact
 end
 
