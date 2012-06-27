@@ -1,13 +1,9 @@
 Kaleidoscopio::Application.routes.draw do  
 
-
-
-
-
-  get "dineromail/ipn"
+  devise_for :admins
 
   resources :contacts 
-  get "home/index"
+  
   resources :courses do 
     resources :orders
   end	

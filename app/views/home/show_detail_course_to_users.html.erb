@@ -1,6 +1,27 @@
-<div class="container">
-  <aside class="span12">
-    <section>
+<div class="container contentwrapper withoutpbg preloader_container">
+  <article class="sixteen columns alpha omega pagestyle">
+  <div class="contbg" style="width:100%;float:none; clear:both;">	
+  
+    <div>
+	<div class="clase_titulo relative">
+		<h2 class="absolute"><%= @course.name %></h2>
+		<h1 class="precio_descripcion">$<%= @course.price %>.<span class="decimal">00</span></h1>
+		<img class="size-full wp-image-123 foto_descripcion" width="920" height="220" alt="" 			src="<%=@course.photo.url.to_s%>" title="about">
+	</div>
+    </div>
+    <div class="description_bar">
+    	<div class="description_box descripcion_clase white_container">
+	<p><%= @course.description %></p>
+	</div>	
+	<div class="description_box white_container">
+		<h2><%= @course.teacher_name %></h2>
+		<p><%= @course.biography_teacher %></p>
+	</div>
+
+    </div>
+
+
+	-------------------------	
       <div class="span8 hero-unit" >
         <h2><%= @course.name %></h2>
         <%= image_tag @course.photo.url.to_s%>
@@ -77,9 +98,11 @@
 <% end %>
               <%= link_to "Comprar", curso_path(:id), class: "btn btn-large btn-success" %>
             </div>
-          </section>
-        </aside>
-      </div>
+          
+       
+  </div>    
+  </article>
+</div>
 
 
 

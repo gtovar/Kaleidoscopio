@@ -13,11 +13,11 @@ gem 'meta_search'
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 gem 'dineromail'
 gem "foreigner"
-
 gem 'carrierwave'
 gem 'fog'
 gem 'aws-sdk'
 gem "friendly_id"
+gem 'devise'
 
 
 # Gems used only for assets and not required

@@ -1,5 +1,6 @@
 require 'csv'
 class CoursesController < ApplicationController
+  before_filter :authenticate_admin!
   # GET /courses
   # GET /courses.json
   def index
@@ -16,17 +17,6 @@ class CoursesController < ApplicationController
     end
   end
 
-
-  def vindex
-    @search = Course.search(params[:search])	
-    @courses = @search.order('category').all
-    @total = @courses.count
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @courses }
-    end
-  end
 
 
 
