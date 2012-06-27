@@ -21,7 +21,7 @@ hr {
 	border: none 0;
 	border-bottom: 1px solid #E0E0E0;
 	height: 1px;
-	margin: 10px 0;
+	margin: 19px 0;
 }
 /* HEADERS */
 h1, h2, h3, h4, h5 {
@@ -1847,7 +1847,7 @@ h3.shortcode_accordion_item_title:hover, h3.shortcode_toggles_item_title:hover {
 	word-wrap: break-word;
 }
 
-}
+
 .preloader_container img {
     opacity:0;
 }
@@ -2126,7 +2126,7 @@ text-transform: uppercase;
 	
 .boton_inscripcion:hover {
 
-	background: background: rgb(158,221,86); /* Old browsers */
+	background: rgb(158,221,86); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(158,221,86,1) 1%, rgba(114,181,59,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(158,221,86,1)), color-stop(100%,rgba(114,181,59,1))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top,  rgba(158,221,86,1) 1%,rgba(114,181,59,1) 100%); /* Chrome10+,Safari5.1+ */
