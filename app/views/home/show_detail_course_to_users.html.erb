@@ -14,80 +14,58 @@
 	<p><%= @course.description %></p>
 	</div>	
 	<div class="description_box white_container">
+		<div class="professor-thumb">
+		<img class="foto_profesor" src="<%= @course.photo_teacher.url.to_s%>">
+		</div>
 		<h2><%= @course.teacher_name %></h2>
 		<p><%= @course.biography_teacher %></p>
 	</div>
+    </div>
+    <div class="sidebar">
+	<div class="sidebar_box white_container">
+		<h3>Fecha</h3>
+		<h5><%= @course.date_time %></h5>
+		<h5>5:00pm - 8:00pm</h5>
+	</div>    
+	<div class="sidebar_box white_container ">
+		<div class="cupo">
+			<span><%= @course.limit_class_tickets %></span>
+			<h3>Lugares Disponibles</h3>
+		</div>
+		<div class="boton_inscripcion">
+			<a class="inscribete" href="#">Inscribete</a>
+		</div>
+	</div>
+	<div class="sidebar_box white_container">
+		<h3 class="ubicacion">Ubicación</h3>
+		<iframe width="195" scrolling="no" height="300" frameborder="0" src="https://	maps.google.com/maps?f=q&source=s_q&hl=es&geocode=&q=Col.+Residencial+San+Agust%C3%ADn.+San+Pedro+nl&aq=&sll=40.658905,-4.024454&sspn=1.237613,2.469177&ie=UTF8&hq=Col.+Residencial&hnear=S.+Pedro,+Nuevo+Le%C3%B3n,+M%C3%A9xico&ll=25.498198,-100.175966&spn=0.594686,0.466854&t=m&output=embed" marginwidth="0" 		marginheight="0">
+		</iframe>
+		<br/>
+		<small>
+		<a href="https://maps.google.com/maps?f=q&source=embed&hl=es&geocode=&q=Col.+Residencial+San+Agust%C3%ADn.+San+Pedro+nl&aq=&sll=40.658905,-4.024454&sspn=1.237613,2.469177&ie=UTF8&hq=Col.+Residencial&hnear=S.+Pedro,+Nuevo+Le%C3%B3n,+M%C3%A9xico&ll=25.498198,-100.175966&spn=0.594686,0.466854&t=m">Ver 			mapa más grande</a>
+		</small>
+	</div>
+	<div class="sidebar_box_share white_container clearfix">
+		<h3>Comparte la clase!</h3>
+		<ul class="share_container clearfix">
+			<li>
+			<a class="twitter-share-button" data-via="kaleydoscopio_"href="https://	twitter.com/share">Tweet</a>
+			<script>
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!	d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+			</script>
+			</li>
+			<li>
+				<div class="fb-like" data-font="arial" data-show-faces="true" data-width="100" data-layout="button_count" data-send="false"></div>
+			</li>
+		</ul>
+	</div>	
+
 
     </div>
-
 
 	-------------------------	
-      <div class="span8 hero-unit" >
-        <h2><%= @course.name %></h2>
-        <%= image_tag @course.photo.url.to_s%>
-        <% if @course.owned = true %>
-          <div class="span2">
-            <ul class="nav nav-pills nav-stacked">
-              <li class="active">
-                <a href="#">
-                  Clase de kaleydoscopio
-                </a>
-              </li>
-            </ul>
-          </div>
-        <%end%>
-        <div class="span5">
-          <%= link_to "facebook", curso_path(:id), class: "btn btn-large btn-primary" %>
-          <%= link_to "twitter", curso_path(:id), class: "btn btn-large btn-primary" %>
-        </div>
-        <div class="span8">
-          <p><%= @course.description %></p>
-        </div>
-        <div class="span2">
-          <ul class="nav nav-pills nav-stacked">
-            <li class="active">
-              <a href="#"><h4><%= Course.human_attribute_name("limit_class_tickets") %></h4>
-                <%= @course.limit_class_tickets %></a>
-            </li>
-            <li class="active">
-              <a href="#"><h4><%= Course.human_attribute_name("date_time") %></h4>
-          </p><%= @course.date_time %></p></a>
-        </li>
-        <li class="active">
-          <a href="#"><h4><%= Course.human_attribute_name("place") %></h4>
-            <%= @course.place %></a>
-        </li>
-        <li class="active">
-          <a href="#"><h4><%= Course.human_attribute_name("category") %></h4>
-            <%= @course.category %></a>
-        </li>
-      </ul>
-    </div>
-    <div class="span5">
-      <%= Course.human_attribute_name("teacher_name") %>
-      <h3><%= @course.teacher_name %></h3>
-    </div>
-    <div class="span5">
-      <div class="span3"><%= image_tag @course.photo_teacher.url.to_s%></div>
-      <%= @course.biography_teacher %>
-    </div>
-    <div class="span8">
-      <h4><%= Course.human_attribute_name("google_map") %></h4>
-  </p><%= @course.google_map.html_safe %></p>
-</div>
-            </div>
-          </section>
-        </aside>
-      </div>
-      <div class="container">
-        <aside class="span12">
-          <section>
-            <div class="span8 hero-unit" >
-              <div class="span6">
-                <h4><%= Course.human_attribute_name("price") %></h4>
-                <h1>$<%= @course.price %></h1>
-              </div>
-		<%= form_for([@course, @course.orders.build]) do |f| %>
+
+<%= form_for([@course, @course.orders.build]) do |f| %>
   
   <%= f.label :quantity %><br />
   <%= f.select :quantity, options_for_select([[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"]]) %>
@@ -96,8 +74,7 @@
     <%= f.submit  %>
   </div>
 <% end %>
-              <%= link_to "Comprar", curso_path(:id), class: "btn btn-large btn-success" %>
-            </div>
+            
           
        
   </div>    
