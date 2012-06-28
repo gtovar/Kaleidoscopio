@@ -6,7 +6,7 @@
 	<div class="clase_titulo relative">
 		<h2 class="absolute"><%= @course.name %></h2>
 		<h1 class="precio_descripcion">$<%= @course.price %>.<span class="decimal">00</span></h1>
-		<img class="size-full wp-image-123 foto_descripcion" width="920" height="220" alt="" 			src="<%=@course.photo.url.to_s%>" title="about">
+		<img class="size-full wp-image-123 foto_descripcion" width="920" height="220" alt="" 			src="<%=@course.photo.large.url.to_s%>" title="about">
 	</div>
     </div>
     <div class="description_bar">

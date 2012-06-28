@@ -18,6 +18,7 @@ gem 'fog'
 gem 'aws-sdk'
 gem "friendly_id"
 gem 'devise'
+gem "rmagick", "2.12.0", :require => 'RMagick'
 
 
 # Gems used only for assets and not required

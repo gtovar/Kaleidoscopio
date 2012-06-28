@@ -23,18 +23,17 @@
 
 <p>Total cursos:<%= @total %></p>
 <%= sort_link @search, :name%>
-<table>
+<table class="table table-bordered">
 
-  <tr>
-    <th>Nombre</th>
-    <th>Categoria</th>
-    <th>Fecha</th>
-    <th>Precio</th>
-    <th>Propietario</th>
+  <thead>
+    <th><%= Course.human_attribute_name("name")  %></th>
+    <th><%= Course.human_attribute_name("category") %></th>
+    <th><%= Course.human_attribute_name("limit_class_tickets") %></th>
+    <th><%= Course.human_attribute_name("Owned") %></th>
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+  </thead>
 
 
 
@@ -43,20 +42,15 @@
 
 
 <% @courses.each do |course| %>
-
-
-    <h1><%= Course.human_attribute_name("name")  %></h1>
-		<%= course.name %>
-    <h1><%= Course.human_attribute_name("category") %></h1>
-		<%= course.category %>
-    <h1><%= Course.human_attribute_name("limit_class_tickets") %></h1>
-		<%= course.limit_class_tickets %>
-    
-    <h1><%= Course.human_attribute_name("Owned") %></h1>
-		<%= course.owned %>
-    <%= link_to 'Show', course %>
-    <%= link_to 'Edit', edit_course_path(course) %>
-    <%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %>
+   <tbody>	
+	<td><%= course.name %></td>
+    	<td><%= course.category %></td>
+    	<td><%= course.limit_class_tickets %></td>
+    	<td><%= course.owned %></td>
+    	<td><%= link_to 'Show', course %></td>
+    	<td><%= link_to 'Edit', edit_course_path(course) %></td>
+    	<td><%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %></td>
+   </tbody>
 <% end %>
 <%= will_paginate %>
 

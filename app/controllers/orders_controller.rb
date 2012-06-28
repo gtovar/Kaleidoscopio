@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-
+ layout "front-end"
   
     
   before_filter :get_course
