@@ -21,11 +21,11 @@ hr {
 	border: none 0;
 	border-bottom: 1px solid #E0E0E0;
 	height: 1px;
-	margin: 19px 0;
+	margin: 10px 0;
 }
 /* HEADERS */
 h1, h2, h3, h4, h5 {
-	font-family: Signika, "liquor-store";
+	font-family: Signika, "liquor-store",;
     font-weight: 400;
     line-height: 21px;
     margin-top: 5px;
@@ -655,7 +655,7 @@ img.alignright {
 }
 
 .type_image {
-    background: url("image.png") no-repeat scroll 0 0 transparent;
+    background: url("posttypes/image.png") no-repeat scroll 0 0 transparent;
     display:block;
 	width:50px;
 	height:50px;
@@ -666,25 +666,25 @@ img.alignright {
 	top: 10px;
 }
 .post-type-cont .type_image:hover {
-    background: url("image.png") no-repeat scroll 0 -50px transparent;
+    background: url("posttypes/image.png") no-repeat scroll 0 -50px transparent;
 }
 .post-type-cont .type_default {
-    background: url("default.png") no-repeat scroll 0 0 transparent;
+    background: url("posttypes/default.png") no-repeat scroll 0 0 transparent;
 }
 .post-type-cont .type_default:hover {
-    background: url("default.png") no-repeat scroll 0 -50px transparent;
+    background: url("posttypes/default.png") no-repeat scroll 0 -50px transparent;
 }
 .post-type-cont .type_audio {
-    background: url("audio.png") no-repeat scroll 0 0 transparent;
+    background: url("posttypes/audio.png") no-repeat scroll 0 0 transparent;
 }
 .post-type-cont .type_audio:hover {
-    background: url("audio.png") no-repeat scroll 0 -50px transparent;
+    background: url("posttypes/audio.png") no-repeat scroll 0 -50px transparent;
 }
 .post-type-cont .type_video {
-    background: url("video.png") no-repeat scroll 0 0 transparent;
+    background: url("posttypes/video.png") no-repeat scroll 0 0 transparent;
 }
 .post-type-cont .type_video:hover {
-    background: url("video.png") no-repeat scroll 0 -50px transparent;
+    background: url("posttypes/video.png") no-repeat scroll 0 -50px transparent;
 }
 .post-title-cont .date {
 	color:#959595;
@@ -1202,40 +1202,40 @@ li p {
 	margin:0px 1px;
 }
 .twitter_link {
-    background: url("ico2.png") no-repeat scroll 0 0 transparent;
+    background: url("icons/socials/ico2.png") no-repeat scroll 0 0 transparent;
 }
 .twitter_link:hover {
-    background: url("ico2.png") no-repeat scroll 0 -21px transparent;
+    background: url("icons/socials/ico2.png") no-repeat scroll 0 -21px transparent;
 }
 .LinkedIn_link {
-    background: url("ico3.png") no-repeat scroll 0 0 transparent;
+    background: url("icons/socials/ico3.png") no-repeat scroll 0 0 transparent;
 }
 .LinkedIn_link:hover {
-    background: url("ico3.png") no-repeat scroll 0 -21px transparent;
+    background: url("icons/socials/ico3.png") no-repeat scroll 0 -21px transparent;
 }
 .facebook_link {
-    background: url("ico4.png") no-repeat scroll 0 0 transparent;
+    background: url("icons/socials/ico4.png") no-repeat scroll 0 0 transparent;
 }
 .facebook_link:hover {
-    background: url("ico4.png") no-repeat scroll 0 -21px transparent;
+    background: url("icons/socials/ico4.png") no-repeat scroll 0 -21px transparent;
 }
 .DeviantArt {
-    background: url("ico5.png") no-repeat scroll 0 0 transparent;
+    background: url("icons/socials/ico5.png") no-repeat scroll 0 0 transparent;
 }
 .DeviantArt:hover {
-    background: url("ico5.png") no-repeat scroll 0 -21px transparent;
+    background: url("icons/socials/ico5.png") no-repeat scroll 0 -21px transparent;
 }
 .vimeo_link {
-    background: url("ico6.png") no-repeat scroll 0 0 transparent;
+    background: url("icons/socials/ico6.png") no-repeat scroll 0 0 transparent;
 }
 .vimeo_link:hover {
-    background: url("ico6.png") no-repeat scroll 0 -21px transparent;
+    background: url("icons/socials/ico6.png") no-repeat scroll 0 -21px transparent;
 }
 .flickr_link {
-    background: url("ico7.png") no-repeat scroll 0 0 transparent;
+    background: url("icons/socials/ico7.png") no-repeat scroll 0 0 transparent;
 }
 .flickr_link:hover {
-    background: url("ico7.png") no-repeat scroll 0 -21px transparent;
+    background: url("icons/socials/ico7.png") no-repeat scroll 0 -21px transparent;
 }
 .thismap iframe {
 	width:100% !important;
@@ -1666,19 +1666,19 @@ blockquote p:last-child {
 	padding-bottom:0px;
 }
 .shortcode_iconbox.success {
-    background: url("success.png") no-repeat scroll 18px 7px transparent;
+    background: url("icons/iconboxes/success.png") no-repeat scroll 18px 7px transparent;
     border-left: 4px solid #3E9200;
 }
 .shortcode_iconbox.alert {
-    background: url("alert.png") no-repeat scroll 18px 7px transparent;
+    background: url("icons/iconboxes/alert.png") no-repeat scroll 18px 7px transparent;
     border-left: 4px solid #ff5200;
 }
 .shortcode_iconbox.error {
-    background: url("error.png") no-repeat scroll 18px 7px transparent;
+    background: url("icons/iconboxes/error.png") no-repeat scroll 18px 7px transparent;
     border-left: 4px solid #dd0000;
 }
 .shortcode_iconbox.info {
-    background: url("info.png") no-repeat scroll 18px 7px transparent;
+    background: url("icons/iconboxes/info.png") no-repeat scroll 18px 7px transparent;
     border-left: 4px solid #0095db;
 }
 .shortcode_button {
@@ -1735,7 +1735,7 @@ blockquote p:last-child {
 	width:50px;
 	height:50px;
 	display:inline-block;
-	background: url("rbut01.png") no-repeat scroll 0px 0px transparent;
+	background: url("rbuttons/rbut01.png") no-repeat scroll 0px 0px transparent;
 }
 .btn_round01:hover, .btn_round02:hover, .btn_round03:hover, .btn_round04:hover, .btn_round05:hover, .btn_round06:hover, .btn_round07:hover, .btn_round08:hover {
 	background-position:0px -50px;
@@ -1744,43 +1744,43 @@ blockquote p:last-child {
 	width:50px;
 	height:50px;
 	display:inline-block;
-	background: url("rbut02.png") no-repeat scroll 0px 0px transparent;
+	background: url("rbuttons/rbut02.png") no-repeat scroll 0px 0px transparent;
 }
 .btn_round03 {
 	width:50px;
 	height:50px;
 	display:inline-block;
-	background: url("rbut03.png") no-repeat scroll 0px 0px transparent;
+	background: url("rbuttons/rbut03.png") no-repeat scroll 0px 0px transparent;
 }
 .btn_round04 {
 	width:50px;
 	height:50px;
 	display:inline-block;
-	background: url("rbut04.png") no-repeat scroll 0px 0px transparent;
+	background: url("rbuttons/rbut04.png") no-repeat scroll 0px 0px transparent;
 }
 .btn_round05 {
 	width:50px;
 	height:50px;
 	display:inline-block;
-	background: url("rbut05.png") no-repeat scroll 0px 0px transparent;
+	background: url("rbuttons/rbut05.png") no-repeat scroll 0px 0px transparent;
 }
 .btn_round06 {
 	width:50px;
 	height:50px;
 	display:inline-block;
-	background: url("rbut06.png") no-repeat scroll 0px 0px transparent;
+	background: url("rbuttons/rbut06.png") no-repeat scroll 0px 0px transparent;
 }
 .btn_round07 {
 	width:50px;
 	height:50px;
 	display:inline-block;
-	background: url("rbut07.png") no-repeat scroll 0px 0px transparent;
+	background: url("rbuttons/rbut07.png") no-repeat scroll 0px 0px transparent;
 }
 .btn_round08 {
 	width:50px;
 	height:50px;
 	display:inline-block;
-	background: url("rbut08.png") no-repeat scroll 0px 0px transparent;
+	background: url("rbuttons/rbut08.png") no-repeat scroll 0px 0px transparent;
 }
 .shortcode_tab_item_body .ip {
 	padding:15px;
@@ -1846,7 +1846,6 @@ h3.shortcode_accordion_item_title:hover, h3.shortcode_toggles_item_title:hover {
 .thisconta a, .thisconta div {
 	word-wrap: break-word;
 }
-ge 
 
 .preloader_container img {
     
@@ -2126,7 +2125,7 @@ text-transform: uppercase;
 	
 .boton_inscripcion:hover {
 
-	background: rgb(158,221,86); /* Old browsers */
+	background: background: rgb(158,221,86); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(158,221,86,1) 1%, rgba(114,181,59,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(158,221,86,1)), color-stop(100%,rgba(114,181,59,1))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top,  rgba(158,221,86,1) 1%,rgba(114,181,59,1) 100%); /* Chrome10+,Safari5.1+ */
@@ -2154,7 +2153,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2f481', end
   box-shadow: 0px 2px 2px #a2bc82;
 	}
 	
-body {background-image: url("kaleydoscopio_background.png"); background-repeat: repeat;}
+body {background-image: url('kaleydoscopio_background.png'); background-repeat: repeat;}
 
 .full-container-shadow {border-right: 1px solid #e9e9e9; border-left: 1px solid #e9e9e9;}
 
