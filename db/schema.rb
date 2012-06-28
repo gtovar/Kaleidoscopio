@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(:version => 20120627005102) do
     t.string   "email"
     t.string   "phone"
     t.string   "subjects"
+    t.string   "message"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "message"
   end
 
   create_table "courses", :force => true do |t|
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(:version => 20120627005102) do
     t.text     "google_map"
     t.datetime "date_time"
     t.text     "requisites_student"
-    t.decimal  "price"
+    t.integer  "price"
     t.string   "pay_link"
     t.integer  "limit_class_tickets"
     t.string   "facebook_link"
