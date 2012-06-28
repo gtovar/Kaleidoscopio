@@ -17,6 +17,16 @@ $('#course_date_time').datetimepicker();
 <body>
     <%= render 'layouts/header' %>
     <div class="container">
+      
+
+<div id="user_nav">
+  <% if admin_signed_in? %>
+    Signed in as <%= current_admin.email %>
+    <%= link_to "Salir", destroy_admin_session_path, :method => :delete %>
+  <% end %>
+</div>
+
+	
       <%= yield %>
       <%= debug(params) if Rails.env.development? %>
     </div>
