@@ -38,12 +38,9 @@
 	</div>
 	<div class="sidebar_box white_container">
 		<h3 class="ubicacion">Ubicación</h3>
-		<iframe width="195" scrolling="no" height="300" frameborder="0" src="https://	maps.google.com/maps?f=q&source=s_q&hl=es&geocode=&q=Col.+Residencial+San+Agust%C3%ADn.+San+Pedro+nl&aq=&sll=40.658905,-4.024454&sspn=1.237613,2.469177&ie=UTF8&hq=Col.+Residencial&hnear=S.+Pedro,+Nuevo+Le%C3%B3n,+M%C3%A9xico&ll=25.498198,-100.175966&spn=0.594686,0.466854&t=m&output=embed" marginwidth="0" 		marginheight="0">
-		</iframe>
+		<%= @course.google_map.html_safe%>
 		<br/>
-		<small>
-		<a href="https://maps.google.com/maps?f=q&source=embed&hl=es&geocode=&q=Col.+Residencial+San+Agust%C3%ADn.+San+Pedro+nl&aq=&sll=40.658905,-4.024454&sspn=1.237613,2.469177&ie=UTF8&hq=Col.+Residencial&hnear=S.+Pedro,+Nuevo+Le%C3%B3n,+M%C3%A9xico&ll=25.498198,-100.175966&spn=0.594686,0.466854&t=m">Ver 			mapa más grande</a>
-		</small>
+		
 	</div>
 	<div class="sidebar_box_share white_container clearfix">
 		<h3>Comparte la clase!</h3>
