@@ -1,3 +1,39 @@
+<header>
+	<h1 class="headofpage">Clases Disponibles</h1>
+</header>
+<div class='cpt_sort'>
+	<div class='fl'>
+		Sort by:
+	</div>
+	<ul class='cpt_filter' id='filter'>
+		<li class="act">
+			<a href="#">Todo</a>
+		</li>
+		
+		<%= form_for @search, :url => root_path, :html => {:method => :get} do |f| %>
+  <% f.checks :category_in, [['Open', 'open'], ['Sold out', 'soldout'], ['Completed', 'completed']], :class => 'checkboxy'  do |check| %>
+    <li>
+      <a><%= check.box %>
+      <%= check.label %></a>
+    </li>
+
+  <% end %>
+  <!-- etc... -->
+  <li><%= f.submit %></li>
+<% end %>		
+
+		
+		
+	</ul>
+	<div class='clear'></div>
+</div>
+<div class='clear'></div>
+<div class='portrowed perline2'></div><!-- // rowed -->
+<script>portrowed(2);</script>
+<div class="clear"></div>
+
+
+
 <% @courses.each do |course| %>
 <div id="post-263" class="post block_shadow columns eight port2perline all ">
 	<div class="thispost porttype preloader_container">
@@ -11,8 +47,12 @@
 		</div>
 		<div class="post-content">
 			<div class="class-thumbnail">
-				<h1 class="precio">$<%= course.price %><span class="decimal">00</span></h1>
-				<%= image_tag course.photo.thumb.url.to_s, alt: "Clases de fotografia" %>
+			<% if course.owned == true%>		
+				<span class="type_image" title="Curso Kaleydoscopio"></span>
+			
+			<%end %>
+			<h1 class="precio">$<%= course.price %><span class="decimal">00</span></h1>
+			<%= image_tag course.photo.thumb.url.to_s, alt: "Clases de fotografia" %>
 			</div>
 			<p><%= truncate(course.description, :length => 120) %></p>
 			<%= link_to "Click me", curso_path(course), class: "plus_btn" %>

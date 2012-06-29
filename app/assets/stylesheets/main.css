@@ -374,7 +374,7 @@ img.alignright {
 	height:50px;
 	display:block;
 	text-indent:-9999px;
-	background-image:url(plus_btn.png);
+	background-image:url(plus_btn3.png);
 	background-repeat:no-repeat;
 	background-position:0 0;
 }
@@ -2161,7 +2161,7 @@ body {background-image: url('kaleydoscopio_background.png'); background-repeat: 
 .full-container-width {width: 1010px !important ;}
 
 .gototop_description {
-    background: url("totop_up.png") no-repeat scroll 0 0 transparent;
+    background: url("totop.png") no-repeat scroll 0 0 transparent;
     cursor: pointer;
     height: 31px;
     position: absolute;
@@ -2172,7 +2172,7 @@ body {background-image: url('kaleydoscopio_background.png'); background-repeat: 
 
 
 .gototop_description:hover {
-    background: url("totop_up.png") no-repeat scroll 0 -31px transparent;
+    background: url("totop.png") no-repeat scroll 0 -31px transparent;
     top: -14px;
 	height:30px;
 }
