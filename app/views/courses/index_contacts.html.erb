@@ -1,0 +1,49 @@
+
+<div class="center hero-unit">
+  <h1>Ver contactos</h1>
+
+  <h2>
+    Ver todos los
+    <a href="#">Contactos</a>
+    version de Desarrollo
+  </h2>
+  <%= link_to "Crear contacto", new_contact_path, class: "btn btn-large btn-primary" %>
+</div>
+
+<table class="table table-bordered">
+  <tr>
+    <th><%= Contact.human_attribute_name(:name) %></th>
+    <th><%= Contact.human_attribute_name(:email) %></th>
+    <th><%= Contact.human_attribute_name(:phone) %></th>
+    <th><%= Contact.human_attribute_name(:subjects) %></th>
+    <th><%= Contact.human_attribute_name(:message) %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%= contact.name %></td>
+    <td><%= contact.email %></td>
+    <td><%= contact.phone %></td>
+<% asunto = contact.subjects %>
+<%case asunto%>
+<%when "1"%>
+<td>Duda</td>
+<%when "2"%>
+<td>Queja</td>
+<%when "3"%>
+<td>Sugerencia</td>
+<%when "4"%>
+<td>Propuesta</td>
+<%end%>
+    <td><%= truncate (contact.message) %></td>
+    <td><%= link_to 'Ver', vercontacto_path(contact) %></td>
+    <td><%= link_to 'Editar', edit_contact_path(contact) %></td>
+    <td><%= link_to 'Eliminar', contact, confirm: '¿Estas seguro?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
