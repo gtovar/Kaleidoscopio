@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627005102) do
+ActiveRecord::Schema.define(:version => 20120703162441) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(:version => 20120627005102) do
     t.datetime "date_time"
     t.text     "requisites_student"
     t.integer  "price"
-    t.string   "pay_link"
     t.integer  "limit_class_tickets"
     t.string   "facebook_link"
     t.boolean  "owned"
@@ -61,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20120627005102) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.string   "slug"
+    t.string   "status"
   end
 
   add_index "courses", ["slug"], :name => "index_courses_on_slug"
@@ -76,13 +76,6 @@ ActiveRecord::Schema.define(:version => 20120627005102) do
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
-  create_table "microposts", :force => true do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "orders", :force => true do |t|
     t.string   "token"
     t.integer  "course_id"
@@ -94,13 +87,6 @@ ActiveRecord::Schema.define(:version => 20120627005102) do
   end
 
   add_index "orders", ["course_id"], :name => "index_orders_on_course_id"
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
   add_foreign_key "orders", "courses", :name => "orders_course_id_fk"
 

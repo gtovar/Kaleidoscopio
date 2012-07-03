@@ -2217,3 +2217,37 @@ ul.share_container li {
 
 
 .vermapa {color: green;}
+
+.cpt_filter > li {
+	position: relative;
+	z-index: 100;
+	
+}
+
+
+.cpt_filter li:hover > ul {display: block;}
+
+.cpt_filter .submenu_categorias li a {
+	background: #F6F6F6;
+	color: #3C3C3C;
+	font-family: purista-web;
+	display: block;
+	margin: 0px;
+	padding: 5px 10px;
+}
+	
+	
+.submenu_categorias li {
+	border-bottom: 1px solid #e1e1e1;
+	width: 110px;
+	margin-bottom: 0px;
+}
+	
+	
+.submenu_categorias {
+	left: 5px;
+	top: 24px;
+	position: absolute;
+	margin: 0;
+	display: none;
+}

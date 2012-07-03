@@ -6,11 +6,13 @@
         <ul class="nav pull-right">
           <li><%= link_to "Inicio",    root_path %></li>
           <li><%= link_to "Cursos",    courses_path %></li>
-          <li><%= link_to "Conocenos",    conocenos_path %></li>
           <li><%= link_to "Terminos y Condiciones",    terminos_path %></li>
-          <li><%= link_to "Contacto",    contacto_path %></li>
           <li><%= link_to "Ver contacto",    vercontacto_path(:id) %></li>
           <li><%= link_to "Entrar", '#' %></li>
+	  <% if admin_signed_in? %>
+    		<li><a>Bienvenido <%= current_admin.email %></a></li>
+    		<li><%= link_to "Salir", destroy_admin_session_path, :method => :delete %></li>
+  	  <% end %>	
         </ul>
       </nav>
     </div>
