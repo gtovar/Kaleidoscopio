@@ -28,7 +28,7 @@
 		</div>
 		<h2><%= @course.teacher_name %></h2>
 		<p><%= @course.biography_teacher %></p>
-<div class="fb-comments" data-href="http://example.com" data-num-posts="2" data-width="655"></div>
+<div class="fb-comments" data-href= <%= curso_path(:id) %> data-num-posts="2" data-width="655"></div>
 	</div>
     </div>
     <div class="sidebar">
@@ -70,9 +70,7 @@
 			</script>
 			</li>
 			<li>
-<a name="fb_share">facebook</a> 
-<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" 
-        type="text/javascript">
+<div class="fb-like" data-font="arial" data-show-faces="true" data-width="100" data-layout="button_count" data-send="false"></div>
 </script>
 
 			</li>

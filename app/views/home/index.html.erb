@@ -84,7 +84,7 @@
 				<%= link_to course.name, curso_path(course) %>
 			</h2>	
 			<div class="post-meta portype">
-				<%= course.date_time %>
+				<%= l course.date_time, :format => :short %>
 			</div>
 		</div>
 		<div class="post-content">
