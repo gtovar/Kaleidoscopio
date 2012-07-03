@@ -18,6 +18,7 @@
       <h1>
 				Lista de cursos
 			</h1>
+<%= link_to "Exportar a excel", courses_path(:format => 'csv'), class: "btn" %>
 <%= will_paginate %>
 
 
@@ -29,7 +30,7 @@
     <th><%= Course.human_attribute_name("name")  %></th>
     <th><%= Course.human_attribute_name("category") %></th>
     <th><%= Course.human_attribute_name("limit_class_tickets") %></th>
-    <th><%= Course.human_attribute_name("Owned") %></th>
+    <th><%= Course.human_attribute_name("owned") %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -46,10 +47,12 @@
 	<td><%= course.name %></td>
     	<td><%= course.category %></td>
     	<td><%= course.limit_class_tickets %></td>
-    	<td><%= course.owned %></td>
-    	<td><%= link_to 'Show', course %></td>
-    	<td><%= link_to 'Edit', edit_course_path(course) %></td>
-    	<td><%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %></td>
+<% if course.owned = 'true' %>
+    	<td>si</td>
+<% end %>
+    	<td><%= link_to 'Ver', course %></td>
+    	<td><%= link_to 'Editar', edit_course_path(course) %></td>
+    	<td><%= link_to 'Eliminar', course, confirm: '¿Estas seguro?', method: :delete %></td>
    </tbody>
 <% end %>
 <%= will_paginate %>
@@ -74,5 +77,4 @@
 
 
 <br />
-<%= link_to "Exportar a excel", courses_path(:format => 'csv') %>
 <%= link_to 'Crear Curso', new_course_path, class: "btn btn-large btn-primary" %>

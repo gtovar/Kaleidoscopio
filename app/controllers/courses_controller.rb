@@ -18,6 +18,7 @@ class CoursesController < ApplicationController
   end
 	
 
+
   def vindex
     @courses = Course.paginate(page: params[:page])
     @search = Course.search(params[:search])	
@@ -33,6 +34,23 @@ class CoursesController < ApplicationController
 
   end
 
+  def index_contacts
+    @contacts = Contact.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @contacts }
+    end
+  end
+
+  def show_contacts
+    @contact = Contact.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @contact }
+    end
+  end
 
 
   # GET /courses/1

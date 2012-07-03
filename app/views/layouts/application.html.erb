@@ -3,7 +3,15 @@
 <head>
   <title>Kaleydoscopio</title>
   <%= stylesheet_link_tag    "custom", :media => "all" %>
+  <%= stylesheet_link_tag    "jquery-ui-1.8.16.custom", :media => "all"%> 
 	<%= javascript_include_tag "back-end" %>
+	<%= javascript_include_tag "jquery-1.7.1.min" %>
+	<%= javascript_include_tag "jquery-ui-1.8.16.custom.min" %>
+	<%= javascript_include_tag "jquery-ui-timepicker-addon" %>
+	<%= javascript_include_tag "jquery-ui-sliderAccess" %>
+
+
+
 
 
 <script type="text/javascript">
@@ -28,8 +36,11 @@ $('#course_date_time').datetimepicker();
 
 	
       <%= yield %>
-      <%= debug(params) if Rails.env.development? %>
+      <!--<%= debug(params) if Rails.env.development? %>-->
+
     </div>
+<br/>
+<br/>
   </body>
 
 </html>

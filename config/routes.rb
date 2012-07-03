@@ -11,10 +11,12 @@ Kaleidoscopio::Application.routes.draw do
 	match 'curso/:id' => 'home#show_detail_course_to_users', :as => 'curso' do
 		resources :orders	
 	end
+	match '/admin' => 'courses#index', :as => 'admin'
 	match '/conocenos' => 'home#aboutus', :as => 'conocenos'
 	match '/terminos-y-politicas' => 'home#terms', :as => 'terminos'
 	match '/contacto' => 'contacts#new', :as => 'contacto'
-	match '/ver-contacto/:id' => 'contacts#index', :as => 'vercontacto'
+	match '/contactos' => 'courses#index_contacts', :as => 'contactos'
+	match '/ver-contacto/:id' => 'courses#show_contacts', :as => 'vercontacto'
 	match '/dineromail' => 'dineromail#ipn'
 	match '/vcourses' => 'courses#vindex', :as => 'vindex'
   # The priority is based upon order of creation:

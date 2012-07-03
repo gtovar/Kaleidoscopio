@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+layout "front-end"
   # GET /contacts
   # GET /contacts.json
   def index
@@ -44,7 +45,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Tu informacion a sido recibida gracias!!!' }
         format.json { render json: @contact, status: :created, location: @contact }
       else
         format.html { render action: "new" }
@@ -76,7 +77,7 @@ class ContactsController < ApplicationController
     @contact.destroy
 
     respond_to do |format|
-      format.html { redirect_to contacts_url }
+      format.html { redirect_to contactos_url }
       format.json { head :no_content }
     end
   end
