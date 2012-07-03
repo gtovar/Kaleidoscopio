@@ -16,6 +16,23 @@ class CoursesController < ApplicationController
       format.csv {export(@courses)}	
     end
   end
+	
+
+
+  def vindex
+    @courses = Course.paginate(page: params[:page])
+    @search = Course.search(params[:search])	
+    @courses = @search.order('category').all
+    @total = @courses.count
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @courses }
+    end
+
+
+
+  end
 
   def index_contacts
     @contacts = Contact.all

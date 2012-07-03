@@ -3,24 +3,66 @@
 </header>
 <div class='cpt_sort'>
 	<div class='fl'>
-		Sort by:
+		Filtrar por:
 	</div>
 	<ul class='cpt_filter' id='filter'>
 		<li class="act">
-			<a href="#">Todo</a>
+			<%=link_to'Todo', root_path%>
 		</li>
-		
-		<%= form_for @search, :url => root_path, :html => {:method => :get} do |f| %>
-  <% f.checks :category_in, [['Open', 'open'], ['Sold out', 'soldout'], ['Completed', 'completed']], :class => 'checkboxy'  do |check| %>
+		<li>
+			<a href=#"">Categorias</a>
+			<ul class="submenu_categorias">
+				<li>
+					<a href="?utf8=✓&search[category_in][]=cocina&commit=Crear+Search" title="View Design">Cocina</a>
+				</li>
+				<li>
+					<a href="?utf8=✓&search[category_in][]=arte&commit=Crear+Search" title="View Collage">Arte</a>
+				</li>
+				<li>
+					<a href="?utf8=✓&search[category_in][]=deportes&commit=Crear+Search" title="View Illustration">Deportes</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Estatus</a>
+			<ul class="submenu_categorias">
+				<li>
+					<a href="?utf8=✓&search[status_in][]=abierto&commit=Crear+Search" title="View Design">Abierto</a>
+				</li>
+				<li>
+					<a href="?utf8=✓&search[status_in][]=cerrado&commit=Crear+Search" title="View Collage">Cerrado</a>
+				</li>
+				<li>
+					<a href="?utf8=✓&search[status_in][]=completed&commit=Crear+Search" title="View Illustration">Completed</a>
+				</li>
+			</ul>
+		</li>
+  	<!-- FILTRAR LOS STATUS (ABIERTO,CERRADO,COMPLETADO) -->	
+		<% form_for @search, :url => root_path, :html => {:method => :get} do |f| %>
+  <% f.checks :status_in, [['Abierto', 'abierto'], ['Cerrado', 'cerrado'], ['Completed', 'completed']], :class => 'checkboxy'  do |check| %>
     <li>
-      <a><%= check.box %>
-      <%= check.label %></a>
+      <% check.box %>
+      <% check.label %>
     </li>
 
   <% end %>
   <!-- etc... -->
-  <li><%= f.submit %></li>
+  <li><% f.submit %></li>
 <% end %>		
+
+<!-- FILTRAR LAS CATEGORIAS (COCINA,ARTE,ETC..) -->
+<% form_for @search, :url => root_path, :html => {:method => :get} do |f| %>
+  <% f.checks :category_in, [['Cocina', 'cocina'], ['Arte', 'arte'], ['Deportes', 'deportes']], :class => 'checkboxy'  do |check| %>
+    <li>
+      <% check.box %>
+      <% check.label %>
+    </li>
+
+  <% end %>
+  <!-- etc... -->
+  <li><% f.submit %></li>
+<% end %>		
+
 
 		
 		

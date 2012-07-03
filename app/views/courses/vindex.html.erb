@@ -7,24 +7,27 @@
 			</h1>
 
 
-  
-
-
-<%= form_for @search, :url => vcourses_path, :html => {:method => :get} do |f| %>
+<a href='?utf8=✓&search[category_in][]=open&commit=Crear+Search' >Open</a>
+<a href='?utf8=✓&search[category_in][]=soldout&commit=Crear+Search' >Soldout</a>
+<%=link_to'Todo'%>
+<a href='?utf8=✓&search[category_in][]=completed&commit=Crear+Search' >Completed</a>
+---------------------------------------------------
+-------------------------------------------------
+<%= form_for @search, :url => vindex_path, :html => {:method => :get} do |f| %>
   <% f.checks :category_in, [['Open', 'open'], ['Sold out', 'soldout'], ['Completed', 'completed']], :class => 'checkboxy'  do |check| %>
     <li>
-      <%= check.box %>
-      <%= check.label %>
+      <% check.box %>
+      <% check.label %>
     </li>
   <% end %>
   <!-- etc... -->
-  <%= f.submit %>
+  <% f.submit %>
 <% end %>
-
+--------------------------------------------------
 <% if @courses.empty?%>
   <h6>Create your first course</h6>
  <%end%>
-
+---------------------------------------------
 
 
 <% @courses.each do |course| %>

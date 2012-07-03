@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627005102) do
+ActiveRecord::Schema.define(:version => 20120703162441) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(:version => 20120627005102) do
     t.datetime "date_time"
     t.text     "requisites_student"
     t.integer  "price"
-    t.string   "pay_link"
     t.integer  "limit_class_tickets"
     t.string   "facebook_link"
     t.boolean  "owned"
@@ -61,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20120627005102) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.string   "slug"
+    t.string   "status"
   end
 
   add_index "courses", ["slug"], :name => "index_courses_on_slug"

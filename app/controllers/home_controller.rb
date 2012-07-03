@@ -4,7 +4,7 @@ layout "front-end"
   def index
     @courses = Course.paginate(page: params[:page])
     @search = Course.search(params[:search])	
-    @courses = @search.order('category').all
+    @courses = @search.order('status').all
     @total = @courses.count
 
     respond_to do |format|
