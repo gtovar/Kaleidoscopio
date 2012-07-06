@@ -1,18 +1,16 @@
-<h1>WAITING</h1>
-
-<%= @course.name %>
-<%= @order.token %>
-<%= @course.price %>
-
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function() {
 $("form").submit();
 });
 </script>
 
-<progress>
-        
-</progress>
+<div class="container  contactpage">
+	<div class="espera">
+		<h1 class="headofpage">Su solicitud esta siendo procesada</h1>
+		<h2>Esto puede tardar varios minutos.<br/><progress></progress>
+
+
+
 
 <form action="https://checkout.dineromail.com/CheckOut" method="post" >
 <!-- Variables Obligatorias -->
@@ -32,7 +30,9 @@ $("form").submit();
 <!-- Boton -->
 <input type='image' src='https://mexico.dineromail.com/imagenes/botones/pagar-medios_c.gif' border='0' name='submit' alt='Pagar con DineroMail'>
 </form>
-
-
+</h2>
+	</div>
+		<div class="clear"></div>
+</div>
 
 
