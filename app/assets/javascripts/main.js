@@ -238,13 +238,14 @@ $(window).load(function() {
 	/* Activate preloader */
 	$(".preloader_container").preloader();
 	
+	
 	/* Portfolio filter */
 	$('ul#filter a').click(function() {
 		$(this).css('outline','none');
 		$('ul#filter .act').removeClass('act');
 		$(this).parent().addClass('act');
 		
-		var filterVal = $(this).text().toLowerCase().replace(new RegExp(" ",'g'),"-");
+		var filterVal = $(this).text().toLowerCase().replace(' ','-');
 				
 		if(filterVal == 'all') {
 		
