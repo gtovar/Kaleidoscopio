@@ -1,3 +1,12 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="container contentwrapper withoutpbg preloader_container">
   <article class="sixteen columns alpha omega pagestyle">
   <div class="contbg" style="width:100%;float:none; clear:both;">	
@@ -19,13 +28,13 @@
 		</div>
 		<h2><%= @course.teacher_name %></h2>
 		<p><%= @course.biography_teacher %></p>
+<div class="fb-comments" data-href= <%= curso_path(:id) %> data-num-posts="2" data-width="655"></div>
 	</div>
     </div>
     <div class="sidebar">
 	<div class="sidebar_box white_container">
 		<h3>Fecha</h3>
-		<h5><%= @course.date_time %></h5>
-		<h5>5:00pm - 8:00pm</h5>
+<p><%= l @course.date_time, :format => :long %></p>
 	</div>    
 	<div class="sidebar_box white_container ">
 		<div class="cupo">
@@ -61,7 +70,9 @@
 			</script>
 			</li>
 			<li>
-				<div class="fb-like" data-font="arial" data-show-faces="true" data-width="100" data-layout="button_count" data-send="false"></div>
+<div class="fb-like" data-font="arial" data-show-faces="true" data-width="100" data-layout="button_count" data-send="false"></div>
+</script>
+
 			</li>
 		</ul>
 	</div>	
