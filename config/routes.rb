@@ -12,9 +12,11 @@ Kaleidoscopio::Application.routes.draw do
 		resources :orders	
 	end
 	match '/admin' => 'courses#index', :as => 'admin'
-	match '/conocenos' => 'home#aboutus', :as => 'conocenos'
+	match '/acerca-de' => 'home#aboutus', :as => 'conocenos'
 	match '/terminos-y-politicas' => 'home#terms', :as => 'terminos'
 	match '/contacto' => 'contacts#new', :as => 'contacto'
+	match '/contacto/:id' => 'contacts#new', :as => 'contactocurso'
+
 	match '/contactos' => 'courses#index_contacts', :as => 'contactos'
 	match '/ver-contacto/:id' => 'courses#show_contacts', :as => 'vercontacto'
 	match '/dineromail' => 'dineromail#ipn'

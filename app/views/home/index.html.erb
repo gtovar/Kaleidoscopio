@@ -1,6 +1,13 @@
 <header>
 	<h1 class="headofpage">Clases Disponibles</h1>
 </header>
+<% if flash[:notice] != nil%>
+  <div class="about">
+<%= flash[:notice]  %>
+	</div>
+<% end %>
+
+
 <div class='cpt_sort'>
 	<div class='fl'>
 		Filtrar por:

@@ -1,7 +1,6 @@
-<div class="row">
-  <div class="span6 offset3">
 
-<%= form_for(@contact) do |f| %>
+
+<%= form_for@contact,:html => { :id => "comment-form" } do |f| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
@@ -13,33 +12,47 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :subjects %><br />
-    <%= f.select :subjects, options_for_select([["Duda",1],["Queja",2],["Sugerencia",3],["Quiero Ofertar un curso",4]]) %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :message %><br />
-    <%= f.text_area :message %>
-  </div>
 
+<div class="attwarn">Los campos marcados con * son obligatorios.</div>
+					
+					<div class="attwarn ajaxresponse"></div>
 
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<% if params[:id] != nil%>
+  <div class="commname smallcommf">
+    <%= f.select :subjects, options_for_select([["Duda",1],["Queja",2],
+		["Sugerencia",3],["Quiero Ofertar un curso",4, {:selected => 'true'}]]),class: "textarea sendername", size: "28" %>
+	</div>
+<% else %>
+  <div class="commname smallcommf">
+    <%= f.select :subjects, options_for_select([["Duda",1,{:selected => 'true'}],["Queja",2],
+		["Sugerencia",3],["Quiero Ofertar un curso",4]]),class: "textarea sendername", size: "28" %>
+	</div>
 <% end %>
-<div class="span4">
-<h2>Nuestros numeros telefonicos</h2></div>
-</div>
-</div>
+<br/>
+<br/>
+	<div class="commname smallcommf">
+<%= f.text_field :name, class: "textarea sendername", size: "28", placeholder:"Nombre*" %>
+	</div>
+
+
+	<div class="commname smallcommf">
+    <%= f.text_field :email, class: "textarea senderemail", size: "28", placeholder: "Correo*" %>
+	</div>
+
+	<div class="commname smallcommf">
+    <%= f.text_field :phone, class: "textarea feedback_url", size: "28", placeholder:"telefono*" %>
+  </div>
+
+  <div class="commcomment">
+    <%= f.text_area :message, cols: "60", rows: "10", class: "textarea sendermessage", placeholder:"Mensaje" %>
+  </div>
+
+
+<p>
+    <%= f.submit 'Enviar', class: 'black_btn comment_send_btn ajax_send_feedback'%>
+<p>
+
+<% end %>
+
+
+

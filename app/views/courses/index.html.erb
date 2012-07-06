@@ -2,28 +2,28 @@
 
 <div class="center hero-unit">
   <h1>Gestion de Cursos</h1>
-
-  <h2>
-    Es una pagina para administrar los
-    <a href="#">Cursos</a>
-    version de Desarrollo
-  </h2>
-  <%= link_to "Crear curso", new_course_path, class: "btn btn-large btn-primary" %>
 </div>
 
 <p ><%= flash[:notice]  %></p>
 <div class="row ">
   <aside class="span10">
+
     <section>
+<%= link_to "Exportar a excel", courses_path(:format => 'csv'), class: "btn" %>
+<%= link_to "Crear curso", new_course_path, class: "btn btn-primary" %>
+<br/>
+<br/>
+
       <h1>
 				Lista de cursos
 			</h1>
-<%= link_to "Exportar a excel", courses_path(:format => 'csv'), class: "btn" %>
+
 <%= will_paginate %>
 
 
 <p>Total cursos:<%= @total %></p>
-<%= sort_link @search, :name%>
+<%= link_to "Ordenar", @search_path, class: "btn btn-primary" %>
+<br/>
 <table class="table table-bordered">
 
   <thead>
@@ -35,11 +35,6 @@
     <th></th>
     <th></th>
   </thead>
-
-
-
-
-
 
 
 <% @courses.each do |course| %>
@@ -61,20 +56,12 @@
   </aside>
 </div>
 <br/>
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
-
-
-
 
   <% if @courses.empty?%>
   <h6>Create your first course</h6>
   <%end%>
 
-
 </table>
 
-
-
-
 <br />
-<%= link_to 'Crear Curso', new_course_path, class: "btn btn-large btn-primary" %>
+
