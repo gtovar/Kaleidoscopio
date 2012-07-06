@@ -76,6 +76,13 @@
 <header class="home">
 <h3 class="headofpage_home">Clases Disponibles</h3>
 </header>
+<% if flash[:notice] != nil%>
+  <div class="about">
+<%= flash[:notice]  %>
+	</div>
+<% end %>
+
+
 <div class='cpt_sort'>
 	<div class='fl'>
 		Filtrar por:

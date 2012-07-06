@@ -1,11 +1,6 @@
 <div class="container">     
 <div class="center hero-unit">
   <h1>Ver informacion de contacto</h1>
-  <h2>
-    Datos basicos de contacto de una persona 
-    <a href="#">Home page</a>
-    version de Desarrollo
-  </h2>
 </div>
 <div class="row">
   <div class="span6 offset3">
@@ -13,27 +8,41 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b><%= Contact.human_attribute_name(:name) %></b>
   <%= @contact.name %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b><%= Contact.human_attribute_name(:email) %></b>
   <%= @contact.email %>
 </p>
 
 <p>
-  <b>Phone:</b>
+  <b><%= Contact.human_attribute_name(:phone) %></b>
   <%= @contact.phone %>
 </p>
 
 <p>
-  <b>Subjects:</b>
-  <%= @contact.subjects %>
+  <b><%= Contact.human_attribute_name(:subjects) %></b>
+<% asunto = @contact.subjects %>
+<%case asunto%>
+<%when "1"%>
+<td>Duda</td>
+<%when "2"%>
+<td>Queja</td>
+<%when "3"%>
+<td>Sugerencia</td>
+<%when "4"%>
+<td>Propuesta</td>
+<%end%>
+</p>
+<p>
+  <b><%= Contact.human_attribute_name(:message) %></b>
+  <%= @contact.message %>
 </p>
 
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'Editar', edit_contact_path(@contact) %> |
+<%= link_to 'Regresar', contactos_path %>
 </div>
 </div>

@@ -4,13 +4,20 @@
 <div class="mainwrapper">
 	<div class="wbg full-container-shadow full-container-width" style="background-color:#fff;"></div>
 </div>
+
 <header class="container header">
 	<div class="three columns logo">
-		<%= link_to image_tag("kaleydoscopio_logo.png", :alt => "Kaleydoscopio"), root_path, class: "logoimg" %>
+		<%= link_to image_tag("kaleydoscopio_logo_home.png", :alt => "Kaleydoscopio"), root_path, class: "logoimg" %>
 	</div>
 	<nav class="thirteen columns mainmenu_cont">
 		<div class="menu-navbar-container">
 			<ul id="menu-navbar" class="mainmenu sf-menu">
+				<li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-4 menu_bar_hover">
+					<%= link_to "Solicita",contactocurso_path('quiero-dar-un-curso') %>
+					<span>
+						Dar una clase
+					</span>
+				</li>
 				<li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-4 menu_bar_hover">
 					<%= link_to "Acerca de",conocenos_path %>
 					<span>

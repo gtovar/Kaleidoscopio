@@ -1,14 +1,30 @@
-<div class="container">     
-<div class="center hero-unit">
-  <h1>Contacto</h1>
-  <h2>
-    Oferta tu curso
-    <a href="#">Home page</a>
-    version de Desarrollo
-  </h2>
+<div class="container contentwrapper contactpage">
+<div class="columns eleven npl">
+	<header><h1 class="headofpage">Contacto</h1></header>
+		<div class="clear">
+		</div>
+		<div id="respond" class="type2">
+			<div class="cancel-comment-reply">
+				<small><a style="display:none;" href="/?p=1#respond" id="cancel-comment-reply-link" rel="nofollow">Click here to cancel reply.</a></small>
+			</div>
+				 <%= render 'form' %><!-- #forma -->
+		</div>
 </div>
+<div class="columns four alpha offset-by-one omega presidebar" id="contact_sidebar">
+	<aside id="sidebar">		
+		<div class="sidepanel widget_twitter">
+			<div class="compname">kaleydocopio</div>
+					<div class="compaddr">Ave. Losoles 200 Col. Residencial San Agustín. SPGG, NL</div>
+				</div>
+				<div class="compphone mtyp1">+1 800 603 6035</div>				<div class="mail_icon2 mtyp1">
+					<a href="mailto:mail@companyname.com">clases@kaleydoscopio.com</a>
+				</div>				
+				</div>
+			</aside><!-- #sidebar -->
+		
+		</div>
+		<div class="clear"></div>
+</div>
+		
 
-<%= render 'form' %>
-
-<%= link_to 'Ver Cursos', root_path,class: "btn" %>
 
