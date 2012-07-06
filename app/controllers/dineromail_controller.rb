@@ -1,6 +1,6 @@
 class DineromailController < ApplicationController
   def ipn
-	notifications = Dineromail::Notification.parse(params[:Notificacion])
+	notifications = Dineromail::Notification.parse(params[:NOTIFICACION])
     	notifications.each do |notify|
       	if notify.valid_report? && notify.completed?
         	@order = Order.where("token = ?", notify.transaction_id)
@@ -9,7 +9,7 @@ class DineromailController < ApplicationController
         	@order.save
       	end
    	end
-    render :nothing => true
+    render :nothing => true, :status =>200
   end
 
 
