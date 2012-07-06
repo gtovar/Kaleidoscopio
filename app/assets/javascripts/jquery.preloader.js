@@ -14,7 +14,7 @@ $.fn.preloader = function(options){
 	
 	// variables declaration and precaching images and parent container
 	 var options = $.extend(defaults, options),
-	 root = $(this) , images = root.find("img").not('.ajax-loader').css({"visibility":"hidden",opacity:0}) ,  timer ,  counter = 0, i=0 , checkFlag = [] , delaySum = options.delay ,
+	 root = $(this) , images = root.find("img").css({"visibility":"hidden",opacity:0}) ,  timer ,  counter = 0, i=0 , checkFlag = [] , delaySum = options.delay ,
 	 init = function(){
 		
 		timer = setInterval(function(){

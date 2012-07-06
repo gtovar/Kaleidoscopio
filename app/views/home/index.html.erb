@@ -1,5 +1,80 @@
-<header>
-	<h1 class="headofpage">Clases Disponibles</h1>
+<div class="container contentwrapper">
+<div class="sixteen columns alpha omega portpage">
+
+
+
+<div class="home_marketing">
+	<div class="home_marketing_content">
+		<h1>Clases interesantes para personas curiosas.</h1>
+	</div>
+</div>
+
+
+<div id="slider_beneficios" class="container contentwrapper">
+ <div class="sixteen columns alpha omega block_shadow flexslider">
+  <ul class="slides">
+         <li style="width: 100%; margin-right: -100%; display: none; float: left;">
+          <%=image_tag "universitarios.jpg"%>
+          <div class="flccont" style="height: 380px;">
+           <div class="flcconttc">
+            <div class="flex-caption fadeIn">
+             <span class="fctitle">For Websites and Mobile Applications </span>
+             <span class="subcaption">elementum vel, cursus eleifend, elit aenean auctor.
+              <a href="#">Read more...</a>
+             </span>
+            </div>
+           </div>
+          </div>
+</li>
+	<li style="width: 100%; float: left; margin-right: -100%; display: list-item;">
+	 <%=image_tag "slide2.jpg"%>
+	 <div class="flccont">
+	  <div class="flcconttc">
+	   <div class="flex-caption fadeIn">
+	    <span class="fctitle">Aprendizaje Colaborativo</span>
+	    <span class="subcaption">Ut tellus dolor, cursus eleifend, elit aenean auctor. </span>
+	   </div>
+	  </div>
+	 </div>
+	</li>
+	<li style="width: 100%; float: left; margin-right: -100%; display: none;">
+         <%=image_tag "slide1.png"%>
+          <div class="flccont" style="height: 380px;">
+           <div class="flcconttc">
+            <div class="flex-caption fadeIn">
+             <span class="fctitle">HTML5 + CSS3 Ready</span>
+             <span class="subcaption">Donec metus nisi assa. Nullam vehicula congue viverra.</span>
+            </div>
+           </div>
+          </div>
+         </li>
+  </ul>
+<ol class="flex-control-nav">
+<li>
+<a class="">1</a>
+</li>
+<li>
+<a class="">2</a>
+</li>
+<li>
+<a class="active">3</a>
+</li>
+</ol>
+
+  <ul class="flex-direction-nav">
+   <li>
+    <a class="prev" href="#">Previous</a>
+   </li>
+   <li>
+    <a class="next" href="#">Next</a>
+   </li>
+  </ul>
+ 
+ </div>
+</div>
+
+<header class="home">
+<h3 class="headofpage_home">Clases Disponibles</h3>
 </header>
 <% if flash[:notice] != nil%>
   <div class="about">
@@ -17,18 +92,18 @@
 			<%=link_to'Todo', root_path%>
 		</li>
 		<li>
-			<a href=#"">Categorias</a>
-			<ul class="submenu_categorias">
-				<li>
-					<a href="?utf8=✓&search[category_in][]=cocina&commit=Crear+Search" title="View Design">Cocina</a>
-				</li>
-				<li>
-					<a href="?utf8=✓&search[category_in][]=arte&commit=Crear+Search" title="View Collage">Arte</a>
-				</li>
-				<li>
-					<a href="?utf8=✓&search[category_in][]=deportes&commit=Crear+Search" title="View Illustration">Deportes</a>
-				</li>
-			</ul>
+		  <a href="#">Categorias</a>
+		  <ul class="submenu_categorias">
+		    <li>
+ 		      <a href="?utf8=✓&search[category_in][]=cocina&commit=Crear+Search" title="View Design">Cocina</a>
+                    </li>
+		    <li>
+ 	 	      <a href="?utf8=✓&search[category_in][]=arte&commit=Crear+Search" title="View Collage">Arte</a>
+		    </li>
+	            <li>
+		      <a href="?utf8=✓&search[category_in][]=deportes&commit=Crear+Search" title="View Illustration">Deportes</a>
+		    </li>
+		  </ul>
 		</li>
 		<li>
 			<a href="#">Estatus</a>
@@ -44,7 +119,10 @@
 				</li>
 			</ul>
 		</li>
-  	<!-- FILTRAR LOS STATUS (ABIERTO,CERRADO,COMPLETADO) -->	
+  	
+
+
+<!-- FILTRAR LOS STATUS (ABIERTO,CERRADO,COMPLETADO) -->	
 		<% form_for @search, :url => root_path, :html => {:method => :get} do |f| %>
   <% f.checks :status_in, [['Abierto', 'abierto'], ['Cerrado', 'cerrado'], ['Completed', 'completed']], :class => 'checkboxy'  do |check| %>
     <li>
@@ -69,10 +147,7 @@
   <!-- etc... -->
   <li><% f.submit %></li>
 <% end %>		
-
-
-		
-		
+	
 	</ul>
 	<div class='clear'></div>
 </div>
@@ -110,3 +185,6 @@
 	<div class="clear"></div>
 </div>
 <% end %>
+
+</div>
+</div>

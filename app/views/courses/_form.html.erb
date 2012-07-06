@@ -68,7 +68,7 @@
     <%= f.text_field :facebook_link %>
   </div>
   <div class="field">
-    <%= f.label :owned %><br />
+    <%= f.label 'Curso de kaleydoscopio' %><br />
     <%= f.check_box :owned %>
 
   </div>
@@ -76,5 +76,6 @@
     <%= f.submit :class => "btn btn-large btn-primary" %>
   </div>
 <% end %>
+<%= link_to 'Regresar', courses_path, class: "btn" %>
 </div>
 </div>
