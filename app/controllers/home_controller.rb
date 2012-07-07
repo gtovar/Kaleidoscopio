@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-layout "front-end"
+layout "front-end-waiting"
 
   def index
     @courses = Course.paginate(page: params[:page])
@@ -14,13 +14,14 @@ layout "front-end"
   end
 
   def show_detail_course_to_users
-
+ 
     @course = Course.find(params[:id])
     @order = @course.orders(params[@course])	
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @course }
     end
+   	
   end
 
 def aboutus

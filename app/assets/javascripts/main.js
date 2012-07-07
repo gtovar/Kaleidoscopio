@@ -235,8 +235,7 @@ $(window).load(function() {
 		$(this).find(".flccont").css("height", slideh);
 	});
 	
-	/* Activate preloader */
-	$(".preloader_container").preloader();
+	
 	
 	
 	/* Portfolio filter */
