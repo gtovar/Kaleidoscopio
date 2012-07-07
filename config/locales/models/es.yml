@@ -22,6 +22,11 @@ es:
         limit_class_tickets: "No. boletos"
         facebook_link: "Facebook"
         owned: "Clase"
+        cat_arte: "Arte"
+        cat_culinarias: "Culinarias"
+        cat_empresariales: "Empresariales"
+        cat_estilo_de_vida: "Estilo de vida"
+        cat_tecnologia: "Tecnología"
       contact:
         name: "Nombre"
         email: "Correo electrónico"

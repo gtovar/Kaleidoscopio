@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120703162441) do
+ActiveRecord::Schema.define(:version => 20120707144040) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(:version => 20120703162441) do
     t.text     "requisites_student"
     t.integer  "price"
     t.integer  "limit_class_tickets"
-    t.string   "facebook_link"
     t.boolean  "owned"
     t.string   "photo_teacher"
     t.datetime "created_at",          :null => false
