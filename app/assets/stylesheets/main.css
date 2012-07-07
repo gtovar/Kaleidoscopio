@@ -1951,7 +1951,7 @@ h3.shortcode_accordion_item_title:hover, h3.shortcode_toggles_item_title:hover {
 	font-family: impact;
 	text-shadow: 2px 2px 3px #303030;
 	position: absolute;
-	bottom: 6px;
+	bottom: 16px;
 	right: 30px;
 	letter-spacing: -1px;
 	}
