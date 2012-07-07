@@ -4,6 +4,6 @@ class RemoveColumnDineromailCourse < ActiveRecord::Migration
   end
 
   def down
-	add_column :courses, :pay_link
+	add_column :courses, :pay_link, :string
   end
 end

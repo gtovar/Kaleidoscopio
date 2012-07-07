@@ -1,81 +1,74 @@
 <div class="row">
   <div class="span6 offset3">
 
-  <%= form_for @course, :html => {:multipart => true} do |f| %>
-	<%= render 'shared/error_messages' %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :photo %><br />
-    <%= f.file_field :photo %>
-  </div>
+    <%= form_for @course, :html => {:multipart => true} do |f| %>
+	  <%= render 'shared/error_messages' %>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :category %><br />
+      <%= f.text_field :category %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area :description, :rows => 10 %>
+    </div>
+    <div class="field">
+      <%= f.label :photo %><br />
+      <%= f.file_field :photo %>
+    </div>
 
-  <div class="field">
-    <%= f.label :teacher_name %><br />
-    <%= f.text_field :teacher_name %>
-  </div>
+    <div class="field">
+      <%= f.label :teacher_name %><br />
+      <%= f.text_field :teacher_name %>
+    </div>
 
-  <div class="field">
-    <%= f.label :photo_teacher %><br />
-    <%= f.file_field :photo_teacher %>
-  </div>
+    <div class="field">
+      <%= f.label :photo_teacher %><br />
+      <%= f.file_field :photo_teacher %>
+    </div>
 
 
-  <div class="field">
-    <%= f.label :biography_teacher %><br />
-    <%= f.text_area :biography_teacher %>
+    <div class="field">
+      <%= f.label :biography_teacher %><br />
+      <%= f.text_area :biography_teacher, :rows => 10 %>
+    </div>
+    <div class="field">
+      <%= f.label :place %><br />
+      <%= f.text_field :place %>
+    </div>
+    <div class="field">
+      <%= f.label :google_map %><br />
+      <%= f.text_area :google_map, :rows => 10 %>
+    </div>
+    <div class="field">
+      <%= f.label :date_time %><br />
+      <%= f.text_field :date_time %>
+    </div>
+    <div class="field">
+      <%= f.label :requisites_student %><br />
+      <%= f.text_area :requisites_student, :rows => 10 %>
+    </div>
+    <div class="field">
+      <%= f.label :price %><br />
+      <%= f.text_field :price %>
+    </div>
+    <div class="field">
+      <%= f.label :limit_class_tickets %><br />
+      <%= f.number_field :limit_class_tickets %>
+    </div>
+    <div class="field">
+      <label class="checkbox">
+      <%= f.check_box :owned %> Es un curso de Kaleydoscopio
+      </label>
+    </div>
+    <br />
+    <br />
+    <div class="actions">
+      <%= f.submit :class => "btn btn-large btn-primary" %> o <%= link_to 'Regresar', courses_path %>
+    </div>
+  <% end %>
   </div>
-  <div class="field">
-    <%= f.label :place %><br />
-    <%= f.text_field :place %>
-  </div>
-  <div class="field">
-    <%= f.label :google_map %><br />
-    <%= f.text_area :google_map %>
-  </div>
-  <div class="field">
-    <%= f.label :date_time %><br />
-    <%= f.text_field :date_time %>
-  </div>
-  <div class="field">
-    <%= f.label :requisites_student %><br />
-    <%= f.text_area :requisites_student %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :limit_class_tickets %><br />
-    <%= f.number_field :limit_class_tickets %>
-  </div>
-  <div class="field">
-    <%= f.label :facebook_link %><br />
-    <%= f.text_field :facebook_link %>
-  </div>
-  <div class="field">
-    <%= f.label 'Curso de kaleydoscopio' %><br />
-    <%= f.check_box :owned %>
-
-  </div>
-  <div class="actions">
-    <%= f.submit :class => "btn btn-large btn-primary" %>
-  </div>
-<% end %>
-<%= link_to 'Regresar', courses_path, class: "btn" %>
-</div>
 </div>
