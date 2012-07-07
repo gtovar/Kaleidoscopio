@@ -87,7 +87,7 @@
 	<div class='fl'>
 		Filtrar por:
 	</div>
-	<!--<ul class='cpt_filter' id='filter'>
+	<ul class='cpt_filter' id='filter'>
 		<li class="act">
 			<%=link_to 'Todas', root_path%>
 		</li>
@@ -95,13 +95,16 @@
 		  <a href="#">Categorias</a>
 		  <ul class="submenu_categorias">
 		    <li>
- 		      <a href="?utf8=✓&search[category_in][]=cocina&commit=Crear+Search">Cocina</a>
+ 		      <a href="?utf8=✓&search[category_in][]=culinarias&commit=Crear+Search">Culinarias</a>
                     </li>
 		    <li>
- 	 	      <a href="?utf8=✓&search[category_in][]=arte&commit=Crear+Search">Artes</a>
+ 	 	      <a href="?utf8=✓&search[category_in][]=artes&commit=Crear+Search">Artes</a>
 		    </li>
 	            <li>
-		      <a href="?utf8=✓&search[category_in][]=deportes&commit=Crear+Search">Deportes</a>
+		      <a href="?utf8=✓&search[category_in][]=empresariales&commit=Crear+Search">Empresariales</a>
+		    </li>
+		    <li>
+ 	 	      <a href="?utf8=✓&search[category_in][]=tecnologia&commit=Crear+Search">Tecnologia</a>
 		    </li>
 		  </ul>
 		</li>
@@ -118,7 +121,7 @@
 					<a href="?utf8=✓&search[status_in][]=terminado&commit=Crear+Search" >Terminado</a>
 				</li>
 			</ul>
-		</li>-->
+		</li>
   	
 
 
@@ -137,7 +140,7 @@
 
 <!-- FILTRAR LAS CATEGORIAS (COCINA,ARTE,ETC..) -->
 <%= form_for @search, :url => root_path, :html => {:method => :get} do |f| %>
-  <% f.checks :category_in, [['Culinarias', 'culinarias'], ['Artes', 'artes'], ['Empresariales', 'empresariales'], ['Culinarias', 'culinarias']], :class => 'checkboxy'  do |check| %>
+  <% f.checks :category_in, [['Culinarias', 'culinarias'], ['Artes', 'artes'], ['Empresariales', 'empresariales'], ['Tecnologia', 'tecnologia'], ['Culinarias', 'culinarias']], :class => 'checkboxy'  do |check| %>
     <li>
       <%= check.box %>
       <%= check.label %>

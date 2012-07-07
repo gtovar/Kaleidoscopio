@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-layout "front-end-waiting"
+layout "front-end"
 
   def index
     @courses = Course.paginate(page: params[:page])
