@@ -9,7 +9,9 @@
     </div>
     <div class="field">
       <%= f.label :category %><br />
-      <%= f.text_field :category %>
+      
+      <%= select(:course, :category, Course::CATEGORIES.collect {|cat| [ Course.human_attribute_name(cat), cat ] }, {:include_blank => true}) %>
+      
     </div>
     <div class="field">
       <%= f.label :description %><br />
