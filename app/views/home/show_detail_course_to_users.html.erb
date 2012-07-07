@@ -28,7 +28,7 @@
 		</div>
 		<h2><%= @course.teacher_name %></h2>
 		<p><%= @course.biography_teacher %></p>
-<div class="fb-comments" data-href= <%= curso_path(:id) %> data-num-posts="2" data-width="655"></div>
+<div class="fb-comments" data-href= "<%= course_url(@course) %>" data-num-posts="2" data-width="655"></div>
 	</div>
     </div>
     <div class="sidebar">
@@ -87,5 +87,4 @@
   </article>
 </div>
 
-
-
+	

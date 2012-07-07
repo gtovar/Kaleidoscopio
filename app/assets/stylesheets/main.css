@@ -82,7 +82,8 @@ blockquote {
 	color: #999;
 	margin-top: 5px;
 }
-
+.post-meta a {
+}
 .post-comments {
 	float: right;
 	padding: 3px 0 7px 7px;
@@ -214,7 +215,6 @@ img.alignright {
 	min-width: 1024px;
 	width: 100%;
 	height: auto;
-	position: fixed;
 	top: 0;
 	left: 0;
 }
@@ -2371,22 +2371,17 @@ color: #f0f0f0;
 .fecha {
 	font-family: signika;
 	font-size: 14px;
-	color: #959595;}
+color: #959595;}
 
-.hora {
-	font-family: signika;
-	font-size: 14px;
-	color: #959595;
-	float: right;}
+.hora {font-family: signika;
+font-size: 14px;
+color: #959595;
+float: right;}
 
 
 
 /* Index
 ================================================== */
-.class-thumbnail img {
-	width: 420px;
-	height: 266px;}
-
 
 #resultados {
 	padding-left: 20px;
@@ -2401,12 +2396,9 @@ color: #f0f0f0;
 /* Privacy and Terms
 ================================================== */
 
-.privacy ol li {
-	list-style: decimal;}
+.privacy ol li {list-style: decimal;}
 
-.terms ul li {
-	list-style: disc;
-	margin-left: 30px;}
+.terms ul li {list-style: disc; margin-left: 30px;}
 
 
 /* Detalle Cursos
@@ -2429,83 +2421,5 @@ color: #f0f0f0;
 
 #header_quote span {float: right;}
 
-.cantidad {text-align: center;}
-
-.cantidad h4{
-color: #7A7A7A;
-	width: 75px;
-	display: inline-block;
-}
-
-.cantidad select {
-	width: 35px;
-	display: inline-block;
-	margin-bottom: 10px;
-}
 
 
-/* About
-================================================== */
-
-.about {
-	background-color: #f6f6f6;
-	padding: 20px;
-	box-shadow: 1px 1px 1px #c8c6c6;
-	margin-bottom: 30px;
-}
-
-.about h1 {
-	margin-bottom: 20px;
-	padding-left: 10px;
-}
-
-.about p {
-	margin-bottom: 10px;
-	padding-left: 10px;
-}
-
-
-/* About
-================================================== */
-
-#contact_sidebar {
-	padding-left: 30px;
-	margin-top: 78px;
-	width: 250px;
-}
-
-#sidebar {
-	padding: 20px;
-	background: #f6f6f6;
-	box-shadow: 1px 1px 1px #d5d5d5;
-}
-
-.compname { font-size: 17px; margin-bottom: 15px;}
-
-#comment-form input.comment_send_btn, .followme_btn {
-	background: #f6f6f6;
-	box-shadow: 1px 1px 1px #d5d5d5;
-}
-
-
-#comment-form .black_btn:hover {
-	 color: #8DC741;
-}
-
-
-/* Pagina espera
-================================================== */
-
-.espera h1 {
-	text-align: center;
-	margin-top: 100px;
-	margin-bottom: 0;
-	font-size: 25px;
-}
-.espera h2 {
-	text-align: center;
-	padding-top: 0x;
-	color: #959595;
-	font-size: 15px;
-	margin-bottom: 100px;
-}
