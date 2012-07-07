@@ -1995,7 +1995,7 @@ letter-spacing: -1px;
 .foto_descripcion {
 	width: 960px;
 	display: block;
-	border
+	
 	}
 
 .description_bar {
@@ -2284,7 +2284,9 @@ ul.share_container li {
 
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }
+.clearfix { 
+*zoom: 1; 
+}
 
 
 
