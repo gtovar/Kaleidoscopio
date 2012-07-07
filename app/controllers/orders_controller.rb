@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
- layout "front-end"
+ layout "front-end-waiting"
   
     
   before_filter :get_course

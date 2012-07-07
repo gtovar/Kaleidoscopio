@@ -1,0 +1,41 @@
+<%= render 'layouts/shim-front' %>
+<head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript" src="http://use.typekit.com/qvj6cvf.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<title>kaleydoscopio</title>
+
+<%= stylesheet_link_tag "base", :media => "all" %>
+
+  <%= stylesheet_link_tag "flexslider", :media => "all" %>
+
+  <%= stylesheet_link_tag "layout", :media => "all" %>
+
+
+  <%= stylesheet_link_tag "reset", :media => "all" %>
+  <%= stylesheet_link_tag "prettyPhoto", :media => "all" %>
+  <%= stylesheet_link_tag "skeleton", :media => "all" %>
+
+  <%= stylesheet_link_tag "main", :media => "all" %>
+
+  <%= javascript_include_tag "back-end" %>
+</head>
+
+<body class="page page-id-64 page-template page-template-portfolio_2-php logged-in admin-bar">
+	<%= render 'layouts/header-front' %> <!-- // HEADER -->
+  <div class="container contentwrapper">
+		<div class="sixteen columns alpha omega portpage">
+			<!--<%= render 'layouts/Sort-by-front' %> <!-- // Sort by Bar -->
+				<div class='portrowed perline2'><!-- // Courses -->
+		      <%= yield %>
+				</div>
+    </div>
+	</div><!-- // close container contentwrapper -->
+	<div class="clear"></div>
+	<%= render 'layouts/footer-front' %> <!-- // FOOTER -->
+</body>
+
+</html>

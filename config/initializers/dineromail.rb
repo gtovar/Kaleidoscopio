@@ -1,6 +1,6 @@
 Dineromail.configure do |config|
   config.pay_methods = '' #All the available methods
-  config.account_number = 'clases@kaleidoscopio.com'
+  config.account_number = '1048078/5'
   config.password = 'ramirez2'
   config.logo_url = 'http://my-web.com/images/logo.png'
   config.return_url = 'http://my-web.com/success'

@@ -41,18 +41,21 @@
 			<span><%= @course.limit_class_tickets %></span>
 			<h3>Lugares Disponibles</h3>
 		</div>
-		<div class="boton_inscripcion">
+
+		<div class="cantidad">
 			<%= form_for([@course, @course.orders.build]) do |f| %>
   
-  			<%= f.label :quantity %><br />
+  			<h4><%= f.label :quantity, "Cantidad" %></h4>
   			<%= f.select :quantity, options_for_select([[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"]]) %>
 
-  			<div class="actions">
-    				<%= f.submit :class =>"inscibete" %>
+  			<div class="boton_inscripcion">
+    				<a><%= f.submit :class => "inscibete" %></a>
   			</div>
 			<% end %>	
-			<a class="inscribete" href="#">Inscribete</a>
+			
 		</div>
+		
+		
 	</div>
 	<div class="sidebar_box white_container">
 		<h3 class="ubicacion">Ubicación</h3>
