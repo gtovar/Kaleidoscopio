@@ -13,6 +13,20 @@ layout "front-end"
     end
   end
 
+
+
+  def listcoursespage
+    @courses = Course.paginate(page: params[:page])
+    @search = Course.search(params[:search])	
+    @courses = @search.order('status').all
+    @total = @courses.count
+
+    respond_to do |format|
+      format.html # listacursos.html.erb
+      format.json { render json: @courses }
+    end
+  end
+
   def show_detail_course_to_users
  
     @course = Course.find(params[:id])

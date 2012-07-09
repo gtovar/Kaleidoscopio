@@ -20,7 +20,7 @@ Kaleidoscopio::Application.routes.draw do
 	match '/contactos' => 'courses#index_contacts', :as => 'contactos'
 	match '/ver-contacto/:id' => 'courses#show_contacts', :as => 'vercontacto'
 	match '/dineromail' => 'dineromail#ipn', :as => 'dineromail'
-	match '/vcourses' => 'courses#vindex', :as => 'vindex'
+	match '/listacursos' => 'home#listcoursespage', :as => 'listacursos'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

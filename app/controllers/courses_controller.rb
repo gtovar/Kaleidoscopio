@@ -18,6 +18,7 @@ class CoursesController < ApplicationController
   end
 	
 
+
   def index_contacts
     @contacts = Contact.all
 
