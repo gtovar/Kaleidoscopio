@@ -1,0 +1,27 @@
+<% @courses.each do |course| %>
+<div id="post-263" class="post block_shadow columns eight port2perline all ">
+	<div class="thispost porttype preloader_container">
+		<div class="post-title-cont">
+			<h2 class="post-title">
+				<%= link_to course.name, curso_path(course) %>
+			</h2>	
+			<div class="post-meta portype">
+				<%= l course.date_time, :format => :short %>
+			</div>
+		</div>
+		<div class="post-content">
+			<div class="class-thumbnail">
+			<% if course.owned == true%>		
+				<span class="type_image" title="Curso Kaleydoscopio"></span>
+			
+			<%end %>
+			<h1 class="precio">$<%= course.price %><span class="decimal">00</span></h1>
+			<%= image_tag course.photo.thumb.url.to_s, alt: "Clases de fotografia" %>
+			</div>
+			<p><%= truncate(course.description, :length => 120) %></p>
+			<%= link_to "Click me", curso_path(course), class: "plus_btn" %>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<% end %>

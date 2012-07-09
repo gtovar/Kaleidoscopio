@@ -238,51 +238,7 @@ $(window).load(function() {
 	
 	
 	
-	/* Portfolio filter */
-	$('ul#filter a').click(function() {
-		$(this).css('outline','none');
-		$('ul#filter .act').removeClass('act');
-		$(this).parent().addClass('act');
-		
-		var filterVal = $(this).text().toLowerCase().replace(' ','-');
-				
-		if(filterVal == 'all') {
-		
-			$('.all').animate({
-				opacity: 0
-			}, 500, function() {
-				$('.all').addClass('hidden');
-			});
-		
-			$('.all').animate({
-				opacity: 1
-			}, 500, function() {
-				$('.all').removeClass('hidden');
-			});
-		} else {
-			$('.portrowed > div').each(function() {
-				if(!$(this).hasClass(filterVal)) {
-				
-					$(this).animate({
-						opacity: 0
-					}, 500, function() {
-						$(this).addClass('hidden');
-					});
-					
-				} else {
-
-					$(this).animate({
-						opacity: 1
-					}, 500, function() {
-						$(this).removeClass('hidden');
-					});
-					
-				}
-			});
-		}
 	
-		return false;
-	});
 	
 	
 	/* AJAX FEEDBACK */ 
