@@ -30,21 +30,21 @@
 <% end %>
 <br/>
 <br/>
-	<div class="commname smallcommf">
+	<div class="commnombre smallcommf">
 <%= f.text_field :name, class: "textarea sendername", size: "28", placeholder: "Nombre*" %>
 	</div>
 
 
-	<div class="commname smallcommf">
+	<div class="commcorreo smallcommf">
     <%= f.text_field :email, class: "textarea senderemail", size: "28", placeholder: "Correo*" %>
 	</div>
 
-	<div class="commname smallcommf">
-    <%= f.text_field :phone, class: "textarea feedback_url", size: "28", placeholder: "telefono*" %>
+	<div class="commtelefono smallcommf">
+    <%= f.text_field :phone, class: "textarea feedback_url", size: "28", placeholder: "Telefono*" %>
   </div>
 
-  <div class="commcomment">
-    <%= f.text_area :message, cols: "60", rows: "10", class: "textarea sendermessage", placeholder:"Mensaje" %>
+  <div style ="with:600px; float:left;"">
+    <%= f.text_area :message, cols: "60", rows: "10", placeholder:"Mensaje*" %>
   </div>
 
 
