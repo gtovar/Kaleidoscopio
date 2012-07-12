@@ -1,5 +1,3 @@
-
-
 <%= form_for@contact,:html => { :id => "comment-form" } do |f| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
@@ -17,17 +15,10 @@
 					
 					<div class="attwarn ajaxresponse"></div>
 
-<% if params[:id] != nil%>
-  <div class="commname smallcommf">
-    <%= f.select :subjects, options_for_select([["Duda",1],["Queja",2],
-		["Sugerencia",3],["Quiero Ofertar un curso",4, {:selected => 'true'}]]),class: "textarea sendername", size: "28" %>
-	</div>
-<% else %>
   <div class="commname smallcommf">
     <%= f.select :subjects, options_for_select([["Duda",1,{:selected => 'true'}],["Queja",2],
 		["Sugerencia",3],["Quiero Ofertar un curso",4]]),class: "textarea sendername", size: "28" %>
 	</div>
-<% end %>
 <br/>
 <br/>
 	<div class="commnombre smallcommf">
@@ -53,6 +44,4 @@
 <p>
 
 <% end %>
-
-
 

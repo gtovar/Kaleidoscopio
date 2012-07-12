@@ -1,0 +1,36 @@
+<%= form_for@contact,:html => { :id => "comment-form" } do |f| %>
+<% if @contact.errors.any? %>
+<div id="error_explanation">
+<h2>
+<%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:
+</h2>
+<ul>
+<% @contact.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
+
+<div class="attwarn">Los campos marcados con * son obligatorios.</div>
+<div class="attwarn ajaxresponse"></div>
+<div class="commname smallcommf">
+<% f.text_field :subjects, value:'4'%>
+</div>
+<div class="commnombre smallcommf">
+<%= f.text_field :name, class: "textarea sendername", size: "28", placeholder: "Nombre*" %>
+</div>
+<div class="commcorreo smallcommf">
+<%= f.text_field :email, class: "textarea senderemail", size: "28", placeholder: "Correo*" %>
+</div>
+<div class="commtelefono smallcommf">
+<%= f.text_field :phone, class: "textarea feedback_url", size: "28", placeholder: "Telefono*" %>
+</div>
+<div style ="with:600px; float:left;"">
+<%= f.text_area :message, cols: "60", rows: "10", placeholder:"Mensaje*" %>
+</div>
+<p>
+<%= f.submit 'Enviar', class: 'black_btn comment_send_btn ajax_send_feedback'%>
+<p>
+<% end %>
+

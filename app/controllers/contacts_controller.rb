@@ -33,6 +33,17 @@ layout "front-end"
     end
   end
 
+  # GET /contacts/quieroclase
+  # GET /contacts/quieroclase.json
+  def quieroclase
+    @contact = Contact.new
+
+    respond_to do |format|
+      format.html # quieroclase.html.erb
+      format.json { render json: @contact }
+    end
+  end
+
   # GET /contacts/1/edit
   def edit
     @contact = Contact.find(params[:id])

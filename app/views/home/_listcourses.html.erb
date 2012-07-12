@@ -16,7 +16,7 @@
 			
 			<%end %>
 			<h1 class="precio">$<%= course.price %><span class="decimal">00</span></h1>
-			<%= image_tag course.photo.thumb.url.to_s, alt: "Clases de fotografia" %>
+		<%= link_to image_tag(course.photo.thumb.url.to_s, :alt => "Kaleydoscopio"), curso_path(course) %>
 			</div>
 			<p><%= truncate(course.description, :length => 120) %></p>
 			<%= link_to "Click me", curso_path(course), class: "plus_btn" %>

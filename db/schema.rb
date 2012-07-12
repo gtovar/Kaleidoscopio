@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120707144040) do
+ActiveRecord::Schema.define(:version => 20120711190341) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20120707144040) do
     t.datetime "updated_at",          :null => false
     t.string   "slug"
     t.string   "status"
+    t.time     "end_time"
   end
 
   add_index "courses", ["slug"], :name => "index_courses_on_slug"

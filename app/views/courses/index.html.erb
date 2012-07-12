@@ -1,31 +1,22 @@
-
-
-<div class="center hero-unit">
-  <h1>Gestion de Cursos</h1>
-</div>
-
 <p ><%= flash[:notice]  %></p>
 <div class="row ">
   <aside class="span10">
-
     <section>
+<table class="table">
+  <thead>
+		<th style="width:450px"><h1> Lista de cursos </h1>	<p>Total de cursos:<%= @total %></p></th>
+		<th> 
+
 <%= link_to "Exportar a excel", courses_path(:format => 'csv'), class: "btn" %>
 <%= link_to "Crear curso", new_course_path, class: "btn btn-primary" %>
-<br/>
-<br/>
-
-      <h1>
-				Lista de cursos
-			</h1>
+<%= link_to "Ordenar", @search_path, class: "btn btn-primary" %> 
+</th>
+  </thead>
+</table>
 
 <%= will_paginate %>
-
-
-<p>Total cursos:<%= @total %></p>
-<%= link_to "Ordenar", @search_path, class: "btn btn-primary" %>
 <br/>
 <table class="table table-bordered">
-
   <thead>
     <th><%= Course.human_attribute_name("name")  %></th>
     <th><%= Course.human_attribute_name("category") %></th>
@@ -35,16 +26,9 @@
     <th></th>
     <th></th>
   </thead>
-
-
-
-
-
-
- <% if @courses.empty?%>
- <h6>Create your first course</h6>
-<% else %>
-
+	<% if @courses.empty?%>
+ 	<h6>Create your first course</h6>
+	<% else %>
 
 <% @courses.each do |course| %>
    <tbody>	
@@ -59,15 +43,13 @@
     	<td><%= link_to 'Eliminar', course, confirm: '¿Estas seguro?', method: :delete %></td>
    </tbody>
 <% end %>
-<%= will_paginate %>
 
+<%= will_paginate %>
 </section>
   </aside>
-</div>
-<br/>
-
-
-  <% if @courses.empty?%>
+		</div>
+		<br/>
+	<% if @courses.empty?%>
   <h6>Create your first course</h6>
   <%end%>
 

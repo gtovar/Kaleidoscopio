@@ -50,6 +50,15 @@
       <%= f.text_field :date_time %>
     </div>
     <div class="field">
+      <%= f.label :end_time %><br />
+      <%= f.text_field :end_time, id:"timepicker.[1]", class: "hasTimepicker" %>
+    </div>
+<script type="text/javascript">
+            $(document).ready(function() {
+                $('#timepicker\\.\\[1\\]').timepicker({});
+            });
+        </script>
+    <div class="field">
       <%= f.label :requisites_student %><br />
       <%= f.text_area :requisites_student, :rows => 10 %>
     </div>

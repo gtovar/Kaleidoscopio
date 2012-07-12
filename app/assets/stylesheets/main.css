@@ -223,7 +223,7 @@ img.alignright {
 .mainmenu {
 	float:right;
 	position: relative;
-    z-index: 200;
+  z-index: 200;
 }
 .mainmenu .menu-item {
 	float:left;
