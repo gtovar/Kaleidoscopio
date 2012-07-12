@@ -1,6 +1,13 @@
 <div class="container contentwrapper contactpage">
 <div class="columns eleven npl">
-	<header><h1 class="headofpage">Contacto</h1></header>
+	<header>
+<% if params[:id] != nil%>
+<h1 class="headofpage">Quiero dar una clase </h1>
+
+<% else %>
+<h1 class="headofpage">Contacto</h1>
+<% end %>
+</header>
 		<div class="clear">
 		</div>
 		<div id="respond" class="type2">

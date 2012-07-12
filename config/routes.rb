@@ -12,7 +12,7 @@ Kaleidoscopio::Application.routes.draw do
 	match '/acerca-de' => 'home#aboutus', :as => 'conocenos'
 	match '/terminos-y-politicas' => 'home#terms', :as => 'terminos'
 	match '/contacto' => 'contacts#new', :as => 'contacto'
-	match '/quiero-dar-una-clase' => 'contacts#quieroclase', :as => 'quieroclase'
+	match '/:id' => 'contacts#new', :as => 'quieroclase'
 
 	match '/contactos' => 'courses#index_contacts', :as => 'contactos'
 	match '/ver-contacto/:id' => 'courses#show_contacts', :as => 'vercontacto'

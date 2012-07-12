@@ -35,14 +35,7 @@ layout "front-end"
 
   # GET /contacts/quieroclase
   # GET /contacts/quieroclase.json
-  def quieroclase
-    @contact = Contact.new
 
-    respond_to do |format|
-      format.html # quieroclase.html.erb
-      format.json { render json: @contact }
-    end
-  end
 
   # GET /contacts/1/edit
   def edit
@@ -53,7 +46,7 @@ layout "front-end"
   # POST /contacts.json
   def create
     @contact = Contact.new(params[:contact])
-
+    
     respond_to do |format|
       if @contact.save
         format.html { redirect_to root_path, notice: 'Tu informacion a sido recibida gracias!!!' }

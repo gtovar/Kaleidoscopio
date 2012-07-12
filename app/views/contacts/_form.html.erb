@@ -15,12 +15,17 @@
 					
 					<div class="attwarn ajaxresponse"></div>
 
-  <div class="commname smallcommf">
-    <%= f.select :subjects, options_for_select([["Duda",1,{:selected => 'true'}],["Queja",2],
-		["Sugerencia",3],["Quiero Ofertar un curso",4]]),class: "textarea sendername", size: "28" %>
-	</div>
+<% if params[:id] != nil%>
+<%= f.hidden_field :subjects, :value => 4 %>
+<% else %>
+<div class="commname smallcommf">
+<%= f.select :subjects, options_for_select([["Duda",1,{:selected => 'true'}],["Queja",2],
+["Sugerencia",3],["Quiero Ofertar un curso",4]]),class: "textarea sendername", size: "28" %>
+</div>
 <br/>
 <br/>
+<% end %>
+
 	<div class="commnombre smallcommf">
 <%= f.text_field :name, class: "textarea sendername", size: "28", placeholder: "Nombre*" %>
 	</div>
