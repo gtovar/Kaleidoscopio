@@ -19,7 +19,7 @@
 /* FlexSlider Necessary Styles
 *********************************/
 .flexslider {margin: 0; padding: 0;}
-.flexslider .slides /*> li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; display: block; } /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides img {max-width: 100%; display: block;}
 .flex-pauseplay span {text-transform: capitalize;}
 
@@ -36,7 +36,7 @@ html[xmlns] .slides {display: block;}
 
 /* FlexSlider Default Theme
 *********************************/
-.flexslider {background: #fff; position: relative; zoom: 1;}
+.flexslider {background: #F6F6F6; position: relative; zoom: 1;}
 .flexslider .slides {zoom: 1;display: block;padding: 10px;height: 380px;}
 .flexslider .slides > li {position: relative;}
 /* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
@@ -55,12 +55,13 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endCol
     height: auto;
     left: 0;
     position: absolute;
-    top: 0px;
+    top: 135px;
 }
 .flex-caption {
     background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);
     color: #222222;
-    font-family: 'Anton',Impact;
+    font-family: adelle ,Impact;
+    font-weight: 800;
     font-size: 29px;
     height: auto;
     line-height: 31px;
@@ -68,6 +69,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endCol
     padding: 20px 15px;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
     width: 350px;
+    font-weight: 
 }
 .subcaption {
     display: block;
@@ -87,7 +89,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endCol
 	width: 33px; 
 	height: 32px; 
 	display: block; 
-	background: url(lar_round.png) no-repeat 0 0px; 
+	background: url(../img/lar_round.png) no-repeat 0 0px; 
 	position: absolute; 
     bottom: 20px; 
     right: 57px;
@@ -99,10 +101,10 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endCol
     bottom: 10px;
 }
 .flex-direction-nav li .prev:hover {
-	background: url(lar_round.png) no-repeat 0 -32px; 
+	background: url(../img/lar_round.png) no-repeat 0 -32px; 
 }
 .flex-direction-nav li .next {
-    background: url("rar_round.png") no-repeat scroll 0 0px transparent;
+    background: url("../img/rar_round.png") no-repeat scroll 0 0px transparent;
     bottom: 20px;
     cursor: pointer;
     display: block;
@@ -117,7 +119,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endCol
     bottom: 10px;
 }
 .flex-direction-nav li .next:hover {
-	background: url(rar_round.png) no-repeat 0 -32px; 
+	background: url(../img/rar_round.png) no-repeat 0 -32px; 
 }
 
 
@@ -132,7 +134,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endCol
 	height: 20px; 
 	margin: -13px 0 0; 
 	display: block; 
-	background: url(rar_round.png) no-repeat 0 -20px; 
+	background: url(../img/rar_round.png) no-repeat 0 -20px; 
 	position: absolute; 
 	top: 50%; 
 	cursor: pointer; 
