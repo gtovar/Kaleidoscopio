@@ -2,10 +2,10 @@ class HomeController < ApplicationController
 layout "front-end"
 
   def index
-    @courses = Course.paginate(page: params[:page])
     @search = Course.search(params[:search])	
     @courses = @search.order('status').all
     @total = @courses.count
+    @courses = @search.paginate(page: params[:page], :per_page => 4)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,14 +16,15 @@ layout "front-end"
 
 
   def listcoursespage
-    @courses = Course.paginate(page: params[:page])
     @search = Course.search(params[:search])	
     @courses = @search.order('status').all
     @total = @courses.count
-
+    @courses = @search.paginate(page: params[:page], :per_page => 4)
+	
     respond_to do |format|
       format.html # listacursos.html.erb
       format.json { render json: @courses }
+      format.js
     end
   end
 

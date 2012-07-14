@@ -18,11 +18,13 @@
 				Lista de cursos
 			</h1>
 
-<%= will_paginate %>
+
 
 
 <p>Total cursos:<%= @total %></p>
 <%= link_to "Ordenar", @search_path, class: "btn btn-primary" %>
+  <%= sort_link @search, :name, "Ordenar"%>
+
 <br/>
 <table class="table table-bordered">
 
@@ -59,17 +61,13 @@
     	<td><%= link_to 'Eliminar', course, confirm: '¿Estas seguro?', method: :delete %></td>
    </tbody>
 <% end %>
-<%= will_paginate %>
+<%= will_paginate @courses%>
 
 </section>
   </aside>
 </div>
 <br/>
 
-
-  <% if @courses.empty?%>
-  <h6>Create your first course</h6>
-  <%end%>
 
 <%end%>
 

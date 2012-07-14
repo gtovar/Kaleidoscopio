@@ -7,13 +7,14 @@ class CoursesController < ApplicationController
     @search = Course.search(params[:search])	
     @courses = @search.all
     @total = @courses.count
-    @courses = Course.paginate(page: params[:page])
+    @courses = @search.paginate(page: params[:page], :per_page => 4)
 
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }
-      format.csv {export(@courses)}	
+      format.csv {export(@courses)}
+      format.js	
     end
   end
 	
