@@ -1,11 +1,14 @@
+/* nuevo */
 body {
-	font-family: 'Signika';
-	font-size: 15px;
+	font-family: anivers;
+	font-size: 16px;
 	font-weight:300;
 	color: #3c3c3c;
 	line-height:22px;
 	overflow-x: hidden;
 }
+
+/* end nuevo */
 a {
 	color: #464646;
 	text-decoration: none;
@@ -25,7 +28,7 @@ hr {
 }
 /* HEADERS */
 h1, h2, h3, h4, h5 {
-	font-family: Signika, "liquor-store";
+	font-family: anivers, "liquor-store";
     font-weight: 400;
     line-height: 21px;
     margin-top: 5px;
@@ -234,14 +237,17 @@ img.alignright {
 .mainmenu ul li:last-child {
 	/*margin-right:33px;*/
 }
+
+/* nuevo */
 .mainmenu a {
-	font-family: purista-web;
+	font-family: anivers, purista-web;
 	color:#222222;
 	font-size:18px;
 	text-decoration:none;
 	color:#525252;
 	font-weight: 700;
 }
+/* end nuevo */
 .mainmenu a:hover {
 	color:#222222;
 }
@@ -296,14 +302,18 @@ img.alignright {
     width: 1010px;
     z-index: 2;
 }
+
+/* nuevo */
 .mainmenu li span {
-	font-size:13px;
+	font-size: 13px;
 	color:#959595;
-	font-family:'Signika';
+	font-family:anivers, Signika;
 	font-weight:400;
 	display:block;
 	line-height: 21px;
 }
+/* end nuevo */
+
 /* Styles for the entire LavaLamp menu */
 .backLava {
     background: none repeat scroll 0 0 #FF5200;
@@ -591,14 +601,19 @@ img.alignright {
 .contacts_address {
 	line-height:19px;
 }
+
+/* nuevo  */
 .publicphone {
-    background: url("phone_icon.png") no-repeat scroll 0 0 transparent;
-    padding-left: 16px;
+    background: url("skype.png") no-repeat scroll 0 0 transparent;
+    padding-left: 28px;
 }
+
 .publicmail {
     background: url("mail_icon.png") no-repeat scroll 0 6px transparent;
     padding-left: 20px;
 }
+/* end nuevo  */
+
 .publicinfocont {
 	padding-right:20px;
 }
@@ -619,23 +634,36 @@ img.alignright {
 	height:30px;
 }
 
+
+/* nuevo */
 .headofpage {
 	font-size:30px;
-	font-family:impact;
+	font-family:adelle, impact;
+	font-weight: 800;
 	color:#222222;
 	padding-left: 20px;
 	margin-bottom:10px;
-
 }
+
+.headofpage_sub {
+	font-size:23px;
+	font-family:anivers, impact;
+	color:#555;
+	padding-left: 10px;
+	margin-bottom:10px;}
 
 .headofpage_home {
 	font-size:30px;
-	font-family:impact;
+	font-family:adelle, impact;
+	font-weight: 800;
 	color:#222222;
 	padding-left: 20px;
 	margin-bottom:20px;
 	margin-top: 20px
 }
+
+/* end nuevo */
+
 .portpage .headofpage {
 	padding-left: 20px;
 }
@@ -1210,6 +1238,8 @@ li p {
 	height:21px;
 	margin:0px 1px;
 }
+
+/*nuevo */
 .twitter_link {
     background: url("icons/socials/ico2.png") no-repeat scroll 0 0 transparent;
 }
@@ -1261,13 +1291,16 @@ li p {
 .thisconta .mare {
 	padding-bottom:15px;
 }
+
+/* nuevo  */
+
 .compphone {
-    background: url("phb.png") no-repeat scroll 0 0 transparent;
+    background: url("skype.png") no-repeat scroll 0 0 transparent;
     line-height: 24px;
     padding-left: 28px;
 }
 .compphone:hover {
-    background: url("phb_active.png") no-repeat scroll 0 0px transparent;
+    background: url("skype_active.png") no-repeat scroll 0 0px transparent;
 }
 
 .mail_icon2 {
@@ -1278,6 +1311,9 @@ li p {
 .mail_icon2:hover {
     background: url("mail_icon2_active.png") no-repeat scroll 0 0px transparent;
 }
+
+/* end nuevo  */
+
 .skype_c {
     background: url("skype.png") no-repeat scroll 0 0 transparent;
     line-height: 24px;
@@ -1324,17 +1360,22 @@ li p {
 	float:left;
 	line-height: 21px;
 }
+
+/* nuevo */
 .cpt_sort ul li a {
 	line-height: 21px;
 	margin:0px 5px;
-    background-color: #f6f6f6;
-    box-shadow: 0 1px 1px #D5D5D5;
+	background-color: #f6f6f6;
+	box-shadow: 0 1px 1px #D5D5D5;
 	padding:3px 15px;
 	color:#3c3c3c;
 	font-size:14px;
-	font-family: 'Anton', impact;
+	font-family: adelle, impact;
+	font-weight: 700;
 	text-decoration:none;
 }
+/* end nuevo */
+
 .cpt_sort ul li a:hover {
 	text-decoration:none;
 	color:#8dc741;
@@ -2036,7 +2077,7 @@ color: #646464;}
 	padding-bottom: 5px;
 	border-bottom: 1px solid #c5c5c6;
 	margin-bottom: 0px; color: #333;
-	font-weight: bold;
+	font-weight: 700;
 	font-size: 17px;
 }
 
@@ -2071,8 +2112,10 @@ color: #7a7a7a;  }
 
 
 
-.description_bar h1, .description_bar h2 {	font-family: impact;
-    font-size: 30px;
+.description_bar h1, .description_bar h2 {
+	font-family: adelle;
+	font-weight: 800;
+	font-size: 30px;
 	color:#333;
 	margin-bottom: 22px;
 	line-height:1.3;
@@ -2111,9 +2154,11 @@ body {background-repeat: repeat;}
 
 .clase_titulo {margin-right: 30px;}
 
+/* nuevo */
 .clase_titulo h2 {
 	color: #333;
-	font-family: anton ;
+	font-family: adelle ;
+	font-weight: 800;
 	background-color: #fff;
 	background-color: rgba(255, 255, 255, 0.8);
 	font-size: 35px;
@@ -2122,7 +2167,7 @@ body {background-repeat: repeat;}
 	font-size: 30px;
 	margin-left: 15px;
 }
-
+/* end nuevo */
 .clase_titulo h1 {font-size: 60px; padding: 20px;}
 
 .clase_titulo .precio .decimal {top: 9px; }
@@ -2131,7 +2176,8 @@ body {background-repeat: repeat;}
 
 .boton_inscripcion {
 	padding: 10px 30px;
-	font-family: impact;
+	font-family: adelle;
+	font-weight: 800;
 	background: rgb(194,244,129); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(194,244,129,1) 1%, rgba(140,199,64,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(194,244,129,1)), color-stop(100%,rgba(140,199,64,1))); /* Chrome,Safari4+ */
@@ -2155,14 +2201,14 @@ border-bottom-left-radius: 15px;
 border-top-right-radius: 15px;
 border-top-left-radius: 15px;
 
-margin: 0 auto ;
+	margin: 0 auto ;
 
-border-top: 1px solid #ceff91;
-border-bottom: 1px solid #81b145;
+	border-top: 1px solid #ceff91;
+	border-bottom: 1px solid #81b145;
 
 
-font-size: 18px;
-text-transform: uppercase;
+	font-size: 16px;
+	text-transform: uppercase;
 	text-align: center;
 	padding: 5px 0px 5px 0px;
 	text-shadow: 0px -1px 0px #77a839;
@@ -2207,7 +2253,7 @@ body {background-image: url('kaleydoscopio_background.png'); background-repeat: 
 .full-container-width {width: 1010px !important ;}
 
 .display_more {
-	background: url("../img/totop.png") no-repeat scroll 0 0 transparent;
+	background: url("totop.png") no-repeat scroll 0 0 transparent;
 	cursor: pointer;
 	height: 31px;
 	position: absolute;
@@ -2218,13 +2264,13 @@ body {background-image: url('kaleydoscopio_background.png'); background-repeat: 
 
 
 .display_more:hover {
-	background: url("../img/totop.png") no-repeat scroll 0 -31px transparent;
+	background: url("totop.png") no-repeat scroll 0 -31px transparent;
 	top: -14px;
 	height:30px;
 }
 
 .gototop_description {
-	background: url("../img/totop_up.png") no-repeat scroll 0 0 transparent;
+	background: url("totop_up.png") no-repeat scroll 0 0 transparent;
 	cursor: pointer;
 	height: 31px;
 	position: absolute;
@@ -2298,23 +2344,25 @@ ul.share_container li {
 .cpt_filter > li {
 	position: relative;
 	z-index: 100;
-	text-transform: uppercase;
-
 }
 
 
 .cpt_filter li:hover > ul {display: block;}
 
+
+/* nuevo */
 .cpt_filter .submenu_categorias li a {
 	background: #2D2D2D;
 	color: #f0f0f0;
-	font-family: purista-web;
+	font-family: adelle, purista-web;
 	display: block;
 	margin: 0px;
 	padding: 5px 10px;
 	border-bottom: 1px solid #3c3c3c;
 	text-transform: none;
 }
+
+/* end nuevo */
 
 
 .cpt_filter .submenu_categorias li a:hover {
@@ -2343,16 +2391,18 @@ color: #f0f0f0;
 
 .home_marketing {
 	overflow: hidden;
-	padding: 15px 20px 30px 20px ;
+	padding: 0px 20px 20px 20px ;
 
 }
 
+/* nuevo */
 .home_marketing h1, home_marketing_content h1 {
 	font-size: 40px;
-	font-family: purista-web;
-	font-weight: bold;
+	font-family: anivers, purista-web;
+	font-weight: 700;
 	margin-bottom: 20px;
 }
+/* end nuevo */
 
 .home_marketing h3 {
 	font-size: 25px;
@@ -2423,11 +2473,13 @@ color: #f0f0f0;
 	font-family: purista-web;
 }
 
+/* nuevo */
 #header_quote p, #header_quote span {
-	font-family: purista-web;
+	font-family: anivers, purista-web;
 	font-style: italic;
 	font-size: 17px;
 }
+/* end nuevo */
 
 #header_quote span {float: right;}
 
@@ -2449,12 +2501,16 @@ color: #7A7A7A;
 /* About
 ================================================== */
 
+
+/* nuevo */
 .about {
 	background-color: #f6f6f6;
 	padding: 20px;
 	box-shadow: 1px 1px 1px #c8c6c6;
 	margin-bottom: 30px;
+	overflow: hidden;
 }
+/* end nuevo */
 
 .about h1 {
 	margin-bottom: 20px;
@@ -2511,3 +2567,100 @@ color: #7A7A7A;
 	font-size: 15px;
 	margin-bottom: 100px;
 }
+
+
+/* Nuevo
+================================================== */
+
+/* html home */
+.cursos_disponibles {
+	width: 200px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.cursos_disponibles a {
+	color: #696969;
+} 
+
+.cursos_disponibles a:hover  {
+	color: #8DC741;
+}
+
+.description_box span {
+	display: block;
+	font-size: 18px;
+	padding: 0;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+
+
+
+.foto_porque {
+	width: 272px;
+	float: left;
+	margin: 0 15px 0 0;}
+	
+.foto_quehacemos {
+	width: 272px;
+	float: right;
+	margin: 0 15px 0 0;}
+
+
+
+.porque_kaleydoscopio h1 {display: inline-block; }
+
+
+.about2 {
+	background-color: #f6f6f6;
+	padding: 20px;
+	box-shadow: 1px 1px 1px #c8c6c6;
+	margin-bottom: 30px;
+	overflow: hidden;
+	width: 421px;
+	float: left;
+	margin-right: 20px;
+}
+
+.about3 {
+	background-color: #f6f6f6;
+	padding: 20px;
+	box-shadow: 1px 1px 1px #c8c6c6;
+	margin-bottom: 30px;
+	overflow: hidden;
+	width: 421px;
+	float: left;
+}
+
+.about2 h1, .about3 h1 {
+	margin-bottom: 20px;
+	padding-left: 10px;
+	line-height: 1;
+}
+
+.about2 p, .about3 p {
+	margin-bottom: 10px;
+	padding-left: 10px;
+}
+
+.fundadores {
+	width: 203px;
+	float: left;
+	margin-right: 15px;
+	text-align: center;
+}
+
+.fundadores2 {
+	width: 203px;
+	float: left;
+	text-align: center;
+}
+
+
+.team_social {
+	border-top: 1px solid #ddd;
+	text-align: center;
+	padding: 13px;
+}
+

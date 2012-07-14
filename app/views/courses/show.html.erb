@@ -2,105 +2,86 @@
 
 <p>
 
-  <b>Name:</b>
+  <b><%= Course.human_attribute_name("name")  %></b>
 
   <%= @course.name %>
 </p>
 
 <p>
-  <b>Category:</b>
+  <b><%= Course.human_attribute_name("category")  %></b>
   <%= @course.category %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%= Course.human_attribute_name("description")  %>:</b>
   <%= @course.description %>
 </p>
 
 <p>
-  <b>Photo:</b>
+  <b><%= Course.human_attribute_name("photo")  %>:</b>
   <%= image_tag @course.photo_url %>
 </p>
 
 <p>
 
-  <b>Teacher name:</b>
+  <b><%= Course.human_attribute_name("teacher_name")  %>:</b>
 
   <%= @course.teacher_name %>
 </p>
 
 <p>
 
-  <b>Biography teacher:</b>
+  <b><%= Course.human_attribute_name("biography_teacher")  %>:</b>
 
   <%= @course.biography_teacher %>
 </p>
 
 <p>
-  <b>Photo teacher:</b>
+  <b><%= Course.human_attribute_name("photo_teacher")  %>:</b>
   <%= image_tag @course.photo_teacher_url %>
 </p>
 
 <p>
-  <b>Place:</b>
+  <b><%= Course.human_attribute_name("place")  %>:</b>
   <%= @course.place %>
 </p>
 
 <p>
-  <b>Google map:</b>
+  <b><%= Course.human_attribute_name("google_map")  %>:</b>
   <%= @course.google_map.html_safe %>
 </p>
 
 <p>
-  <b>Date time:</b>
+  <b><%= Course.human_attribute_name("date_time")  %>:</b>
 
   <%= @course.date_time %>
 </p>
 
 <p>
-  <b>Requisites student:</b>
+  <b><%= Course.human_attribute_name("requisites_student")  %></b>
   <%= @course.requisites_student %>
 </p>
 
 <p>
-  <b>Price:</b>
+  <b><%= Course.human_attribute_name("price")  %></b>
   <%= @course.price %>
 </p>
 
 <p>
-  <b>Pay link:</b>
+  <b><%= Course.human_attribute_name("pay_link")  %></b>
   <%= @course.status %>
 </p>
 
 <p>
-  <b>Limit class tickets:</b>
+  <b><%= Course.human_attribute_name("limit_class_tickets")  %></b>
   <%= @course.limit_class_tickets %>
 </p>
 
 <p>
-  <b>Facebook link:</b>
-  <%= @course.facebook_link %>
-</p>
-
-<p>
-  <b>Owned:</b>
+  <b><%= Course.human_attribute_name("owned")  %></b>
   <%= @course.owned %>
 </p>
 
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
-
-
-
-
- ----------------------
-
-
-
-
-
-
------------------
-
-
+<%= link_to 'Editar', edit_course_path(@course) %> |
+<%= link_to 'Regresar', courses_path %>

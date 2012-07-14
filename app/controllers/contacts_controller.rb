@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  before_filter :authenticate_admin!, :except => ["new","create","giveclass","create_giveclass"]
 layout "front-end"
   # GET /contacts
   # GET /contacts.json
@@ -33,6 +34,10 @@ layout "front-end"
     end
   end
 
+  # GET /contacts/quieroclase
+  # GET /contacts/quieroclase.json
+
+
   # GET /contacts/1/edit
   def edit
     @contact = Contact.find(params[:id])
@@ -42,7 +47,7 @@ layout "front-end"
   # POST /contacts.json
   def create
     @contact = Contact.new(params[:contact])
-
+    
     respond_to do |format|
       if @contact.save
         format.html { redirect_to root_path, notice: 'Tu informacion a sido recibida gracias!!!' }
@@ -81,4 +86,29 @@ layout "front-end"
       format.json { head :no_content }
     end
   end
+
+  def giveclass
+    @contact = Contact.new
+
+    respond_to do |format|
+      format.html 
+    end
+  end
+
+	def create_giveclass
+    @contact = Contact.new(params[:contact])
+    
+    respond_to do |format|
+      if @contact.save
+        format.html { redirect_to root_path, notice: 'Tu informacion a sido recibida gracias!!!' }
+        format.json { render json: @contact, status: :created, location: @contact }
+      else
+        format.html { render action: "giveclass" }
+        format.json { render json: @contact.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
+
 end

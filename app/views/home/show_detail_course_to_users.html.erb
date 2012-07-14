@@ -23,7 +23,7 @@
     </div>
     <div class="description_bar">
     	<div class="description_box descripcion_clase white_container">
-	<p><%= @course.description %></p>
+	<p><%= raw Redcarpet.new(@course.description).to_html %></p>
 	</div>	
 	<div class="description_box white_container">
 		<div style="margin-bottom:15px">
@@ -33,19 +33,34 @@
 		<img class="foto_profesor" src="<%= @course.photo_teacher.url.to_s%>">
 		</div>
 		<h2><%= @course.teacher_name %></h2>
+<span>Instructor</span>
 		<p><%= @course.biography_teacher %></p>
-<div class="fb-comments" data-href= "<%= curso_url(@course) %>" data-num-posts="2" data-width="655"></div>
+
 	</div>
+
+<div class="description_box white_container">
+<h2>Ubicación</h2>
+<span><%= @course.place%></span>										    
+<%= @course.google_map.gsub('width="425"','width="655"').html_safe %>
+												
+									</div>
+<div class="description_box white_container">
+<h2>Comentarios</h2>
+<div class="fb-comments" data-href= "<%= curso_url(@course) %>" data-num-posts="2" data-width="655"></div>
+</div>
+
+
     </div>
+
     <div class="sidebar">
 	<div class="sidebar_box white_container">
 		<h3>Fecha</h3>
-<p><%= l @course.date_time, :format => :long %></p>
+<p><%= l @course.date_time, :format => :long %> - <%= @course.end_time.strftime("%I:%M %P") %></p>
 	</div>    
 	<div class="sidebar_box white_container ">
 		<div class="cupo">
-			<span><%= @course.limit_class_tickets %></span>
-			<h3>Lugares Disponibles</h3>
+			<h3><%= @course.limit_class_tickets %>
+			Lugares Disponibles</h3>
 		</div>
 
 		<div class="cantidad">
@@ -73,12 +88,11 @@
 		
 		
 	</div>
-	<div class="sidebar_box white_container">
-		<h3 class="ubicacion">Ubicación</h3>
-		<%= @course.google_map.html_safe%>
-		<br/>
-		
-	</div>
+
+
+
+
+
 	<div class="sidebar_box_share white_container clearfix">
 		<h3>Comparte la clase!</h3>
 		<ul class="share_container clearfix">

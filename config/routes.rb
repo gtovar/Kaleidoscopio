@@ -1,11 +1,8 @@
 Kaleidoscopio::Application.routes.draw do  
-
   devise_for :admins
-
   resources :contacts 
-  
   resources :courses do 
-    resources :orders
+  resources :orders
   end	
 	root :to => "home#index"
 	match 'curso/:id' => 'home#show_detail_course_to_users', :as => 'curso' do
@@ -15,7 +12,9 @@ Kaleidoscopio::Application.routes.draw do
 	match '/acerca-de' => 'home#aboutus', :as => 'conocenos'
 	match '/terminos-y-politicas' => 'home#terms', :as => 'terminos'
 	match '/contacto' => 'contacts#new', :as => 'contacto'
-	match '/contacto/:id' => 'contacts#new', :as => 'contactocurso'
+	match '/quiero-dar-una-clase' => 'contacts#giveclass', :as => 'quieroclase', :via => :get
+	match '/enviar-mensaje' => 'contacts#create_giveclass', :as => 'crear_quieroclase', :via => :post
+	match '/privacidad' => 'home#privacidad', :as => 'privacidad'
 
 	match '/contactos' => 'courses#index_contacts', :as => 'contactos'
 	match '/ver-contacto/:id' => 'courses#show_contacts', :as => 'vercontacto'

@@ -14,15 +14,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <script type="text/javascript" src="http://use.typekit.com/qvj6cvf.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<title>kaleydoscopio</title>
+<title><%= full_title(yield(:title)) %></title>
+<link rel="shortcut icon" type="image/x-icon" href="/assets/kaleydoscopio_favicon_transparent.ico">
 
 <%= stylesheet_link_tag "base", :media => "all" %>
-
-  <%= stylesheet_link_tag "flexslider", :media => "all" %>
-
-  <%= stylesheet_link_tag "layout", :media => "all" %>
-
-
+ <%= stylesheet_link_tag "flexslider", :media => "all" %>
+ <%= stylesheet_link_tag "layout", :media => "all" %>
+  <%= stylesheet_link_tag "superfish", :media => "all" %>
   <%= stylesheet_link_tag "reset", :media => "all" %>
   <%= stylesheet_link_tag "prettyPhoto", :media => "all" %>
   <%= stylesheet_link_tag "skeleton", :media => "all" %>
