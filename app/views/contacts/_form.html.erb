@@ -1,11 +1,34 @@
-<%= form_for@contact,:html => { :id => "comment-form" } do |f| %>
+<div class="container contentwrapper contactpage">
+<div class="columns eleven npl">
+	<header>
+
+<h1 class="headofpage"><%= title %></h1>
+
+</header>
+		<div class="clear">
+		</div>
+		<div id="respond" class="type2">
+			<div class="cancel-comment-reply">
+				<small><a style="display:none;" href="/?p=1#respond" id="cancel-comment-reply-link" rel="nofollow">Click here to cancel reply.</a></small>
+			</div>
+
+
+<%= form_for@contact,:url => route,:html => { :id => "comment-form" } do |f| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+			<div class="alert alert-error">
+      
+<% errores = @contact.errors.count %>
 
+<% if errores > 1 %>
+<h2><%= errores %>&nbsp;errores encontrados:</h2>
+<%else%>
+<h2><%= errores%>error encontrado:</h2>
+<%end%>
+			</div>
       <ul>
       <% @contact.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li>* <%= msg %></li>
       <% end %>
       </ul>
     </div>
@@ -15,7 +38,7 @@
 					
 					<div class="attwarn ajaxresponse"></div>
 
-<% if params[:id] != nil%>
+<% if giveclass %>
 <%= f.hidden_field :subjects, :value => 4 %>
 <% else %>
 <div class="commname smallcommf">
@@ -50,3 +73,21 @@
 
 <% end %>
 
+
+</div>
+</div>
+<div class="columns four alpha offset-by-one omega presidebar" id="contact_sidebar">
+	<aside id="sidebar">		
+		<div class="sidepanel widget_twitter">
+			<div class="compname">kaleydocopio</div>
+					<div class="compaddr">Ave. Losoles 200 Col. Residencial San Agustín. SPGG, NL</div>
+				</div>
+				<div class="compphone mtyp1">+1 800 603 6035</div>				<div class="mail_icon2 mtyp1">
+					<a href="mailto:mail@companyname.com">clases@kaleydoscopio.com</a>
+				</div>				
+				</div>
+			</aside><!-- #sidebar -->
+		
+		</div>
+		<div class="clear"></div>
+</div>

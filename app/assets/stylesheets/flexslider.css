@@ -55,7 +55,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endCol
     height: auto;
     left: 0;
     position: absolute;
-    top: 135px;
+    top: 0px;
 }
 .flex-caption {
     background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);

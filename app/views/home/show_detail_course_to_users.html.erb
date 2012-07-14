@@ -23,7 +23,7 @@
     </div>
     <div class="description_bar">
     	<div class="description_box descripcion_clase white_container">
-	<p><%= @course.description %></p>
+	<p><%= raw Redcarpet.new(@course.description).to_html %></p>
 	</div>	
 	<div class="description_box white_container">
 		<div class="professor-thumb">

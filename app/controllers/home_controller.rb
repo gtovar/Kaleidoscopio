@@ -44,6 +44,9 @@ end
 def terms
 end
 
+def privacidad
+end
+
 def contact
 end
 
