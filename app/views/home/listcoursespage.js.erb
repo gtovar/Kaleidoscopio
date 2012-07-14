@@ -1,0 +1,7 @@
+$('#courses').append('<%= escape_javascript (render :partial => "lc", :collection => @courses)%>');
+ $('.pagination').replaceWith('<%= escape_javascript (will_paginate @courses)%>');
+<% if @courses.next_page %>
+<% else %>
+ $('.pagination').remove();
+<% end %>
+<% sleep 1%>

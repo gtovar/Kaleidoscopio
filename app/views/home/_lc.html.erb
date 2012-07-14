@@ -1,0 +1,27 @@
+
+<div id="post-263" class="post block_shadow columns eight port2perline all ">
+	<div class="thispost porttype preloader_container">
+		<div class="post-title-cont">
+			<h2 class="post-title">
+				<%= link_to lc.name, curso_path(lc) %>
+			</h2>	
+			<div class="post-meta portype">
+				<%= l lc.date_time, :format => :short %>
+			</div>
+		</div>
+		<div class="post-content">
+			<div class="class-thumbnail">
+			<% if lc.owned == true%>		
+				<span class="type_image" title="Curso Kaleydoscopio"></span>
+			
+			<%end %>
+			<h1 class="precio">$<%= lc.price %><span class="decimal">00</span></h1>
+			<%= image_tag lc.photo.thumb.url.to_s, alt: "Clases de fotografia" %>
+			</div>
+			<p><%= truncate(lc.description, :length => 120) %></p>
+			<%= link_to "Click me", curso_path(lc), class: "plus_btn" %>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
