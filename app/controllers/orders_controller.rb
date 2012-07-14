@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
 
   def get_course
     @course = Course.find(params[:course_id])
+
   end	
 
   

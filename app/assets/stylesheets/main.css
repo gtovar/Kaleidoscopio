@@ -2454,7 +2454,7 @@ color: #f0f0f0;
 ================================================== */
 
 .privacy ol li {
-	list-style: decimal;}
+	list-style: decimal outside none;}
 
 .terms ul li {
 	list-style: disc;

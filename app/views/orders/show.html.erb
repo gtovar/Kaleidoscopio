@@ -19,9 +19,9 @@ $("form").submit();
 <input type="hidden" name="item_name_1" value="<%= @course.name %>" />
 <input type="hidden" name="item_quantity_1" value="<%= @order.quantity %>" />
 <input type="hidden" name="item_ammount_1" value="<%= @course.price %>00" />
-<input type="hidden" name="ok_url" value="http://kaleydoscopio.heroku.com/succes" />
-<input type="hidden" name="error_url" value="http://kaleydoscopio.heroku.com/error" />
-<input type="hidden" name="pending_url" value="http://kaleydoscopio.heroku.com/succes" />
+<input type="hidden" name="ok_url" value="<%= course_success_url(@course.id) %>" />
+<input type="hidden" name="error_url" value="<%= course_error_url %>" />
+<input type="hidden" name="pending_url" value="<%= course_success_url(@course.id) %>" />
 <input type="hidden" name="transaction_id" value="<%=@order.token%>" />
 <input type="hidden" name="change_quantity" value="0" />
 
