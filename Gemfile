@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-
+gem 'redcarpet'
 gem 'rails', '3.2.3'
 gem 'bootstrap-sass', '2.0.0'
 gem 'will_paginate', '3.0.3'
