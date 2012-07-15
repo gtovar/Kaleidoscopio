@@ -9,17 +9,11 @@
 
                 <%= link_to "Exportar a excel", courses_path(:format => 'csv'), class: "btn" %>
                 <%= link_to "Crear curso", new_course_path, class: "btn btn-primary" %>
-                <%= link_to "Ordenar", @search_path, class: "btn btn-primary" %> 
+                <%= link_to "Ordenar", @search_path, class: "btn btn-primary" %>
+		<%= sort_link @search, :name, "Ordenar"%> 
                     </th>
               </thead>
             </table>
-
-
-
-
-            <p>Total cursos:<%= @total %></p>
-            <%= link_to "Ordenar", @search_path, class: "btn btn-primary" %>
-            <%= sort_link @search, :name, "Ordenar"%>
 
 
             <br/>
@@ -53,7 +47,7 @@
                </tbody>
             <% end %>
 
-            <%= will_paginate @courses%>
+           
             
             <%end%>
             </table>

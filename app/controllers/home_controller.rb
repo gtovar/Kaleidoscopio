@@ -5,7 +5,7 @@ layout "front-end"
     @search = Course.search(params[:search])	
     @courses = @search.order('status').all
     @total = @courses.count
-    @courses = @search.paginate(page: params[:page], :per_page => 4)
+    @courses = @search.paginate(page: 1, :per_page => 8)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,18 +13,27 @@ layout "front-end"
     end
   end
 
-
+	def get_next_results
+    @search = Course.search(session[:search]).order('status')
+		@total = @search.count
+		@no_more_results = @total <= Course::RESULTS_PER_PAGE
+    @courses = @search.paginate(page: params[:page], :per_page => Course::RESULTS_PER_PAGE )
+    respond_to do |format|
+			format.js		
+		end
+  end	
 
   def listcoursespage
     @search = Course.search(params[:search])	
     @courses = @search.order('status').all
     @total = @courses.count
-    @courses = @search.paginate(page: params[:page], :per_page => 4)
+    @courses = @search.paginate(page: 1, :per_page => Course::RESULTS_PER_PAGE )
+    session[:search] = params[:search]
+
 	
     respond_to do |format|
       format.html # listacursos.html.erb
       format.json { render json: @courses }
-      format.js
     end
   end
 
@@ -37,6 +46,12 @@ layout "front-end"
       format.json { render json: @course }
     end
    	
+  end
+
+
+def paginate_casinos
+    @no_more_results = params[:page] ? (params[:page].to_i * Kaleydoscopio::Application::RESULTS_PER_SCROLLING >= @total_results) :
+                                       (@total_results <= Kaleydoscopio::Application::RESULTS_PER_SCROLLING)
   end
 
 def aboutus

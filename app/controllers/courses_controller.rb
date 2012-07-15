@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
     @search = Course.search(params[:search])	
     @courses = @search.all
     @total = @courses.count
-    @courses = @search.paginate(page: params[:page], :per_page => 4)
+    
 
 
     respond_to do |format|
