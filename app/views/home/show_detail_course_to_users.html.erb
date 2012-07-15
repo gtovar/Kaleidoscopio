@@ -21,29 +21,36 @@
 		<img class="size-full wp-image-123 foto_descripcion" width="920" height="220" alt="" 			src="<%=@course.photo.large.url.to_s%>" title="about">
 	</div>
     </div>
+
     <div class="description_bar">
     	<div class="description_box descripcion_clase white_container">
-	<p><%= raw Redcarpet.new(@course.description).to_html %></p>
-	</div>	
-	<div class="description_box white_container">
-		<div style="margin-bottom:15px">
-		<h3 style="font-family:impact;font-size:30px;">El Maestro</h3>
-		</div>
-		<div class="professor-thumb">
-		<img class="foto_profesor" src="<%= @course.photo_teacher.url.to_s%>">
-		</div>
-		<h2><%= @course.teacher_name %></h2>
-<span>Instructor</span>
-		<p><%= @course.biography_teacher %></p>
 
-	</div>
+				<p><%= markdown (@course.description) %></p>
+			</div>	
+			
+<% unless @course.requisites_student.blank? %>
+
+			<div class="description_box white_container">
+<h2>Requisitos</h2>
+				<p><%= markdown (@course.requisites_student) %></p>
+			</div>
+<% end %>
+			<div class="description_box white_container">
+				<div class="professor-thumb">
+					<img class="foto_profesor" src="<%= @course.photo_teacher.url.to_s%>">
+				</div>
+				<h2><%= @course.teacher_name %></h2>
+				<span>Instructor</span>
+				<p><%= @course.biography_teacher %></p>
+			</div>
+
 
 <div class="description_box white_container">
 <h2>Ubicación</h2>
 <span><%= @course.place%></span>										    
 <%= @course.google_map.gsub('width="425"','width="655"').html_safe %>
-												
-									</div>
+</div>
+
 <div class="description_box white_container">
 <h2>Comentarios</h2>
 <div class="fb-comments" data-href= "<%= curso_url(@course) %>" data-num-posts="2" data-width="655"></div>

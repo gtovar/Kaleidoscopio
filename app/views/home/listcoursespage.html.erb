@@ -5,6 +5,7 @@
 <div class="sixteen columns alpha omega portpage">
 <header class="home">
 <h3 class="headofpage_home">Clases Disponibles</h3>
+
 </header>
 <% if flash[:notice] != nil%>
   <div class="about">
@@ -71,6 +72,8 @@
   <% f.submit %>
 <% end %>		
 
+
+
 <!-- FILTRAR LAS CATEGORIAS (COCINA,ARTE,ETC..) -->
 <% form_for @search, :url => listacursos_path, :html => {:method => :get} do |f| %>
   <% f.checks :category_in, [['Culinarias', 'culinarias'], ['Artes', 'arte'], ['Empresariales', 'empresariales'], ['Tecnologia', 'tecnologia'], ['Estilo de vida', 'estilo_de_vida']], :class => 'checkboxy'  do |check| %>
@@ -87,6 +90,7 @@
 	</ul>
 	<div class='clear'></div>
 </div>
+
 <div class='clear'></div>
 
 <div class="clear"></div>

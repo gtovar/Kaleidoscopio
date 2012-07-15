@@ -1,7 +1,14 @@
 source 'https://rubygems.org'
 
 
+
+
 gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
+
+
+
 gem 'rails', '3.2.3'
 gem 'bootstrap-sass', '2.0.0'
 gem 'will_paginate'

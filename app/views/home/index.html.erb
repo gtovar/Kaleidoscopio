@@ -17,36 +17,35 @@
  <div class="sixteen columns alpha omega block_shadow flexslider">
   <ul class="slides">
          <li style="width: 100%; margin-right: -100%; display: none; float: left;">
-          <%=image_tag "universitarios.jpg"%>
+          <%=image_tag "kaleydoscopio_slider_home1.jpg"%>
           <div class="flccont" style="height: 380px;">
            <div class="flcconttc">
             <div class="flex-caption fadeIn">
-             <span class="fctitle">For Websites and Mobile Applications </span>
-             <span class="subcaption">elementum vel, cursus eleifend, elit aenean auctor.
-              <a href="#">Read more...</a>
+             <span class="fctitle">Aprende algo diferente cada semana</span>
+             <span class="subcaption">Rompe la rutina, alimenta tu curiosidad con clases interesantes.
              </span>
             </div>
            </div>
           </div>
 </li>
 	<li style="width: 100%; float: left; margin-right: -100%; display: list-item;">
-	 <%=image_tag "slide2.jpg"%>
+	 <%=image_tag "kaleydoscopio_slider_home2.jpg"%>
 	 <div class="flccont">
 	  <div class="flcconttc">
 	   <div class="flex-caption fadeIn">
-	    <span class="fctitle">Aprendizaje Colaborativo</span>
-	    <span class="subcaption">Ut tellus dolor, cursus eleifend, elit aenean auctor. </span>
+	    <span class="fctitle">Comparte lo que sabes</span>
+	    <span class="subcaption">Todos tenemos un talento que podamos compartir, date a conocer. </span>
 	   </div>
 	  </div>
 	 </div>
 	</li>
 	<li style="width: 100%; float: left; margin-right: -100%; display: none;">
-         <%=image_tag "slide1.png"%>
+         <%=image_tag "kaleydoscopio_slider_home3.jpg"%>
           <div class="flccont" style="height: 380px;">
            <div class="flcconttc">
             <div class="flex-caption fadeIn">
-             <span class="fctitle">HTML5 + CSS3 Ready</span>
-             <span class="subcaption">Donec metus nisi assa. Nullam vehicula congue viverra.</span>
+             <span class="fctitle">En cualquier lugar se puede aprender.</span>
+             <span class="subcaption">Rompe el paradigma, aprende en un lugar diferente y olvida el salón de clases. </span>
             </div>
            </div>
           </div>
@@ -112,7 +111,7 @@
 		    <li>
  	 	      <a href="lista-cursos?utf8=✓&search[category_in][]=tecnologia&commit=Crear+Search">Tecnologia</a>
 		    </li>
-		  </ul>
+		  </f>
 		</li>
 		<li>
 			<a href="">Estatus</a>
@@ -165,8 +164,12 @@
 <div class="clear"></div>
 
 
-
 <%= render :partial => "lc", :locals => {:course_list => @courses, :no_more_results => @no_more_results}%>
+
+
+<div class="cursos_disponibles">
+<%= link_to "Ver cursos disponibles", listacursos_path, class: "cursos_disponibles"%>
+</div>
 
 </div>
 </div>

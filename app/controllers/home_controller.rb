@@ -57,12 +57,6 @@ def paginate_casinos
 def aboutus
 end
 
-def terms
-end
-
-def privacidad
-end
-
 def contact
 end
 

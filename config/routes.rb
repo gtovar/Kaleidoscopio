@@ -4,6 +4,7 @@ Kaleidoscopio::Application.routes.draw do
   resources :courses do 
   resources :orders
   end	
+
 	root :to => "home#index"
 	match 'curso/:id' => 'home#show_detail_course_to_users', :as => 'curso' do
 		resources :orders	
@@ -14,15 +15,21 @@ Kaleidoscopio::Application.routes.draw do
 	match '/contacto' => 'contacts#new', :as => 'contacto'
 	match '/quiero-dar-una-clase' => 'contacts#giveclass', :as => 'quieroclase', :via => :get
 	match '/enviar-mensaje' => 'contacts#create_giveclass', :as => 'crear_quieroclase', :via => :post
-	match '/privacidad' => 'home#privacidad', :as => 'privacidad'
+	match '/privacidad' => 'static_pages#privacy', :as => 'privacidad'
 
 	match '/contactos' => 'courses#index_contacts', :as => 'contactos'
 	match '/ver-contacto/:id' => 'courses#show_contacts', :as => 'vercontacto'
 	match '/dineromail' => 'dineromail#ipn', :as => 'dineromail'
+
 	match '/lista-cursos' => 'home#listcoursespage', :as => 'listacursos'
-	match '/success' => 'home#succes'
-	match '/error' => 'home#error'
+	
+	
 	match '/get_next_results' => 'home#get_next_results'
+
+	
+	match '/success/:course_id' => 'home#succes', :as => 'course_success'
+	match '/error' => 'home#error', :as => 'course_error'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
