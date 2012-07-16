@@ -63,8 +63,7 @@ end
 def view_contact
 end
 
-def succes
-end
+
 
 def error
 end

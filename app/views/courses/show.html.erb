@@ -14,7 +14,7 @@
 
 <p>
   <b><%= Course.human_attribute_name("description")  %>:</b>
-  <%= @course.description %>
+  <%= markdown (@course.description) %>
 </p>
 
 <p>
@@ -59,7 +59,7 @@
 
 <p>
   <b><%= Course.human_attribute_name("requisites_student")  %></b>
-  <%= @course.requisites_student %>
+  <%= markdown (@course.requisites_student) %>
 </p>
 
 <p>

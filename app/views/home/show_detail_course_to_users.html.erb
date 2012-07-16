@@ -41,7 +41,7 @@
 				</div>
 				<h2><%= @course.teacher_name %></h2>
 				<span>Instructor</span>
-				<p><%= @course.biography_teacher %></p>
+				<p><%= markdown (@course.biography_teacher) %></p>
 			</div>
 
 
