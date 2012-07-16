@@ -97,19 +97,19 @@
 		  <a href="">Categorias</a>
 		  <ul class="submenu_categorias">
 		    <li>
- 		      <a href="listacursos?utf8=✓&search[category_in][]=culinarias&commit=Crear+Search">Culinarias</a>
+ 		      <a href="lista-cursos?utf8=✓&search[category_in][]=culinarias&commit=Crear+Search">Culinarias</a>
                     </li>
 		    <li>
- 	 	      <a href="listacursos?utf8=✓&search[category_in][]=arte&commit=Crear+Search">Artes</a>
+ 	 	      <a href="lista-cursos?utf8=✓&search[category_in][]=arte&commit=Crear+Search">Artes</a>
 		    </li>
 	            <li>
-		      <a href="listacursos?utf8=✓&search[category_in][]=empresariales&commit=Crear+Search">Empresariales</a>
+		      <a href="lista-cursos?utf8=✓&search[category_in][]=empresariales&commit=Crear+Search">Empresariales</a>
 		    </li>
 		    <li>
- 	 	      <a href="listacursos?utf8=✓&search[category_in][]=estilo_de_vida&commit=Crear+Search">Estilo de vida</a>
+ 	 	      <a href="lista-cursos?utf8=✓&search[category_in][]=estilo_de_vida&commit=Crear+Search">Estilo de vida</a>
 		    </li>
 		    <li>
- 	 	      <a href="listacursos?utf8=✓&search[category_in][]=tecnologia&commit=Crear+Search">Tecnologia</a>
+ 	 	      <a href="lista-cursos?utf8=✓&search[category_in][]=tecnologia&commit=Crear+Search">Tecnologia</a>
 		    </li>
 		  </f>
 		</li>
@@ -117,13 +117,13 @@
 			<a href="">Estatus</a>
 			<ul class="submenu_categorias">
 				<li>
-					<a href="listacursos?utf8=✓&search[status_in][]=abierto&commit=Crear+Search">Abierto</a>
+					<a href="lista-cursos?utf8=✓&search[status_in][]=abierto&commit=Crear+Search">Abierto</a>
 				</li>
 				<li>
-					<a href="listacursos?utf8=✓&search[status_in][]=agotado&commit=Crear+Search">Agotado</a>
+					<a href="lista-cursos?utf8=✓&search[status_in][]=agotado&commit=Crear+Search">Agotado</a>
 				</li>
 				<li>
-					<a href="listacursos?utf8=✓&search[status_in][]=terminado&commit=Crear+Search" >Terminado</a>
+					<a href="lista-cursos?utf8=✓&search[status_in][]=terminado&commit=Crear+Search" >Terminado</a>
 				</li>
 			</ul>
 		</li>
@@ -160,13 +160,16 @@
 	<div class='clear'></div>
 </div>
 <div class='clear'></div>
-<div class='portrowed perline2'></div><!-- // rowed -->
-<script>portrowed(2);</script>
+
 <div class="clear"></div>
 
-<%= render 'listcourses'%>
+
+<%= render :partial => "lc", :locals => {:course_list => @courses, :no_more_results => @no_more_results}%>
+
+
 <div class="cursos_disponibles">
 <%= link_to "Ver cursos disponibles", listacursos_path, class: "cursos_disponibles"%>
 </div>
+
 </div>
 </div>

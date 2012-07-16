@@ -1,5 +1,12 @@
 module ApplicationHelper
 
+
+def javascript(*args)
+  content_for(:head) { javascript_include_tag(*args) }
+end
+
+
+
   # Returns the full title on a per-page basis.
   def full_title(page_title)
     base_title = "Kaleydoscopio"
@@ -18,7 +25,6 @@ module ApplicationHelper
       home
     end
   end
-
 
 
 def markdown(text, options = {})
@@ -43,7 +49,6 @@ def syntax_highlighter(html)
   end
   doc.to_s
 end
-
 
 
 

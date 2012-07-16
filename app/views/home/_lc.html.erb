@@ -1,5 +1,5 @@
-<% @courses.each do |course| %>
-<div id="post-263" class="post block_shadow columns eight port2perline all ">
+<% course_list.each do |course| %>
+  <div id="post-263" class="post block_shadow columns eight port2perline all ">
 	<div class="thispost porttype preloader_container">
 		<div class="post-title-cont">
 			<h2 class="post-title">
@@ -16,7 +16,7 @@
 			
 			<%end %>
 			<h1 class="precio">$<%= course.price %><span class="decimal">00</span></h1>
-		<%= link_to image_tag(course.photo.thumb.url.to_s, :alt => "Kaleydoscopio"), curso_path(course) %>
+			<%= image_tag course.photo.thumb.url.to_s, alt: "Clases de fotografia" %>
 			</div>
 			<p><%= markdown(truncate(course.description, :length => 120)) %></p>
 			<%= link_to "Click me", curso_path(course), class: "plus_btn" %>
@@ -24,4 +24,7 @@
 	</div>
 	<div class="clear"></div>
 </div>
+<% end %>
+<% if no_more_results %>
+  <div id="no_more_course_results">Ya no hay cursos</div>
 <% end %>

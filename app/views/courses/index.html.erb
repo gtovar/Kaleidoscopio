@@ -1,62 +1,58 @@
 <p ><%= flash[:notice]  %></p>
 <div class="row ">
-  <aside class="span10">
-    <section>
-<table class="table">
-  <thead>
-		<th style="width:450px"><h1> Lista de cursos </h1>	<p>Total de cursos:<%= @total %></p></th>
-		<th> 
+    <aside class="span10">
+        <section>
+	        <table class="table">
+          		<thead>
+			        <th style="width:450px"><h1> Lista de cursos </h1>	<p>Total de cursos:<%= @total %></p></th>
+		        <th> 
 
-<%= link_to "Exportar a excel", courses_path(:format => 'csv'), class: "btn" %>
-<%= link_to "Crear curso", new_course_path, class: "btn btn-primary" %>
-<%= link_to "Ordenar", @search_path, class: "btn btn-primary" %> 
-</th>
-  </thead>
-</table>
-
-<%= will_paginate %>
-<br/>
-<table class="table table-bordered">
-  <thead>
-    <th><%= Course.human_attribute_name("name")  %></th>
-    <th><%= Course.human_attribute_name("category") %></th>
-    <th><%= Course.human_attribute_name("limit_class_tickets") %></th>
-    <th><%= Course.human_attribute_name("owned") %></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </thead>
-	<% if @courses.empty?%>
- 	<h6>Create your first course</h6>
-	<% else %>
-
-<% @courses.each do |course| %>
-   <tbody>	
-	<td><%= course.name %></td>
-    	<td><%= course.category %></td>
-    	<td><%= course.limit_class_tickets %></td>
-<% if course.owned = 'true' %>
-    	<td>si</td>
-<% end %>
-    	<td><%= link_to 'Ver', course %></td>
-    	<td><%= link_to 'Editar', edit_course_path(course) %></td>
-    	<td><%= link_to 'Eliminar', course, confirm: '¿Estas seguro?', method: :delete %></td>
-   </tbody>
-<% end %>
-
-<%= will_paginate %>
-</section>
-  </aside>
-		</div>
-		<br/>
-	<% if @courses.empty?%>
-  <h6>Create your first course</h6>
-  <%end%>
-
-<%end%>
+                <%= link_to "Exportar a excel", courses_path(:format => 'csv'), class: "btn" %>
+                <%= link_to "Crear curso", new_course_path, class: "btn btn-primary" %>
+                <%= link_to "Ordenar", @search_path, class: "btn btn-primary" %>
+		<%= sort_link @search, :name, "Ordenar"%> 
+                    </th>
+              </thead>
+            </table>
 
 
-</table>
+            <br/>
+            <% if @courses.empty?%>
+             <h6>Create your first course</h6>
+            <% else %>
 
-<br />
+            <table class="table table-bordered">
+              <thead>
+                <th><%= Course.human_attribute_name("name")  %></th>
+                <th><%= Course.human_attribute_name("category") %></th>
+                <th><%= Course.human_attribute_name("limit_class_tickets") %></th>
+                <th><%= Course.human_attribute_name("owned") %></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </thead>
+
+
+            <% @courses.each do |course| %>
+               <tbody>	
+	            <td><%= course.name %></td>
+                	<td><%= course.category %></td>
+                	<td><%= course.limit_class_tickets %></td>
+            <% if course.owned = 'true' %>
+                	<td>si</td>
+            <% end %>
+                	<td><%= link_to 'Ver', course %></td>
+                	<td><%= link_to 'Editar', edit_course_path(course) %></td>
+                	<td><%= link_to 'Eliminar', course, confirm: '¿Estas seguro?', method: :delete %></td>
+               </tbody>
+            <% end %>
+
+           
+            
+            <%end%>
+            </table>
+
+        </section>
+    </aside>
+</div>
 

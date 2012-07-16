@@ -12,7 +12,12 @@ attr_accessible :requisites_student, :end_time, :biography_teacher, :category, :
     end
 	end 
 
+
+  RESULTS_PER_PAGE = 6
+
+
 validates :end_time, :biography_teacher, :category, :date_time, :description, :google_map, :limit_class_tickets, :name, :photo_teacher, :photo, :place, :price, :teacher_name, :presence => true
+
 
   has_many :orders
 
