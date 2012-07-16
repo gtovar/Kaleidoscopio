@@ -2307,7 +2307,7 @@ body {background-image: url('kaleydoscopio_background.png'); background-repeat: 
 
 ul.share_container {
 
-	width: 190px;
+	width: 250px;
 	margin: 0 auto;
 margin-top: 20px;
        margin-bottom: 0;
@@ -2317,7 +2317,7 @@ margin-top: 20px;
 ul.share_container li {
   	display: list-item;
 	float: left;
-	width: 90px;
+	width: 105px;
 }
 
 .descripcion_clase {margin-bottom: 20px;}
