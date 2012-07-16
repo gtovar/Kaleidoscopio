@@ -2306,9 +2306,13 @@ body {background-image: url('kaleydoscopio_background.png'); background-repeat: 
 
 
 ul.share_container {
-	width: 185px;
+
+	width: 190px;
 	margin: 0 auto;
+margin-top: 20px;
+       margin-bottom: 0;
 }
+
 
 ul.share_container li {
   	display: list-item;
