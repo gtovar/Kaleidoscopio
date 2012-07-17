@@ -7,7 +7,7 @@ before_create :create_token
   validates :token, :uniqueness => true
   
 def create_token
-   self.token = SecureRandom.urlsafe_base64(15)
+   self.token = SecureRandom.hex(9)
    self.total_price = Course.find(course.id).price * self.quantity
    self.payment_status = "pending"
   end

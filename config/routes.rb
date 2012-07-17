@@ -3,7 +3,6 @@ Kaleidoscopio::Application.routes.draw do
   
 
   devise_for :admins
-  devise_for :users
   resources :contacts 
   resources :courses do 
   resources :orders
@@ -13,7 +12,7 @@ Kaleidoscopio::Application.routes.draw do
 	match 'curso/:id' => 'home#show_detail_course_to_users', :as => 'curso' do
 		resources :orders	
 	end
-	match '/lista-users' => 'courses#index_users', :as => 'lista_users'
+	match '/lista-admins' => 'courses#index_users', :as => 'lista_admins'
 	match '/acerca-de' => 'home#aboutus', :as => 'conocenos'
 	match '/terminos-y-politicas' => 'home#terms', :as => 'terminos'
 	match '/contacto' => 'contacts#new', :as => 'contacto'

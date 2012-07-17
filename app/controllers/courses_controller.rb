@@ -31,11 +31,11 @@ class CoursesController < ApplicationController
   end
 
   def index_users
-    @users = User.all
+    @admins = Admin.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @users }
+      format.json { render json: @admins }
     end
   end
 

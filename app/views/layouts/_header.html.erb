@@ -10,11 +10,7 @@
 	  <% if admin_signed_in? %>
     		<li><a>Bienvenido <%= current_admin.email %></a></li>
    		<li><%= link_to "Salir", destroy_admin_session_path, :method => :delete %></li>
-		<li><%= link_to "users", lista_users_path%></li>
-	  <% elsif user_signed_in? %>
-		<li><a>Bienvenido <%= current_user.email %></a></li>
-   		<li><%= link_to "Salir", destroy_user_session_path, :method => :delete %></li>
-		<li><%= link_to "users", lista_users_path%></li>		
+		<li><%= link_to "Usuarios", lista_admins_path%></li>	
   	  <% end %>	
 		
 		          

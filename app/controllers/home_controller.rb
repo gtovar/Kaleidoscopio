@@ -15,11 +15,9 @@ layout "front-end"
 
 	def get_next_results
     @search = Course.search(session[:search])
-		@courses = @search.order('status ASC').all
-		
-    @courses = @search.paginate(page: params[:page], :per_page => Course::RESULTS_PER_PAGE )
-
-		@no_more_results = @total <= Course::RESULTS_PER_PAGE
+    @total = @search.count			
+    @courses = @search.order(:status).paginate(page: params[:page], :per_page => Course::RESULTS_PER_PAGE )
+    @no_more_results = @total <= Course::RESULTS_PER_PAGE
    
     respond_to do |format|
 			format.js		
@@ -28,9 +26,8 @@ layout "front-end"
 
   def listcoursespage
     @search = Course.search(params[:search])
-    @courses = @search.order('status ASC').all
-    @total = @courses.count
-    @courses = @search.paginate(page: 1, :per_page => Course::RESULTS_PER_PAGE )
+    @total = @search.count
+    @courses = @search.order(:status).paginate(page: 1, :per_page => Course::RESULTS_PER_PAGE )
     session[:search] = params[:search]
 
 	
