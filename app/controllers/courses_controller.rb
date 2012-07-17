@@ -1,7 +1,7 @@
 require 'csv'
 class CoursesController < ApplicationController
   before_filter :authenticate_user!
- 
+  
   # GET /courses
   # GET /courses.json
   def index
@@ -140,4 +140,10 @@ def export(courses)
       format.json { head :no_content }
     end
   end
+
+	
+  
+ 
+
+
 end

@@ -19,7 +19,7 @@ gem 'pg'
 
 gem 'meta_search'
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
-gem 'dineromail'
+gem 'dineromail', :git => 'git://github.com/acolin/dineromail.git'
 gem "foreigner"
 gem 'carrierwave'
 gem 'fog'
