@@ -19,7 +19,7 @@ layout "front-end"
 		
     @courses = @search.paginate(page: params[:page], :per_page => Course::RESULTS_PER_PAGE )
 
-		@no_more_results = @courses <= Course::RESULTS_PER_PAGE
+		@no_more_results = @total <= Course::RESULTS_PER_PAGE
    
     respond_to do |format|
 			format.js		

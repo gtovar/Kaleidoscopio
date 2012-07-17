@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 
 
-gem 'redcarpet'
+gem 'redcarpet', '1.17.2'
 gem 'albino'
 gem 'nokogiri'
 
