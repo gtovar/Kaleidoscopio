@@ -88,7 +88,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endCol
 	width: 33px; 
 	height: 32px; 
 	display: block; 
-	background: url(../img/lar_round.png) no-repeat 0 0px; 
+	background: url(lar_round.png) no-repeat 0 0px; 
 	position: absolute; 
     bottom: 20px; 
     right: 57px;
@@ -100,10 +100,10 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endCol
     bottom: 10px;
 }
 .flex-direction-nav li .prev:hover {
-	background: url(../img/lar_round.png) no-repeat 0 -32px; 
+	background: url(lar_round.png) no-repeat 0 -32px; 
 }
 .flex-direction-nav li .next {
-    background: url("../img/rar_round.png") no-repeat scroll 0 0px transparent;
+    background: url("rar_round.png") no-repeat scroll 0 0px transparent;
     bottom: 20px;
     cursor: pointer;
     display: block;
@@ -118,7 +118,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endCol
     bottom: 10px;
 }
 .flex-direction-nav li .next:hover {
-	background: url(../img/rar_round.png) no-repeat 0 -32px; 
+	background: url(rar_round.png) no-repeat 0 -32px; 
 }
 
 
@@ -133,7 +133,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endCol
 	height: 20px; 
 	margin: -13px 0 0; 
 	display: block; 
-	background: url(../img/rar_round.png) no-repeat 0 -20px; 
+	background: url(rar_round.png) no-repeat 0 -20px; 
 	position: absolute; 
 	top: 50%; 
 	cursor: pointer; 
