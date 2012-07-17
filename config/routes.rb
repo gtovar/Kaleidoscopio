@@ -1,5 +1,9 @@
 Kaleidoscopio::Application.routes.draw do  
+  
+  
+
   devise_for :admins
+  devise_for :users
   resources :contacts 
   resources :courses do 
   resources :orders
@@ -9,7 +13,7 @@ Kaleidoscopio::Application.routes.draw do
 	match 'curso/:id' => 'home#show_detail_course_to_users', :as => 'curso' do
 		resources :orders	
 	end
-	match '/admin' => 'courses#index', :as => 'admin'
+	match '/lista-users' => 'courses#index_users', :as => 'lista_users'
 	match '/acerca-de' => 'home#aboutus', :as => 'conocenos'
 	match '/terminos-y-politicas' => 'home#terms', :as => 'terminos'
 	match '/contacto' => 'contacts#new', :as => 'contacto'
@@ -29,6 +33,7 @@ Kaleidoscopio::Application.routes.draw do
 	
 	match '/success/:course_id' => 'home#succes', :as => 'course_success'
 	match '/error' => 'home#error', :as => 'course_error'
+	
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

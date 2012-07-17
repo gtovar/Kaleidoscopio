@@ -5,7 +5,7 @@ layout "front-end"
     @search = Course.search(params[:search])	
     @courses = @search.order('status').all
     @total = @courses.count
-    @courses = @search.paginate(page: 1, :per_page => 8)
+    @courses = @search.paginate(page: 1, :per_page => 6)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,7 +16,7 @@ layout "front-end"
 	def get_next_results
     @search = Course.search(session[:search]).order('status')
 		@total = @search.count
-		@no_more_results = @total <= Course::RESULTS_PER_PAGE
+		@no_more_results = @total < Course::RESULTS_PER_PAGE
     @courses = @search.paginate(page: params[:page], :per_page => Course::RESULTS_PER_PAGE )
     respond_to do |format|
 			format.js		
@@ -64,6 +64,7 @@ def view_contact
 end
 
 def succes
+
 end
 
 def error

@@ -1,6 +1,7 @@
 require 'csv'
 class CoursesController < ApplicationController
-  before_filter :authenticate_admin!
+  before_filter :authenticate_user!
+ 
   # GET /courses
   # GET /courses.json
   def index
@@ -26,6 +27,15 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @contacts }
+    end
+  end
+
+  def index_users
+    @users = User.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @users }
     end
   end
 

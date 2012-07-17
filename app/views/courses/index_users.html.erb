@@ -1,0 +1,21 @@
+<div class="center hero-unit">
+  <h1>Ver users</h1>
+</div>
+
+<table class="table table-bordered">
+  <tr>
+    <th><%= Contact.human_attribute_name(:email) %></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.email %></td>
+
+    <td><%= link_to 'Editar', edit_user_password_path(user) %></td>
+    
+  </tr>
+<% end %>
+</table>
+

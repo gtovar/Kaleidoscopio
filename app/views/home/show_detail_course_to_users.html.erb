@@ -66,8 +66,8 @@
 	</div>    
 	<div class="sidebar_box white_container ">
 		<div class="cupo">
-			<h3><%= @course.limit_class_tickets %>
-			Lugares Disponibles</h3>
+			<h3>Quedan <%= @course.limit_class_tickets %>
+			Lugares</h3>
 		</div>
 
 		<div class="cantidad">
@@ -83,8 +83,6 @@
 		$("#new_order").submit();	
 		});
 	});	
-
- 	
 </script>
   			<div class="boton_inscripcion">
     				<%= link_to "Comprar", "#", :class => "inscribete" %>

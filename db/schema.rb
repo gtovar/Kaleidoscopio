@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120711190341) do
+ActiveRecord::Schema.define(:version => 20120716230720) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(:version => 20120711190341) do
     t.integer  "limit_class_tickets"
     t.boolean  "owned"
     t.string   "photo_teacher"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
     t.string   "slug"
-    t.string   "status"
+    t.string   "status",              :default => "abierto"
     t.time     "end_time"
   end
 
@@ -87,6 +87,24 @@ ActiveRecord::Schema.define(:version => 20120711190341) do
   end
 
   add_index "orders", ["course_id"], :name => "index_orders_on_course_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   add_foreign_key "orders", "courses", :name => "orders_course_id_fk"
 
