@@ -19,11 +19,28 @@ $("form").submit();
 <input type="hidden" name="item_name_1" value="<%= @course.name %>" />
 <input type="hidden" name="item_quantity_1" value="<%= @order.quantity %>" />
 <input type="hidden" name="item_ammount_1" value="<%= @course.price %>00" />
-<input type="hidden" name="ok_url" value="<%= course_success_url(@course.id) %>" />
+<input type="hidden" name="ok_url" value="<%= course_success_url(@course) %>" />
 <input type="hidden" name="error_url" value="<%= course_error_url %>" />
-<input type="hidden" name="pending_url" value="<%= course_success_url(@course.id) %>" />
+<input type="hidden" name="pending_url" value="<%= course_success_url(@course) %>" />
 <input type="hidden" name="transaction_id" value="<%=@order.token%>" />
 <input type="hidden" name="change_quantity" value="0" />
+
+
+
+
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 
 
 <!--<input type='image' src='https://mexico.dineromail.com/imagenes/botones/pagar-medios_c.gif' border='0' name='submit' alt='Pagar con DineroMail'>

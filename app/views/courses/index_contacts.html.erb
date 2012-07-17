@@ -2,7 +2,9 @@
 <div class="center hero-unit">
   <h1>Ver contactos</h1>
 </div>
-
+<%if @contacts.empty? %>
+	<h3> "aún no hay mensajes de contacto" </h3>
+<%elsif%>
 <table class="table table-bordered">
   <tr>
     <th><%= Contact.human_attribute_name(:name) %></th>
@@ -10,10 +12,9 @@
     <th><%= Contact.human_attribute_name(:phone) %></th>
     <th><%= Contact.human_attribute_name(:subjects) %></th>
     <th><%= Contact.human_attribute_name(:message) %></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Acciones</th>
   </tr>
+
 
 <% @contacts.each do |contact| %>
   <tr>
@@ -32,10 +33,10 @@
 <td>Propuesta</td>
 <%end%>
     <td><%= truncate (contact.message) %></td>
-    <td><%= link_to 'Ver', vercontacto_path(contact) %></td>
-    <td><%= link_to 'Editar', edit_contact_path(contact) %></td>
-    <td><%= link_to 'Eliminar', contact, confirm: '¿Estas seguro?', method: :delete %></td>
+    <td><%= link_to 'Ver', vercontacto_path(contact) %> - 
+    <%= link_to 'Eliminar', contact, confirm: '¿Estas seguro?', method: :delete %></td>
   </tr>
+<% end %>
 <% end %>
 </table>
 

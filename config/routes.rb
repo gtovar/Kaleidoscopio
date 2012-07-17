@@ -31,7 +31,7 @@ Kaleidoscopio::Application.routes.draw do
 	match '/get_next_results' => 'home#get_next_results'
 
 	
-	match '/success/:course_id' => 'home#succes', :as => 'course_success'
+	match '/success/:course_id' => 'orders#success', :as => 'course_success'
 	match '/error' => 'home#error', :as => 'course_error'
 	
 

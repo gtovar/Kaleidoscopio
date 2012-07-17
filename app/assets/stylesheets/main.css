@@ -316,11 +316,12 @@ img.alignright {
 
 /* Styles for the entire LavaLamp menu */
 .backLava {
-    background: none repeat scroll 0 0 #FF5200;
+    background: none repeat scroll 0 0 #a6ea4b;
     height: 4px !important;
     position: absolute;
     top: 0;
 }
+.menu_bar_hover:hover {border-top: 4px solid #a6ea4b;}
 .dn {
 	display:none !important;
 }
@@ -2140,7 +2141,6 @@ color: #7a7a7a;  }
 
 .nombre_profesor { margin-left: 10px;}
 
-.menu_bar_hover:hover {border-top: 4px solid #a6ea4b;}
 
 #background-image {
 	position: fixed;
@@ -2306,14 +2306,18 @@ body {background-image: url('kaleydoscopio_background.png'); background-repeat: 
 
 
 ul.share_container {
-	margin-top: 20px;
-	margin-bottom: 0;
+
+	width: 250px;
+	margin: 0 auto;
+margin-top: 20px;
+       margin-bottom: 0;
 }
+
 
 ul.share_container li {
   	display: list-item;
 	float: left;
-	width: 90px;
+	width: 105px;
 }
 
 .descripcion_clase {margin-bottom: 20px;}
@@ -2378,7 +2382,7 @@ color: #f0f0f0;
 
 .submenu_categorias {
 	left: 5px;
-	top: 24px;
+	top: 23px;
 	position: absolute;
 	margin: 0;
 	display: none;

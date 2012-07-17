@@ -41,7 +41,7 @@
 				</div>
 				<h2><%= @course.teacher_name %></h2>
 				<span>Instructor</span>
-				<p><%= @course.biography_teacher %></p>
+				<p><%= markdown (@course.biography_teacher) %></p>
 			</div>
 
 
@@ -62,7 +62,7 @@
     <div class="sidebar">
 	<div class="sidebar_box white_container">
 		<h3>Fecha</h3>
-<p><%= l @course.date_time, :format => :long %> - <%= @course.end_time.strftime("%I:%M %P") %></p>
+<p><%= (l @course.date_time, :format => :long).capitalize %> - <%= @course.end_time.strftime("%I:%M %P") %></p>
 	</div>    
 	<div class="sidebar_box white_container ">
 		<div class="cupo">
