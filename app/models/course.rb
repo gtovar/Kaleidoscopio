@@ -10,13 +10,13 @@ attr_accessible :requisites_student, :end_time, :biography_teacher, :category, :
         category_name
       end
     end
-	end 
+  end 
 
 
   RESULTS_PER_PAGE = 4
 
 
-validates :end_time, :biography_teacher, :category, :date_time, :description, :google_map, :limit_class_tickets, :name, :photo_teacher, :photo, :place, :price, :teacher_name, :presence => true
+validates :end_time, :biography_teacher, :category, :date_time, :description, :google_map, :limit_class_tickets, :name, :place, :price, :teacher_name, :photo_teacher, :photo, :presence => true
 
 
   has_many :orders

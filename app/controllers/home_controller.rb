@@ -14,11 +14,13 @@ layout "front-end"
   end
 
 	def get_next_results
-    @search = Course.search(session[:search])
-    @total = @search.count			
-    @courses = @search.order(:status).paginate(page: params[:page], :per_page => Course::RESULTS_PER_PAGE )
-    @no_more_results = @total <= Course::RESULTS_PER_PAGE
-   
+    @search = Course.search(session[:search])  			
+    @courses = @search.order(:status).paginate(:page => params[:page], :per_page =>Course::RESULTS_PER_PAGE)
+		@total = @search.count 
+		@prueba = params[:page] 
+		if @courses.total_pages == @prueba.to_i
+		@no_more_results= true
+		end
     respond_to do |format|
 			format.js		
 		end
@@ -26,11 +28,9 @@ layout "front-end"
 
   def listcoursespage
     @search = Course.search(params[:search])
-    @total = @search.count
-    @courses = @search.order(:status).paginate(page: 1, :per_page => Course::RESULTS_PER_PAGE )
-    session[:search] = params[:search]
-
-	
+    @courses = @search.order(:status).paginate(:page => 1, :per_page => Course::RESULTS_PER_PAGE )
+		@total = @search.count    
+		session[:search] = params[:search]
     respond_to do |format|
       format.html # listacursos.html.erb
       format.json { render json: @courses }

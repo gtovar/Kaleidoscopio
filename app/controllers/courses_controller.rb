@@ -1,16 +1,12 @@
 require 'csv'
 class CoursesController < ApplicationController
   before_filter :authenticate_admin!
-  
   # GET /courses
   # GET /courses.json
   def index
     @search = Course.search(params[:search])	
     @courses = @search.all
     @total = @courses.count
-    
-
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }
