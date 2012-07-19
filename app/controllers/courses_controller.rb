@@ -11,7 +11,6 @@ class CoursesController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @courses }
       format.csv {export(@courses)}
-      format.js	
     end
   end
 	

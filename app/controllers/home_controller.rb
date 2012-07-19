@@ -3,9 +3,7 @@ layout "front-end"
 
   def index
     @search = Course.search(params[:search])	
-    @courses = @search.order('status ASC').all
-    @total = @courses.count
-    
+    @courses = @search.order('status ASC').all   
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,10 +14,9 @@ layout "front-end"
 	def get_next_results
     @search = Course.search(session[:search])  			
     @courses = @search.order(:status).paginate(:page => params[:page], :per_page =>Course::RESULTS_PER_PAGE)
-		@total = @search.count 
 		@prueba = params[:page] 
-		if @courses.total_pages == @prueba.to_i
-		@no_more_results= true
+		if @courses.total_pages == @prueba
+		 @no_more_results= true
 		end
     respond_to do |format|
 			format.js		
@@ -29,8 +26,7 @@ layout "front-end"
   def listcoursespage
     @search = Course.search(params[:search])
     @courses = @search.order(:status).paginate(:page => 1, :per_page => Course::RESULTS_PER_PAGE )
-		@total = @search.count    
-		session[:search] = params[:search]
+    session[:search] = params[:search]
     respond_to do |format|
       format.html # listacursos.html.erb
       format.json { render json: @courses }

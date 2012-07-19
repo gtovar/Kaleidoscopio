@@ -1,6 +1,5 @@
 $(document).ready(
   function() {
-   
     $("#loading-spinner").bind("ajaxSend", function() {
 	        $(this).show();
 	    }).bind("ajaxStop", function() {
@@ -10,18 +9,20 @@ $(document).ready(
 	    });
 
     var p = 1;
-  
+
     function last_msg_function() {
+	var allvars= getUrlVars();
+	
       $.ajax({
         url: 'get_next_results.js',
         type: 'get',
-        data: {'page': p},
+        data: {'page': p, '': allvars},
         async: true,
         dataType: 'html',
         success: function(data){
-            $('#course_results').append(data);         
+            $('#course_results').append(data);
         }
-      });			
+      });
     };
 
     $(window).scroll(
@@ -37,3 +38,10 @@ $(document).ready(
   }
 );
 
+function getUrlVars()
+{
+    
+    var vars = window.location.href.slice(window.location.href.indexOf('?') + 1);
+    
+    return vars;
+}
