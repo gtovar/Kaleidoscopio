@@ -1,7 +1,7 @@
 class Course < ActiveRecord::Base
 
 attr_accessible :requisites_student, :end_time, :biography_teacher, :category, :date_time, :description, :google_map, :limit_class_tickets, :name, :owned, :photo, :place, :price, :teacher_name, :photo_teacher
-
+before_create :create_status
   CATEGORIES = ['arte', 'culinarias', 'empresariales', 'estilo_de_vida', 'tecnologia']
   
   class << self
@@ -11,7 +11,10 @@ attr_accessible :requisites_student, :end_time, :biography_teacher, :category, :
       end
     end
   end 
-
+  
+  def create_token
+      self.status = "abierto"
+  end
 
   RESULTS_PER_PAGE = 4
 
