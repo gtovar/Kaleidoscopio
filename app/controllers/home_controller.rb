@@ -15,9 +15,7 @@ layout "front-end"
     @search = Course.search(session[:search])  			
     @courses = @search.order(:status).paginate(:page => params[:page], :per_page =>Course::RESULTS_PER_PAGE)
 		@prueba = params[:page] 
-		if @courses.total_pages == @prueba
-		 @no_more_results= true
-		end
+		 @no_more_results= @courses.total_pages == @prueba.to_i
     respond_to do |format|
 			format.js		
 		end
