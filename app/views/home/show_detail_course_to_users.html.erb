@@ -66,8 +66,13 @@
 	</div>    
 	<div class="sidebar_box white_container ">
 		<div class="cupo">
-			<h3>Quedan <%= @course.limit_class_tickets %>
-			Lugares</h3>
+			<% if @disponibles > 1 %>
+			<h3>Quedan <%= @disponibles %>
+			Lugares </h3>
+			<% elsif %>
+			<h3>Queda <%= @disponobles %>
+			Lugar </h3>
+			<%end%>	
 		</div>
 
 		<div class="cantidad">

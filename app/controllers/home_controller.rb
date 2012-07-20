@@ -3,7 +3,7 @@ layout "front-end"
 
   def index
     @search = Course.search(params[:search])	
-    @courses = @search.order('status ASC').all   
+    @courses = @search.order(:status).limit(10)   
 
     respond_to do |format|
       format.html # index.html.erb
@@ -34,7 +34,9 @@ layout "front-end"
   def show_detail_course_to_users
  
     @course = Course.find(params[:id])
-    @order = @course.orders(params[@course])	
+    @order = @course.orders(params[@course])
+		@suma = @order.where(:payment_status => 'success').sum(:quantity)
+		@disponibles= @course.limit_class_tickets	- @suma
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @course }

@@ -1,27 +1,40 @@
 <%= render 'layouts/shim-front' %>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset="utf-8">
+	<meta property="og:title" content="Clases interesantes para personas curiosas." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://kaleydoscopio.herokuapp.com" />
+	<meta property="og:image" content="http://kaleydoscopio.herokuapp.com/assets/posttypes/image1.png" />
+	<meta property="og:site_name" content="KALEYDOSCOPIO" />
+	<meta property="fb:admins" content="589571332" />
+
+	<!-- Fonts
+	================================================== -->
+
+	<link href='http://fonts.googleapis.com/css?family=Anton|Signika:400,300,600&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+	<!-- Mobile Specific Metas
+	================================================== -->
+
 	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<script type="text/javascript" src="http://use.typekit.com/qvj6cvf.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<title>kaleydoscopio</title>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="http://use.typekit.com/qvj6cvf.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<title><%= full_title(yield(:title)) %></title>
+	<link rel="shortcut icon" type="image/x-icon" href="/assets/kaleydoscopio_favicon_transparent.ico">
+	  <%= stylesheet_link_tag "reset", :media => "all" %>
+	<%= stylesheet_link_tag "base", :media => "all" %>
+	 <%= stylesheet_link_tag "flexslider", :media => "all" %>
+	 <%= stylesheet_link_tag "layout", :media => "all" %>
+	  <%= stylesheet_link_tag "superfish", :media => "all" %>
 
-<link rel="shortcut icon" type="image/x-icon" href="/assets/kaleydoscopio_favicon_transparent.ico">
-  <%= stylesheet_link_tag "skeleton", :media => "all" %>
-  <%= stylesheet_link_tag "reset", :media => "all" %>
-<%= stylesheet_link_tag "base", :media => "all" %>
- <%= stylesheet_link_tag "flexslider", :media => "all" %>
- <%= stylesheet_link_tag "layout", :media => "all" %>
-  <%= stylesheet_link_tag "superfish", :media => "all" %>
+	  <%= stylesheet_link_tag "prettyPhoto", :media => "all" %>
+	  <%= stylesheet_link_tag "skeleton", :media => "all" %>
 
-  <%= stylesheet_link_tag "prettyPhoto", :media => "all" %>
-
-
-  <%= stylesheet_link_tag "main", :media => "all" %>
-
-  <%= javascript_include_tag "back-end" %>
+	  <%= stylesheet_link_tag "main", :media => "all" %>
+	  <%= javascript_include_tag "back-end" %>
 </head>
 
 <body class="page page-id-64 page-template page-template-portfolio_2-php logged-in admin-bar">

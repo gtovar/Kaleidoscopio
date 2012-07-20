@@ -1,16 +1,9 @@
 
-<script type="text/javascript" charset="utf-8">
-$(document).ready(function() {
-$("form").submit();
-});
-</script>
-
-
 <div class="container  contactpage">
 	<div class="espera">
 		<h1 class="headofpage">Su solicitud esta siendo procesada</h1>
 		<h2>Esto puede tardar varios minutos.<br/><progress></progress>
-
+	</div>
 <form action="https://checkout.dineromail.com/CheckOut" method="post" >
 <!-- Variables Obligatorias -->
 <input type="hidden" name="merchant" value="1048078" />
@@ -29,6 +22,14 @@ $("form").submit();
 
 
 
+<!--<input type='image' src='https://mexico.dineromail.com/imagenes/botones/pagar-medios_c.gif' border='0' name='submit' alt='Pagar con DineroMail'>
+</form>-->
+</div>
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+$("form").submit();
+});
+</script>
 
 
 <div id="fb-root"></div>
@@ -39,18 +40,4 @@ $("form").submit();
   js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-
-<!--<input type='image' src='https://mexico.dineromail.com/imagenes/botones/pagar-medios_c.gif' border='0' name='submit' alt='Pagar con DineroMail'>
-</form>-->
-
-
-</h2>
-	</div>
-		<div class="clear"></div>
-</div>
-
-
 
