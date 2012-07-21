@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(:version => 20120711190341) do
     t.integer  "limit_class_tickets"
     t.boolean  "owned"
     t.string   "photo_teacher"
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.string   "slug"
-    t.string   "status",              :default => "abierto"
+    t.string   "status"
     t.time     "end_time"
   end
 

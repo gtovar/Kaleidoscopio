@@ -18,7 +18,7 @@
 
             <br/>
             <% if @courses.empty?%>
-             <h6>Create your first course</h6>
+             <h6>Aun no hay cursos. <%= link_to 'Crea el primero ahora', new_course_path %></h6>
             <% else %>
 
             <table class="table table-bordered">

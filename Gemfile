@@ -22,7 +22,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'aws-sdk'
 gem "friendly_id"
-gem 'devise'
+gem 'devise' , "1.5.3"
 gem "rmagick", "2.12.0", :require => 'RMagick'
 gem "cancan"
 
