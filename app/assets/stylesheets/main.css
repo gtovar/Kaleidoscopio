@@ -2668,3 +2668,17 @@ color: #7A7A7A;
 	padding: 13px;
 }
 
+
+.btn_lista_cursos a {
+    background-color: #F6F6F6;
+    box-shadow: 0 1px 1px #D5D5D5;
+    color: #3C3C3C;
+    font-family: adelle,impact;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    margin: 0 5px;
+    padding: 3px 15px;
+    text-decoration: none;
+}
+
