@@ -11,12 +11,16 @@ $(document).ready(
     var p = 1;
 
     function last_msg_function() {
-	var allvars= getUrlVars();
+	var allvars = getUrlVars();	
+	if (allvars == 'http://localhost:3000/lista-cursos')
+		;
+	else		
+		var okallvars = getUrlVars();
 	
       $.ajax({
         url: 'get_next_results.js',
         type: 'get',
-        data: {'page': p, '': allvars},
+        data: {'page': p, '': okallvars},
         async: true,
         dataType: 'html',
         success: function(data){
@@ -42,6 +46,6 @@ function getUrlVars()
 {
     
     var vars = window.location.href.slice(window.location.href.indexOf('?') + 1);
-    
-    return vars;
+		
+    	return vars;
 }
