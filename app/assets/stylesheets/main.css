@@ -1901,7 +1901,7 @@ h3.shortcode_accordion_item_title:hover, h3.shortcode_toggles_item_title:hover {
 
 
 .preloader_container img {
-    
+
 }
 #wp-calendar {
 	width:100%;
@@ -2037,7 +2037,7 @@ letter-spacing: -1px;
 .foto_descripcion {
 	width: 960px;
 	display: block;
-	
+
 	}
 
 .description_bar {
@@ -2334,8 +2334,8 @@ ul.share_container li {
 
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
-.clearfix { 
-*zoom: 1; 
+.clearfix {
+*zoom: 1;
 }
 
 
@@ -2585,7 +2585,7 @@ color: #7A7A7A;
 
 .cursos_disponibles a {
 	color: #696969;
-} 
+}
 
 .cursos_disponibles a:hover  {
 	color: #8DC741;
@@ -2602,10 +2602,10 @@ color: #7A7A7A;
 
 
 .foto_porque {
-	width: 272px;
+	width: 920px;
 	float: left;
 	margin: 0 15px 0 0;}
-	
+
 .foto_quehacemos {
 	width: 272px;
 	float: right;
@@ -2649,14 +2649,17 @@ color: #7A7A7A;
 }
 
 .fundadores {
-	width: 203px;
+	width: 159px;
 	float: left;
 	margin-right: 15px;
 	text-align: center;
 }
+.fundadores img {box-shadow: 1px 1px 1px #ccc}
+
+.fundadores2 img {box-shadow: 1px 1px 1px #ccc}
 
 .fundadores2 {
-	width: 203px;
+	width: 159px;
 	float: left;
 	text-align: center;
 }
