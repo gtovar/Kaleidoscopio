@@ -316,12 +316,11 @@ img.alignright {
 
 /* Styles for the entire LavaLamp menu */
 .backLava {
-    background: none repeat scroll 0 0 #a6ea4b;
+    background: none repeat scroll 0 0 #FF5200;
     height: 4px !important;
     position: absolute;
     top: 0;
 }
-.menu_bar_hover:hover {border-top: 4px solid #a6ea4b;}
 .dn {
 	display:none !important;
 }
@@ -605,12 +604,12 @@ img.alignright {
 
 /* nuevo  */
 .publicphone {
-    background: url("skype.png") no-repeat scroll 0 0 transparent;
+    background: url("../img/skype.png") no-repeat scroll 0 0 transparent;
     padding-left: 28px;
 }
 
 .publicmail {
-    background: url("mail_icon.png") no-repeat scroll 0 6px transparent;
+    background: url("../img/mail_icon.png") no-repeat scroll 0 6px transparent;
     padding-left: 20px;
 }
 /* end nuevo  */
@@ -1242,16 +1241,16 @@ li p {
 
 /*nuevo */
 .twitter_link {
-    background: url("icons/socials/ico2.png") no-repeat scroll 0 0 transparent;
+    background: url("../img/icons/socials/ico2.png") no-repeat scroll 0 0 transparent;
 }
 .twitter_link:hover {
-    background: url("icons/socials/ico2.png") no-repeat scroll 0 -21px transparent;
+    background: url("../img/icons/socials/ico2.png") no-repeat scroll 0 -21px transparent;
 }
 .LinkedIn_link {
-    background: url("icons/socials/ico3.png") no-repeat scroll 0 0 transparent;
+    background: url("../img/icons/socials/ico3.png") no-repeat scroll 0 0 transparent;
 }
 .LinkedIn_link:hover {
-    background: url("icons/socials/ico3.png") no-repeat scroll 0 -21px transparent;
+    background: url("../img/icons/socials/ico3.png") no-repeat scroll 0 -21px transparent;
 }
 .facebook_link {
     background: url("icons/socials/ico4.png") no-repeat scroll 0 0 transparent;
@@ -1296,21 +1295,21 @@ li p {
 /* nuevo  */
 
 .compphone {
-    background: url("skype.png") no-repeat scroll 0 0 transparent;
+    background: url("../img/skype.png") no-repeat scroll 0 0 transparent;
     line-height: 24px;
     padding-left: 28px;
 }
 .compphone:hover {
-    background: url("skype_active.png") no-repeat scroll 0 0px transparent;
+    background: url("../img/skype_active.png") no-repeat scroll 0 0px transparent;
 }
 
 .mail_icon2 {
-    background: url("mail_icon2.png") no-repeat scroll 0 0 transparent;
+    background: url("../img/mail_icon2.png") no-repeat scroll 0 0 transparent;
     line-height: 24px;
     padding-left: 28px;
 }
 .mail_icon2:hover {
-    background: url("mail_icon2_active.png") no-repeat scroll 0 0px transparent;
+    background: url("../img/mail_icon2_active.png") no-repeat scroll 0 0px transparent;
 }
 
 /* end nuevo  */
@@ -2142,6 +2141,7 @@ color: #7a7a7a;  }
 .nombre_profesor { margin-left: 10px;}
 
 
+
 #background-image {
 	position: fixed;
 }
@@ -2216,6 +2216,8 @@ border-top-left-radius: 15px;
 	}
 
 
+
+
 .boton_inscripcion:hover {
 
 	background: rgb(158,221,86); /* Old browsers */
@@ -2246,6 +2248,86 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2f481', end
   box-shadow: 0px 2px 2px #a2bc82;
 	}
 
+
+
+.boton_about {
+	padding: 10px 30px;
+	font-family: adelle;
+	font-weight: 800;
+	background: rgb(194,244,129); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(194,244,129,1) 1%, rgba(140,199,64,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(194,244,129,1)), color-stop(100%,rgba(140,199,64,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2f481', endColorstr='#8cc740',GradientType=0 ); /* IE6-9 */
+-webkit-border-bottom-right-radius: 15px;
+-webkit-border-bottom-left-radius: 15px;
+-webkit-border-top-right-radius: 15px;
+-webkit-border-top-left-radius: 15px;
+
+-moz-border-radius-bottomright: 15px;
+-moz-border-radius-bottomleft: 15px;
+-moz-border-radius-topright: 15px;
+-moz-border-radius-topleft: 15px;
+
+border-bottom-right-radius: 15px;
+border-bottom-left-radius: 15px;
+border-top-right-radius: 15px;
+border-top-left-radius: 15px;
+
+	margin: 30px auto 0 ;
+	border-top: 1px solid #ceff91;
+	border-bottom: 1px solid #81b145;
+
+
+	font-size: 16px;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 5px 0px 5px 0px;
+	text-shadow: 0px -1px 0px #77a839;
+	width: 260px;
+	}
+
+
+
+
+.boton_about:hover {
+
+	background: rgb(158,221,86); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(158,221,86,1) 1%, rgba(114,181,59,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(158,221,86,1)), color-stop(100%,rgba(114,181,59,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(158,221,86,1) 1%,rgba(114,181,59,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(158,221,86,1) 1%,rgba(114,181,59,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(158,221,86,1) 1%,rgba(114,181,59,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(158,221,86,1) 1%,rgba(114,181,59,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9edd56', endColorstr='#72b53b',GradientType=0 ); /* IE6-9 */
+text-decoration: none;}
+
+.boton_about a {color: white; text-decoration: none;}
+
+
+	.boton_about:active {
+	background: rgb(194,244,129); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(194,244,129,1) 1%, rgba(140,199,64,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(194,244,129,1)), color-stop(100%,rgba(140,199,64,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2f481', endColorstr='#8cc740',GradientType=0 ); /* IE6-9 */
+
+  border-top: 1px solid #ceff91;
+  border-bottom: 1px solid #81b145;
+  box-shadow: 0px 2px 2px #a2bc82;
+	}
+
+
+
+
+
+
 body {background-image: url('kaleydoscopio_background.png'); background-repeat: repeat;}
 
 .full-container-shadow {border-right: 1px solid #e9e9e9; border-left: 1px solid #e9e9e9;}
@@ -2253,7 +2335,7 @@ body {background-image: url('kaleydoscopio_background.png'); background-repeat: 
 .full-container-width {width: 1010px !important ;}
 
 .display_more {
-	background: url("totop.png") no-repeat scroll 0 0 transparent;
+	background: url("../img/totop.png") no-repeat scroll 0 0 transparent;
 	cursor: pointer;
 	height: 31px;
 	position: absolute;
@@ -2264,13 +2346,13 @@ body {background-image: url('kaleydoscopio_background.png'); background-repeat: 
 
 
 .display_more:hover {
-	background: url("totop.png") no-repeat scroll 0 -31px transparent;
+	background: url("../img/totop.png") no-repeat scroll 0 -31px transparent;
 	top: -14px;
 	height:30px;
 }
 
 .gototop_description {
-	background: url("totop_up.png") no-repeat scroll 0 0 transparent;
+	background: url("../img/totop_up.png") no-repeat scroll 0 0 transparent;
 	cursor: pointer;
 	height: 31px;
 	position: absolute;
@@ -2306,18 +2388,14 @@ body {background-image: url('kaleydoscopio_background.png'); background-repeat: 
 
 
 ul.share_container {
-
-	width: 250px;
-	margin: 0 auto;
-margin-top: 20px;
-       margin-bottom: 0;
+	margin-top: 20px;
+	margin-bottom: 0;
 }
-
 
 ul.share_container li {
   	display: list-item;
 	float: left;
-	width: 105px;
+	width: 90px;
 }
 
 .descripcion_clase {margin-bottom: 20px;}
@@ -2382,7 +2460,7 @@ color: #f0f0f0;
 
 .submenu_categorias {
 	left: 5px;
-	top: 23px;
+	top: 24px;
 	position: absolute;
 	margin: 0;
 	display: none;
@@ -2458,7 +2536,7 @@ color: #f0f0f0;
 ================================================== */
 
 .privacy ol li {
-	list-style: decimal outside none;}
+	list-style: decimal;}
 
 .terms ul li {
 	list-style: disc;
@@ -2519,6 +2597,7 @@ color: #7A7A7A;
 .about h1 {
 	margin-bottom: 20px;
 	padding-left: 10px;
+	display: inline-block;
 }
 
 .about p {
@@ -2606,11 +2685,16 @@ color: #7A7A7A;
 	float: left;
 	margin: 0 15px 0 0;}
 
-.foto_quehacemos {
-	width: 272px;
-	float: right;
-	margin: 0 15px 0 0;}
+.foto_porque img {box-shadow: 1px 1px 1px #C8C6C6;}
 
+
+.foto_quehacemos {
+	width: 330px;
+	float: right;
+	margin: 49px 0 0 15px ;
+	}
+
+.foto_quehacemos img {box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.7);}
 
 
 .porque_kaleydoscopio h1 {display: inline-block; }
@@ -2622,7 +2706,7 @@ color: #7A7A7A;
 	box-shadow: 1px 1px 1px #c8c6c6;
 	margin-bottom: 30px;
 	overflow: hidden;
-	width: 421px;
+	width: 333px;
 	float: left;
 	margin-right: 20px;
 }
@@ -2633,12 +2717,13 @@ color: #7A7A7A;
 	box-shadow: 1px 1px 1px #c8c6c6;
 	margin-bottom: 30px;
 	overflow: hidden;
-	width: 421px;
+	width: 527px;
 	float: left;
+	height: 194px;
 }
 
 .about2 h1, .about3 h1 {
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 	padding-left: 10px;
 	line-height: 1;
 }
@@ -2654,6 +2739,7 @@ color: #7A7A7A;
 	margin-right: 15px;
 	text-align: center;
 }
+
 .fundadores img {box-shadow: 1px 1px 1px #ccc}
 
 .fundadores2 img {box-shadow: 1px 1px 1px #ccc}
@@ -2664,6 +2750,8 @@ color: #7A7A7A;
 	text-align: center;
 }
 
+.fundadores h2, .fundadores2 h2 {font-size: 15px;}
+.fundadores h4, .fundadores2 h4, .fundadores p, .fundadores2 p {font-size: 13px;}
 
 .team_social {
 	border-top: 1px solid #ddd;
@@ -2671,17 +2759,6 @@ color: #7A7A7A;
 	padding: 13px;
 }
 
+.sponsors {width: 175px; float: left;}
 
-.btn_lista_cursos a {
-    background-color: #F6F6F6;
-    box-shadow: 0 1px 1px #D5D5D5;
-    color: #3C3C3C;
-    font-family: adelle,impact;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 21px;
-    margin: 0 5px;
-    padding: 3px 15px;
-    text-decoration: none;
-}
-
+.sponsor_logo {background: url("../images/sponsors/boletia.png")}

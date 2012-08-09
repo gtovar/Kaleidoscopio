@@ -1,7 +1,5 @@
-
 <div class="center hero-unit">
   <h1>Ver contactos</h1>
-
   <h2>
     Ver todos los
     <a href="#">Contactos</a>
@@ -9,7 +7,6 @@
   </h2>
   <%= link_to "Crear contacto", new_contact_path, class: "btn btn-large btn-primary" %>
 </div>
-
 <table>
   <tr>
     <th><%= Contact.human_attribute_name(:name) %></th>
@@ -21,7 +18,6 @@
     <th></th>
     <th></th>
   </tr>
-
 <% @contacts.each do |contact| %>
   <tr>
     <td><%= contact.name %></td>
@@ -45,5 +41,4 @@
   </tr>
 <% end %>
 </table>
-
 <br />

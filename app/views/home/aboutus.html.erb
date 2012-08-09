@@ -1,76 +1,78 @@
 <% provide(:title, 'Acerca de nosotros') %>
-
 <div class=" container contentwrapper withoutpbg preloader_container ">
-
-
-	<div class="about">
-      <div class="foto_porque"></div>
-		<div class="porque_kaleydoscopio">
-			<h1 class="headofpage">¿Por qué kaleydoscopio?</h1>
-			<p>Si bien el nombre proviene de la palabra original Caleidoscopio y físicamente es un tubo donde mediante tres espejos y láminas traslúcidas se forman objetos diversos en colores y formas, nosotros lo llevamos a otro nivel.
-			</p>
-
-			<p>
-			kaleydoscopio toma su inspiración de este increíble objeto para llevarlo a una experiencia. Nuestro objetivo es que cada vez que entres a nuestra Página Web, Facebook y Twitter puedas encontrar diferentes clases, cursos y experiencias que te hagan ver la vida de diferente forma.
-			</p>
-
-			<p>
-			Nuestro logotipo esta compuesto de dos partes, nuestro nombre - kaleydoscopio - y una imagen la cual llamamos el "arbolito". Ésta representa el árbol de la sabiduría visto a través de este increíble objeto.
-			</p>
-          </div>
-                  <div class="foto_porque">
-<%= image_tag("kaleydoscopio_diagrama.jpg", :alt => "porque") %>
-                                        </div>
-	</div>
-
-
-<div class="about">
-	<h1 class="headofpage">¿Qué hacemos en kaleydoscopio?
-		<%= image_tag("kaleydoscopio_porque.jpg", :alt => "porque", :class => "foto_quehacemos") %></h1>
-
-
-<p>Nuestro servicio tiene como objetivo que cualquier persona pueda compartir su talento con la gente de su comunidad. Nosotros nos dedicamos a encontrar gente interesante para después organizar, publicar y promover la clase con más personas. Los alumnos revisan las clases que les interesan y a través de nuestra página compran su boleto para poder asistir.
-</p>
+  <div class="about">
+    <div class="foto_porque"></div>
+    <div class="porque_kaleydoscopio">
+      <h1 class="headofpage">¿Por qué kaleydoscopio?</h1>
+      <div class="foto_quehacemos">
+        <%= image_tag("kaleydoscopio_porque.jpg", :alt => "porque") %>
+      </div>
+      <p>Si bien el nombre proviene de la palabra original Caleidoscopio y físicamente es un tubo donde mediante tres espejos y láminas traslúcidas se forman objetos diversos en colores y formas, nosotros lo llevamos a otro nivel.
+      </p>
+      <p>
+        kaleydoscopio toma su inspiración de este increíble objeto para llevarlo a una experiencia. Nuestro objetivo es que cada vez que entres a nuestra Página Web, Facebook y Twitter puedas encontrar diferentes clases, cursos y experiencias que te hagan ver la vida de diferente forma.
+      </p>
+      <p>
+        Nuestro logotipo esta compuesto de dos partes, nuestro nombre - kaleydoscopio - y una imagen la cual llamamos el "arbolito". Ésta representa el árbol de la sabiduría visto a través de este increíble objeto.
+      </p>
+    </div>
+  </div>
+  <div class="about">
+    <h1 class="headofpage">¿Qué hacemos en kaleydoscopio?</h1>
+    <p>Nuestro servicio tiene como objetivo que cualquier persona pueda compartir su talento con la gente de su comunidad. Nosotros nos dedicamos a encontrar gente interesante para después organizar, publicar y promover la clase con más personas. Los alumnos revisan las clases que les interesan y a través de nuestra página compran su boleto para poder asistir.
+    </p>
+    <div class="foto_porque">
+      <%= image_tag("kaleydoscopio_diagrama.jpg", :alt => "porque", :class => "diagrama") %>
+    </div>
+  </div>
+  <!-- nuevo -->
+  <div class="about2">
+    <h1 class="headofpage">Los fundadores</h1>
+    <div class="fundadores">
+      <%= image_tag("kaleydoscopio_mike.jpg", :alt => "Mike") %>
+      <h2><strong>Miguel Rmz</strong></h2>
+      <h4><strong>Clases que quiero dar:</strong></h4><p>Marketing Digital for Dummies, Fundamentos e Historia de Batman y Cómo hacer un buen Spaguetti
+      </p>
+      <div class="smallproflinks">
+        <a class="twitter_link tiptip" href="http://twitter.com/#!/mikermqz"></a>
+        <a class="LinkedIn_link tiptip" href="http://mx.linkedin.com/in/miguelrmqz"></a>
+      </div>
+    </div>
+    <div class="fundadores2">
+      <%= image_tag("kaleydoscopio_hugo.jpg", :alt => "hugo") %>
+      <h2><strong>Hugo Rmz</strong></h2>
+      <h4><strong>Clases que quiero dar:</strong></h4><p> Finanzas Personales, Soluciones a cualquier problema y Cómo preparar una cena romántica.
+      </p>
+      <div class="smallproflinks">
+        <a class="twitter_link tiptip" href="http://twitter.com/#!/hugormzo"></a>
+        <a class="LinkedIn_link tiptip" href="http://www.linkedin.com/in/hugormz86"></a>
+      </div>
+    </div>
+  </div>
+  <div class="about3">
+    <h1 class="headofpage">Amigos Kaleydoscopio.</h1>
+    <página>
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p>
+  <div class="sponsors">
+  <%= image_tag("sponsors/boletia.png", :alt => "boletia") %>
+  </div>
+  <div class="sponsors">
+ <%= image_tag("sponsors/incaztech-logo.png", :alt => "incaztech-logo") %>
+  </div>
+  <div class="sponsors">
+  <%= image_tag("sponsors/coworkingmty.png", :alt => "coworkingmty") %>
+  </div>
 </div>
+<div class="about3">
+  <h1 class="headofpage">¿Quieres trabajar con nosotros?</h1>
+  <p>trabajar
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  </p>
+  <div class="boton_about">
+    <%= link_to "Me interesa dar un curso", quieroclase_path %>
+  </div>
+</div>
+<div class='clear'></div></div><div class='clear'></div>
 
 
 
-
-	<!-- nuevo -->
-		<div class="about2">
-		<h1 class="headofpage">El equipo</h1>
-		<div class="fundadores">
-			<%= image_tag("kaleydoscopio_hugo.jpg", :alt => "Mike") %>
-
-			<h2><strong>Miguel Rmz</strong></h2>
-			<h4><strong>Clases que quiero dar:</strong></h4><p>Marketing Digital for Dummies, Fundamentos e Historia de Batman y Cómo hacer un buen Spaguetti
-</p>
-				<div class="smallproflinks">
-					<a class="twitter_link tiptip" href="http://twitter.com/#!/mikermqz"></a>
-					<a class="LinkedIn_link tiptip" href="http://mx.linkedin.com/in/miguelrmqz"></a>
-				</div>
-
-
-		</div>
-		<div class="fundadores2">
-<%= image_tag("kaleydoscopio_mike.jpg", :alt => "hugo") %>
-			<h2><strong>Hugo Rmz</strong></h2>
-			<h4><strong>Clases que quiero dar:</strong></h4><p> Finanzas Personales, Soluciones a cualquier problema y Cómo preparar una cena romántica.
-</p>
-			<div class="smallproflinks">
-					<a class="twitter_link tiptip" href="http://twitter.com/#!/hugormzo"></a>
-					<a class="LinkedIn_link tiptip" href="http://www.linkedin.com/in/hugormz86"></a>
-			</div>
-
-
-
-
-		</div>
-		</div>
-
-		<div class="about3">
-		<h1 class="headofpage">Amigos Kaleydoscopio.</h1>
-
-		</div>
-
-	<div class='clear'></div></div><div class='clear'></div>
