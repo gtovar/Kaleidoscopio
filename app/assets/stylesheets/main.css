@@ -1901,7 +1901,7 @@ h3.shortcode_accordion_item_title:hover, h3.shortcode_toggles_item_title:hover {
 
 
 .preloader_container img {
-    
+
 }
 #wp-calendar {
 	width:100%;
@@ -2037,7 +2037,7 @@ letter-spacing: -1px;
 .foto_descripcion {
 	width: 960px;
 	display: block;
-	
+
 	}
 
 .description_bar {
@@ -2334,8 +2334,8 @@ ul.share_container li {
 
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
-.clearfix { 
-*zoom: 1; 
+.clearfix {
+*zoom: 1;
 }
 
 
@@ -2683,3 +2683,78 @@ color: #7A7A7A;
 .sponsors {width: 175px; float: left;}
 
 .sponsor_logo {background: url("boletia.png")}
+
+
+.boton_about {
+    padding: 10px 30px;
+    font-family: adelle;
+    font-weight: 800;
+    background: rgb(194,244,129); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(194,244,129,1) 1%, rgba(140,199,64,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(194,244,129,1)), color-stop(100%,rgba(140,199,64,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2f481', endColorstr='#8cc740',GradientType=0 ); /* IE6-9 */
+-webkit-border-bottom-right-radius: 15px;
+-webkit-border-bottom-left-radius: 15px;
+-webkit-border-top-right-radius: 15px;
+-webkit-border-top-left-radius: 15px;
+
+-moz-border-radius-bottomright: 15px;
+-moz-border-radius-bottomleft: 15px;
+-moz-border-radius-topright: 15px;
+-moz-border-radius-topleft: 15px;
+
+border-bottom-right-radius: 15px;
+border-bottom-left-radius: 15px;
+border-top-right-radius: 15px;
+border-top-left-radius: 15px;
+
+    margin: 30px auto 0 ;
+
+    border-top: 1px solid #ceff91;
+    border-bottom: 1px solid #81b145;
+
+
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+    text-shadow: 0px -1px 0px #77a839;
+    width: 260px;
+    }
+   
+
+
+
+.boton_about:hover {
+
+    background: rgb(158,221,86); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(158,221,86,1) 1%, rgba(114,181,59,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(158,221,86,1)), color-stop(100%,rgba(114,181,59,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(158,221,86,1) 1%,rgba(114,181,59,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(158,221,86,1) 1%,rgba(114,181,59,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(158,221,86,1) 1%,rgba(114,181,59,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(158,221,86,1) 1%,rgba(114,181,59,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9edd56', endColorstr='#72b53b',GradientType=0 ); /* IE6-9 */
+text-decoration: none;}
+
+.boton_about a {color: white; text-decoration: none;}
+
+
+    .boton_about:active {
+    background: rgb(194,244,129); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(194,244,129,1) 1%, rgba(140,199,64,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(194,244,129,1)), color-stop(100%,rgba(140,199,64,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(194,244,129,1) 1%,rgba(140,199,64,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2f481', endColorstr='#8cc740',GradientType=0 ); /* IE6-9 */
+
+  border-top: 1px solid #ceff91;
+  border-bottom: 1px solid #81b145;
+  box-shadow: 0px 2px 2px #a2bc82;
+    }
