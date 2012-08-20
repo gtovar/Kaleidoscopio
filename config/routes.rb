@@ -1,16 +1,16 @@
-Kaleidoscopio::Application.routes.draw do  
-  
-  
+Kaleidoscopio::Application.routes.draw do
+
+
 
   devise_for :admins
-  resources :contacts 
-  resources :courses do 
+  resources :contacts
+  resources :courses do
   resources :orders
-  end	
+  end
 
 	root :to => "home#index"
 	match 'curso/:id' => 'home#show_detail_course_to_users', :as => 'curso' do
-		resources :orders	
+		resources :orders
 	end
 	match '/lista-admins' => 'courses#index_users', :as => 'lista_admins'
 	match '/acerca-de' => 'home#aboutus', :as => 'conocenos'
@@ -26,14 +26,14 @@ Kaleidoscopio::Application.routes.draw do
 	match '/dineromail' => 'dineromail#ipn', :as => 'dineromail'
 
 	match '/lista-cursos' => 'home#listcoursespage', :as => 'listacursos'
-	
-	
+
+
 	match '/get_next_results' => 'home#get_next_results'
 
-	
+
 	match '/success/:course_id' => 'orders#success', :as => 'course_success'
 	match '/error' => 'home#error', :as => 'course_error'
-	
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

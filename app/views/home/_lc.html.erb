@@ -4,16 +4,16 @@
 		<div class="post-title-cont">
 			<h2 class="post-title">
 				<%= link_to course.name, curso_path(course) %>
-			</h2>	
+			</h2>
 			<div class="post-meta portype">
 				<%= l course.date_time, :format => :long %>
 			</div>
 		</div>
 		<div class="post-content">
 			<div class="class-thumbnail">
-			<% if course.owned == true%>		
+			<% if course.owned == true%>
 				<span class="type_image" title="Curso Kaleydoscopio"></span>
-			
+
 			<%end %>
 			<h1 class="precio">$<%= course.price %><span class="decimal">00</span></h1>
 				<%= link_to image_tag(course.photo.thumb.url.to_s, :alt => "Kaleydoscopio"), curso_path(course) %>
