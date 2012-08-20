@@ -12,8 +12,8 @@
 
 <div class="container contentwrapper withoutpbg preloader_container">
   <article class="sixteen columns alpha omega pagestyle">
-  <div class="contbg" style="width:100%;float:none; clear:both;">	
-  
+  <div class="contbg" style="width:100%;float:none; clear:both;">
+
     <div>
 	<div class="clase_titulo relative">
 		<h2 class="absolute"><%= @course.name %></h2>
@@ -26,8 +26,8 @@
     	<div class="description_box descripcion_clase white_container">
 
 				<p><%= markdown (@course.description) %></p>
-			</div>	
-			
+			</div>
+
 <% unless @course.requisites_student.blank? %>
 
 			<div class="description_box white_container">
@@ -40,14 +40,14 @@
 					<img class="foto_profesor" src="<%= @course.photo_teacher.url.to_s%>">
 				</div>
 				<h2><%= @course.teacher_name %></h2>
-				<span>Instructor</span>
+				<span>Maestr@</span>
 				<p><%= markdown (@course.biography_teacher) %></p>
 			</div>
 
 
 <div class="description_box white_container">
 <h2>Ubicación</h2>
-<span><%= @course.place%></span>										    
+<span><%= @course.place%></span>
 <%= @course.google_map.gsub('width="425"','width="655"').html_safe %>
 </div>
 
@@ -63,21 +63,21 @@
 	<div class="sidebar_box white_container">
 		<h3>Fecha</h3>
 <p><%= (l @course.date_time, :format => :long).capitalize %> - <%= @course.end_time.strftime("%I:%M %P") %></p>
-	</div>    
+	</div>
 	<div class="sidebar_box white_container ">
 		<div class="cupo">
 			<% if @disponibles > 1 %>
 			<h3>Quedan <%= @disponibles %>
 			Lugares </h3>
-			<% elsif %>
-			<h3>Queda <%= @disponobles %>
+        <% else %>
+			<h3>Queda <%= @disponibles %>
 			Lugar </h3>
-			<%end%>	
+			<%end%>
 		</div>
 
 		<div class="cantidad">
 			<%= form_for([@course, @course.orders.build]) do |f| %>
-  
+
   			<h4><%= f.label :quantity, "Cantidad" %></h4>
   			<%= f.select :quantity, options_for_select([[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"]]) %>
 
@@ -85,18 +85,18 @@
 	$(document).ready(function(){
 	$(".boton_inscripcion a").click(function(e){
 		e.preventDefault();
-		$("#new_order").submit();	
+		$("#new_order").submit();
 		});
-	});	
+	});
 </script>
   			<div class="boton_inscripcion">
     				<%= link_to "Comprar", "#", :class => "inscribete" %>
   			</div>
-			<% end %>	
-			
+			<% end %>
+
 		</div>
-		
-		
+
+
 	</div>
 
 
@@ -118,13 +118,13 @@
 
 			</li>
 		</ul>
-	</div>	
+	</div>
 
 
     </div>
 
-  </div>    
+  </div>
   </article>
 </div>
 
-	
+
