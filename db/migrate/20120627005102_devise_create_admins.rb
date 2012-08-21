@@ -22,4 +22,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration
     # add_index :admins, :authentication_token, :unique => true
   end
 
+  def down
+    drop_table :admins
+  end
 end
