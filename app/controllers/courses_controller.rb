@@ -4,8 +4,8 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @search = Course.search(params[:search])	
-    @courses = @search.all
+    @search = Course.search(params[:search])
+    @courses = @search.order("date_time ASC")
     @total = @courses.count
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
       format.csv {export(@courses)}
     end
   end
-	
+
 
 
   def index_contacts
@@ -48,7 +48,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
-    @order = @course.orders(params[@course])	
+    @order = @course.orders(params[@course])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @course }
@@ -62,13 +62,13 @@ class CoursesController < ApplicationController
 def export(courses)
       csv = CSV.generate(:col_sep => "\t") do |csv|
       csv << ["Nombre_Curso", "Categoria", "Fecha", "", "", "Precio", "Curso_Propio"]
-      courses.each do |course|	
+      courses.each do |course|
       csv << [course.name, course.category, course.date_time, course.price, course.owned]
       end
     end
 
      send_data csv, :type => 'text/csv; charset=iso-8859-1; header=present', :disposition => 	"attachment; filename=#{Time.now.strftime('%d-%m-%y--%H-%M')}.csv"
-    
+
 
  end
 
@@ -91,7 +91,7 @@ def export(courses)
 
 
 
-  
+
   # POST /courses
   # POST /courses.json
   def create
@@ -136,9 +136,9 @@ def export(courses)
     end
   end
 
-	
-  
- 
+
+
+
 
 
 end

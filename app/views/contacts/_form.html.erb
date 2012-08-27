@@ -18,7 +18,7 @@
   <% if @contact.errors.any? %>
     <div id="error_explanation">
 			<div class="alert alert-error">
-      
+
 <% errores = @contact.errors.count %>
 
 <% if errores > 1 %>
@@ -36,7 +36,7 @@
   <% end %>
 
 <div class="attwarn" style="margin-top:20px;margin-bottom:30px;font-size:20px;"><%= subtitle %></div>
-					
+
 					<div class="attwarn ajaxresponse"></div>
 
 <% if giveclass %>
@@ -44,7 +44,7 @@
 <% else %>
 <div class="commname smallcommf">
 <%= f.select :subjects, options_for_select([["Duda",1,{:selected => 'true'}],["Queja",2],
-["Sugerencia",3],["Quiero Ofertar un curso",4]]),class: "textarea sendername", size: "28" %>
+["Sugerencia",3],["Quiero Ofertar un curso",4]),class: "textarea sendername", size: "28" %>
 </div>
 <br/>
 <br/>
@@ -78,17 +78,17 @@
 </div>
 </div>
 <div class="columns four alpha offset-by-one omega presidebar" id="contact_sidebar">
-	<aside id="sidebar">		
+	<aside id="sidebar">
 		<div class="sidepanel widget_twitter">
 			<div class="compname">kaleydoscopio</div>
 					<div class="compaddr">Ave. Losoles 200 Col. Residencial San Agustín. SPGG, NL</div>
 				</div>
 				<div class="compphone mtyp1">contacto.kaleydoscopio</div>				<div class="mail_icon2 mtyp1">
 					<a href="mailto:mail@companyname.com">clases@kaleydoscopio.com</a>
-				</div>				
+				</div>
 				</div>
 			</aside><!-- #sidebar -->
-		
+
 		</div>
 		<div class="clear"></div>
 </div>

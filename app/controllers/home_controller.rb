@@ -2,8 +2,8 @@ class HomeController < ApplicationController
 layout "front-end"
 
   def index
-    @search = Course.search(params[:search])	
-    @courses = @search.order(:status).limit(10)   
+    @search = Course.search(params[:search])
+    @courses = @search.order(:status,"date_time ASC").limit(10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,14 +12,14 @@ layout "front-end"
   end
 
 	def get_next_results
-    @search = Course.search(session[:search])  			
+    @search = Course.search(session[:search])
     @courses = @search.order(:status).paginate(:page => params[:page], :per_page =>Course::RESULTS_PER_PAGE)
-		@prueba = params[:page] 
+		@prueba = params[:page]
 		 @no_more_results= @courses.total_pages == @prueba.to_i
     respond_to do |format|
-			format.js		
+			format.js
 		end
-  end	
+  end
 
   def listcoursespage
     @search = Course.search(params[:search])
@@ -32,7 +32,7 @@ layout "front-end"
   end
 
   def show_detail_course_to_users
- 
+
     @course = Course.find(params[:id])
     @order = @course.orders(params[@course])
 		@suma = @order.where(:payment_status => 'success').sum(:quantity)
@@ -41,7 +41,7 @@ layout "front-end"
       format.html # show.html.erb
       format.json { render json: @course }
     end
-   	
+
   end
 
 
