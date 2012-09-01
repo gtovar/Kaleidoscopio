@@ -75,7 +75,7 @@
 	.container .mainmenu_responsive {
 		display:none;
 	}
-	.container.contentwrapper .flexslider {
+	.containerfntwrapper .flexslider {
 		width: 960px;
 	}
 	.container.contentwrapper .singlepostslider {
@@ -146,7 +146,8 @@
         .container .five.columns                    { width: 220px; }
         .container .six.columns                     { width: 268px; }
         .container .seven.columns                   { width: 316px; }
-        .container .eight.columns                   { width: 364px; }
+        .container .eight.columns                   { width: 364px;position: relative;
+height: 500px; }
         .container .nine.columns                    { width: 412px; }
         .container .ten.columns                     { width: 460px; }
         .container .eleven.columns                  { width: 508px; }
