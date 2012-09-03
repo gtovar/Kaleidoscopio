@@ -31,9 +31,11 @@
 <td>Sugerencia</td>
 <%when "4"%>
 <td>Propuesta</td>
+<%when "5"%>
+<td>Vacante</td>
 <%end%>
     <td><%= truncate (contact.message) %></td>
-    <td><%= link_to 'Ver', vercontacto_path(contact) %> - 
+    <td><%= link_to 'Ver', vercontacto_path(contact) %> -
     <%= link_to 'Eliminar', contact, confirm: '¿Estas seguro?', method: :delete %></td>
   </tr>
 <% end %>

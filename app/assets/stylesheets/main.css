@@ -2208,7 +2208,6 @@ border-top-left-radius: 15px;
 
 
 	font-size: 16px;
-	text-transform: uppercase;
 	text-align: center;
 	padding: 5px 0px 5px 0px;
 	text-shadow: 0px -1px 0px #77a839;
@@ -2324,6 +2323,8 @@ ul.share_container li {
 
 .white_container	{background-color: #f6f6f6;
 	box-shadow:1px 1px 1px #c8c6c6;}
+.white_container2	{background-color: #E2E2E2;
+	box-shadow:1px 1px 1px #B4B2B2;}
 
 .fl {float: left;}
 

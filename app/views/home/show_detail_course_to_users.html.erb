@@ -60,11 +60,11 @@
     </div>
 
     <div class="sidebar">
-	<div class="sidebar_box white_container">
+	<div class="sidebar_box white_container2">
 		<h3>Fecha</h3>
-<p><%= (l @course.date_time, :format => :long).capitalize %> - <%= @course.end_time.strftime("%I:%M %P") %></p>
+<p><%= (l @course.date_time, :format => :default).capitalize %> - <%= @course.end_time.strftime("%I:%M %P") %> </p>
 	</div>
-	<div class="sidebar_box white_container ">
+	<div class="sidebar_box white_container2">
 		<div class="cupo">
 			<% if @disponibles > 1 %>
 			<h3>Quedan <%= @disponibles %>
@@ -90,7 +90,7 @@
 	});
 </script>
   			<div class="boton_inscripcion">
-    				<%= link_to "Comprar", "#", :class => "inscribete" %>
+    				<%= link_to "comprar", "#", :class => "inscribete" %>
   			</div>
 			<% end %>
 		</div>
