@@ -27,6 +27,7 @@
                 <th><%= Course.human_attribute_name("category") %></th>
                 <th><%= Course.human_attribute_name("limit_class_tickets") %></th>
                 <th><%= Course.human_attribute_name("owned") %></th>
+								<th><%= sort_link @search, :date_time %></th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -43,6 +44,7 @@
 			<% elsif%>
 				<td>no</td>
             <% end %>
+<td><%= course.date_time %></td>
                 	<td><%= link_to 'Ver', course %></td>
                 	<td><%= link_to 'Editar', edit_course_path(course) %></td>
                 	<td><%= link_to 'Eliminar', course, confirm: '¿Estas seguro?', method: :delete %></td>
