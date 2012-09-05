@@ -1,13 +1,6 @@
 <%= render 'layouts/shim-front' %>
 <head>
   <%= render 'layouts/head-front' %>
-  <%= ('<meta property="og:title" content="Kaleydoscopio | ' + curso_path(@course).gsub("/curso/","") + '" />').html_safe %>
-<%= ('<meta property="og:type" content="Clases" />').html_safe %>
-<%= ('<meta property="og:url" content="'+ curso_url(@course) + '" />').html_safe %>
-<%= ('<meta property="og:image" content="' + @course.photo.large.url.to_s + '" />').html_safe %>
-<meta property="og:site_name" content="Kaleydoscopio site name" />
-<meta property="fm:admins" content="589571332" />
-
 
 </head>
 
