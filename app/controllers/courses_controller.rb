@@ -61,9 +61,9 @@ class CoursesController < ApplicationController
 
 def export(courses)
       csv = CSV.generate(:col_sep => "\t") do |csv|
-      csv << ["Nombre_Curso", "Categoria", "Fecha", "", "", "Precio", "Curso_Propio"]
+      csv << ["Nombre_Curso", "Categoria", "Fecha", "", "", "Precio", "Curso_Propio", "Estatus"]
       courses.each do |course|
-      csv << [course.name, course.category, course.date_time, course.price, course.owned]
+      csv << [course.name, course.category, course.date_time, course.price, course.owned, course.status]
       end
     end
 

@@ -2757,3 +2757,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2f481', end
   border-bottom: 1px solid #81b145;
   box-shadow: 0px 2px 2px #a2bc82;
     }
+.msg{
+width: 500px;
+margin: 0 auto 0 auto;
+text-align: justify;
+}

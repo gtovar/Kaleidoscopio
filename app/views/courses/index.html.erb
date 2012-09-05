@@ -5,12 +5,12 @@
 	        <table class="table">
           		<thead>
 			        <th style="width:528px"><h1> Lista de cursos </h1>	<p>Total de cursos:<%= @total %></p></th>
-		        <th> 
+		        <th>
 
                 <%= link_to "Exportar a excel", courses_path(:format => 'csv'), class: "btn" %>
-                <%= link_to "Crear curso", new_course_path, class: "btn btn-primary" %>          
-				
-				 
+                <%= link_to "Crear curso", new_course_path, class: "btn btn-primary" %>
+
+
                     </th>
               </thead>
             </table>
@@ -27,28 +27,30 @@
                 <th><%= Course.human_attribute_name("category") %></th>
                 <th><%= Course.human_attribute_name("limit_class_tickets") %></th>
                 <th><%= Course.human_attribute_name("owned") %></th>
-								<th><%= sort_link @search, :date_time %></th>
-                <th></th>
+				<th><%= sort_link @search, :date_time %></th>
+ 				<th><%= sort_link @search, :status %></th>
+               <th></th>
                 <th></th>
                 <th></th>
               </thead>
 
 
             <% @courses.each do |course| %>
-               <tbody>	
+               <tbody>
 	            <td><%= course.name %></td>
-                	<td><%= course.category %></td>
-                	<td><%= course.limit_class_tickets %></td>
+               	<td><%= course.category %></td>
+               	<td><%= course.limit_class_tickets %></td>
             <% if course.owned == TRUE %>
                 	<td>si</td>
 			<% elsif%>
 				<td>no</td>
             <% end %>
-<td><%= course.date_time %></td>
-                	<td><%= link_to 'Ver', course %></td>
+                <td><%= course.date_time %></td>
+                <td><%= course.status %></td>
+               	<td><%= link_to 'Ver', course %></td>
                 	<td><%= link_to 'Editar', edit_course_path(course) %></td>
                 	<td><%= link_to 'Eliminar', course, confirm: '¿Estas seguro?', method: :delete %></td>
-					
+
                </tbody>
             <% end %>
 
