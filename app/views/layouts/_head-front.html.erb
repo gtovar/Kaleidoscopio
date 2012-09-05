@@ -10,7 +10,10 @@
 
 <!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+    <![endif]-->
+    <% if @course != nil %>
+<%= ('<meta property="og:title" content="Kaleydoscopio | ' + curso_path(@course).gsub("/curso/","") + '"' + '/>').html_safe %>
+<% end %>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <script type="text/javascript" src="http://use.typekit.com/qvj6cvf.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
