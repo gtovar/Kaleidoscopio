@@ -24,7 +24,6 @@ Kaleidoscopio::Application.routes.draw do
 	match '/contactos' => 'courses#index_contacts', :as => 'contactos'
 	match '/ver-contacto/:id' => 'courses#show_contacts', :as => 'vercontacto'
 	match '/dineromail' => 'dineromail#ipn', :as => 'dineromail'
-
 	match '/lista-cursos' => 'home#listcoursespage', :as => 'listacursos'
 
 
