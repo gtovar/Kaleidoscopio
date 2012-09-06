@@ -2319,7 +2319,7 @@ ul.share_container li {
 	width: 105px;
 }
 
-.descripcion_clase {margin-bottom: 20px;}
+.descripcion_clase {margin-bottom: 20px; text-align: justify;}
 
 .white_container	{background-color: #f6f6f6;
 	box-shadow:1px 1px 1px #c8c6c6;}
@@ -2513,6 +2513,7 @@ color: #7A7A7A;
 	box-shadow: 1px 1px 1px #c8c6c6;
 	margin-bottom: 30px;
 	overflow: hidden;
+    text-align: justify;
 }
 /* end nuevo */
 
@@ -2524,6 +2525,7 @@ color: #7A7A7A;
 .about p {
 	margin-bottom: 10px;
 	padding-left: 10px;
+    text-align: justify;
 }
 
 
@@ -2630,6 +2632,7 @@ color: #7A7A7A;
 	width: 333px;
 	float: left;
 	margin-right: 20px;
+    text-align: justify;
 }
 
 .about3 {
@@ -2640,6 +2643,7 @@ color: #7A7A7A;
 	overflow: hidden;
 	width: 527px;
 	float: left;
+    text-align: justify;
 }
 
 .about2 h1, .about3 h1 {
