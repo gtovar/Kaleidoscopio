@@ -1,13 +1,12 @@
 <%= render 'layouts/shim-front' %>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
-<meta property="og:title" content="Clases interesantes desde success." />
+  <%= ('<meta property="og:title" content= Kaleydoscopio | "' + @course.name  + ' " />').html_safe %>
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://kaleydoscopio.herokuapp.com" />
-  <meta property="og:image" content="http://kaleydoscopio.herokuapp.com/assets/posttypes/image1.png" />
+  <%= ('<meta property="og:url" content="' + curso_url(@course) + '" />').html_safe %>
+  <%= ('<meta property="og:image" content="' + @course.photo.large.url.to_s + '" />').html_safe %>
   <meta property="og:site_name" content="KALEYDOSCOPIO" />
   <meta property="fb:admins" content="589571332" />
-
 
 	<!-- Fonts
 	================================================== -->
