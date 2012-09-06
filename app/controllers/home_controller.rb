@@ -4,14 +4,17 @@ layout "front-end"
   def index
     @search = Course.search(params[:search])
     @courses = @search.order(:status,"date_time ASC").limit(10)
-@course = nil
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }
     end
+  @course = nil
+
   end
 
 	def get_next_results
+@course = nil
+
     @search = Course.search(session[:search])
     @courses = @search.order(:status).paginate(:page => params[:page], :per_page =>Course::RESULTS_PER_PAGE)
 		@prueba = params[:page]
@@ -22,6 +25,8 @@ layout "front-end"
   end
 
   def listcoursespage
+@course = nil
+
     @search = Course.search(params[:search])
     @courses = @search.order(:status).paginate(:page => 1, :per_page => Course::RESULTS_PER_PAGE )
     session[:search] = params[:search]
@@ -32,6 +37,7 @@ layout "front-end"
   end
 
   def show_detail_course_to_users
+@course = nil
 
     @course = Course.find(params[:id])
     @order = @course.orders(params[@course])
@@ -48,16 +54,24 @@ layout "front-end"
 
 
 def aboutus
+@course = nil
+
 end
 
 def contact
+@course = nil
+
 end
 
 def view_contact
+@course = nil
+
 end
 
 
 def error
+@course = nil
+
 end
 
 
