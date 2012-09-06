@@ -18,6 +18,9 @@ Kaleidoscopio::Application.routes.draw do
 	match '/contacto' => 'contacts#new', :as => 'contacto'
 	match '/quiero-dar-una-clase' => 'contacts#giveclass', :as => 'quieroclase', :via => :get
 	match '/enviar-mensaje' => 'contacts#create_giveclass', :as => 'crear_quieroclase', :via => :post
+	match '/quiero-trabajo' => 'contacts#givejob', :as => 'quierotrabajo', :via => :get
+	match '/enviar-solicitud' => 'contacts#create_givejob', :as => 'crear_quierotrabajo', :via => :post
+
 	match '/privacidad' => 'static_pages#privacy', :as => 'privacidad'
 	match '/terminos' => 'static_pages#terms', :as => 'terminos'
 

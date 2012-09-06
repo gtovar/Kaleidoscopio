@@ -47,7 +47,7 @@ layout "front-end"
   # POST /contacts.json
   def create
     @contact = Contact.new(params[:contact])
-    
+
     respond_to do |format|
       if @contact.save
         format.html { redirect_to root_path, notice: 'Tu informacion a sido recibida gracias!!!' }
@@ -91,19 +91,40 @@ layout "front-end"
     @contact = Contact.new
 
     respond_to do |format|
-      format.html 
+      format.html
     end
   end
 
 	def create_giveclass
     @contact = Contact.new(params[:contact])
-    
+
     respond_to do |format|
       if @contact.save
         format.html { redirect_to root_path, notice: 'Tu informacion a sido recibida gracias!!!' }
         format.json { render json: @contact, status: :created, location: @contact }
       else
         format.html { render action: "giveclass" }
+        format.json { render json: @contact.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def givejob
+    @contact = Contact.new
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
+	def create_givejob
+    @contact = Contact.new(params[:contact])
+    respond_to do |format|
+      if @contact.save
+        format.html { redirect_to root_path, notice: 'Tu informacion a sido recibida gracias!!!' }
+        format.json { render json: @contact, status: :created, location: @contact }
+      else
+        format.html { render action: "givejob" }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
       end
     end

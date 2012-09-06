@@ -42,14 +42,7 @@
 <% if giveclass %>
 <%= f.hidden_field :subjects, :value => 4 %>
 <% else %>
-<div class="commname smallcommf">
-<%= f.select :subjects, options_for_select([["Duda",1,{:selected => 'true'}],["Queja",2],
-["Sugerencia",3],["Quiero dar una clase",4],["Quiero trabajar en Kaleydoscopio",5]], class: "textarea sendername", size: "28") %>
-</div>
-<br/>
-<br/>
-<% end %>
-<% if option = 5 %>
+  <% if option == 5 %>
 <div class="commname smallcommf">
   <%= f.select :subjects, options_for_select([
     ["Duda",1],["Queja",2],["Sugerencia",3],["Quiero dar una clase",4],
@@ -58,9 +51,16 @@
 </div>
 <br/>
 <br/>
+<% else %>
+
+  <div class="commname smallcommf">
+<%= f.select :subjects, options_for_select([["Duda",1,{:selected => 'true'}],["Queja",2],
+["Sugerencia",3],["Quiero dar una clase",4],["Quiero trabajar en Kaleydoscopio",5]], class: "textarea sendername", size: "28") %>
+</div>
+<br/>
+<br/>
 <% end %>
-
-
+<% end %>
 	<div class="commnombre smallcommf">
 <%= f.text_field :name, class: "textarea sendername", size: "28", placeholder: "Nombre*" %>
 	</div>
