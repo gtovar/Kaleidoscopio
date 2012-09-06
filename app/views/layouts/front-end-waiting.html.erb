@@ -1,7 +1,7 @@
 <%= render 'layouts/shim-front' %>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
-  <%= ('<meta property="og:title" content= Kaleydoscopio | "' + @course.name  + ' " />').html_safe %>
+  <%= ('<meta property="og:title" content="Kaleydoscopio | ' + @course.name  + ' " />').html_safe %>
   <meta property="og:type" content="website" />
   <%= ('<meta property="og:url" content="' + curso_url(@course) + '" />').html_safe %>
   <%= ('<meta property="og:image" content="' + @course.photo.large.url.to_s + '" />').html_safe %>
