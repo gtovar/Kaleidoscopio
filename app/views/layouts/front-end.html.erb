@@ -1,6 +1,9 @@
 <%= render 'layouts/shim-front' %>
 <head>
   <%= render 'layouts/head-front' %>
+  <% if @course == nil %>
+    <% @course = Course.first %>
+  <% end %>
   <%= ('<meta property="og:title" content=" Kaleydoscopio | ' + @course.name  + ' " />').html_safe %>
   <meta property="og:type" content="website" />
   <%= ('<meta property="og:url" content="' + curso_url(@course) + '" />').html_safe %>
