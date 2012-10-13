@@ -4,11 +4,11 @@
   <% if @course == nil %>
     <% @course = Course.first %>
   <% end %>
-  <%= ('<meta property="og:title" content=" Kaleydoscopio | ' + @course.name  + ' " />').html_safe %>
+  <%= ('<meta property="og:title" content=" Claseteca | ' + @course.name  + ' " />').html_safe %>
   <meta property="og:type" content="website" />
   <%= ('<meta property="og:url" content="' + curso_url(@course) + '" />').html_safe %>
   <%= ('<meta property="og:image" content="' + @course.photo.large.url.to_s + '" />').html_safe %>
-  <meta property="og:site_name" content="KALEYDOSCOPIO" />
+  <meta property="og:site_name" content="CLASETECA" />
   <meta property="fb:admins" content="589571332" />
 
 

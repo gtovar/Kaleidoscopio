@@ -9,7 +9,7 @@ end
 
   # Returns the full title on a per-page basis.
   def full_title(page_title)
-    base_title = "Kaleydoscopio"
+    base_title = "Claseteca"
     if page_title.empty?
       base_title
     else
@@ -18,9 +18,9 @@ end
   end
 
   def logo(where)
-    home = "kaleydoscopio_logo_home.png"
+    home = "logo-claseteca-01.png"
     if where.empty?
-      "kaleydoscopio_logo.png"
+      "logo-claseteca-01.png"
     else
       home
     end

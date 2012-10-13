@@ -572,6 +572,7 @@ img.alignright {
 }
 .logoimg {
 	margin-left:7px;
+    width: 19%;
 }
 .pt10 {
 	padding:10px 0px 0px 0px;
@@ -691,7 +692,8 @@ img.alignright {
 
 
 .type_image {
-    background: url("posttypes/image1.png") no-repeat scroll 0 0 transparent;
+    background: url("posttypes/cajita-claseteca-02.jpg") no-repeat scroll 0 0 transparent;
+    background-size: 50px auto;
     display:block;
 	width:63px;
 	height:63px;

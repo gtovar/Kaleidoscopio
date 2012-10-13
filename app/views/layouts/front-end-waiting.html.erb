@@ -1,11 +1,11 @@
 <%= render 'layouts/shim-front' %>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
-  <%= ('<meta property="og:title" content="Kaleydoscopio | ' + @course.name  + ' " />').html_safe %>
+  <%= ('<meta property="og:title" content="Claseteca | ' + @course.name  + ' " />').html_safe %>
   <meta property="og:type" content="website" />
   <%= ('<meta property="og:url" content="' + curso_url(@course) + '" />').html_safe %>
   <%= ('<meta property="og:image" content="' + @course.photo.large.url.to_s + '" />').html_safe %>
-  <meta property="og:site_name" content="KALEYDOSCOPIO" />
+  <meta property="og:site_name" content="CLASETECA" />
   <meta property="fb:admins" content="589571332" />
 
 	<!-- Fonts
@@ -26,7 +26,7 @@
 	<script type="text/javascript" src="http://use.typekit.com/qvj6cvf.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<title><%= full_title(yield(:title)) %></title>
-	<link rel="shortcut icon" type="image/x-icon" href="/assets/kaleydoscopio_favicon_transparent.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
 	  <%= stylesheet_link_tag "reset", :media => "all" %>
 	<%= stylesheet_link_tag "base", :media => "all" %>
 	 <%= stylesheet_link_tag "flexslider", :media => "all" %>
