@@ -1,11 +1,10 @@
 class ContactsController < ApplicationController
-  before_filter :authenticate_admin!, :except => ["new","create","giveclass","create_giveclass"]
+
 layout "front-end"
   # GET /contacts
   # GET /contacts.json
   def index
     @contacts = Contact.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @contacts }

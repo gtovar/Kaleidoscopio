@@ -224,9 +224,9 @@ img.alignright {
 
 
 .mainmenu {
-	float:right;
-	position: relative;
     z-index: 200;
+	padding-bottom: 25px ;
+
 }
 .mainmenu .menu-item {
 	float:left;
@@ -572,7 +572,7 @@ img.alignright {
 }
 .logoimg {
 	margin-left:7px;
-    width: 19%;
+    width: 124px;
 }
 .pt10 {
 	padding:10px 0px 0px 0px;
@@ -2030,8 +2030,6 @@ letter-spacing: -1px;
 
 .header {
 	width: 960px;
-	padding-bottom: 25px ;
-	border-bottom: 1px solid #F9F9F9;
 	position: relative;
 }
 
