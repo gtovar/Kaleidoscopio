@@ -116,6 +116,7 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.5.2)
+    newrelic_rpm (3.5.0.1)
     nokogiri (1.5.5)
     orm_adapter (0.0.7)
     pg (0.14.0)
@@ -192,6 +193,7 @@ DEPENDENCIES
   friendly_id
   jquery-rails
   meta_search
+  newrelic_rpm
   nokogiri
   pg
   rails (= 3.2.3)

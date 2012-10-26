@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 
-
+gem 'newrelic_rpm'
 gem 'redcarpet', '1.17.2'
 gem 'albino'
 gem 'nokogiri'
