@@ -22,7 +22,7 @@ before_create :create_status
 validates :end_time, :biography_teacher, :category, :date_time, :description, :google_map, :limit_class_tickets, :name, :place, :price, :teacher_name, :photo_teacher, :photo, :presence => true
 
 
-  has_many :orders
+  has_many :orders, :dependent => :destroy
 
   accepts_nested_attributes_for :orders
 

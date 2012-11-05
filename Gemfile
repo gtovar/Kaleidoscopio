@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'rails-erd'
 
 gem 'newrelic_rpm'
 gem 'redcarpet', '1.17.2'
