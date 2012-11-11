@@ -71,9 +71,11 @@
                   <% end %>
                 </td>
                 
-               	<td><%= link_to 'Ver', course %></td>
-                <td><%= link_to 'Editar', edit_course_path(course) %></td>
-                <td><%= link_to 'Eliminar', course, confirm: '¿Estas seguro?', method: :delete %></td>
+               	<td>
+               	  <%= link_to 'Ver', course %><br>
+                  <%= link_to 'Editar', edit_course_path(course) %><br>
+                  <%= link_to 'Eliminar', course, confirm: '¿Estas seguro?', method: :delete %>
+                </td>
 
                </tbody>
             <% end %>
