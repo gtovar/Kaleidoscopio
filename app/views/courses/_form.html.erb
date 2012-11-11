@@ -154,23 +154,23 @@
     
     function mtos(value){
       if (value) {
-        $("#course_end_time").hide();
-        $("#course_finish_time").parent().show();
-        $("#course_schedule_info").parent().show();
+        $("#course_end_time").fadeOut();
+        $("#course_finish_time").parent().fadeIn();
+        $("#course_schedule_info").parent().fadeIn();
       } else {
-        $("#course_end_time").show();
-        $("#course_finish_time").parent().hide();
-        $("#course_schedule_info").parent().hide();     
+        $("#course_end_time").fadeIn();
+        $("#course_finish_time").parent().fadeOut();
+        $("#course_schedule_info").parent().fadeOut();     
       }
     }
     
     function no_price_yet(value){
       if (value) {
-        $("#course_price").parent().hide();
-        $("#course_go_to_info").parent().show();
+        $("#course_price").parent().fadeOut();
+        $("#course_go_to_info").parent().fadeIn();
       } else {
-        $("#course_price").parent().show();
-        $("#course_go_to_info").parent().hide();
+        $("#course_price").parent().fadeIn();
+        $("#course_go_to_info").parent().fadeOut();
       }
     }
     
