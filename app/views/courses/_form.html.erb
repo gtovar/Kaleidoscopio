@@ -159,11 +159,11 @@
     
     function no_price_yet(value){
       if (value) {
-        $("#course_price").hide();
-        $("#course_go_to_info").show();
+        $("#course_price").parent().hide();
+        $("#course_go_to_info").parent().show();
       } else {
-        $("#course_price").hide();
-        $("#course_go_to_info").show();
+        $("#course_price").parent().show();
+        $("#course_go_to_info").parent().hide();
       }
     }
     
