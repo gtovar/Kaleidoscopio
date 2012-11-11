@@ -3,7 +3,7 @@
 	<div class="thispost porttype preloader_container">
 		<div class="post-title-cont">
 			<h2 class="post-title">
-				<%= link_to course.name, curso_path(course) %>
+				<%= link_to truncate(course.name, length => 30), curso_path(course) %>
 			</h2>
 			<div class="post-meta portype">
 				<%= l course.date_time, :format => :long %>
