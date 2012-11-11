@@ -53,13 +53,13 @@
                 <% end %>
                 
                 <td>
-                  Inicio: <%= course.date_time.strftime("%e %b a las %I:%M%P") unless course.date_time.nil? %> <br>
+                  <strong>Inicio:</strong> <%= course.date_time.strftime("%e %b a las %I:%M%P") unless course.date_time.nil? %> <br>
                   <% if course.more_than_one_session %>
                     
-                    Fin:    <%= course.finish_time.strftime("%e %b a las %I:%M%P") unless course.finish_time.nil? %> <br>
-                    Notas: <%= course.schedule_info %>
+                    <strong>Fin:</strong>    <%= course.finish_time.strftime("%e %b a las %I:%M%P") unless course.finish_time.nil? %> <br>
+                    <strong>Notas:</strong> <%= course.schedule_info %>
                   <% else %>
-                    Fin:    <%= course.end_time.strftime("%I:%M%P") unless course.end_time.nil? %> <br>
+                    <strong>Fin:</strong>    <%= course.end_time.strftime("%I:%M%P") unless course.end_time.nil? %> <br>
                   <% end %>
                 </td>
                 
