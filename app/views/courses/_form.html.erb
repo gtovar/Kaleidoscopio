@@ -51,14 +51,37 @@
       <%= f.label :google_map %><br />
       <%= f.text_area :google_map, :rows => 10 %>
     </div>
+    
+    <h4>Inicia</h4>
+    
     <div class="field">
       <%= f.label :date_time %><br />
       <%= f.text_field :date_time %>
     </div>
+    
+    <h4>Termina</h4>
+    
+    <div class="field">
+      <%= f.label :more_than_one_session %><br />
+      <%= f.checkbox :more_than_one_session %>
+    </div>
+    
     <div class="field">
       <%= f.label :end_time %><br />
       <%= f.text_field :end_time, id: "timepicker.[1]", class: "hasTimepicker" %>
     </div>
+    
+    <div class="field">
+      <%= f.label :finish_time %><br />
+      <%= f.text_field :finish_time %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :schedule_info %><br />
+      <%= f.text_field :schedule_info %>
+    </div>
+
+    
 <script type="text/javascript">
             $(document).ready(function() {
                 $('#timepicker\\.\\[1\\]').timepicker({});
