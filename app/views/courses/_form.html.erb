@@ -63,7 +63,7 @@
     
     <div class="field">
       <%= f.label :more_than_one_session %><br />
-      <%= f.checkbox :more_than_one_session %>
+      <%= f.check_box :more_than_one_session %>
     </div>
     
     <div class="field">
@@ -94,10 +94,24 @@
 							<h3><i style="position: relative; top: 3px;" class="icon-info-sign"></i> <a href="http://www.squarespace.com/display/ShowHelp?section=Markdown">Markdown tags</a></h3>
 						</div>
     </div>
+    
+    <h4>Precio</h4>
+    
+    <div class="field">
+      <%= f.label :wont_be_bought %><br />
+      <%= f.check_box :wont_be_bought %>
+    </div>
+    
     <div class="field">
       <%= f.label :price %><br />
       <%= f.text_field :price %>
     </div>
+    
+    <div class="field">
+      <%= f.label :go_to_info %><br />
+      <%= f.text_field :go_to_info %>
+    </div>    
+    
     <div class="field">
       <%= f.label :limit_class_tickets %><br />
       <%= f.number_field :limit_class_tickets %>
