@@ -58,29 +58,32 @@
       <%= f.label :date_time %><br />
       <%= f.text_field :date_time %>
     </div>
-    
-    <h4>Termina</h4>
-    
-    <div class="field">
-      <%= f.check_box :more_than_one_session %>  
-      <%= f.label :more_than_one_session, :style => "display: inline;" %>
-    </div>
-    
-    <div class="field" id="course_end_time">
-      <%= f.label :end_time %><br />
-      <%= f.text_field :end_time, id: "timepicker.[1]", class: "hasTimepicker" %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :finish_time %><br />
-      <%= f.text_field :finish_time %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :schedule_info %><br />
-      <%= f.text_field :schedule_info %>
-    </div>
 
+    <div style="background-color: #eeeeee; margin: 10px;">
+        
+      <h4>Termina</h4>
+    
+      <div class="field">
+        <%= f.check_box :more_than_one_session %>  
+        <%= f.label :more_than_one_session, :style => "display: inline; margin-top: 10px; margin-bottom: 10px;" %>
+      </div>
+      
+      <div class="field" id="course_end_time">
+        <%= f.label :end_time %><br />
+        <%= f.text_field :end_time, id: "timepicker.[1]", class: "hasTimepicker" %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :finish_time %><br />
+        <%= f.text_field :finish_time %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :schedule_info %><br />
+        <%= f.text_field :schedule_info %>
+      </div>
+
+    </div>
     
 <script type="text/javascript">
             $(document).ready(function() {
@@ -95,22 +98,26 @@
 						</div>
     </div>
     
-    <h4>Precio</h4>
-    
-    <div class="field">
-      <%= f.check_box :wont_be_bought %>
-      <%= f.label :wont_be_bought, :style => "display: inline;" %>
+    <div style="background-color: #eeeeee; margin: 10px;">
+      
+      <h4>Precio</h4>
+      
+      <div class="field">
+        <%= f.check_box :wont_be_bought %>
+        <%= f.label :wont_be_bought, :style => "display: inline; margin-top: 10px; margin-bottom: 10px;" %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :price %><br />
+        <%= f.text_field :price %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :go_to_info %><br />
+        <%= f.text_field :go_to_info %>
+      </div>
+          
     </div>
-    
-    <div class="field">
-      <%= f.label :price %><br />
-      <%= f.text_field :price %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :go_to_info %><br />
-      <%= f.text_field :go_to_info %>
-    </div>    
     
     <div class="field">
       <%= f.label :limit_class_tickets %><br />
