@@ -62,8 +62,8 @@
     <h4>Termina</h4>
     
     <div class="field">
-      <%= f.label :more_than_one_session %><br />
-      <%= f.check_box :more_than_one_session %>
+      <%= f.check_box :more_than_one_session %>  
+      <%= f.label :more_than_one_session %>
     </div>
     
     <div class="field">
@@ -98,8 +98,8 @@
     <h4>Precio</h4>
     
     <div class="field">
-      <%= f.label :wont_be_bought %><br />
       <%= f.check_box :wont_be_bought %>
+      <%= f.label :wont_be_bought %>
     </div>
     
     <div class="field">
@@ -129,3 +129,42 @@
   <% end %>
   </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+      
+      mtos(<%= @course.more_than_one_session %>);      
+      no_price_yet(<%= @course.wont_be_bought %>);
+        
+      $("#course_more_than_one_session").change(function () {
+         mtos($(this).is(':checked'));
+      });
+      
+      $("#course_wont_be_bought").change(function () {
+         no_price_yet($(this).is(':checked'));
+      });
+     
+    });
+    
+    function mtos(value){
+      if (value) {
+        $("#course_end_time").hide();
+        $("#course_finish_time").show();
+        $("#course_schedule_info").show();
+      } else {
+        $("#course_end_time").show();
+        $("#course_finish_time").hide();
+        $("#course_schedule_info").hide();     
+      }
+    }
+    
+    function no_price_yet(value){
+      if (value) {
+        $("#course_price").hide();
+        $("#course_go_to_info").show();
+      } else {
+        $("#course_price").hide();
+        $("#course_go_to_info").show();
+      }
+    }
+    
+</script>
