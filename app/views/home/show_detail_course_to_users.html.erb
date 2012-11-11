@@ -17,7 +17,7 @@
     <div>
 	<div class="clase_titulo relative">
 		<h2 class="absolute"><%= @course.name %></h2>
-		<h1 class="precio_descripcion">$<%= @course.price %>.<span class="decimal">00</span></h1>
+		<h1 class="precio_descripcion"><%= @course.wont_be_bought ? "Clase fija" :  number_to_currency(@course.price) %></h1>
 		<img class="size-full wp-image-123 foto_descripcion" width="920" height="220" alt="" 			src="<%=@course.photo.large.url.to_s%>" title="about">
 	</div>
     </div>
@@ -61,8 +61,15 @@
 
     <div class="sidebar">
 	<div class="sidebar_box white_container2">
-		<h3>Fecha</h3>
-<p><%= (l @course.date_time, :format => :default).capitalize %> - <%= @course.end_time.strftime("%I:%M %p") unless @course.end_time.nil? %> </p>
+		<h3>Cuándo</h3>
+    <p>
+      <% if @course.more_than_one_session %>
+        <%= @course.date_time.strftime("Del %e %b de %I:%M%P") + " al " + (@course.finish_time.strftime("Del %e %b de %I:%M%P") unless @course.finish_time.nil?) %> <br>
+        <i><%= @course.schedule_info %></i>
+      <% else %>
+        <%= @course.date_time.strftime("%e %b de %I:%M%P") + " a " + (@course.end_time.strftime("%I:%M%P") unless @course.end_time.nil?) %> 
+      <% end %>
+    </p>
 	</div>
 	<div class="sidebar_box white_container2">
 		<div class="cupo">

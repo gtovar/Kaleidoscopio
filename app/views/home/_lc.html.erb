@@ -6,7 +6,7 @@
 				<%= link_to truncate(course.name, :length => 30), curso_path(course) %>
 			</h2>
 			<div class="post-meta portype">
-				<%= l course.date_time, :format => :long %>
+				<%= (l course.date_time, :format => :long).capitalize %>
 			</div>
 		</div>
 		<div class="post-content">
