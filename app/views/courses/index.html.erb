@@ -23,12 +23,15 @@
 
             <table class="table table-bordered">
               <thead>
-                <th><%= sort_link @search, :name%></th>
+                <th><%= sort_link @search, :name %></th>
+         				<th><%= sort_link @search, :status %></th>
+         				<th><%= sort_link @search, :more_than_one_session %></th>
+         				<th><%= sort_link @search, :wont_be_bought %></th>
                 <th><%= Course.human_attribute_name("category") %></th>
                 <th><%= Course.human_attribute_name("limit_class_tickets") %></th>
                 <th><%= Course.human_attribute_name("owned") %></th>
-				<th><%= sort_link @search, :date_time %></th>
- 				<th><%= sort_link @search, :status %></th>
+				        <th>Horario</th>
+				        <th>Precio</th>
                <th></th>
                 <th></th>
                 <th></th>
@@ -36,20 +39,41 @@
 
 
             <% @courses.each do |course| %>
-               <tbody>
-	            <td><%= course.name %></td>
+              <tbody>
+	              <td><%= course.name %></td>
+	              <td><%= course.status %></td>
+	              <td><%= course.more_than_one_session ? "Sí" : "No" %></td>
+	              <td><%= course.wont_be_bought ? "Sí" : "No" %></td>
                	<td><%= course.category %></td>
                	<td><%= course.limit_class_tickets %></td>
-            <% if course.owned == TRUE %>
-                	<td>si</td>
-			<% elsif%>
-				<td>no</td>
-            <% end %>
-                <td><%= course.date_time %></td>
-                <td><%= course.status %></td>
+                <% if course.owned == TRUE %>
+                  <td>si</td>
+			          <% else %>
+				          <td>no</td>
+                <% end %>
+                
+                <td>
+                  <% if course.more_than_one_session %>
+                    Inicio: <%= course.date_time.strftime("%e %b a las %I:%M%P") %> <br>
+                    Fin:    <%= course.finish_time.strftime("%e %b a las %I:%M%P") %> <br>
+                    Notas: <%= course.schedule_info %>
+                  <% else %>
+                    Inicio: <%= course.date_time.strftime("%e %b a las %I:%M%P") %> <br>
+                    Fin:    <%= course.finish_time.strftime("%I:%M%P") %> <br>
+                  <% end %>
+                </td>
+                
+                <td>
+                  <% if course.wont_be_bought %>
+                    <%= course.go_to_info %> 
+                  <% else %>
+                    <%= number_to_currency(course.price) %>
+                  <% end %>
+                </td>
+                
                	<td><%= link_to 'Ver', course %></td>
-                	<td><%= link_to 'Editar', edit_course_path(course) %></td>
-                	<td><%= link_to 'Eliminar', course, confirm: '¿Estas seguro?', method: :delete %></td>
+                <td><%= link_to 'Editar', edit_course_path(course) %></td>
+                <td><%= link_to 'Eliminar', course, confirm: '¿Estas seguro?', method: :delete %></td>
 
                </tbody>
             <% end %>
