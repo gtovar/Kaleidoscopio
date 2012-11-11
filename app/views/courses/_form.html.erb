@@ -147,13 +147,13 @@
     
     function mtos(value){
       if (value) {
-        $("#course_end_time").hide();
-        $("#course_finish_time").show();
-        $("#course_schedule_info").show();
+        $("#course_end_time").parent().hide();
+        $("#course_finish_time").parent().show();
+        $("#course_schedule_info").parent().show();
       } else {
-        $("#course_end_time").show();
-        $("#course_finish_time").hide();
-        $("#course_schedule_info").hide();     
+        $("#course_end_time").parent().show();
+        $("#course_finish_time").parent().hide();
+        $("#course_schedule_info").parent().hide();     
       }
     }
     
