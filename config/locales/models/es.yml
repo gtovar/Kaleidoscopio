@@ -39,3 +39,10 @@ es:
         phone: "Teléfono"
         subjects: "Asunto"
         message: "Mensaje"
+    errors:
+      models:
+        course:
+          attributes:
+            finish_time:
+              after: "No puede estar antes de la fecha y hora inicial"
+              
