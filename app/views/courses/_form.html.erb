@@ -136,42 +136,4 @@
   <% end %>
   </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function() {
-      
-      mtos(<%= @course.more_than_one_session %>);      
-      no_price_yet(<%= @course.wont_be_bought %>);
-        
-      $("#course_more_than_one_session").change(function () {
-         mtos($(this).is(':checked'));
-      });
-      
-      $("#course_wont_be_bought").change(function () {
-         no_price_yet($(this).is(':checked'));
-      });
-     
-    });
-    
-    function mtos(value){
-      if (value) {
-        $("#course_end_time").fadeOut();
-        $("#course_finish_time").parent().fadeIn();
-        $("#course_schedule_info").parent().fadeIn();
-      } else {
-        $("#course_end_time").fadeIn();
-        $("#course_finish_time").parent().fadeOut();
-        $("#course_schedule_info").parent().fadeOut();     
-      }
-    }
-    
-    function no_price_yet(value){
-      if (value) {
-        $("#course_price").parent().fadeOut();
-        $("#course_go_to_info").parent().fadeIn();
-      } else {
-        $("#course_price").parent().fadeIn();
-        $("#course_go_to_info").parent().fadeOut();
-      }
-    }
-    
-</script>
+
