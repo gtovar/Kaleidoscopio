@@ -15,7 +15,7 @@
 				<span class="type_image" title="Curso Kaleydoscopio"></span>
 
 			<%end %>
-			<h1 class="precio">$<%= course.price %><span class="decimal">00</span></h1>
+			<h1 class="precio"><%= course.more_than_one_session ? number_to_currency(course.price) : "Clase fija" %></h1>
 				<%= link_to image_tag(course.photo.thumb.url.to_s, :alt => "Kaleydoscopio"), curso_path(course) %>
 			</div>
 			<p><%= strip_tags(markdown(truncate(course.description, :length => 120))) %></p>
