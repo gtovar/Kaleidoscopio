@@ -17,7 +17,7 @@
     <div>
 	<div class="clase_titulo relative">
 		<h2 class="absolute"><%= @course.name %></h2>
-		<h1 class="precio_descripcion"><%= @course.wont_be_bought ? "" :  number_to_currency(@course.price) %></h1>
+		<h1 class="precio_descripcion"><%= @course.wont_be_bought ? truncate(@course.go_to_info, :length => 30) :  number_to_currency(@course.price) %></h1>
 		<img class="size-full wp-image-123 foto_descripcion" width="920" height="220" alt="" 			src="<%=@course.photo.large.url.to_s%>" title="about">
 	</div>
     </div>
@@ -89,7 +89,7 @@
   			  Queda <%= @disponibles %> Lugar
 			  <% end %>
 			<% else %>
-			  Cómo asistir
+			  Promoción Claseteca
 			<% end %>
 			</h3>
 		</div>
