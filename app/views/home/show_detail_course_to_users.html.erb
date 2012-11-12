@@ -69,7 +69,7 @@
         Fin: <br> 
         <%= (l(@course.finish_time, :format => :short) unless @course.finish_time.nil?) %> <br>
         <hr style=" border-bottom: 1px solid #C5C5C6;">
-        <i><%= @course.schedule_info %></i>
+        <span style="font-style: italic;">Notas: <%= @course.schedule_info %></span>
       <% else %>
         
         <%= l(@course.date_time, :format => :short) + " - " + (@course.end_time.strftime("%k:%M hrs") unless @course.end_time.nil?) %>
