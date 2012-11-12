@@ -28,6 +28,8 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   
   validates :go_to_info, :presence => true, :if => Proc.new { |c| c.wont_be_bought }
   validates :price, :presence => true, :unless => Proc.new { |c| c.wont_be_bought }  
+  
+  validates_datetime :finish_time, :after => :date_time
 
   has_many :orders, :dependent => :destroy
 
