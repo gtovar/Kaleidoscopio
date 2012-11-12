@@ -6,7 +6,7 @@
 				<%= link_to truncate(course.name, :length => 30), curso_path(course) %>
 			</h2>
 			<div class="post-meta portype">
-				<%= (l course.date_time, :format => :long).capitalize %>
+				<%= course.more_than_one_session ? "Múltiples sesiones" : (l course.date_time, :format => :long).capitalize %>
 			</div>
 		</div>
 		<div class="post-content">
@@ -15,7 +15,7 @@
 				<span class="type_image" title="Curso Kaleydoscopio"></span>
 
 			<%end %>
-			<h1 class="precio"><%= course.more_than_one_session ? number_to_currency(course.price) : "Clase fija" %></h1>
+			<h1 class="precio"><%= !course.wont_be_bought ? number_to_currency(course.price) : "Clase fija" %></h1>
 				<%= link_to image_tag(course.photo.thumb.url.to_s, :alt => "Kaleydoscopio"), curso_path(course) %>
 			</div>
 			<p><%= strip_tags(markdown(truncate(course.description, :length => 120))) %></p>
