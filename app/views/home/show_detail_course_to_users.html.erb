@@ -75,38 +75,53 @@
       <% end %>
     </p>
 	</div>
+	
 	<div class="sidebar_box white_container2">
+	
 		<div class="cupo">
-			<% if @disponibles > 1 %>
-			<h3>Quedan <%= @disponibles %>
-			Lugares </h3>
+		  <h3>
+		  <% unless @course.wont_be_bought %>
+			  <% if @disponibles > 1 %>
+			    Quedan <%= @disponibles %> Lugares
         <% else %>
-			<h3>Queda <%= @disponibles %>
-			Lugar </h3>
-			<%end%>
+  			  Queda <%= @disponibles %> Lugar
+			  <% end %>
+			<% else %>
+			  Esta clase es fija
+			<% end %>
+			</h3>
 		</div>
 
 		<div class="cantidad">
-			<%= form_for([@course, @course.orders.build]) do |f| %>
+		  <% unless @course.wont_be_bought %>
+		  
+			  <%= form_for([@course, @course.orders.build]) do |f| %>
 
-  			<h4><%= f.label :quantity, "Cantidad" %></h4>
-  			<%= f.select :quantity, options_for_select([[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"]]) %>
+    			<h4><%= f.label :quantity, "Cantidad" %></h4>
+    			<%= f.select :quantity, options_for_select([[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"]]) %>
 
-<script type="text/javascript" charset="utf-8">
-	$(document).ready(function(){
-	$(".boton_inscripcion a").click(function(e){
-		e.preventDefault();
-		$("#new_order").submit();
-		});
-	});
-</script>
-  			<div class="boton_inscripcion">
-    				<%= link_to "comprar", "#", :class => "inscribete" %>
-                  </div>
-			<% end %>
-	  <%= image_tag ("logos.png"), :alt => "Formas de pago" %>
+          <script type="text/javascript" charset="utf-8">
+	          $(document).ready(function(){
+	          $(".boton_inscripcion a").click(function(e){
+		          e.preventDefault();
+		          $("#new_order").submit();
+		          });
+	          });
+          </script>
+    			
+    			<div class="boton_inscripcion">
+      				<%= link_to "comprar", "#", :class => "inscribete" %>
+          </div>
+			  <% end %>
+	      <%= image_tag ("logos.png"), :alt => "Formas de pago" %>
+	      
+	  <% else %>
+	    <h4><%= @course.go_to_info %></h4>
+	  <% end %>  
+	  </div>
+	
 	</div>
-	</div>
+	
 	<div class="sidebar_box_share white_container clearfix">
 		<h3>Comparte la clase!</h3>
 		<ul class="share_container clearfix">
