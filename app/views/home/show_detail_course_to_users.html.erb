@@ -63,6 +63,7 @@
 	<div class="sidebar_box white_container2">
 		<h3>Cuándo</h3>
     <p>
+      <% if false %>
       <% if @course.more_than_one_session %>
         
         <%= l(@course.date_time, :format => :short) + " - " %> <br> <%= (l(@course.finish_time, :format => :short) unless @course.finish_time.nil?) %> <br>
@@ -73,7 +74,7 @@
         <%= l(@course.date_time, :format => :short) + " - " + (@course.end_time.strftime("%I:%M%P") unless @course.end_time.nil?) %>
          
       <% end %>
-      
+      <% end %>
     </p>
 	</div>
 	<div class="sidebar_box white_container2">
