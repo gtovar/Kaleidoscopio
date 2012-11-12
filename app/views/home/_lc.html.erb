@@ -15,7 +15,7 @@
 				<span class="type_image" title="Curso Kaleydoscopio"></span>
 
 			<%end %>
-			<h1 class="precio"><%= !course.wont_be_bought ? number_to_currency(course.price) : truncate(course.go_to_info, :length => 20) %></h1>
+			<h1 class="precio"><%= !course.wont_be_bought ? number_to_currency(course.price) : truncate(course.go_to_info, :length => 30) %></h1>
 				<%= link_to image_tag(course.photo.thumb.url.to_s, :alt => "Kaleydoscopio"), curso_path(course) %>
 			</div>
 			<p><%= strip_tags(markdown(truncate(course.description, :length => 120))) %></p>
