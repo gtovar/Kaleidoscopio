@@ -2,7 +2,26 @@
   <div class="span6 offset3">
 
     <%= form_for @slider_image, :html => {:multipart => true} do |f| %>
-	  <%= render 'shared/error_messages' %>
+	  
+	  <% if @slider_image.errors.any? %>
+      <div id="error_explanation">
+			  <div class="alert alert-error">
+          <% errores = @slider_image.errors.count %>
+
+          <% if errores > 1 %>
+            <h2><%= errores %>&nbsp;errores encontrados:</h2>
+          <% else %>
+            <h2><%= errores%>error encontrado:</h2>
+          <% end %>
+			  </div>
+        <ul>
+        <% @slider_image.errors.full_messages.each do |msg| %>
+          <li>* <%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+	    
 	  
     <div class="field">
       <%= f.label :tagline %><br />
