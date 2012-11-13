@@ -5,8 +5,9 @@ Kaleidoscopio::Application.routes.draw do
   devise_for :admins
   resources :contacts
   resources :courses do
-  resources :orders
+    resources :orders
   end
+  resources :slider_images
 
 	root :to => "home#index"
 	match 'curso/:id' => 'home#show_detail_course_to_users', :as => 'curso' do
