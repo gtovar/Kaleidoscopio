@@ -10,67 +10,7 @@
       </div>
     </div>
 
-    <div id="slider_beneficios" class="container contentwrapper">
-      <div class="sixteen columns alpha omega block_shadow flexslider">
-        <ul class="slides">
-          <li style="width: 100%; margin-right: -100%; display: none; float: left;">
-            <%=image_tag "kaleydoscopio_slider_home1.jpg"%>
-            <div class="flccont" style="height: 380px;">
-              <div class="flcconttc">
-                <div class="flex-caption fadeIn">
-                  <span class="fctitle">Aprende algo diferente cada semana</span>
-                  <span class="subcaption">Rompe la rutina, alimenta tu curiosidad con clases interesantes.
-                  </span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li style="width: 100%; float: left; margin-right: -100%; display: list-item;">
-            <%=image_tag "kaleydoscopio_slider_home3.jpg"%>
-            <div class="flccont">
-              <div class="flcconttc">
-                <div class="flex-caption fadeIn">
-                  <span class="fctitle">Comparte lo que sabes</span>
-                  <span class="subcaption">Todos tenemos un talento que podamos compartir, date a conocer. </span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li style="width: 100%; float: left; margin-right: -100%; display: none;">
-            <%=image_tag "kaleydoscopio_slider_home2.jpg"%>
-            <div class="flccont" style="height: 380px;">
-              <div class="flcconttc">
-                <div class="flex-caption fadeIn">
-                  <span class="fctitle">En cualquier lugar se puede aprender.</span>
-                  <span class="subcaption">Rompe el paradigma, aprende en un lugar diferente y olvida el salón de clases. </span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <ol class="flex-control-nav">
-          <li>
-            <a class="">1</a>
-          </li>
-          <li>
-            <a class="">2</a>
-          </li>
-          <li>
-            <a class="active">3</a>
-          </li>
-        </ol>
-
-        <ul class="flex-direction-nav">
-          <li>
-            <a class="prev" href="#">Previous</a>
-          </li>
-          <li>
-            <a class="next" href="#">Next</a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
+    <%=  render :partial => "slider_images" %>
 
     <header class="home">
       <h3 class="headofpage_home">Clases Disponibles</h3>
