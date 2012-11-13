@@ -5,6 +5,14 @@
     <% @slider_images.each do |si|  %>
       <li>
         <%= image_tag (si.is_from_url ? si.external_photo : si.photo_url(:large)) %>
+        <div class="flccont" style="height: 380px;">
+          <div class="flcconttc">
+            <div class="flex-caption fadeIn">
+              <span class="fctitle"><%= si.tagline %></span>
+              <span class="subcaption"><%= si.description %></span>
+            </div>
+          </div>
+        </div>
       </li>
     <% end %>
     </ul>
