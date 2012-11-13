@@ -24,6 +24,7 @@
             <th><%= SliderImage.human_attribute_name("photo") %></th>
             <th><%= SliderImage.human_attribute_name("tagline") %></th>
 	          <th><%= SliderImage.human_attribute_name("description") %></th>
+	          <th>Opciones</th>
           </thead>
 
 
@@ -32,6 +33,11 @@
             <td><%= image_tag (si.is_from_url ? si.external_photo : si.photo_url(:large)), :style => "width: 480px;"  %></td>
             <td><%= si.tagline %></td>
             <td><%= si.description %></td>
+            <td>
+              <%= link_to 'Ver', si %><br>
+              <%= link_to 'Editar', edit_slider_image_path(si) %><br>
+              <%= link_to 'Eliminar', si, confirm: '¿Estas seguro?', method: :delete %>
+            </td>
           </tbody>
         <% end %>
 
