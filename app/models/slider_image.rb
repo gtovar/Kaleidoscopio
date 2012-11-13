@@ -24,8 +24,7 @@ class SliderImage < ActiveRecord::Base
     def external_photo_should_be_url
       URI.parse(self.external_photo) unless self.external_photo.nil?
       rescue URI::InvalidURIError
-        errors.add(:external_photo, "No es un URL válido")
-        false
+      false
     end
 
 end
