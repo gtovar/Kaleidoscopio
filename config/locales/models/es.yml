@@ -3,6 +3,7 @@ es:
     models:
       course: "Curso"
       contact: "Contacto"
+      slider_image: "Elementos del slider"
     attributes:
       course:
         teacher_name: "Nombre del profesor"
@@ -39,6 +40,12 @@ es:
         phone: "Teléfono"
         subjects: "Asunto"
         message: "Mensaje"
+      slider_image:
+        tagline: "Tagline"
+        description: "Descripción"
+        photo: "Imagen"
+        is_from_url: "La imagen está en internet"
+        external_photo: "URL de la imagen"
     errors:
       models:
         course:

@@ -47,7 +47,7 @@ class SliderImagesController < ApplicationController
 
     respond_to do |format|
       if @slider_image.update_attributes(params[:slider_image])
-        format.html { redirect_to @slider_image, notice: 'La imagen del slider se actualizó exitosamente' }
+        format.html { redirect_to slider_images_path, notice: 'La imagen del slider se actualizó exitosamente' }
       else
         format.html { render action: "edit" }
       end
