@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="span6 offset3">
+
+    <%= form_for @slider_image, :html => {:multipart => true} do |f| %>
+	  <%= render 'shared/error_messages' %>
+	  
+    <div class="field">
+      <%= f.label :tagline %><br />
+      <%= f.text_field :tagline %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area :description, :rows => 3 %>
+    </div>
+    
+    <div style="background-color: #eeeeee; padding: 10px;">
+    
+      <h4 style="margin-top: 10px; margin-bottom: 10px;">Imagen de fondo</h4>
+      
+      <div class="field" style="margin-top: 10px; margin-bottom: 10px;">
+        <%= f.check_box :is_from_url %>  
+        <%= f.label :is_from_url, :style => "display: inline;" %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :photo %><br />
+        <%= f.file_field :photo %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :external_photo %><br />
+        <%= f.text_field :external_photo %>
+      </div>
+    
+    </div>
+
+    <div class="actions">
+      <%= f.submit :class => "btn btn-large btn-primary" %> o <%= link_to 'Regresar', slider_images_path %>
+    </div>
+  <% end %>
+  </div>
+</div>

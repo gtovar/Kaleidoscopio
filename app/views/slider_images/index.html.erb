@@ -1,0 +1,42 @@
+<p ><%= flash[:notice]  %></p>
+<div class="row ">
+  <aside class="span10">
+    <section>
+	    <table class="table">
+    		<thead>
+          <th style="width:528px">
+            <h1> Lista de imágenes del slider </h1>	
+            <p>Total: <%= @slider_images.count.to_s %></p>
+          </th>
+          <th>
+            <%= link_to "Crear imagen de slider", new_slider_image_path, class: "btn btn-primary" %>
+          </th>
+        </thead>
+      </table>
+
+      <br>
+
+      <% if @slider_images.empty?%>
+       <h6>Aun no hay imágenes para el slider. <%= link_to 'Crea la primera ahora', new_slider_image_path %></h6>
+      <% else %>
+        <table class="table table-bordered">
+          <thead>
+            <th><%= SliderImage.human_attribute_name("photo") %></th>
+            <th><%= SliderImage.human_attribute_name("tagline") %></th>
+	          <th><%= SliderImage.human_attribute_name("description") %></th>
+          </thead>
+
+
+        <% @slider_images.each do |si| %>
+          <tbody>
+            <td><%= image_tag (si.is_from_url ? si.external_photo : si.photo_url(:large)), :style => "width: 480px;"  %></td>
+            <td><%= si.tagline %></td>
+            <td><%= si.description %></td>
+          </tbody>
+        <% end %>
+
+        </table>
+      <%end%>
+    </section>
+  </aside>
+</div>
