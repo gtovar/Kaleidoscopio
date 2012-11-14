@@ -109,9 +109,9 @@
   </div>
 </div>
 <script type="text/javascript">
-  $(document).ready(function() {
+  jQuery(document).ready(function() {
        
-      $(window).on("load resize", function(){
+      jQuery(window).on("load resize", function(){
         $('ul.slides li').each(function(){
           centerImage($(this));
         });  
@@ -119,9 +119,9 @@
        
       $('ul.slides li').each(function () {
         if ($(this).addEventListener) {  
-          $(this).addEventListener("webkitTransitionEnd", centerImage, false); // Webkit event
-          $(this).addEventListener("transitionend", centerImage, false); // FF event
-          $(this).addEventListener("oTransitionEnd", centerImage, false); // Opera event
+          $(this).addEventListener("webkitTransitionEnd", centerImage($(this)), false); // Webkit event
+          $(this).addEventListener("transitionend", centerImage($(this)), false); // FF event
+          $(this).addEventListener("oTransitionEnd", centerImage($(this), false); // Opera event
         }
       });
       
