@@ -2767,3 +2767,22 @@ width: 500px;
 margin: 0 auto 0 auto;
 text-align: justify;
 }
+
+ul.slides li {
+  max-height: 395px;
+  overflow: hidden;  
+  -webkit-transition: max-width .5s ease-out;  /* Saf3.2+, Chrome */
+  -moz-transition: max-width .5s ease-out;  /* FF4+ */
+  -ms-transition: max-width .5s ease-out;  /* IE10? */
+  -o-transition: max-width .5s ease-out;  /* Opera 10.5+ */
+  transition: max-width .5s ease-out;
+}
+
+ul.slides li img {
+    width: 100%;
+    -webkit-transition: margin-top .5s ease-out;  /* Saf3.2+, Chrome */
+    -moz-transition: margin-top .5s ease-out;  /* FF4+ */
+    -ms-transition: margin-top .5s ease-out;  /* IE10? */
+    -o-transition: margin-top .5s ease-out;  /* Opera 10.5+ */
+    transition: margin-top .5s ease-out;
+}

@@ -2,7 +2,6 @@
 <% provide(:sino, 'poner') %>
 
 <div class="container contentwrapper">
-
   <div class="sixteen columns alpha omega portpage">
     <div class="home_marketing">
       <div class="home_marketing_content">
@@ -48,69 +47,91 @@
             <li>
               <a href="lista-cursos?utf8=✓&search[category_in][]=tecnologia&commit=Crear+Search">Tecnología</a>
             </li>
-            </ul>
-          </li>
-          <li>
-            <a href="">Estatus</a>
-            <ul class="submenu_categorias">
-              <li>
-                <a href="lista-cursos?utf8=✓&search[status_in][]=abierto&commit=Crear+Search">Abierto</a>
-              </li>
-              <li>
-                <a href="lista-cursos?utf8=✓&search[status_in][]=agotado&commit=Crear+Search">Agotado</a>
-              </li>
-              <li>
-                <a href="lista-cursos?utf8=✓&search[status_in][]=terminado&commit=Crear+Search" >Terminado</a>
-              </li>
-            </ul>
-          </li>
+          </ul>
+        </li>
+        <li>
+          <a href="">Estatus</a>
+          <ul class="submenu_categorias">
+            <li>
+              <a href="lista-cursos?utf8=✓&search[status_in][]=abierto&commit=Crear+Search">Abierto</a>
+            </li>
+            <li>
+              <a href="lista-cursos?utf8=✓&search[status_in][]=agotado&commit=Crear+Search">Agotado</a>
+            </li>
+            <li>
+              <a href="lista-cursos?utf8=✓&search[status_in][]=terminado&commit=Crear+Search" >Terminado</a>
+            </li>
+          </ul>
+        </li>
 
+        <!-- FILTRAR LOS STATUS (ABIERTO,CERRADO,COMPLETADO) -->
+        <% form_for @search, :url => listacursos_path, :html => {:method => :get} do |f| %>
+          <% f.checks :status_in, [['Abierto', 'abierto'], ['Agotado', 'agotado'], ['Terminado', 'terminado']], :class => 'checkboxy'  do |check| %>
+            <li>
+              <% check.box %>
+              <% check.label %>
+            </li>
 
-
-          <!-- FILTRAR LOS STATUS (ABIERTO,CERRADO,COMPLETADO) -->
-          <% form_for @search, :url => listacursos_path, :html => {:method => :get} do |f| %>
-            <% f.checks :status_in, [['Abierto', 'abierto'], ['Agotado', 'agotado'], ['Terminado', 'terminado']], :class => 'checkboxy'  do |check| %>
-              <li>
-                <% check.box %>
-                <% check.label %>
-              </li>
-
-            <% end %>
-            <!-- etc... -->
-            <% f.submit %>
           <% end %>
+          <!-- etc... -->
+          <% f.submit %>
+        <% end %>
 
-          <!-- FILTRAR LAS CATEGORIAS (COCINA,ARTE,ETC..) -->
-          <% form_for @search, :url => listacursos_path, :html => {:method => :get} do |f| %>
-            <% f.checks :category_in, [['Culinarias', 'culinarias'], ['Artes', 'arte'], ['Empresariales', 'empresariales'], ['Tecnologia', 'tecnologia'], ['Estilo de vida', 'estilo_de_vida']], :class => 'checkboxy'  do |check| %>
-              <li>
-                <% check.box %>
-                <% check.label %>
-              </li>
+        <!-- FILTRAR LAS CATEGORIAS (COCINA,ARTE,ETC..) -->
+        <% form_for @search, :url => listacursos_path, :html => {:method => :get} do |f| %>
+          <% f.checks :category_in, [['Culinarias', 'culinarias'], ['Artes', 'arte'], ['Empresariales', 'empresariales'], ['Tecnologia', 'tecnologia'], ['Estilo de vida', 'estilo_de_vida']], :class => 'checkboxy'  do |check| %>
+            <li>
+              <% check.box %>
+              <% check.label %>
+            </li>
 
-            <% end %>
-            <!-- etc... -->
-            <% f.submit %>
           <% end %>
+          <!-- etc... -->
+          <% f.submit %>
+        <% end %>
 
-        </ul>
-        <div class='clear'></div>
-      </div>
+      </ul>
       <div class='clear'></div>
-      <div class="portrowed perline2">
-        <div class="clear"></div>
+    </div>
+    <div class='clear'></div>
+    <div class="portrowed perline2">
+      <div class="clear"></div>
+
+      <%= render :partial => "lc", :locals => {:course_list => @courses, :no_more_results => @no_more_results}%>
 
 
-        <%= render :partial => "lc", :locals => {:course_list => @courses, :no_more_results => @no_more_results}%>
-
-
-        <div class="boton_inscripcion" style="margin: 0px auto; width: 300px;">
-          <%= link_to "Ver más clases disponibles", listacursos_path%>
-
-
-        </div>
+      <div class="boton_inscripcion" style="margin: 0px auto; width: 300px;">
+        <%= link_to "Ver más clases disponibles", listacursos_path%>
 
 
       </div>
     </div>
   </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+       
+      $(window).on("load resize", function(){
+        $('ul.slides li').each(function(){
+          centerImage($(this));
+        });  
+      });
+       
+      $('ul.slides li').each(function () {
+        if ($(this).addEventListener) {  
+          $(this).addEventListener("webkitTransitionEnd", centerImage, false); // Webkit event
+          $(this).addEventListener("transitionend", centerImage, false); // FF event
+          $(this).addEventListener("oTransitionEnd", centerImage, false); // Opera event
+        }
+      });
+      
+      function centerImage(obj) {
+        var imageHeight, wrapperHeight, overlap, container = obj;  
+        imageHeight = container.find('img').height();
+        wrapperHeight = container.height();
+        overlap = (wrapperHeight - imageHeight) / 2;
+        container.find('img').css('margin-top', overlap);
+      }
+      
+  });
+</script>

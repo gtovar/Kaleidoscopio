@@ -1,7 +1,7 @@
 <% if @slider_images.count > 0 %>
 <div id="slider_beneficios" class="container contentwrapper">
   <div class="sixteen columns alpha omega block_shadow flexslider">
-    <ul class="slides">
+    <ul class="slides" id="main-slider">
     <% @slider_images.each do |si|  %>
       <li>
         <%= image_tag (si.is_from_url ? si.external_photo : si.photo_url(:large)) %>
