@@ -126,9 +126,9 @@
       });
       
       function centerImage(obj) {
-        var imageHeight, wrapperHeight, overlap, container = obj;  
+        var imageHeight, overlap, container = obj;  
         imageHeight = container.find('img').height();
-        wrapperHeight = container.parent().height();
+        wrapperHeight = jQuery("ul.slides").height();
         overlap = (wrapperHeight - imageHeight) / 2;
         container.find('img').css('margin-top', overlap);
       }
