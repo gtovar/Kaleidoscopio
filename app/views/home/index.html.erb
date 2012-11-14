@@ -129,8 +129,8 @@
         var imageHeight, wrapperHeight, overlap, container = obj;  
         imageHeight = container.find('img').height();
         wrapperHeight = container.height();
-        overlap = (wrapperHeight - imageHeight) / 2;
-        container.find('img').css('margin-top', overlap);
+        overlap = (wrapperHeight - imageHeight) / -2;
+        container.find('img').css('top', overlap);
       }
       
   });
