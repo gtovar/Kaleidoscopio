@@ -128,8 +128,8 @@
       function centerImage(obj) {
         var imageHeight, wrapperHeight, overlap, container = obj;  
         imageHeight = container.find('img').height();
-        wrapperHeight = container.height();
-        overlap = (wrapperHeight - imageHeight) / -2;
+        wrapperHeight = container.parent().height();
+        overlap = (wrapperHeight - imageHeight) / 2;
         container.find('img').css('top', overlap);
       }
       
