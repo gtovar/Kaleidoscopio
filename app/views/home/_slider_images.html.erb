@@ -8,7 +8,7 @@
         <div class="flccont" style="height: 380px;">
           <div class="flcconttc">
             <div class="flex-caption fadeIn">
-              <span class="fctitle"><%= si.tagline %></span>
+              <span class="fctitle"><%= si.is_from_url ? (link_to si.tagline, si.external_url, :target => "_blank") : si.tagline %></span>
               <span class="subcaption"><%= si.description %></span>
             </div>
           </div>
