@@ -109,29 +109,31 @@
   </div>
 </div>
 <script type="text/javascript">
+
   jQuery(document).ready(function() {
        
-      jQuery(window).on("load resize", function(){
-        jQuery('ul.slides li').each(function(){
-          centerImage(jQuery(this));
-        });  
-      });
-       
-      jQuery('ul.slides li').each(function () {
-        if (jQuery(this).addEventListener) {  
-          jQuery(this).addEventListener("webkitTransitionEnd", centerImage(jQuery(this)), false); // Webkit event
-          jQuery(this).addEventListener("transitionend", centerImage(jQuery(this)), false); // FF event
-          jQuery(this).addEventListener("oTransitionEnd", centerImage(jQuery(this)), false); // Opera event
-        }
-      });
-      
-      function centerImage(obj) {
-        var imageHeight, overlap, container = obj;  
-        imageHeight = container.find('img').height();
-        wrapperHeight = jQuery("ul.slides").height();
-        overlap = (wrapperHeight - imageHeight) / 2;
-        container.find('img').css('margin-top', overlap);
+    jQuery(window).on("load resize", function(){
+      jQuery('ul.slides li').each(function(){
+        centerImage(jQuery(this));
+      });  
+    });
+     
+    jQuery('ul.slides li').each(function () {
+      if (jQuery(this).addEventListener) {  
+        jQuery(this).addEventListener("webkitTransitionEnd", centerImage(jQuery(this)), false); // Webkit event
+        jQuery(this).addEventListener("transitionend", centerImage(jQuery(this)), false); // FF event
+        jQuery(this).addEventListener("oTransitionEnd", centerImage(jQuery(this)), false); // Opera event
       }
-      
+    });
+     
   });
+  
+  function centerImage(obj) {
+    var imageHeight, overlap, container = obj;  
+    imageHeight = container.find('img').height();
+    wrapperHeight = jQuery("ul.slides").height();
+    overlap = (wrapperHeight - imageHeight) / 2;
+    container.find('img').css('margin-top', overlap);
+  }
+  
 </script>
