@@ -121,7 +121,7 @@
         if ($(this).addEventListener) {  
           $(this).addEventListener("webkitTransitionEnd", centerImage($(this)), false); // Webkit event
           $(this).addEventListener("transitionend", centerImage($(this)), false); // FF event
-          $(this).addEventListener("oTransitionEnd", centerImage($(this), false); // Opera event
+          $(this).addEventListener("oTransitionEnd", centerImage($(this)), false); // Opera event
         }
       });
       
