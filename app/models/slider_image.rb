@@ -10,7 +10,7 @@ class SliderImage < ActiveRecord::Base
   mount_uploader :photo, ImageUploader
   
   def photo_height
-    ::Magick::Image.open(self.photo.path)[:height] unless self.photo.nil?
+    ::Magick::Image.open(photo.path)['height']
   end
   
   private
