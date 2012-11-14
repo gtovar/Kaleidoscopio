@@ -44,8 +44,8 @@ es:
         tagline: "Tagline"
         description: "Descripción"
         photo: "Imagen"
-        is_from_url: "La imagen está en internet"
-        external_url: "URL al que conduce el tagline"
+        is_from_url: "El tagline conduce a una página web"
+        external_url: "Sitio web al que conduce el tagline"
     errors:
       models:
         course:
