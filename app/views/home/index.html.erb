@@ -130,7 +130,7 @@
   
   function centerImage(obj) {
     var imageHeight, overlap, container = obj;  
-    imageHeight = container.find('img').height();
+    imageHeight = container.find('img').attr("data-height");
     wrapperHeight = jQuery("ul.slides").height();
     overlap = (wrapperHeight - imageHeight) / 2;
     container.find('img').css('margin-top', overlap);
