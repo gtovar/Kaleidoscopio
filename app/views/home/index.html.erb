@@ -112,16 +112,16 @@
   jQuery(document).ready(function() {
        
       jQuery(window).on("load resize", function(){
-        $('ul.slides li').each(function(){
-          centerImage($(this));
+        jQuery('ul.slides li').each(function(){
+          centerImage(jQuery(this));
         });  
       });
        
-      $('ul.slides li').each(function () {
-        if ($(this).addEventListener) {  
-          $(this).addEventListener("webkitTransitionEnd", centerImage($(this)), false); // Webkit event
-          $(this).addEventListener("transitionend", centerImage($(this)), false); // FF event
-          $(this).addEventListener("oTransitionEnd", centerImage($(this)), false); // Opera event
+      jQuery('ul.slides li').each(function () {
+        if (jQuery(this).addEventListener) {  
+          jQuery(this).addEventListener("webkitTransitionEnd", centerImage(jQuery(this)), false); // Webkit event
+          jQuery(this).addEventListener("transitionend", centerImage(jQuery(this)), false); // FF event
+          jQuery(this).addEventListener("oTransitionEnd", centerImage(jQuery(this)), false); // Opera event
         }
       });
       
