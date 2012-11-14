@@ -2769,7 +2769,7 @@ text-align: justify;
 }
 
 ul.slides li {
-  max-height: 395px;
+  max-height: 380px;
   overflow: hidden;  
   -webkit-transition: max-width .5s ease-out;  /* Saf3.2+, Chrome */
   -moz-transition: max-width .5s ease-out;  /* FF4+ */
