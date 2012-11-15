@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class SliderImage < ActiveRecord::Base
-  attr_accessible :tagline, :description, :photo, :is_from_url, :external_url
+  attr_accessible :tagline, :description, :photo, :is_from_url, :external_url, :simg_height, :simg_width
 
   validates :tagline, :description, :photo, :presence => true 
 
