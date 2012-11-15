@@ -4,7 +4,7 @@
     <ul class="slides" id="main-slider">
     <% @slider_images.each do |si|  %>
       <li>
-        <%= image_tag si.photo_url(:large) %>
+        <%= image_tag si.photo_url(:large), :data-height => si.simg_height %>
         <div class="flccont" style="height: 380px;">
           <div class="flcconttc">
             <div class="flex-caption fadeIn">
