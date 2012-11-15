@@ -5,6 +5,7 @@ class SliderImage < ActiveRecord::Base
   validates :tagline, :description, :photo, :presence => true 
 
   validates :external_url, :presence => true, :if => Proc.new { |c| c.is_from_url }  
+  
   validate :external_is_url
   
   mount_uploader :photo, ImageUploader
