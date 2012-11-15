@@ -5,7 +5,7 @@ class AddDimensionsToSliderImage < ActiveRecord::Migration
   end
 
   def down
-	  remove_column :slider_images, :photo_width
-	  remove_column :slider_images, :photo_height
+	  remove_column :slider_images, :simg_width
+	  remove_column :slider_images, :simg_height
   end
 end
