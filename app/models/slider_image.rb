@@ -9,10 +9,6 @@ class SliderImage < ActiveRecord::Base
   
   mount_uploader :photo, ImageUploader
   
-  def photo_height
-    ::Magick::Image.open(photo.path)['height']
-  end
-  
   private
     
     def external_is_url
