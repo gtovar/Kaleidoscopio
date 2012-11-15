@@ -1,5 +1,4 @@
 # encoding: utf-8
-
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
@@ -55,7 +54,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
- 
   def store_geometry
     if @file
       img = ::Magick::Image::read(@file.file).first
