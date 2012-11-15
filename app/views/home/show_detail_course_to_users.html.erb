@@ -61,7 +61,11 @@
 
     <div class="sidebar">
 	<div class="sidebar_box white_container2">
-		<h3>Cuándo</h3>
+		<% unless @course.wont_be_bought %>
+		  <h3>Cuándo</h3>
+		<% else %>
+		  <h3>Fecha de validez</h3>
+		<% end %>
     <p>
       <% if @course.more_than_one_session %>
         Inicio: <br>
