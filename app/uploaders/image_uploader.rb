@@ -57,10 +57,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
  
   def store_geometry
-    manipulate! do |img|
+    if @file
+      img = ::Magick::Image::read(@file.file).first
       if model
-        model.photo_width = img.rows
-        model.photo_height = img.columns
+        model.photo_width = img.columns
+        model.photo_height = img.rows
       end
     end
   end
