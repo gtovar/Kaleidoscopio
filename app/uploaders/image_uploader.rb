@@ -58,8 +58,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     if @file
       img = ::Magick::Image::read(@file.file).first
       if model
-        model.photo_width = img.columns
-        model.photo_height = img.rows
+        model.simg_width = img.columns
+        model.simg_height = img.rows
       end
     end
   end
