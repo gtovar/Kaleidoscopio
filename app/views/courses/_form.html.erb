@@ -85,11 +85,6 @@
 
     </div>
     
-<script type="text/javascript">
-            $(document).ready(function() {
-                $('#timepicker_end_time').timepicker({});
-            });
-        </script>
     <div class="field">
       <%= f.label :requisites_student %><br />
       <%= f.text_area :requisites_student, :rows => 10 %>
@@ -149,8 +144,13 @@
       $("#course_wont_be_bought").change(function () {
          no_price_yet($(this).is(':checked'));
       });
-     
+       
+      $('#course_date_time').datetimepicker();
+      $('#course_finish_time').datetimepicker();
+      $('#timepicker_end_time').timepicker({});
+    
     });
+   
     
     function mtos(value){
       if (value) {
