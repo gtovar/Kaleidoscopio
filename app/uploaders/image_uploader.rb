@@ -57,7 +57,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   def store_geometry
     if @file
       img = ::Magick::Image::read(@file.file).first
-      if model
+      if model.class.name == "SliderImage"
         model.simg_width = img.columns
         model.simg_height = img.rows
       end
