@@ -48,7 +48,11 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
     f_time = self.finish_time.to_time.to_f unless self.finish_time.nil?
     current_time = DateTime.now.to_time.to_f + DateTime.now.to_time.in_time_zone('Mexico City').utc_offset 
     
-    self.more_than_one_session ? (f_time < current_time) : (d_time < current_time)
+    if self.more_than_one_session
+      return f_time < current_time
+    else
+      return d_time < current_time
+    end
   end
   
   def is_sold_out?
