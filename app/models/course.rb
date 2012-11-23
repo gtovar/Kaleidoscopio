@@ -45,8 +45,8 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   
   def has_finished?
     
-    d_time = Time.now
-    f_time = Time.now
+    d_time = nil
+    f_time = nil
     
     unless self.date_time.nil?
       d_time = self.date_time.to_time.to_f 
