@@ -52,6 +52,18 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
 		self.limit_class_tickets - suma <= 0
   end
   
+  def set_status
+    unless course.has_finished?
+      if course.is_sold_out?
+        self.status = "agotado"
+      else
+        self.status = "abierto"
+      end
+    else
+      self.status = "terminado"
+    end
+  end
+  
   private
   
     def set_date_and_price_info
@@ -68,18 +80,5 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
         self.go_to_info = nil
       end
     end
-    
-    
-  def set_status
-    unless course.has_finished?
-      if course.is_sold_out?
-        self.status = "agotado"
-      else
-        self.status = "abierto"
-      end
-    else
-      self.status = "terminado"
-    end
-  end
 
 end
