@@ -1,8 +1,8 @@
 class Course < ActiveRecord::Base
 
-attr_accessible :requisites_student, :end_time, :biography_teacher, :category, :date_time, :description, :google_map, :limit_class_tickets, :name, :owned, :photo, :place, :price, :teacher_name, :photo_teacher, :more_than_one_session, :wont_be_bought, :finish_time, :schedule_info, :go_to_info 
-before_create :create_status
-before_create :set_date_and_price_info
+  attr_accessible :requisites_student, :end_time, :biography_teacher, :category, :date_time, :description, :google_map, :limit_class_tickets, :name, :owned, :photo, :place, :price, :teacher_name, :photo_teacher, :more_than_one_session, :wont_be_bought, :finish_time, :schedule_info, :go_to_info 
+  before_create :set_status
+  before_create :set_date_and_price_info
 
   CATEGORIES = ['arte', 'culinarias', 'empresariales', 'estilo_de_vida', 'tecnologia']
 
@@ -14,9 +14,6 @@ before_create :set_date_and_price_info
     end
   end
 
-  def create_status
-      self.status = "abierto"
-  end
 
   RESULTS_PER_PAGE = 6
 
@@ -42,19 +39,12 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   mount_uploader  :photo_teacher, ImageUploader
   
   after_find do |course|
-    if course.has_finished?
-      course.status = "terminado"
-      course.save
-    elsif course.is_sold_out?
-      course.status = "agotado"
-      course.save
-    end
+    course.set_status
+    course.save
   end
   
   def has_finished?
-    self.more_than_one_session ? (self.finish_time < Time.now.in_time_zone('Mexico City')
-) : (self.date_time < Time.now.in_time_zone('Mexico City')
-)
+    self.more_than_one_session ? (self.finish_time < Time.now.in_time_zone('Mexico City')) : (self.date_time < Time.now.in_time_zone('Mexico City'))
   end
   
   def is_sold_out?
@@ -78,5 +68,18 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
         self.go_to_info = nil
       end
     end
+    
+    
+  def set_status
+    unless course.has_finished?
+      if course.is_sold_out?
+        self.status = "agotado"
+      else
+        self.status = "abierto"
+      end
+    else
+      self.status = "terminado"
+    end
+  end
 
 end
