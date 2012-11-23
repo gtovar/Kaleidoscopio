@@ -53,14 +53,12 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   end
   
   def set_status
-    unless self.has_finished?
-      if self.is_sold_out?
-        self.status = "agotado"
-      else
-        self.status = "abierto"
-      end
-    else
+    if self.has_finished?
       self.status = "terminado"
+    elsif self.is_sold_out?
+      self.status = "agotado"
+    else
+      self.status = "abierto"
     end
   end
   
