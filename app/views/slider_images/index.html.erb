@@ -31,7 +31,7 @@
 
         <% @slider_images.each do |si| %>
           <tbody>
-            <td><%= image_tag si.photo_url(:large), :style => "width: 480px;"  %></td>
+            <td><%= image_tag si.photo_url(:large), :style => "width: 300px;"  %></td>
             <td><%= si.tagline %></td>
             <td><%= si.is_from_url ? (link_to si.external_url, si.external_url, :target => "_blank") : "- Ninguno -" %></td>
             <td><%= si.description %></td>
