@@ -5,6 +5,8 @@ layout "front-end"
     @course = Course.first
     @search = Course.search(params[:search])
     @courses = @search.order(:status,"date_time ASC").limit(10)
+    
+    @courses = @courses.select { |c| c.more_than_one_session ? (c.finish_time > Date.today) : (c.date_time > Date.today)}
     @slider_images = SliderImage.all
     respond_to do |format|
       format.html # index.html.erb
