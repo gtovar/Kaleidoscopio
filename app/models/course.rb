@@ -53,8 +53,8 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   end
   
   def set_status
-    unless course.has_finished?
-      if course.is_sold_out?
+    unless self.has_finished?
+      if self.is_sold_out?
         self.status = "agotado"
       else
         self.status = "abierto"
