@@ -52,7 +52,9 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   end
   
   def has_finished?
-    self.more_than_one_session ? (self.finish_time < Date.today) : (self.date_time < Date.today)
+    self.more_than_one_session ? (self.finish_time < Time.now.in_time_zone('Mexico City')
+) : (self.date_time < Time.now.in_time_zone('Mexico City')
+)
   end
   
   def is_sold_out?
