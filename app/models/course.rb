@@ -44,8 +44,8 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   end
   
   def has_finished?
-    logger.debug "El tiempo final es " + self.finish_time.to_time.to_s + ", el tiempo de inicio es " + self.date_time.to_s + " y la hora actual es " + Time.now.in_time_zone('Mexico City').to_s + ". Ademas, la resta da " + (self.finish_time.to_time < Time.now.in_time_zone('Mexico City')).to_s
-    self.more_than_one_session ? (self.finish_time < Time.now) : (self.date_time < Time.now)
+    logger.debug "El tiempo final es " + self.finish_time.to_s + ", el tiempo de inicio es " + self.date_time.to_s + " y la hora actual es " + DateTime.now.in_time_zone('Mexico City').to_s + ". Ademas, la resta da " + (self.finish_time.to_time < DateTime.now.in_time_zone('Mexico City')).to_s
+    self.more_than_one_session ? (self.finish_time < DateTime.now) : (self.date_time < DateTime.now)
   end
   
   def is_sold_out?
