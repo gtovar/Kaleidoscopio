@@ -56,8 +56,7 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   end
   
   def is_sold_out?
-    orders = self.orders(params[self])
-		suma = orders.where(:payment_status => 'success').sum(:quantity)
+		suma = self.orders.where(:payment_status => 'success').sum(:quantity)
 		self.limit_class_tickets - suma <= 0
   end
   
