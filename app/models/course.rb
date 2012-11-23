@@ -46,7 +46,7 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   def has_finished?
     finish_time = self.finish_time.to_time.to_f
     current_time = DateTime.now.to_time.to_f - DateTime.now.to_time.in_time_zone('Mexico City').utc_offset 
-    logger.debug "FT: " + finish_time.to_s + ", CT: " + current_time.to_f + ". La resta de FT - CT es " + (finish_time < current_time).to_s
+    logger.debug "FT: " + finish_time.to_s + ", CT: " + current_time.to_s + ". La resta de FT - CT es " + (finish_time < current_time).to_s
     self.more_than_one_session ? (self.finish_time < DateTime.now) : (self.date_time < DateTime.now)
   end
   
