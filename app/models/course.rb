@@ -44,8 +44,18 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   end
   
   def has_finished?
-    d_time = self.date_time.to_time.to_f unless self.date_time.nil?
-    f_time = self.finish_time.to_time.to_f unless self.finish_time.nil?
+    
+    d_time = Time.now
+    f_time = Time.now
+    
+    unless self.date_time.nil?
+      d_time = self.date_time.to_time.to_f 
+    end
+    
+    unless self.finish_time.nil?
+      f_time = self.finish_time.to_time.to_f 
+    end
+    
     current_time = DateTime.now.to_time.to_f + DateTime.now.to_time.in_time_zone('Mexico City').utc_offset 
     
     if self.more_than_one_session
