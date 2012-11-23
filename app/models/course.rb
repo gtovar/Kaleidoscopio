@@ -1,7 +1,7 @@
 class Course < ActiveRecord::Base
 
   attr_accessible :requisites_student, :end_time, :biography_teacher, :category, :date_time, :description, :google_map, :limit_class_tickets, :name, :owned, :photo, :place, :price, :teacher_name, :photo_teacher, :more_than_one_session, :wont_be_bought, :finish_time, :schedule_info, :go_to_info 
-  before_save :set_status
+  before_save :set_current_status
   before_create :set_date_and_price_info
 
   CATEGORIES = ['arte', 'culinarias', 'empresariales', 'estilo_de_vida', 'tecnologia']
@@ -45,7 +45,7 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   
   def has_finished?
     logger.debug "El tiempo final es " + self.finish_time.to_s + ", el tiempo de inicio es " + self.date_time.to_s + " y la hora actual es " + Time.now.in_time_zone("Mexico City").to_s
-    self.more_than_one_session ? (self.finish_time < Time.now.in_time_zone('Mexico City')) : (self.date_time < Time.now.in_time_zone('Mexico City'))
+    self.more_than_one_session ? (self.finish_time < Time.now) : (self.date_time < Time.now)
   end
   
   def is_sold_out?
@@ -79,6 +79,10 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
       else
         self.go_to_info = nil
       end
+    end
+    
+    def set_current_status
+      self.set_status
     end
 
 end
