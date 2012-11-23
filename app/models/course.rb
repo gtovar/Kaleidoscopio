@@ -41,6 +41,26 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   mount_uploader  :photo, ImageUploader
   mount_uploader  :photo_teacher, ImageUploader
   
+  after_find do |course|
+    if course.has_finished?
+      course.status = "terminado"
+      course.save
+    elsif course.is_sold_out?
+      course.status = "agotado"
+      course.save
+    end
+  end
+  
+  def has_finished?
+    self.more_than_one_session ? (self.finish_time > Date.today) : (self.date_time > Date.today)
+  end
+  
+  def is_sold_out?
+    orders = self.orders(params[self])
+		suma = orders.where(:payment_status => 'success').sum(:quantity)
+		self.limit_class_tickets - suma <= 0
+  end
+  
   private
   
     def set_date_and_price_info
