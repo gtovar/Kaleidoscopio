@@ -6,7 +6,7 @@ layout "front-end"
     @search = Course.search(params[:search])
     @courses = @search.order(:status,"date_time ASC").limit(10)
     
-    @courses = @courses.select { |c| c.has_finished? }
+    @courses = @courses.select { |c| !(c.has_finished?) }
     @slider_images = SliderImage.all
     respond_to do |format|
       format.html # index.html.erb
