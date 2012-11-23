@@ -44,7 +44,9 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
   end
   
   def has_finished?
-    logger.debug "El tiempo final es " + self.finish_time.to_s + ", el tiempo de inicio es " + self.date_time.to_s + " y la hora actual es " + DateTime.now.in_time_zone('Mexico City').to_s + ". Ademas, la resta da " + (self.finish_time.to_time < DateTime.now.in_time_zone('Mexico City')).to_s
+    finish_time = self.finish_time.to_time.to_f.to_s
+    current_time = DateTime.now.to_time.in_time_zone('Mexico City').to_f.to_s 
+    logger.debug "FT: " + finish_time + ", CT: " + current_time + ". La resta de FT - CT es " + (finish_time < current_time).to_s
     self.more_than_one_session ? (self.finish_time < DateTime.now) : (self.date_time < DateTime.now)
   end
   
