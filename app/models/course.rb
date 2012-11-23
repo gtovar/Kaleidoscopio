@@ -60,6 +60,7 @@ validates :biography_teacher, :category, :date_time, :description, :google_map, 
     else
       self.status = "abierto"
     end
+    logger.debug "El estatus de este curso es " + self.status
   end
   
   private
