@@ -1,7 +1,7 @@
 class Course < ActiveRecord::Base
 
   attr_accessible :requisites_student, :end_time, :biography_teacher, :category, :date_time, :description, :google_map, :limit_class_tickets, :name, :owned, :photo, :place, :price, :teacher_name, :photo_teacher, :more_than_one_session, :wont_be_bought, :finish_time, :schedule_info, :go_to_info 
-  before_create :set_status
+  before_save :set_status
   before_create :set_date_and_price_info
 
   CATEGORIES = ['arte', 'culinarias', 'empresariales', 'estilo_de_vida', 'tecnologia']
