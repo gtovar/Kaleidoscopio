@@ -13,7 +13,7 @@
   <%= ('<meta property="og:url" content="' + @course.description  + '" />').html_safe %>
 <% end %>
 
-
+<%= yield :javscripts %>
     <script type="text/javascript">
 
  var _gaq = _gaq || [];

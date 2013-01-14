@@ -1,6 +1,6 @@
-  <head>
+<% content_for :javscripts do %>
 <%= javascript_include_tag "jquery" %>
-</head>
+<% end %>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -70,20 +70,20 @@
       <% if @course.more_than_one_session %>
         Inicio: <br>
         <%= l(@course.date_time, :format => :short) %>
-        Fin: <br> 
+        Fin: <br>
         <%= (l(@course.finish_time, :format => :short) unless @course.finish_time.nil?) %> <br>
         <hr style=" border-bottom: 1px solid #C5C5C6;">
         <span style="font-style: italic;">Notas: <%= @course.schedule_info %></span>
       <% else %>
-        
+
         <%= l(@course.date_time, :format => :short) + " - " + (@course.end_time.strftime("%k:%M hrs") unless @course.end_time.nil?) %>
-         
+
       <% end %>
     </p>
 	</div>
-	
+
 	<div class="sidebar_box white_container2">
-	
+
 		<div class="cupo">
 		  <h3>
 		  <% unless @course.wont_be_bought %>
@@ -100,7 +100,7 @@
 
 		<div class="cantidad">
 		  <% unless @course.wont_be_bought %>
-		  
+
 			  <%= form_for([@course, @course.orders.build]) do |f| %>
 
     			<h4><%= f.label :quantity, "Cantidad" %></h4>
@@ -114,20 +114,20 @@
 		          });
 	          });
           </script>
-    			
+
     			<div class="boton_inscripcion">
       				<%= link_to "comprar", "#", :class => "inscribete" %>
           </div>
 			  <% end %>
 	      <%= image_tag ("logos.png"), :alt => "Formas de pago" %>
-	      
+
 	  <% else %>
 	    <%= @course.go_to_info %>
-	  <% end %>  
+	  <% end %>
 	  </div>
-	
+
 	</div>
-	
+
 	<div class="sidebar_box_share white_container clearfix">
 		<h3>Comparte la clase!</h3>
 		<ul class="share_container clearfix">
