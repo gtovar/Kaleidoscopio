@@ -1,17 +1,18 @@
 <%= render 'layouts/shim-front' %>
 <head>
   <%= render 'layouts/head-front' %>
-  <% unless @course == nil %>
+   <META name="keywords" content="Clases,Talleres,Cursos,Clases de cocina,Clases deportivas,Clases Crossfit,Clases de repostería,Clases de baile,Clases de música,Clases de defensa personal ">
+  <META name="description" content=" Nuestro servicio tiene como objetivo que cualquier persona pueda compartir su talento con la gente de su comunidad.">
+ <% unless @course == nil %>
    <%= ('<meta property="og:title" content=" Claseteca | ' + @course.name  + ' " />').html_safe %>
   <meta property="og:type" content="website" />
   <%= ('<meta property="og:url" content="' + curso_url(@course) + '" />').html_safe %>
   <%= ('<meta property="og:image" content="' + @course.photo.large.url.to_s + '" />').html_safe %>
   <meta property="og:site_name" content="CLASETECA" />
   <meta property="fb:admins" content="589571332" />
-  <META name="keywords" content="Clases,Talleres,Cursos,Clases de cocina,Clases deportivas,Clases Crossfit,Clases de repostería,Clases de baile,Clases de música,Clases de defensa personal ">
-  <META name="description" content="Descripcion de la pagina sin og">
+  <%= ('<meta property="og:url" content="' + @course.description  + '" />').html_safe %>
+<% end %>
 
-  <% end %>
 
     <script type="text/javascript">
 
