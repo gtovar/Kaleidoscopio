@@ -1398,7 +1398,7 @@ li p {
 	margin-bottom:0px;
 }
 .port2perline .post-title-cont {
-    width: 350px;
+    width: 420px;
 }
 .port2perline, .port4perline {
 	margin-bottom:20px !important;
@@ -1990,14 +1990,15 @@ h3.shortcode_accordion_item_title:hover, h3.shortcode_toggles_item_title:hover {
 
 
 .precio {color: white;
-	font-size:45px;
+	font-size:30px;
 	line-height:34px;
 	font-family: impact;
 	text-shadow: 2px 2px 3px #303030;
 	position: absolute;
 	bottom: 16px;
-	right: 30px;
+	right: 16px;
 	letter-spacing: -1px;
+	margin-bottom: 0px;
 	}
 
 
@@ -2015,7 +2016,7 @@ font-family: impact;
 text-shadow: 2px 2px 3px #303030;
 position: absolute;
 bottom: 10px;
-right: 20px;
+right: 0px;
 letter-spacing: -1px;
 }
 
@@ -2168,7 +2169,7 @@ body {background-repeat: repeat;}
 	margin-left: 15px;
 }
 /* end nuevo */
-.clase_titulo h1 {font-size: 60px; padding: 20px;}
+.clase_titulo h1 {font-size: 50px; padding: 20px;}
 
 .clase_titulo .precio .decimal {top: 9px; }
 
@@ -2765,4 +2766,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2f481', end
 width: 500px;
 margin: 0 auto 0 auto;
 text-align: justify;
+}
+
+ul.slides li {
+  max-height: 380px;
+  overflow: hidden;  
+  -webkit-transition: max-width .5s ease-out;  /* Saf3.2+, Chrome */
+  -moz-transition: max-width .5s ease-out;  /* FF4+ */
+  -ms-transition: max-width .5s ease-out;  /* IE10? */
+  -o-transition: max-width .5s ease-out;  /* Opera 10.5+ */
+  transition: max-width .5s ease-out;
+}
+
+ul.slides li img {
+    width: 100%;
+    -webkit-transition: margin-top .5s ease-out;  /* Saf3.2+, Chrome */
+    -moz-transition: margin-top .5s ease-out;  /* FF4+ */
+    -ms-transition: margin-top .5s ease-out;  /* IE10? */
+    -o-transition: margin-top .5s ease-out;  /* Opera 10.5+ */
+    transition: margin-top .5s ease-out;
 }

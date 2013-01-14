@@ -17,7 +17,7 @@
     <div>
 	<div class="clase_titulo relative">
 		<h2 class="absolute"><%= @course.name %></h2>
-		<h1 class="precio_descripcion">$<%= @course.price %>.<span class="decimal">00</span></h1>
+		<h1 class="precio_descripcion"><%= @course.wont_be_bought ? truncate(@course.go_to_info, :length => 30) :  number_to_currency(@course.price) %></h1>
 		<img class="size-full wp-image-123 foto_descripcion" width="920" height="220" alt="" 			src="<%=@course.photo.large.url.to_s%>" title="about">
 	</div>
     </div>
@@ -61,41 +61,73 @@
 
     <div class="sidebar">
 	<div class="sidebar_box white_container2">
-		<h3>Fecha</h3>
-<p><%= (l @course.date_time, :format => :default).capitalize %> - <%= @course.end_time.strftime("%I:%M %p") %> </p>
+		<% unless @course.wont_be_bought %>
+		  <h3>Cuándo</h3>
+		<% else %>
+		  <h3>Fecha de validez</h3>
+		<% end %>
+    <p>
+      <% if @course.more_than_one_session %>
+        Inicio: <br>
+        <%= l(@course.date_time, :format => :short) %>
+        Fin: <br> 
+        <%= (l(@course.finish_time, :format => :short) unless @course.finish_time.nil?) %> <br>
+        <hr style=" border-bottom: 1px solid #C5C5C6;">
+        <span style="font-style: italic;">Notas: <%= @course.schedule_info %></span>
+      <% else %>
+        
+        <%= l(@course.date_time, :format => :short) + " - " + (@course.end_time.strftime("%k:%M hrs") unless @course.end_time.nil?) %>
+         
+      <% end %>
+    </p>
 	</div>
+	
 	<div class="sidebar_box white_container2">
+	
 		<div class="cupo">
-			<% if @disponibles > 1 %>
-			<h3>Quedan <%= @disponibles %>
-			Lugares </h3>
+		  <h3>
+		  <% unless @course.wont_be_bought %>
+			  <% if @disponibles > 1 %>
+			    Quedan <%= @disponibles %> Lugares
         <% else %>
-			<h3>Queda <%= @disponibles %>
-			Lugar </h3>
-			<%end%>
+  			  Queda <%= @disponibles %> Lugar
+			  <% end %>
+			<% else %>
+			  Promoción Claseteca
+			<% end %>
+			</h3>
 		</div>
 
 		<div class="cantidad">
-			<%= form_for([@course, @course.orders.build]) do |f| %>
+		  <% unless @course.wont_be_bought %>
+		  
+			  <%= form_for([@course, @course.orders.build]) do |f| %>
 
-  			<h4><%= f.label :quantity, "Cantidad" %></h4>
-  			<%= f.select :quantity, options_for_select([[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"]]) %>
+    			<h4><%= f.label :quantity, "Cantidad" %></h4>
+    			<%= f.select :quantity, options_for_select([[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"]]) %>
 
-<script type="text/javascript" charset="utf-8">
-	$(document).ready(function(){
-	$(".boton_inscripcion a").click(function(e){
-		e.preventDefault();
-		$("#new_order").submit();
-		});
-	});
-</script>
-  			<div class="boton_inscripcion">
-    				<%= link_to "comprar", "#", :class => "inscribete" %>
-                  </div>
-			<% end %>
-	  <%= image_tag ("logos.png"), :alt => "Formas de pago" %>
+          <script type="text/javascript" charset="utf-8">
+	          $(document).ready(function(){
+	          $(".boton_inscripcion a").click(function(e){
+		          e.preventDefault();
+		          $("#new_order").submit();
+		          });
+	          });
+          </script>
+    			
+    			<div class="boton_inscripcion">
+      				<%= link_to "comprar", "#", :class => "inscribete" %>
+          </div>
+			  <% end %>
+	      <%= image_tag ("logos.png"), :alt => "Formas de pago" %>
+	      
+	  <% else %>
+	    <%= @course.go_to_info %>
+	  <% end %>  
+	  </div>
+	
 	</div>
-	</div>
+	
 	<div class="sidebar_box_share white_container clearfix">
 		<h3>Comparte la clase!</h3>
 		<ul class="share_container clearfix">

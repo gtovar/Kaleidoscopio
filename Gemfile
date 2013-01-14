@@ -13,6 +13,7 @@ gem 'will_paginate'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem "validates_timeliness"
 
 gem 'meta_search'
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
@@ -36,6 +37,7 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'jquery-ui-rails'
 end
 
 gem 'jquery-rails'

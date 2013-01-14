@@ -51,19 +51,40 @@
       <%= f.label :google_map %><br />
       <%= f.text_area :google_map, :rows => 10 %>
     </div>
+    
+    <h4>Inicia</h4>
+    
     <div class="field">
       <%= f.label :date_time %><br />
       <%= f.text_field :date_time %>
     </div>
-    <div class="field">
-      <%= f.label :end_time %><br />
-      <%= f.text_field :end_time, id: "timepicker.[1]", class: "hasTimepicker" %>
+
+    <div style="background-color: #eeeeee; padding: 10px;">
+        
+      <h4>Termina</h4>
+    
+      <div class="field" style="margin-top: 10px; margin-bottom: 10px;">
+        <%= f.check_box :more_than_one_session %>  
+        <%= f.label :more_than_one_session, :style => "display: inline;" %>
+      </div>
+      
+      <div class="field" id="course_end_time">
+        <%= f.label :end_time %><br />
+        <%= f.text_field :end_time, id: "timepicker_end_time", class: "hasTimepicker" %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :finish_time %><br />
+        <%= f.text_field :finish_time %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :schedule_info %><br />
+        <%= f.text_field :schedule_info %>
+      </div>
+
     </div>
-<script type="text/javascript">
-            $(document).ready(function() {
-                $('#timepicker\\.\\[1\\]').timepicker({});
-            });
-        </script>
+    
     <div class="field">
       <%= f.label :requisites_student %><br />
       <%= f.text_area :requisites_student, :rows => 10 %>
@@ -71,17 +92,35 @@
 							<h3><i style="position: relative; top: 3px;" class="icon-info-sign"></i> <a href="http://www.squarespace.com/display/ShowHelp?section=Markdown">Markdown tags</a></h3>
 						</div>
     </div>
-    <div class="field">
-      <%= f.label :price %><br />
-      <%= f.text_field :price %>
+    
+    <div style="background-color: #eeeeee; padding: 10px;">
+      
+      <h4>Precio</h4>
+      
+      <div class="field" style="margin-top: 10px; margin-bottom: 10px;">
+        <%= f.check_box :wont_be_bought %>
+        <%= f.label :wont_be_bought, :style => "display: inline;" %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :price %><br />
+        <%= f.text_field :price %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :go_to_info %><br />
+        <%= f.text_field :go_to_info %>
+      </div>
+          
     </div>
+    
     <div class="field">
       <%= f.label :limit_class_tickets %><br />
       <%= f.number_field :limit_class_tickets %>
     </div>
     <div class="field">
       <label class="checkbox">
-      <%= f.check_box :owned %> Es un curso de Kaleydoscopio
+      <%= f.check_box :owned %> Es un curso de Claseteca
       </label>
     </div>
     <br />
@@ -92,3 +131,47 @@
   <% end %>
   </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+      
+      mtos(<%= @course.more_than_one_session %>);      
+      no_price_yet(<%= @course.wont_be_bought %>);
+        
+      $("#course_more_than_one_session").change(function () {
+         mtos($(this).is(':checked'));
+      });
+      
+      $("#course_wont_be_bought").change(function () {
+         no_price_yet($(this).is(':checked'));
+      });
+       
+      jQuery('#course_date_time').datetimepicker();
+      jQuery('#course_finish_time').datetimepicker();
+      jQuery('#timepicker_end_time').timepicker({});
+    
+    });
+   
+    
+    function mtos(value){
+      if (value) {
+        $("#course_end_time").fadeOut();
+        $("#course_finish_time").parent().fadeIn();
+        $("#course_schedule_info").parent().fadeIn();
+      } else {
+        $("#course_end_time").fadeIn();
+        $("#course_finish_time").parent().fadeOut();
+        $("#course_schedule_info").parent().fadeOut();     
+      }
+    }
+    
+    function no_price_yet(value){
+      if (value) {
+        $("#course_price").parent().fadeOut();
+        $("#course_go_to_info").parent().fadeIn();
+      } else {
+        $("#course_price").parent().fadeIn();
+        $("#course_go_to_info").parent().fadeOut();
+      }
+    }
+    
+</script>

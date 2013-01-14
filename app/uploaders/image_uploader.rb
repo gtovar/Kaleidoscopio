@@ -1,5 +1,4 @@
 # encoding: utf-8
-
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
@@ -37,6 +36,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
    version :large do
      process :resize_to_fill => [960, 404]
+     process :store_geometry
    end
 
    version :thumb do
@@ -54,5 +54,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  def store_geometry
+    if @file
+      img = ::Magick::Image::read(@file.file).first
+      if model.class.name == "SliderImage"
+        model.simg_width = img.columns
+        model.simg_height = img.rows
+      end
+    end
+  end
 
 end

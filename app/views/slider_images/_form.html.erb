@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="span6 offset3">
+
+    <%= form_for @slider_image, :html => {:multipart => true} do |f| %>
+	  
+	  <% if @slider_image.errors.any? %>
+      <div id="error_explanation">
+			  <div class="alert alert-error">
+          <% errores = @slider_image.errors.count %>
+
+          <% if errores > 1 %>
+            <h2><%= errores %>&nbsp;errores encontrados:</h2>
+          <% else %>
+            <h2><%= errores%>error encontrado:</h2>
+          <% end %>
+			  </div>
+        <ul>
+        <% @slider_image.errors.full_messages.each do |msg| %>
+          <li>* <%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+	    
+    <div style="background-color: #eeeeee; padding: 10px;">
+    
+      <div class="field">
+        <%= f.label :tagline %><br />
+        <%= f.text_field :tagline %>
+      </div>
+      
+      <div class="field" style="margin-top: 10px; margin-bottom: 10px;">
+        <%= f.check_box :is_from_url %>  
+        <%= f.label :is_from_url, :style => "display: inline;" %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :external_url %><br />
+        <%= f.text_field :external_url %>
+      </div>
+    
+    </div>
+    
+      
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area :description, :rows => 3 %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :photo %><br />
+      <%= f.file_field :photo %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit :class => "btn btn-large btn-primary" %> o <%= link_to 'Regresar', slider_images_path %>
+    </div>
+  <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+      
+      ifu(<%= @slider_image.is_from_url %>);    
+        
+      $("#slider_image_is_from_url").change(function () {
+         ifu($(this).is(':checked'));
+      });
+     
+    });
+    
+    function ifu(value){
+      if (value) {
+        $("#slider_image_external_url").parent().fadeIn();
+      } else {
+        $("#slider_image_external_url").parent().fadeOut();
+      }
+    }
+    
+</script>

@@ -3,10 +3,10 @@
 	<div class="thispost porttype preloader_container">
 		<div class="post-title-cont">
 			<h2 class="post-title">
-				<%= link_to course.name, curso_path(course) %>
+				<%= link_to truncate(course.name, :length => 30), curso_path(course) %>
 			</h2>
 			<div class="post-meta portype">
-				<%= l course.date_time, :format => :long %>
+				<%= course.more_than_one_session ? "Múltiples sesiones" : (l course.date_time, :format => :long).capitalize %>
 			</div>
 		</div>
 		<div class="post-content">
@@ -15,10 +15,10 @@
 				<span class="type_image" title="Curso Kaleydoscopio"></span>
 
 			<%end %>
-			<h1 class="precio">$<%= course.price %><span class="decimal">00</span></h1>
+			<h1 class="precio"><%= !course.wont_be_bought ? number_to_currency(course.price) : truncate(course.go_to_info, :length => 30) %></h1>
 				<%= link_to image_tag(course.photo.thumb.url.to_s, :alt => "Kaleydoscopio"), curso_path(course) %>
 			</div>
-			<p><%= markdown(truncate(course.description, :length => 120)) %></p>
+			<p><%= strip_tags(markdown(truncate(course.description, :length => 120))) %></p>
 			<%= link_to "Click me", curso_path(course), class: "plus_btn" %>
 		</div>
 	</div>

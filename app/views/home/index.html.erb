@@ -2,7 +2,6 @@
 <% provide(:sino, 'poner') %>
 
 <div class="container contentwrapper">
-
   <div class="sixteen columns alpha omega portpage">
     <div class="home_marketing">
       <div class="home_marketing_content">
@@ -10,67 +9,7 @@
       </div>
     </div>
 
-    <div id="slider_beneficios" class="container contentwrapper">
-      <div class="sixteen columns alpha omega block_shadow flexslider">
-        <ul class="slides">
-          <li style="width: 100%; margin-right: -100%; display: none; float: left;">
-            <%=image_tag "kaleydoscopio_slider_home1.jpg"%>
-            <div class="flccont" style="height: 380px;">
-              <div class="flcconttc">
-                <div class="flex-caption fadeIn">
-                  <span class="fctitle">Aprende algo diferente cada semana</span>
-                  <span class="subcaption">Rompe la rutina, alimenta tu curiosidad con clases interesantes.
-                  </span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li style="width: 100%; float: left; margin-right: -100%; display: list-item;">
-            <%=image_tag "kaleydoscopio_slider_home3.jpg"%>
-            <div class="flccont">
-              <div class="flcconttc">
-                <div class="flex-caption fadeIn">
-                  <span class="fctitle">Comparte lo que sabes</span>
-                  <span class="subcaption">Todos tenemos un talento que podamos compartir, date a conocer. </span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li style="width: 100%; float: left; margin-right: -100%; display: none;">
-            <%=image_tag "kaleydoscopio_slider_home2.jpg"%>
-            <div class="flccont" style="height: 380px;">
-              <div class="flcconttc">
-                <div class="flex-caption fadeIn">
-                  <span class="fctitle">En cualquier lugar se puede aprender.</span>
-                  <span class="subcaption">Rompe el paradigma, aprende en un lugar diferente y olvida el salón de clases. </span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <ol class="flex-control-nav">
-          <li>
-            <a class="">1</a>
-          </li>
-          <li>
-            <a class="">2</a>
-          </li>
-          <li>
-            <a class="active">3</a>
-          </li>
-        </ol>
-
-        <ul class="flex-direction-nav">
-          <li>
-            <a class="prev" href="#">Previous</a>
-          </li>
-          <li>
-            <a class="next" href="#">Next</a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
+    <%=  render :partial => "slider_images" %>
 
     <header class="home">
       <h3 class="headofpage_home">Clases Disponibles</h3>
@@ -88,7 +27,7 @@
       </div>
       <ul class='cpt_filter' id='filter'>
         <li class="act">
-          <%=link_to 'Todas', listacursos_path%>
+          <%=link_to 'Todas', listacursos_path %>
         </li>
         <li>
           <a href="">Categorías</a>
@@ -108,69 +47,93 @@
             <li>
               <a href="lista-cursos?utf8=✓&search[category_in][]=tecnologia&commit=Crear+Search">Tecnología</a>
             </li>
-            </ul>
-          </li>
-          <li>
-            <a href="">Estatus</a>
-            <ul class="submenu_categorias">
-              <li>
-                <a href="lista-cursos?utf8=✓&search[status_in][]=abierto&commit=Crear+Search">Abierto</a>
-              </li>
-              <li>
-                <a href="lista-cursos?utf8=✓&search[status_in][]=agotado&commit=Crear+Search">Agotado</a>
-              </li>
-              <li>
-                <a href="lista-cursos?utf8=✓&search[status_in][]=terminado&commit=Crear+Search" >Terminado</a>
-              </li>
-            </ul>
-          </li>
+          </ul>
+        </li>
+        <li>
+          <a href="">Estatus</a>
+          <ul class="submenu_categorias">
+            <li>
+              <a href="lista-cursos?utf8=✓&search[status_in][]=abierto&commit=Crear+Search">Abierto</a>
+            </li>
+            <li>
+              <a href="lista-cursos?utf8=✓&search[status_in][]=agotado&commit=Crear+Search">Agotado</a>
+            </li>
+            <li>
+              <a href="lista-cursos?utf8=✓&search[status_in][]=terminado&commit=Crear+Search" >Terminado</a>
+            </li>
+          </ul>
+        </li>
 
+        <!-- FILTRAR LOS STATUS (ABIERTO,CERRADO,COMPLETADO) -->
+        <% form_for @search, :url => listacursos_path, :html => {:method => :get} do |f| %>
+          <% f.checks :status_in, [['Abierto', 'abierto'], ['Agotado', 'agotado'], ['Terminado', 'terminado']], :class => 'checkboxy'  do |check| %>
+            <li>
+              <% check.box %>
+              <% check.label %>
+            </li>
 
-
-          <!-- FILTRAR LOS STATUS (ABIERTO,CERRADO,COMPLETADO) -->
-          <% form_for @search, :url => listacursos_path, :html => {:method => :get} do |f| %>
-            <% f.checks :status_in, [['Abierto', 'abierto'], ['Agotado', 'agotado'], ['Terminado', 'terminado']], :class => 'checkboxy'  do |check| %>
-              <li>
-                <% check.box %>
-                <% check.label %>
-              </li>
-
-            <% end %>
-            <!-- etc... -->
-            <% f.submit %>
           <% end %>
+          <!-- etc... -->
+          <% f.submit %>
+        <% end %>
 
-          <!-- FILTRAR LAS CATEGORIAS (COCINA,ARTE,ETC..) -->
-          <% form_for @search, :url => listacursos_path, :html => {:method => :get} do |f| %>
-            <% f.checks :category_in, [['Culinarias', 'culinarias'], ['Artes', 'arte'], ['Empresariales', 'empresariales'], ['Tecnologia', 'tecnologia'], ['Estilo de vida', 'estilo_de_vida']], :class => 'checkboxy'  do |check| %>
-              <li>
-                <% check.box %>
-                <% check.label %>
-              </li>
+        <!-- FILTRAR LAS CATEGORIAS (COCINA,ARTE,ETC..) -->
+        <% form_for @search, :url => listacursos_path, :html => {:method => :get} do |f| %>
+          <% f.checks :category_in, [['Culinarias', 'culinarias'], ['Artes', 'arte'], ['Empresariales', 'empresariales'], ['Tecnologia', 'tecnologia'], ['Estilo de vida', 'estilo_de_vida']], :class => 'checkboxy'  do |check| %>
+            <li>
+              <% check.box %>
+              <% check.label %>
+            </li>
 
-            <% end %>
-            <!-- etc... -->
-            <% f.submit %>
           <% end %>
+          <!-- etc... -->
+          <% f.submit %>
+        <% end %>
 
-        </ul>
-        <div class='clear'></div>
-      </div>
+      </ul>
       <div class='clear'></div>
-      <div class="portrowed perline2">
-        <div class="clear"></div>
+    </div>
+    <div class='clear'></div>
+    <div class="portrowed perline2">
+      <div class="clear"></div>
+
+      <%= render :partial => "lc", :locals => {:course_list => @courses, :no_more_results => @no_more_results}%>
 
 
-        <%= render :partial => "lc", :locals => {:course_list => @courses, :no_more_results => @no_more_results}%>
-
-
-        <div class="boton_inscripcion" style="margin: 0px auto; width: 300px;">
-          <%= link_to "Ver más clases disponibles", listacursos_path%>
-
-
-        </div>
+      <div class="boton_inscripcion" style="margin: 0px auto; width: 300px;">
+        <%= link_to "Ver más clases disponibles", listacursos_path%>
 
 
       </div>
     </div>
   </div>
+</div>
+<script type="text/javascript">
+
+  jQuery(document).ready(function() {
+       
+    jQuery(window).on("load resize", function(){
+      jQuery('ul.slides li').each(function(){
+        centerImage(jQuery(this));
+      });  
+    });
+     
+    jQuery('ul.slides li').each(function () {
+      if (jQuery(this).addEventListener) {  
+        jQuery(this).addEventListener("webkitTransitionEnd", centerImage(jQuery(this)), false); // Webkit event
+        jQuery(this).addEventListener("transitionend", centerImage(jQuery(this)), false); // FF event
+        jQuery(this).addEventListener("oTransitionEnd", centerImage(jQuery(this)), false); // Opera event
+      }
+    });
+     
+  });
+  
+  function centerImage(obj) {
+    var imageHeight, overlap, container = obj;  
+    imageHeight = container.find('img').attr("dh");
+    wrapperHeight = jQuery("ul.slides").height();
+    overlap = (wrapperHeight - imageHeight) / 2;
+    container.find('img').css('margin-top', overlap);
+  }
+  
+</script>

@@ -3,6 +3,7 @@ es:
     models:
       course: "Curso"
       contact: "Contacto"
+      slider_image: "Elementos del slider"
     attributes:
       course:
         teacher_name: "Nombre del profesor"
@@ -16,9 +17,9 @@ es:
         place: "Lugar"
         google_map: "Google map"
         date_time: "Fecha y hora inicial"
-        end_time: "hora final"
+        end_time: "Hora final"
         requisites_student: "Requisitos del estudiante"
-        price: "Precio"
+        price: "Costo"
         pay_link: "Dinero mail"
         limit_class_tickets: "No. boletos"
         facebook_link: "Facebook"
@@ -28,9 +29,27 @@ es:
         cat_empresariales: "Empresariales"
         cat_estilo_de_vida: "Estilo de vida"
         cat_tecnologia: "Tecnología"
+        finish_time: "Fecha y hora final"
+        schedule_info: "Información adicional"
+        more_than_one_session: "Más de una sesión"
+        wont_be_bought: "Este curso no tendrá precio"
+        go_to_info: "Cómo asistir al curso"
       contact:
         name: "Nombre"
         email: "Correo electrónico"
         phone: "Teléfono"
         subjects: "Asunto"
         message: "Mensaje"
+      slider_image:
+        tagline: "Tagline"
+        description: "Descripción"
+        photo: "Imagen"
+        is_from_url: "El tagline conduce a una página web"
+        external_url: "Sitio web al que conduce el tagline"
+    errors:
+      models:
+        course:
+          attributes:
+            finish_time:
+              after: "No puede estar antes de la fecha y hora inicial"
+              

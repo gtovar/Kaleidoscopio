@@ -1,0 +1,21 @@
+<% if @slider_images.count > 0 %>
+<div id="slider_beneficios" class="container contentwrapper">
+  <div class="sixteen columns alpha omega block_shadow flexslider">
+    <ul class="slides" id="main-slider">
+    <% @slider_images.each do |si|  %>
+      <li>
+        <%= image_tag si.photo_url(:large), :dh => si.simg_height %>
+        <div class="flccont" style="height: 380px;">
+          <div class="flcconttc">
+            <div class="flex-caption fadeIn">
+              <span class="fctitle"><%= si.is_from_url ? (link_to si.tagline, si.external_url, :target => "_blank") : si.tagline %></span>
+              <span class="subcaption"><%= si.description %></span>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
+<% end %>
