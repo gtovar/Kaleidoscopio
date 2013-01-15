@@ -321,7 +321,6 @@ img.alignright {
     position: absolute;
     top: 0;
 }
-.menu_bar_hover:hover {border-top: 4px solid #a6ea4b;}
 .dn {
 	display:none !important;
 }
@@ -2770,7 +2769,7 @@ text-align: justify;
 
 ul.slides li {
   max-height: 380px;
-  overflow: hidden;  
+  overflow: hidden;
   -webkit-transition: max-width .5s ease-out;  /* Saf3.2+, Chrome */
   -moz-transition: max-width .5s ease-out;  /* FF4+ */
   -ms-transition: max-width .5s ease-out;  /* IE10? */
