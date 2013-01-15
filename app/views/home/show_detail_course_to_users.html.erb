@@ -1,6 +1,14 @@
 <% content_for :javscripts do %>
 <%= javascript_include_tag "jquery" %>
 <% end %>
+
+<% content_for :metatags do %>
+   <%= ('<meta property="og:title" content=" Claseteca | ' + @course.name  + ' " />').html_safe %>
+    <%= ('<meta property="og:url" content="' + curso_url(@course) + '" />').html_safe %>
+  <%= ('<meta property="og:image" content="' + @course.photo.large.url.to_s + '" />').html_safe %>
+ <%= ('<meta property="og:description" content="' + @course.description.to_s  + '" />').html_safe %>
+<% end %>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
