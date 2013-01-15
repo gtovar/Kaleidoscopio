@@ -2,15 +2,16 @@
 <head>
   <%= render 'layouts/head-front' %>
    <META name="keywords" content="Clases,Talleres,Cursos,Clases de cocina,Clases deportivas,Clases Crossfit,Clases de repostería,Clases de baile,Clases de música,Clases de defensa personal ">
-  <META name="description" content=" Nuestro servicio tiene como objetivo que cualquier persona pueda compartir su talento con la gente de su comunidad.">
+  <META name="description" content="Ofertas, Promociones y Descuentos en Clases, Talleres y Cursos en tu comunidad.">
  <% unless @course == nil %>
    <%= ('<meta property="og:title" content=" Claseteca | ' + @course.name  + ' " />').html_safe %>
   <meta property="og:type" content="website" />
   <%= ('<meta property="og:url" content="' + curso_url(@course) + '" />').html_safe %>
   <%= ('<meta property="og:image" content="' + @course.photo.large.url.to_s + '" />').html_safe %>
   <meta property="og:site_name" content="CLASETECA" />
-  <meta property="fb:admins" content="589571332" />
-  <%= ('<meta property="og:description" content="' + @course.description  + '" />').html_safe %>
+  <!--  <meta property="fb:admins" content="589571332" /> -->
+  <meta property="fb:admins" content="400979823251615" />
+<%= ('<meta property="og:description" content="' + @course.description  + '" />').html_safe %>
 <% end %>
 
 <%= yield :javscripts %>
