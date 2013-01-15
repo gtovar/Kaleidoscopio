@@ -10,7 +10,7 @@
   <%= ('<meta property="og:image" content="' + @course.photo.large.url.to_s + '" />').html_safe %>
   <meta property="og:site_name" content="CLASETECA" />
   <meta property="fb:admins" content="589571332" />
-  <%= ('<meta property="og:url" content="' + @course.description  + '" />').html_safe %>
+  <%= ('<meta property="og:description" content="' + @course.description  + '" />').html_safe %>
 <% end %>
 
 <%= yield :javscripts %>
