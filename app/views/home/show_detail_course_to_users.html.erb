@@ -7,6 +7,9 @@
     <%= ('<meta property="og:url" content="' + curso_url(@course) + '" />').html_safe %>
   <%= ('<meta property="og:image" content="' + @course.photo.large.url.to_s + '" />').html_safe %>
  <%= ('<meta property="og:description" content="' + @course.description.to_s  + '" />').html_safe %>
+
+
+
 <% end %>
 
 <div id="fb-root"></div>
@@ -16,7 +19,8 @@
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+</script>
 
 <div class="container contentwrapper withoutpbg preloader_container">
   <article class="sixteen columns alpha omega pagestyle">
@@ -139,6 +143,12 @@
 	<div class="sidebar_box_share white_container clearfix">
 		<h3>Comparte la clase!</h3>
 		<ul class="share_container clearfix">
+
+<li>
+             <div class="fb-like" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div> 
+
+
+			</li>
 			<li>
 			<a class="twitter-share-button" data-via="claseteca" href="https://twitter.com/share" data-text="Comparte la clase ">Tweet</a>
 
@@ -146,11 +156,7 @@
 			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!	d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 			</script>
 			</li>
-			<li>
-              <div class="fb-like" data-font="arial" data-show-faces="true" data-width="100" data-layout="button_count" data-send="false" ></div>
-</script>
-
-			</li>
+			
 		</ul>
 	</div>
 
@@ -160,5 +166,3 @@
   </div>
   </article>
 </div>
-
-

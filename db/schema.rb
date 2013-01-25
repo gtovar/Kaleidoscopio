@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120711190341) do
+ActiveRecord::Schema.define(:version => 20121114191435) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -56,11 +56,16 @@ ActiveRecord::Schema.define(:version => 20120711190341) do
     t.integer  "limit_class_tickets"
     t.boolean  "owned"
     t.string   "photo_teacher"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.string   "slug"
     t.string   "status"
     t.time     "end_time"
+    t.datetime "finish_time"
+    t.string   "schedule_info"
+    t.boolean  "more_than_one_session"
+    t.boolean  "wont_be_bought"
+    t.string   "go_to_info"
   end
 
   add_index "courses", ["slug"], :name => "index_courses_on_slug"
@@ -87,6 +92,18 @@ ActiveRecord::Schema.define(:version => 20120711190341) do
   end
 
   add_index "orders", ["course_id"], :name => "index_orders_on_course_id"
+
+  create_table "slider_images", :force => true do |t|
+    t.string   "tagline"
+    t.text     "description"
+    t.string   "photo"
+    t.boolean  "is_from_url"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "external_url"
+    t.string   "simg_width"
+    t.string   "simg_height"
+  end
 
   add_foreign_key "orders", "courses", :name => "orders_course_id_fk"
 

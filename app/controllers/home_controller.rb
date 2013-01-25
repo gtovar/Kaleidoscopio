@@ -2,10 +2,10 @@ class HomeController < ApplicationController
 layout "front-end"
 
   def index
-    @course = Course.first
+   # @course = Course.first
     @search = Course.search(params[:search])
     @courses = @search.order(:status,"date_time ASC").limit(10)
-    
+
     @courses = @courses.select { |c| c.status == "abierto" }
     @slider_images = SliderImage.all
     respond_to do |format|
