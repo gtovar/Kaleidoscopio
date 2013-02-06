@@ -3,10 +3,9 @@ class HomeController < ApplicationController
 
   def index
     # @course = Course.first
-    @search = Course.search(params[:search])
+    @search = Course.where(:status, "abierto").search(params[:search])
     @courses = @search.order("date_time ASC").limit(10)
 
-    @courses = @courses.select { |c| c.status == "abierto" }
     @slider_images = SliderImage.all
     respond_to do |format|
       format.html # index.html.erb
@@ -17,9 +16,8 @@ class HomeController < ApplicationController
   def get_next_results
     @course = nil
 
-    @search = Course.search(session[:search])
+    @search = Course.where(:status, "abierto").search(session[:search])
     @courses = @search.paginate(:page => params[:page], :per_page =>Course::RESULTS_PER_PAGE)
-    @courses = @courses.select { |c| c.status == "abierto" }
 
     @prueba = params[:page]
     @no_more_results= @courses.total_pages == @prueba.to_i
@@ -31,9 +29,8 @@ class HomeController < ApplicationController
   def listcoursespage
     @course = nil
 
-    @search = Course.search(params[:search])
+    @search = Course.where(:status, "abierto").search(params[:search])
     @courses = @search.paginate(:page => 1, :per_page => Course::RESULTS_PER_PAGE )
-    @courses = @courses.select { |c| c.status == "abierto" }
 
     session[:search] = params[:search]
     respond_to do |format|

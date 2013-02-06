@@ -4,8 +4,6 @@ class Course < ActiveRecord::Base
   before_save :set_current_status
   before_create :set_date_and_price_info
 
-  scope :open, where(:status, 'abierto')
-
   CATEGORIES = ['arte', 'culinarias', 'empresariales', 'estilo_de_vida', 'tecnologia']
 
   class << self
