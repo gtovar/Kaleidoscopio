@@ -16,8 +16,8 @@ class HomeController < ApplicationController
   def get_next_results
     @course = nil
 
-    @search = Course.where(:status, "abierto").search(session[:search])
-    @courses = @search.paginate(:page => params[:page], :per_page =>Course::RESULTS_PER_PAGE)
+    @search = Course.search(session[:search])
+    @courses = @search.where(:status => 'abierto').paginate(:page => params[:page], :per_page =>Course::RESULTS_PER_PAGE)
 
     @prueba = params[:page]
     @no_more_results= @courses.total_pages == @prueba.to_i
@@ -29,8 +29,8 @@ class HomeController < ApplicationController
   def listcoursespage
     @course = nil
 
-    @search = Course.where(:status, "abierto").search(params[:search])
-    @courses = @search.paginate(:page => 1, :per_page => Course::RESULTS_PER_PAGE )
+    @search = Course.search(params[:search])
+    @courses = @search.where(:status => 'abierto').paginate(:page => 1, :per_page => Course::RESULTS_PER_PAGE )
 
     session[:search] = params[:search]
     respond_to do |format|
