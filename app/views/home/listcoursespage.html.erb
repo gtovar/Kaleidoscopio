@@ -57,10 +57,10 @@
 				</li>
 			</ul>
 		</li>
-  	
 
 
-<!-- FILTRAR LOS STATUS (ABIERTO,CERRADO,COMPLETADO) -->	
+
+<!-- FILTRAR LOS STATUS (ABIERTO,CERRADO,COMPLETADO) -->
 <% form_for @search, :url => listacursos_path, :html => {:method => :get} do |f| %>
   <% f.checks :status_in, [['Abierto', 'abierto'], ['Agotado', 'agotado'], ['Terminado', 'terminado']], :class => 'checkboxy'  do |check| %>
     <li>
@@ -71,7 +71,7 @@
   <% end %>
   <!-- etc... -->
   <% f.submit %>
-<% end %>		
+<% end %>
 
 
 
@@ -86,8 +86,8 @@
   <% end %>
   <!-- etc... -->
   <% f.submit %>
-<% end %>		
-	
+<% end %>
+
 	</ul>
 	<div class='clear'></div>
 </div>
@@ -95,7 +95,11 @@
 <div class='clear'></div>
 <div class="portrowed perline2">
 <div class="clear"></div>
-
+<ul>
+<% @courses.each do |s| %>
+  <li>  <%= s.name + ",  => " + s.id.to_s + ',  => ' + s.date_time.to_s + ',  => ' + s.end_time.to_s %></li>
+   <% end %>
+ </ul>
 <div id="course_results">
         <%= render :partial => "home/lc", :locals => {:course_list => @courses, :no_more_results => @no_more_results} %>
 </div>
@@ -104,3 +108,4 @@
 </div>
 </div>
 </div>
+

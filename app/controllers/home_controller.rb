@@ -14,20 +14,20 @@ layout "front-end"
     end
   end
 
-	def get_next_results
-@course = nil
+  def get_next_results
+    @course = nil
 
     @search = Course.search(session[:search])
     @courses = @search.order(:status).paginate(:page => params[:page], :per_page =>Course::RESULTS_PER_PAGE)
-		@prueba = params[:page]
-		 @no_more_results= @courses.total_pages == @prueba.to_i
+    @prueba = params[:page]
+    @no_more_results= @courses.total_pages == @prueba.to_i
     respond_to do |format|
-			format.js
-		end
+      format.js
+    end
   end
 
   def listcoursespage
-@course = nil
+    @course = nil
 
     @search = Course.search(params[:search])
     @courses = @search.order(:status).paginate(:page => 1, :per_page => Course::RESULTS_PER_PAGE )

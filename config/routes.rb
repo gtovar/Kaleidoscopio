@@ -9,7 +9,7 @@ Kaleidoscopio::Application.routes.draw do
   end
   resources :slider_images
 
-	root :to => "home#index"
+	root :to => "home#listcoursespage"
 	match 'curso/:id' => 'home#show_detail_course_to_users', :as => 'curso' do
 		resources :orders
 	end
