@@ -10,3 +10,4 @@ config/database.yml
 *.DS_Store
 *.swp
 *.out
+public/images/uploads/course/*
