@@ -3,8 +3,8 @@ class HomeController < ApplicationController
 
   def index
     # @course = Course.first
-    @search = Course.where(:status, "abierto").search(params[:search])
-    @courses = @search.order("date_time ASC").limit(10)
+    @search = Course.search(params[:search])
+    @courses = @search.where(:status, "abierto").order("date_time ASC").limit(10)
 
     @slider_images = SliderImage.all
     respond_to do |format|
